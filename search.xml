@@ -2,7 +2,7 @@
 <search>
   <entry>
     <title><![CDATA[Python环境安装教程]]></title>
-    <url>%2F2019%2Fck0mjbx2w0000botpx9w7rbea%2Fpython%E7%8E%AF%E5%A2%83%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B%2FPython%E7%8E%AF%E5%A2%83%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B%2F</url>
+    <url>%2F2019%2Fck0mjyvfz0000o8tpfud3nyd9%2Fpython%E7%8E%AF%E5%A2%83%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B%2FPython%E7%8E%AF%E5%A2%83%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B%2F</url>
     <content type="text"><![CDATA[第一步：百度搜索“Python”，或直接前往Python官网 https://www.python.org 第二步：找到网页上部的Download按钮，鼠标悬浮上去（注意:不要点击），选择Windows的版本 第三步：在页面里选择最新的稳定版本，找到 Download Windows x86-64 executable installer ，注意，一定要是 installer 的自动安装程序 直接右键另存为，选择好路径点保存/下载 第四步：双击安装即可 安装界面，下面的Add Python to PATH一定要打勾，然后点击Install Now 等待安装完成，到最后一个界面点击Close即可 写一个程序测试一下 nice！]]></content>
   </entry>
 </search>
