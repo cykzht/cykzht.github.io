@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+
+
+
+
+
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 3.9.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.4.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.4.0">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.4.0">
+  <link rel="mask-icon" href="/images/logo.svg?v=7.4.0" color="#222">
+
+<link rel="stylesheet" href="/css/main.css?v=7.4.0">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '7.4.0',
+    exturl: false,
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: 'search.xml',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    translation: {
+      copy_button: '复制',
+      copy_success: '复制成功',
+      copy_failure: '复制失败'
+    },
+    sidebarPadding: 40
+  };
+</script>
+
+  <meta name="description" content="第三次作业">
+<meta name="keywords" content="Python编程">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Python基础输入语句和数据类型转换">
+<meta property="og:url" content="https://cykzht.github.io/2019/Python基础输入语句和数据类型转换/index.html">
+<meta property="og:site_name" content="程俞客">
+<meta property="og:description" content="第三次作业">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://cykrldzp.goho.co:85/wp-content/uploads/2019/10/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20191009225736.png">
+<meta property="og:image" content="https://cykrldzp.goho.co:85/wp-content/uploads/2019/10/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20191009225903-1024x134.png">
+<meta property="og:image" content="https://cykrldzp.goho.co:85/wp-content/uploads/2019/10/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20191009225922-1024x689.png">
+<meta property="og:updated_time" content="2019-10-10T10:27:25.845Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Python基础输入语句和数据类型转换">
+<meta name="twitter:description" content="第三次作业">
+<meta name="twitter:image" content="https://cykrldzp.goho.co:85/wp-content/uploads/2019/10/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20191009225736.png">
+  <link rel="canonical" href="https://cykzht.github.io/2019/Python基础输入语句和数据类型转换/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true,
+    isPage: false,
+    isArchive: false
+  };
+</script>
+
+  <title>Python基础输入语句和数据类型转换 | 程俞客</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+   <canvas class="fireworks" style="position: fixed;left: 0;top: 0;z-index: 1; pointer-events: none;" ></canvas> 
+   <script type="text/javascript" src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script> 
+   <script type="text/javascript" src="/js/fireworks.js"></script>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">程俞客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+        <p class="site-subtitle">又一个Hexo站点</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+      
+      
+      
+        
+        <li class="menu-item menu-item-home">
+      
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-archives">
+      
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a href="javascript:;" class="popup-trigger">
+        
+          <i class="menu-item-icon fa fa-search fa-fw"></i> <br>搜索</a>
+      </li>
+    
+  </ul>
+
+</nav>
+  <div class="site-search">
+    <div class="popup search-popup">
+    <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocorrect="off" autocapitalize="none"
+           placeholder="搜索..." spellcheck="false"
+           type="text" id="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result"></div>
+
+</div>
+<div class="search-pop-overlay"></div>
+
+  </div>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+            
+
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+      <article itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block post">
+    <link itemprop="mainEntityOfPage" href="https://cykzht.github.io/2019/Python基础输入语句和数据类型转换/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="大海Leo">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/head.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="程俞客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">Python基础输入语句和数据类型转换
+
+          
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              
+                
+              
+
+              <time title="创建时间：2019-10-09 22:12:41" itemprop="dateCreated datePublished" datetime="2019-10-09T22:12:41+08:00">2019-10-09</time>
+            </span>
+          
+            
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2019-10-10 18:27:25" itemprop="dateModified" datetime="2019-10-10T18:27:25+08:00">2019-10-10</time>
+              </span>
+            
+          
+
+          
+            <span class="post-meta-item" title="阅读次数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+            </span>
+          
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">本文字数：</span>
+              
+              <span>4.6k</span>
+            </span>
+          
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              
+              <span>4 分钟</span>
+            </span>
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>第三次作业</p>
+<a id="more"></a>
+
+<h1 id="程序的基本结构"><a href="#程序的基本结构" class="headerlink" title="程序的基本结构"></a>程序的基本结构</h1><p>输入数据存入变量中——根据数据进行计算——结果输出</p>
+<h1 id="输入语句"><a href="#输入语句" class="headerlink" title="输入语句"></a>输入语句</h1><p>Python 3.x中输入语句为<strong>input()</strong>函数。<br>例如：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">a = input()   <span class="comment">#等待用户输入，给a赋值</span></span><br><span class="line">b = input()   <span class="comment">#等待用户输入，给a赋值</span></span><br></pre></td></tr></table></figure>
+
+<p>在这则表达式中，括号里可以填任何东西，如果要输入文字提示的话，需要加引号</p>
+<p>input可以输入任何东西，包括数字、字母、汉字、符号以及你能打的出来的外语</p>
+<p>输入的结果为<strong>str</strong>类型，即字符串类型</p>
+<p>For exampl ：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">x = <span class="number">3000</span></span><br><span class="line">a = input(x)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">a = input(<span class="string">'请输入数字：'</span>)</span><br></pre></td></tr></table></figure>
+
+<p>第一框输出的结果就是<strong>3000</strong>，运行程序的时候会先显示出<strong>3000</strong>，然后等待你去输入</p>
+<p>第二框的输出就是“请输入数字：”，后面可以输入任何东西</p>
+<p>虽然看上去像是给input()函数赋值，但实际上，我们是将input()函数的执行结果（收集的信息）赋值给变量<strong>a</strong></p>
+<p>通俗来讲，我们放进<strong>a</strong>这个盒子里的东西，不是input()函数中提的问题，而是我们通过input()函数收集到的<strong>别人的答案</strong></p>
+<p>这样，不管你在<strong>终端</strong>输入的内容是什么，不管你的回答改变多少次。只要是对input()函数所提问题的回答，都会被存储在变量中。等待你打印变量时，将回答提取出来，展示在显示屏上</p>
+<p>而这些展示在<strong>终端</strong>的信息/回答/数据，在代码世界，我们可以称其为<strong>输入值</strong>——我们输入给函数的内容</p>
+<h1 id="转换函数-数据类型"><a href="#转换函数-数据类型" class="headerlink" title="转换函数,数据类型"></a>转换函数,数据类型</h1><h2 id="str字符串"><a href="#str字符串" class="headerlink" title="str字符串"></a>str字符串</h2><p>我们来认识一下字符串，字符串英文<strong>string</strong></p>
+<p>字符串，顾名思义，就是由一个个字符串起来的组合，字符可以是一个数字、一个字母、一个文字，甚至是一个符号。字符串可以表达现实世界里的词、语句、表达式等</p>
+<p>字符串的识别方式非常简单——有层名为【引号】的皮，只要是被【单/双/三引号】这层皮括起来的内容，不论那个内容是中文、英文、数字甚至火星文。只要是被括起来的，就表示是字符串类型</p>
+<p>在这组代码里，【’世界’】、【”HelloWorld!”】都属于<strong>字符串</strong>类型</p>
+<h2 id="int整数"><a href="#int整数" class="headerlink" title="int整数"></a>int整数</h2><p>这就是我们要介绍的，常见数据类型中的第二种：<strong>整数</strong>，<strong>整数</strong>英文为<strong>integer</strong>，简写做<strong>int</strong>。Python世界的<strong>整数</strong>其实和现实世界数学中定义的一样：是正整数、负整数和零的统称，是没有小数点的数字</p>
+<p><strong>整数</strong>其实是一个不带小数点的数字，可以不穿名为<strong>引号</strong>的马甲，直接跟print()函数组团搞输出，比如下列代码：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">print(<span class="number">666</span>)</span><br></pre></td></tr></table></figure>
+
+<p>输出的结果就是<strong>666</strong></p>
+<p>我们已经知道了字符串有【引号】的保护，可以和符号及其他文字类数据，譬如中文、英文随意组合</p>
+<p>而<strong>整数</strong>脱掉了【引号】马甲，只能『单独行动』。一旦碰上符号及其他文字类数据，譬如中文、英文，立马被报错秒杀</p>
+<h2 id="float浮点数"><a href="#float浮点数" class="headerlink" title="float浮点数"></a>float浮点数</h2><p>浮点数的英文名是<strong>float</strong>，与<strong>整数(int)</strong>和<strong>字符串(str)</strong>不同，<strong>浮点数</strong>没有简写</p>
+<p>浮点数非常好识别，它比整数多了一个小数点『.』，比如下列代码中的数字都是<strong>浮点数</strong></p>
+<p>形如【4.5】【3.14】这样的数就是浮点数</p>
+<p><strong>浮点数</strong>可能让你有点眩晕，这是因为，与【整数运算结果永远精确】的特点不同，计算机里浮点数的运算是不精确的，会有四舍五入的误差，意思就是说计算是由二进制0和1表示的，逢二进一，这也就造成了我们与程序计算结果的差异</p>
+<h1 id="课堂练习"><a href="#课堂练习" class="headerlink" title="课堂练习"></a>课堂练习</h1><h2 id="习题一：输入两个字符串，连接成一个字符串后输出"><a href="#习题一：输入两个字符串，连接成一个字符串后输出" class="headerlink" title="习题一：输入两个字符串，连接成一个字符串后输出"></a>习题一：输入两个字符串，连接成一个字符串后输出</h2><h3 id="1、输入指令"><a href="#1、输入指令" class="headerlink" title="1、输入指令"></a>1、输入指令</h3><p>我们需要先使用<strong>input</strong>进行输入，要拼接两个字符串，就要有两个输出</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">a = input(<span class="string">'请输入第一个字符串：'</span>)</span><br><span class="line">b = input(<span class="string">'请输入第二个字符串：'</span>)</span><br></pre></td></tr></table></figure>
+
+<h3 id="2、拼接输出"><a href="#2、拼接输出" class="headerlink" title="2、拼接输出"></a>2、拼接输出</h3><p>前两步只是对a、b进行赋值，我们还需要对结果进行一个输出</p>
+<p>在题目里，要求“连成一个字符串后输出”，这一步比较简单，我们只需要在print的<strong>括号</strong>里输入【+】号即可</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">print(a + b)</span><br></pre></td></tr></table></figure>
+
+<h3 id="代码示例"><a href="#代码示例" class="headerlink" title="代码示例"></a>代码示例</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">a = input(<span class="string">'请输入第一个字符串：'</span>)   <span class="comment">#等待输入赋值</span></span><br><span class="line">b = input(<span class="string">'请输入第二个字符串：'</span>)   <span class="comment">#等待输入赋值</span></span><br><span class="line">print(a + b)   <span class="comment">#输出拼接结果</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="部分代码解释"><a href="#部分代码解释" class="headerlink" title="部分代码解释"></a>部分代码解释</h3><p>表达式中的运算符号前后可以不加空格</p>
+<p>print里的a、b<strong>不可以</strong>加引号</p>
+<h2 id="习题二：输入两个正整数，输出两个正整数的和及乘积"><a href="#习题二：输入两个正整数，输出两个正整数的和及乘积" class="headerlink" title="习题二：输入两个正整数，输出两个正整数的和及乘积"></a>习题二：输入两个正整数，输出两个正整数的和及乘积</h2><h3 id="1、数据输入"><a href="#1、数据输入" class="headerlink" title="1、数据输入"></a>1、数据输入</h3><p>我们需要先输入两个正整数去进行计算，使用<strong>input</strong>进行输入</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">a = input(<span class="string">'请输入第一个正整数：'</span>)</span><br><span class="line">b = input(<span class="string">'请输入第二个正整数：'</span>)</span><br></pre></td></tr></table></figure>
+
+<h3 id="2、数据计算"><a href="#2、数据计算" class="headerlink" title="2、数据计算"></a>2、数据计算</h3><p>题目里要求<strong>和</strong>、<strong>乘积</strong>，我们需要另外两字母进行计算结果的赋值,第一行是相加的过程，第二行是相乘的过程</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">c = int(a) + int(b)</span><br><span class="line">d = int(a) * int(b)</span><br></pre></td></tr></table></figure>
+
+<h3 id="3、数据输出"><a href="#3、数据输出" class="headerlink" title="3、数据输出"></a>3、数据输出</h3><p>这道题里有两计算结果，所以我们要使用<strong>两个</strong>print进行输出</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">print(c)</span><br><span class="line">print(d)</span><br></pre></td></tr></table></figure>
+
+<h3 id="代码示例-1"><a href="#代码示例-1" class="headerlink" title="代码示例"></a>代码示例</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">a = input(<span class="string">'请输入第一个正整数：'</span>)   <span class="comment">#等待输入赋值</span></span><br><span class="line">b = input(<span class="string">'请输入第二个正整数：'</span>)   <span class="comment">#等待输入赋值</span></span><br><span class="line">c = int(a) + int(b)   <span class="comment">#加法运算过程</span></span><br><span class="line">d = int(a) * int(b)   <span class="comment">#乘法运算过程</span></span><br><span class="line">print(<span class="string">'相加等于'</span> + str(c))   <span class="comment">#输出结果，拼接内容，需要转化数据类型</span></span><br><span class="line">print(<span class="string">'相乘等于'</span> + str(d))   <span class="comment">#输出结果，拼接内容，需要转化数据类型</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="部分代码解释-1"><a href="#部分代码解释-1" class="headerlink" title="部分代码解释"></a>部分代码解释</h3><p>表达式中的运算符号前后可以不加空格</p>
+<p>输出结果里如果有文字需要加引号，并且拼接数字的时候需要强制将数字转化为字符串</p>
+<h2 id="习题三：输入两个实数，输出两个实数的和及乘积"><a href="#习题三：输入两个实数，输出两个实数的和及乘积" class="headerlink" title="习题三：输入两个实数，输出两个实数的和及乘积"></a>习题三：输入两个实数，输出两个实数的和及乘积</h2><p>这道题基本和上一题类似，但上一题要求的是整数，而这道题要求的是实数，也就意味着可以包含<strong>小数</strong>即<strong>浮点数</strong></p>
+<h3 id="1、数据输入-1"><a href="#1、数据输入-1" class="headerlink" title="1、数据输入"></a>1、数据输入</h3><p>我们需要先输入两个正实数去进行计算，使用<strong>input</strong>进行输入</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">a = input(<span class="string">'请输入第一个正整数：'</span>)</span><br><span class="line">b = input(<span class="string">'请输入第二个正整数：'</span>)</span><br></pre></td></tr></table></figure>
+
+<h3 id="2、数据计算-1"><a href="#2、数据计算-1" class="headerlink" title="2、数据计算"></a>2、数据计算</h3><p>题目里要求<strong>和</strong>、<strong>乘积</strong>，我们需要另外两字母进行计算结果的赋值,第一行是相加的过程，第二行是相乘的过程</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">c = float(a) + float(b)</span><br><span class="line">d = float(a) * float(b)</span><br></pre></td></tr></table></figure>
+
+<h3 id="3、数据输出-1"><a href="#3、数据输出-1" class="headerlink" title="3、数据输出"></a>3、数据输出</h3><p>这道题里有两计算结果，所以我们要使用<strong>两个</strong>print进行输出</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">print(c)</span><br><span class="line">print(d)</span><br></pre></td></tr></table></figure>
+
+<h3 id="代码示例-2"><a href="#代码示例-2" class="headerlink" title="代码示例"></a>代码示例</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">a = input(<span class="string">'请输入第一个实数：'</span>)   <span class="comment">#等待输入赋值</span></span><br><span class="line">b = input(<span class="string">'请输入第二个实数：'</span>)   <span class="comment">#等待输入赋值</span></span><br><span class="line">c = float(a) + float(b)   <span class="comment">#加法运算过程</span></span><br><span class="line">d = float(a) * float(b)   <span class="comment">#乘法运算过程</span></span><br><span class="line">print(<span class="string">'相加等于'</span> + str(c))   <span class="comment">#输出结果，拼接内容，需要转化数据类型</span></span><br><span class="line">print(<span class="string">'相乘等于'</span> + str(d))   <span class="comment">#输出结果，拼接内容，需要转化数据类型</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="部分代码解释-2"><a href="#部分代码解释-2" class="headerlink" title="部分代码解释"></a>部分代码解释</h3><p>表达式中的运算符号前后可以不加空格</p>
+<p>输出结果里如果有文字需要加引号，并且拼接数字的时候需要强制将数字转化为字符串</p>
+<h1 id="家庭作业"><a href="#家庭作业" class="headerlink" title="家庭作业"></a>家庭作业</h1><h2 id="题目一：买文具"><a href="#题目一：买文具" class="headerlink" title="题目一：买文具"></a>题目一：买文具</h2><p>买文具：已知需要购买的文具是2元3角。用于购买文具的资金总共a元b角。请求出一共可以购买多少件文具？</p>
+<h3 id="1、题目分析"><a href="#1、题目分析" class="headerlink" title="1、题目分析"></a>1、题目分析</h3><p>要求买文具，让我们求可以买多少件，这里会用到小学的除法，假设我有100元钱，文具2.3元一个，我可以买100/2.3个</p>
+<h3 id="2、数据输入"><a href="#2、数据输入" class="headerlink" title="2、数据输入"></a>2、数据输入</h3><p>这一题只需要输入一个数值即可，就是“你带了多少钱”，要使用<strong>input</strong>进行输入</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">a = input(<span class="string">'你带了多少钱：'</span>)</span><br></pre></td></tr></table></figure>
+
+<h3 id="3、数据计算"><a href="#3、数据计算" class="headerlink" title="3、数据计算"></a>3、数据计算</h3><p>题目里说明了2.3元一件，所以我们要把输入的数值除以2.3</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">b = (float(a) / <span class="number">2.3</span>)</span><br></pre></td></tr></table></figure>
+
+<h3 id="4、数据输出"><a href="#4、数据输出" class="headerlink" title="4、数据输出"></a>4、数据输出</h3><p>呈现出最终的结果即可求出本题的答案</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">print(b)</span><br></pre></td></tr></table></figure>
+
+<h3 id="代码示例-3"><a href="#代码示例-3" class="headerlink" title="代码示例"></a>代码示例</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">a = input(<span class="string">"请输入多少元："</span>)   <span class="comment">#等待输入值</span></span><br><span class="line">b = (float(a) / <span class="number">2.3</span>)   <span class="comment">#价钱运算，赋值a可带浮点</span></span><br><span class="line">print(<span class="string">'一共可以购买文具'</span> + str(b) + <span class="string">'件'</span>)   <span class="comment">#输出结果，将b转换为字符串</span></span><br><span class="line">d = int(b)   <span class="comment">#把b转换成整数</span></span><br><span class="line">print(<span class="string">'折合'</span> + str(d) + <span class="string">'件'</span>)   <span class="comment">#输出结果，将b转换为字符串</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="部分代码解释-3"><a href="#部分代码解释-3" class="headerlink" title="部分代码解释"></a>部分代码解释</h3><p>表达式中的运算符号前后可以不加空格</p>
+<p>计算中<strong>a</strong>可以输入浮点数，即“你带了10.3元”</p>
+<p>使用int是因为计算结果可能会有小数，在这一步进行一个折合</p>
+<p>输出结果里如果有文字需要加引号，并且拼接数字的时候需要强制将数字转化为字符串</p>
+<h2 id="题目二：小鱼游泳"><a href="#题目二：小鱼游泳" class="headerlink" title="题目二：小鱼游泳"></a>题目二：小鱼游泳</h2><p>这一天，小鱼给自己的游泳时间做了精确的计时，它发现自己从a时b分一直游泳到当天的c时d分，请你帮小鱼计算一下，它这天一共游了多少时间呢？</p>
+<h3 id="分析题目"><a href="#分析题目" class="headerlink" title="分析题目"></a>分析题目</h3><p>这道题目比较复杂，时间的格式是00：00，不能直接进行计算，需要拆分计算</p>
+<p><strong>例如</strong>：开始的时间是6：30，结束的时间是7：20，正常我们人口算得出的时间是50分钟，在计算机里需要把小时和分钟拆开计算，即“结束小时-开始小时”“结束分钟-开始分钟”，这里还涉及到一个判定的条件，就像我给的这个示例一样，结束的分钟数比开始的分钟数要小，所以减出来的就会有负数，这时候我们需要让60减去开始的分钟数，然后在加上结束的分钟数，并且还需要在小时上借1</p>
+<p><strong>这道题我不进行讲解，以后会学到，这道题为选做</strong></p>
+<h3 id="代码示例-4"><a href="#代码示例-4" class="headerlink" title="代码示例"></a>代码示例</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">a = input(<span class="string">'请输入开始的小时（24小时制）：'</span>)   <span class="comment">#等待输入</span></span><br><span class="line">b = input(<span class="string">'请输入开始的分钟（24小时制）：'</span>)   <span class="comment">#等待输入</span></span><br><span class="line">c = input(<span class="string">'请输入结束的小时（24小时制）：'</span>)   <span class="comment">#等待输入</span></span><br><span class="line">d = input(<span class="string">'请输入结束的分钟（24小时制）：'</span>)   <span class="comment">#等待输入</span></span><br><span class="line"><span class="keyword">if</span> d&lt;b:   <span class="comment">#if做状态判断，如果d小于b，即“结束分钟”小于“开始分钟”</span></span><br><span class="line">    e = int(c) - int(a) - <span class="number">1</span>   <span class="comment">#运算过程，分钟相减不够向小时借1</span></span><br><span class="line">    f = (<span class="number">60</span> - int(b)) + int(d)   <span class="comment">#运算过程，一小时60分钟</span></span><br><span class="line">    print(<span class="string">'一共游泳'</span> + str(e) + <span class="string">'时'</span> +str(f) + <span class="string">'分'</span>)   <span class="comment">#输出结果，将数字转换为字符串</span></span><br><span class="line"><span class="keyword">else</span>:   <span class="comment">#包含在if判断里，否则</span></span><br><span class="line">    g = int(c) - int(a)   <span class="comment">#运算过程，将输入值转化为整数</span></span><br><span class="line">    f = int(d) - int(b)   <span class="comment">#运算过程，将输入值转化为整数</span></span><br><span class="line">    print(<span class="string">'一共游泳'</span> + str(g) + <span class="string">'时'</span> +str(f) + <span class="string">'分'</span>)   <span class="comment">#输出结果，将数字转换为字符串</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="部分代码解释-4"><a href="#部分代码解释-4" class="headerlink" title="部分代码解释"></a>部分代码解释</h3><p><strong>if</strong>语句没有学到，以后会学，大概的用法就是这样的，详细请见注释</p>
+<h1 id="作业提交"><a href="#作业提交" class="headerlink" title="作业提交"></a>作业提交</h1><p>这次老师把作业上传到了<strong>希悦</strong>系统上，记一次平时成绩，作业上交截至到10月12日，请大家认真对待</p>
+<p>由于这次的作业提交需要上传附件，建议大家使用电脑上传</p>
+<p>打开希悦的网址<a href="https://bayi.seiue.com/" target="_blank" rel="noopener">https://bayi.seiue.com</a>登录进系统</p>
+<p>在首页的”课程”栏找到“课业任务”</p>
+<p><img src="https://cykrldzp.goho.co:85/wp-content/uploads/2019/10/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20191009225736.png" alt="img"></p>
+<p>找到本次的作业任务</p>
+<p><img src="https://cykrldzp.goho.co:85/wp-content/uploads/2019/10/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20191009225903-1024x134.png" alt="img"></p>
+<p>上传本次作业的内容和附件</p>
+<p><img src="https://cykrldzp.goho.co:85/wp-content/uploads/2019/10/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20191009225922-1024x689.png" alt="img"></p>
+<p><strong>大家尽量不要直接复制我的代码，还是要自己动手打代码练习一下，我们是11班，比1班多了10，希望成绩不要比1班落下10，谢谢</strong></p>
+<hr>
+<h1 id="礼物环节"><a href="#礼物环节" class="headerlink" title="礼物环节"></a>礼物环节</h1><p>最近智学网查分平台开通了，账号和密码都是一长串数字+自己的学号+28，我教大家如何使用Python对账号进行整合</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">a = input(<span class="string">'请输入你的学号：'</span>)</span><br><span class="line">b = int(a) + <span class="number">28</span></span><br><span class="line">print(<span class="string">'你的账号为：961743'</span> + str(b))</span><br></pre></td></tr></table></figure>
+
+<p><strong>文章作者：朱海天   未经允许禁止转载</strong></p>
+
+    </div>
+
+    
+    
+    
+        
+      
+
+      <footer class="post-footer">
+          
+            
+          
+          <div class="post-tags">
+            
+              <a href="/tags/Python编程/" rel="tag"># Python编程</a>
+            
+          </div>
+        
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-next post-nav-item">
+              
+                <a href="/2019/摆脱老师控制：极域电子教室破解教程/" rel="next" title="摆脱老师控制：极域电子教室破解教程">
+                  <i class="fa fa-chevron-left"></i> 摆脱老师控制：极域电子教室破解教程
+                </a>
+              
+            </div>
+
+            <span class="post-nav-divider"></span>
+
+            <div class="post-nav-prev post-nav-item">
+              
+            </div>
+          </div>
+        
+      </footer>
+    
+          
+            <div class="post-symbolscount">
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">本文字数：</span>
+                
+                <!-- <span title="本文字数">18k</span> -->
+			  <span title="本文字数">
+                  3.1k字
+                </span>
+              
+  </div>
+  
+  
+  
+  </article>
+
+  </div>
+
+
+          </div>
+          
+
+        </div>
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+        
+        
+        
+        
+      
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#程序的基本结构"><span class="nav-number">1.</span> <span class="nav-text">程序的基本结构</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#输入语句"><span class="nav-number">2.</span> <span class="nav-text">输入语句</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#转换函数-数据类型"><span class="nav-number">3.</span> <span class="nav-text">转换函数,数据类型</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#str字符串"><span class="nav-number">3.1.</span> <span class="nav-text">str字符串</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#int整数"><span class="nav-number">3.2.</span> <span class="nav-text">int整数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#float浮点数"><span class="nav-number">3.3.</span> <span class="nav-text">float浮点数</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#课堂练习"><span class="nav-number">4.</span> <span class="nav-text">课堂练习</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#习题一：输入两个字符串，连接成一个字符串后输出"><span class="nav-number">4.1.</span> <span class="nav-text">习题一：输入两个字符串，连接成一个字符串后输出</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1、输入指令"><span class="nav-number">4.1.1.</span> <span class="nav-text">1、输入指令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2、拼接输出"><span class="nav-number">4.1.2.</span> <span class="nav-text">2、拼接输出</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#代码示例"><span class="nav-number">4.1.3.</span> <span class="nav-text">代码示例</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#部分代码解释"><span class="nav-number">4.1.4.</span> <span class="nav-text">部分代码解释</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#习题二：输入两个正整数，输出两个正整数的和及乘积"><span class="nav-number">4.2.</span> <span class="nav-text">习题二：输入两个正整数，输出两个正整数的和及乘积</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1、数据输入"><span class="nav-number">4.2.1.</span> <span class="nav-text">1、数据输入</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2、数据计算"><span class="nav-number">4.2.2.</span> <span class="nav-text">2、数据计算</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3、数据输出"><span class="nav-number">4.2.3.</span> <span class="nav-text">3、数据输出</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#代码示例-1"><span class="nav-number">4.2.4.</span> <span class="nav-text">代码示例</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#部分代码解释-1"><span class="nav-number">4.2.5.</span> <span class="nav-text">部分代码解释</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#习题三：输入两个实数，输出两个实数的和及乘积"><span class="nav-number">4.3.</span> <span class="nav-text">习题三：输入两个实数，输出两个实数的和及乘积</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1、数据输入-1"><span class="nav-number">4.3.1.</span> <span class="nav-text">1、数据输入</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2、数据计算-1"><span class="nav-number">4.3.2.</span> <span class="nav-text">2、数据计算</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3、数据输出-1"><span class="nav-number">4.3.3.</span> <span class="nav-text">3、数据输出</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#代码示例-2"><span class="nav-number">4.3.4.</span> <span class="nav-text">代码示例</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#部分代码解释-2"><span class="nav-number">4.3.5.</span> <span class="nav-text">部分代码解释</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#家庭作业"><span class="nav-number">5.</span> <span class="nav-text">家庭作业</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#题目一：买文具"><span class="nav-number">5.1.</span> <span class="nav-text">题目一：买文具</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1、题目分析"><span class="nav-number">5.1.1.</span> <span class="nav-text">1、题目分析</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2、数据输入"><span class="nav-number">5.1.2.</span> <span class="nav-text">2、数据输入</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3、数据计算"><span class="nav-number">5.1.3.</span> <span class="nav-text">3、数据计算</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4、数据输出"><span class="nav-number">5.1.4.</span> <span class="nav-text">4、数据输出</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#代码示例-3"><span class="nav-number">5.1.5.</span> <span class="nav-text">代码示例</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#部分代码解释-3"><span class="nav-number">5.1.6.</span> <span class="nav-text">部分代码解释</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#题目二：小鱼游泳"><span class="nav-number">5.2.</span> <span class="nav-text">题目二：小鱼游泳</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#分析题目"><span class="nav-number">5.2.1.</span> <span class="nav-text">分析题目</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#代码示例-4"><span class="nav-number">5.2.2.</span> <span class="nav-text">代码示例</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#部分代码解释-4"><span class="nav-number">5.2.3.</span> <span class="nav-text">部分代码解释</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#作业提交"><span class="nav-number">6.</span> <span class="nav-text">作业提交</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#礼物环节"><span class="nav-number">7.</span> <span class="nav-text">礼物环节</span></a></li></ol></div>
+        
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image"
+      src="/images/head.jpg"
+      alt="大海Leo">
+  <p class="site-author-name" itemprop="name">大海Leo</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+  <nav class="site-state motion-element">
+      <div class="site-state-item site-state-posts">
+        
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">5</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+    
+      
+      
+      <div class="site-state-item site-state-tags">
+        
+        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-name">标签</span>
+        
+      </div>
+    
+  </nav>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="https://weibo.com/u/6509626594" title="Weibo &rarr; https://weibo.com/u/6509626594" rel="noopener" target="_blank"><i class="fa fa-fw fa-weibo"></i>Weibo</a>
+      </span>
+    
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="https://cykrldzp.goho.co:85" title="WordPress &rarr; https://cykrldzp.goho.co:85" rel="noopener" target="_blank"><i class="fa fa-fw fa-globe"></i>WordPress</a>
+      </span>
+    
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="https://space.bilibili.com/122529890" title="bilibili &rarr; https://space.bilibili.com/122529890" rel="noopener" target="_blank"><i class="fa fa-fw fa-film"></i>bilibili</a>
+      </span>
+    
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">大海Leo</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+      <span class="post-meta-item-text">站点总字数：</span>
+    
+    <span title="站点总字数">8k</span>
+</div>
+<script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">站点总字数：</span>
+    
+	<span title="post.totalcount">
+     5.6k字 </span>
+    <!--<span title="站点总字数">8k</span>-->
+  
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-user"></i>
+    </span>
+    <span class="site-uv" title="总访客量">
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+    </span>
+  
+    <span class="post-meta-divider">|</span>
+  
+    <span class="post-meta-item-icon">
+      <i class="fa fa-eye"></i>
+    </span>
+    <span class="site-pv" title="总访问量">
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+  </div>
+
+  
+
+
+  <script src="/lib/anime.min.js?v=3.1.0"></script>
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+<script src="/js/utils.js?v=7.4.0"></script><script src="/js/motion.js?v=7.4.0"></script>
+<script src="/js/schemes/pisces.js?v=7.4.0"></script>
+
+<script src="/js/next-boot.js?v=7.4.0"></script>
+
+
+
+  
+
+
+
+
+
+
+
+
+  <script src="/js/local-search.js?v=7.4.0"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+</body>
+</html>
