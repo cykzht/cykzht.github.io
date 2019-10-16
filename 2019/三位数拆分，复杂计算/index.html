@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+
+
+
+
+
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 3.9.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.4.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.4.0">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.4.0">
+  <link rel="mask-icon" href="/images/logo.svg?v=7.4.0" color="#222">
+
+<link rel="stylesheet" href="/css/main.css?v=7.4.0">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '7.4.0',
+    exturl: false,
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: 'search.xml',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    translation: {
+      copy_button: '复制',
+      copy_success: '复制成功',
+      copy_failure: '复制失败'
+    },
+    sidebarPadding: 40
+  };
+</script>
+
+  <meta name="description" content="第四次作业">
+<meta name="keywords" content="Python编程">
+<meta property="og:type" content="article">
+<meta property="og:title" content="三位数的拆分">
+<meta property="og:url" content="https://cykzht.github.io/2019/三位数拆分，复杂计算/index.html">
+<meta property="og:site_name" content="程俞客">
+<meta property="og:description" content="第四次作业">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://cykrldzp.goho.co:85/wp-content/uploads/2019/10/%E4%BD%99%E6%95%B0%E7%A4%BA%E4%BE%8B.jpg">
+<meta property="og:image" content="https://cykrldzp.goho.co:85/wp-content/uploads/2019/10/%E7%99%BE%E4%BD%8D%E6%95%B0.jpg">
+<meta property="og:image" content="https://cykrldzp.goho.co:85/wp-content/uploads/2019/10/%E5%8D%81%E4%BD%8D%E6%95%B0.jpg">
+<meta property="og:image" content="https://cykrldzp.goho.co:85/wp-content/uploads/2019/10/%E4%B8%AA%E4%BD%8D%E6%95%B0.jpg">
+<meta property="og:image" content="https://cykrldzp.goho.co:85/wp-content/uploads/2019/10/%E6%8D%A2%E5%BA%8F.png">
+<meta property="og:updated_time" content="2019-10-16T15:07:44.688Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="三位数的拆分">
+<meta name="twitter:description" content="第四次作业">
+<meta name="twitter:image" content="https://cykrldzp.goho.co:85/wp-content/uploads/2019/10/%E4%BD%99%E6%95%B0%E7%A4%BA%E4%BE%8B.jpg">
+  <link rel="canonical" href="https://cykzht.github.io/2019/三位数拆分，复杂计算/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true,
+    isPage: false,
+    isArchive: false
+  };
+</script>
+
+  <title>三位数的拆分 | 程俞客</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+   <canvas class="fireworks" style="position: fixed;left: 0;top: 0;z-index: 1; pointer-events: none;" ></canvas> 
+   <script type="text/javascript" src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script> 
+   <script type="text/javascript" src="/js/fireworks.js"></script>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">程俞客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+        <p class="site-subtitle">又一个Hexo站点</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+      
+      
+      
+        
+        <li class="menu-item menu-item-home">
+      
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-archives">
+      
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a href="javascript:;" class="popup-trigger">
+        
+          <i class="menu-item-icon fa fa-search fa-fw"></i> <br>搜索</a>
+      </li>
+    
+  </ul>
+
+</nav>
+  <div class="site-search">
+    <div class="popup search-popup">
+    <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocorrect="off" autocapitalize="none"
+           placeholder="搜索..." spellcheck="false"
+           type="text" id="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result"></div>
+
+</div>
+<div class="search-pop-overlay"></div>
+
+  </div>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+            
+
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+      <article itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block post">
+    <link itemprop="mainEntityOfPage" href="https://cykzht.github.io/2019/三位数拆分，复杂计算/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="大海Leo">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/head.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="程俞客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">三位数的拆分
+
+          
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              
+                
+              
+
+              <time title="创建时间：2019-10-16 17:59:41 / 修改时间：23:07:44" itemprop="dateCreated datePublished" datetime="2019-10-16T17:59:41+08:00">2019-10-16</time>
+            </span>
+          
+            
+
+            
+          
+
+          
+            <span class="post-meta-item" title="阅读次数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+            </span>
+          
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">本文字数：</span>
+              
+              <span>2k</span>
+            </span>
+          
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              
+              <span>2 分钟</span>
+            </span>
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>第四次作业</p>
+<a id="more"></a>
+
+<h1 id="题目1：拆分三位数"><a href="#题目1：拆分三位数" class="headerlink" title="题目1：拆分三位数"></a>题目1：拆分三位数</h1><p>题目：<strong>输入一个三位正整数，请分别计算出，这个正整数的个位、十位和百位</strong></p>
+<p>这道题的意思就是，<strong>例如321</strong>，前面的3就是百位数，2是十位数，1是个位数</p>
+<h2 id="1、输入数字"><a href="#1、输入数字" class="headerlink" title="1、输入数字"></a>1、输入数字</h2><p>使用<strong>input</strong>指令进行输入</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">a = input(<span class="string">'请输入一个三位数：'</span>)</span><br></pre></td></tr></table></figure>
+
+<h2 id="2、数字的提取计算"><a href="#2、数字的提取计算" class="headerlink" title="2、数字的提取计算"></a>2、数字的提取计算</h2><p>这一步的计算我们会用到余数的计算，在代码中，它的符号是<strong>【%】</strong>，这是我们小学学的一个概念，我再给大家复习一下余数的概念</p>
+<p><img src="https://cykrldzp.goho.co:85/wp-content/uploads/2019/10/%E4%BD%99%E6%95%B0%E7%A4%BA%E4%BE%8B.jpg" alt="avatar"></p>
+<p>这里百位数的提取就是输入的数字除以100</p>
+<p><img src="https://cykrldzp.goho.co:85/wp-content/uploads/2019/10/%E7%99%BE%E4%BD%8D%E6%95%B0.jpg" alt="avatar"></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">b = int(a) / <span class="number">100</span></span><br></pre></td></tr></table></figure>
+
+<p>十位数提取需要先算出输入值100的余数，然后除以10</p>
+<p><img src="https://cykrldzp.goho.co:85/wp-content/uploads/2019/10/%E5%8D%81%E4%BD%8D%E6%95%B0.jpg" alt="avatar"></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">c = int(a) % <span class="number">100</span> / <span class="number">10</span></span><br></pre></td></tr></table></figure>
+
+<p>个位数需要先100的余数，然后再来一个10的余数</p>
+<p><img src="https://cykrldzp.goho.co:85/wp-content/uploads/2019/10/%E4%B8%AA%E4%BD%8D%E6%95%B0.jpg" alt="avatar"></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">d = int(a) % <span class="number">100</span> % <span class="number">10</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="3、整数转换"><a href="#3、整数转换" class="headerlink" title="3、整数转换"></a>3、整数转换</h2><p>因为这里算出来的除法有可能包含小数，所以我们要把整数提取出来</p>
+<p>这里使用<strong>int</strong>指令即可</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">e = int(b)</span><br><span class="line">f = int(c)</span><br><span class="line">g = int(d)</span><br></pre></td></tr></table></figure>
+
+<h2 id="4、结果输出"><a href="#4、结果输出" class="headerlink" title="4、结果输出"></a>4、结果输出</h2><p>这里使用print指令，注意要把个、十、百分开，要使用str转化为字符串</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">print(<span class="string">'百位数为：'</span> + str(e))</span><br><span class="line">print(<span class="string">'十位数为：'</span> + str(f))</span><br><span class="line">print(<span class="string">'个位数为：'</span> + str(g))</span><br></pre></td></tr></table></figure>
+
+<h2 id="代码示例"><a href="#代码示例" class="headerlink" title="代码示例"></a>代码示例</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">a = input(<span class="string">'请输入一个三位数：'</span>)   <span class="comment">#等待输入</span></span><br><span class="line">b = int(a) / <span class="number">100</span>   <span class="comment">#百位数提取</span></span><br><span class="line">c = int(a) % <span class="number">100</span> /<span class="number">10</span>   <span class="comment">#十位数提取</span></span><br><span class="line">d = int(a) % <span class="number">100</span> % <span class="number">10</span>   <span class="comment">#各位数提取</span></span><br><span class="line">e = int(b)   <span class="comment">#百位整数化</span></span><br><span class="line">f = int(c)   <span class="comment">#十位整数化</span></span><br><span class="line">g = int(d)   <span class="comment">#个位整数化</span></span><br><span class="line">print(<span class="string">'百位数为：'</span> + str(e))   <span class="comment">#百位输出</span></span><br><span class="line">print(<span class="string">'十位数为：'</span> + str(f))   <span class="comment">#十位输出</span></span><br><span class="line">print(<span class="string">'个位数为：'</span> + str(g))   <span class="comment">#个位输出</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="判定部分（提高篇）"><a href="#判定部分（提高篇）" class="headerlink" title="判定部分（提高篇）"></a>判定部分（提高篇）</h2><p>这道题要求输入三位数的输入，如果不是三位数就无法进行提取和匀速，所以要先在第一步进行判定</p>
+<p>这里就要使用<strong>if</strong>语句了，具体的使用方法如下</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> a&lt;b:</span><br><span class="line">  print(<span class="string">'a'</span>)</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">  print(<span class="string">'b'</span>)</span><br></pre></td></tr></table></figure>
+
+<p>我一行一行进行解释，如果a小于b（这里的数值需要提前赋值），则显示a，否则显示b</p>
+<p><strong>if</strong>和<strong>else</strong>是一起使用的，有if就要有else，而if的判定就是数字的大小，符号的输入是英文下输入的书名号<strong>&lt;&gt;</strong></p>
+<p>使用if和else后，代码都要<strong>缩进</strong>，前面空四格</p>
+<p>在题目里，要求输入的是三位数，这个书的范围就是大于等于100，小于1000，写法就是<strong>100&lt;=int(a)&lt;1000</strong></p>
+<p>如果输入的是三位数，则进行下一步的计算，如果不是三位数，则提示非三位数，无法运算</p>
+<h3 id="代码示例-1"><a href="#代码示例-1" class="headerlink" title="代码示例"></a>代码示例</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">a = input(<span class="string">'请输入一个三位数：'</span>)   <span class="comment">#等待输入</span></span><br><span class="line"><span class="keyword">if</span> <span class="number">100</span>&lt;=int(a)&lt;<span class="number">1000</span>:</span><br><span class="line">  b = int(a) / <span class="number">100</span>   <span class="comment">#百位数提取</span></span><br><span class="line">  c = int(a) % <span class="number">100</span> /<span class="number">10</span>   <span class="comment">#十位数提取</span></span><br><span class="line">  d = int(a) % <span class="number">100</span> % <span class="number">10</span>   <span class="comment">#各位数提取</span></span><br><span class="line">  e = int(b)   <span class="comment">#百位整数化</span></span><br><span class="line">  f = int(c)   <span class="comment">#十位整数化</span></span><br><span class="line">  g = int(d)   <span class="comment">#个位整数化</span></span><br><span class="line">  print(<span class="string">'百位数为：'</span> + str(e))   <span class="comment">#百位输出</span></span><br><span class="line">  print(<span class="string">'十位数为：'</span> + str(f))   <span class="comment">#十位输出</span></span><br><span class="line">  print(<span class="string">'个位数为：'</span> + str(g))   <span class="comment">#个位输出</span></span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">  print(<span class="string">'你输入的好像不是三位数'</span>)</span><br></pre></td></tr></table></figure>
+
+<h1 id="题目2：数字倒序"><a href="#题目2：数字倒序" class="headerlink" title="题目2：数字倒序"></a>题目2：数字倒序</h1><p>将问题一种求得的个位、十位、百位重新倒序组合，即将个位变到百位上、十位仍然在十位、百位放到个位上。组成新的数值。</p>
+<h2 id="常规做法"><a href="#常规做法" class="headerlink" title="常规做法"></a>常规做法</h2><p>这一步需要把原输入的三位数倒过来，只需要在print里改一下顺序即可</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">a = input(<span class="string">'请输入一个三位数：'</span>)   <span class="comment">#等待输入</span></span><br><span class="line">b = int(a) / <span class="number">100</span>   <span class="comment">#百位数提取</span></span><br><span class="line">c = int(a) % <span class="number">100</span> /<span class="number">10</span>   <span class="comment">#十位数提取</span></span><br><span class="line">d = int(a) % <span class="number">100</span> % <span class="number">10</span>   <span class="comment">#各位数提取</span></span><br><span class="line">e = int(b)   <span class="comment">#百位整数化</span></span><br><span class="line">f = int(c)   <span class="comment">#十位整数化</span></span><br><span class="line">g = int(d)   <span class="comment">#个位整数化</span></span><br></pre></td></tr></table></figure>
+
+<p>把数字重新排列，然后输出</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">print(d + c + b)</span><br></pre></td></tr></table></figure>
+
+<h2 id="偷懒做法"><a href="#偷懒做法" class="headerlink" title="偷懒做法"></a>偷懒做法</h2><p>使用[::-1]进行顺序转换<strong>（不推荐）</strong></p>
+<p>具体用法如下</p>
+<p><img src="https://cykrldzp.goho.co:85/wp-content/uploads/2019/10/%E6%8D%A2%E5%BA%8F.png" alt="avatar"></p>
+<h3 id="代码示例-2"><a href="#代码示例-2" class="headerlink" title="代码示例"></a>代码示例</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">str = input(<span class="string">'请输入一个三位数：'</span>)   <span class="comment">#等待输入输入</span></span><br><span class="line">print(str[::<span class="number">-1</span>])   <span class="comment">#取从后向前（相反）的元素</span></span><br></pre></td></tr></table></figure>
+
+<hr>
+<p>同学们，一班的作业我已经教给大家了，希望大家能好好学习信息，认真完成作业，尽快赶上一班，加油吧！</p>
+
+    </div>
+
+    
+    
+    
+        
+      
+
+      <footer class="post-footer">
+          
+            
+          
+          <div class="post-tags">
+            
+              <a href="/tags/Python编程/" rel="tag"># Python编程</a>
+            
+          </div>
+        
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-next post-nav-item">
+              
+                <a href="/2019/Python基础输入语句和数据类型转换/" rel="next" title="Python基础输入语句和数据类型转换">
+                  <i class="fa fa-chevron-left"></i> Python基础输入语句和数据类型转换
+                </a>
+              
+            </div>
+
+            <span class="post-nav-divider"></span>
+
+            <div class="post-nav-prev post-nav-item">
+              
+            </div>
+          </div>
+        
+      </footer>
+    
+          
+            <div class="post-symbolscount">
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">本文字数：</span>
+                
+                <!-- <span title="本文字数">10k</span> -->
+			  <span title="本文字数">
+                  1.1k字
+                </span>
+              
+  </div>
+  
+  
+  
+  </article>
+
+  </div>
+
+
+          </div>
+          
+
+        </div>
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+        
+        
+        
+        
+      
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#题目1：拆分三位数"><span class="nav-number">1.</span> <span class="nav-text">题目1：拆分三位数</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1、输入数字"><span class="nav-number">1.1.</span> <span class="nav-text">1、输入数字</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2、数字的提取计算"><span class="nav-number">1.2.</span> <span class="nav-text">2、数字的提取计算</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3、整数转换"><span class="nav-number">1.3.</span> <span class="nav-text">3、整数转换</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4、结果输出"><span class="nav-number">1.4.</span> <span class="nav-text">4、结果输出</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#代码示例"><span class="nav-number">1.5.</span> <span class="nav-text">代码示例</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#判定部分（提高篇）"><span class="nav-number">1.6.</span> <span class="nav-text">判定部分（提高篇）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#代码示例-1"><span class="nav-number">1.6.1.</span> <span class="nav-text">代码示例</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#题目2：数字倒序"><span class="nav-number">2.</span> <span class="nav-text">题目2：数字倒序</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#常规做法"><span class="nav-number">2.1.</span> <span class="nav-text">常规做法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#偷懒做法"><span class="nav-number">2.2.</span> <span class="nav-text">偷懒做法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#代码示例-2"><span class="nav-number">2.2.1.</span> <span class="nav-text">代码示例</span></a></li></ol></li></ol></li></ol></div>
+        
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image"
+      src="/images/head.jpg"
+      alt="大海Leo">
+  <p class="site-author-name" itemprop="name">大海Leo</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+  <nav class="site-state motion-element">
+      <div class="site-state-item site-state-posts">
+        
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">7</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+    
+      
+      
+      <div class="site-state-item site-state-tags">
+        
+        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-name">标签</span>
+        
+      </div>
+    
+  </nav>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="https://weibo.com/u/6509626594" title="Weibo &rarr; https://weibo.com/u/6509626594" rel="noopener" target="_blank"><i class="fa fa-fw fa-weibo"></i>Weibo</a>
+      </span>
+    
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="https://cykrldzp.goho.co:85" title="WordPress &rarr; https://cykrldzp.goho.co:85" rel="noopener" target="_blank"><i class="fa fa-fw fa-globe"></i>WordPress</a>
+      </span>
+    
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="https://space.bilibili.com/122529890" title="bilibili &rarr; https://space.bilibili.com/122529890" rel="noopener" target="_blank"><i class="fa fa-fw fa-film"></i>bilibili</a>
+      </span>
+    
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">大海Leo</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+      <span class="post-meta-item-text">站点总字数：</span>
+    
+    <span title="站点总字数">13k</span>
+</div>
+<script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">站点总字数：</span>
+    
+	<span title="post.totalcount">
+     7.3k字 </span>
+    <!--<span title="站点总字数">13k</span>-->
+  
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-user"></i>
+    </span>
+    <span class="site-uv" title="总访客量">
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+    </span>
+  
+    <span class="post-meta-divider">|</span>
+  
+    <span class="post-meta-item-icon">
+      <i class="fa fa-eye"></i>
+    </span>
+    <span class="site-pv" title="总访问量">
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+  </div>
+
+  
+
+
+  <script src="/lib/anime.min.js?v=3.1.0"></script>
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+<script src="/js/utils.js?v=7.4.0"></script><script src="/js/motion.js?v=7.4.0"></script>
+<script src="/js/schemes/pisces.js?v=7.4.0"></script>
+
+<script src="/js/next-boot.js?v=7.4.0"></script>
+
+
+
+  
+
+
+
+
+
+
+
+
+  <script src="/js/local-search.js?v=7.4.0"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+</body>
+</html>
