@@ -349,6 +349,170 @@
   
   
   <div class="post-block home">
+    <link itemprop="mainEntityOfPage" href="https://cykzht.github.io/2019/小鱼游泳题目详解/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="大海Leo">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/head.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="程俞客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+            
+            <a href="/2019/小鱼游泳题目详解/" class="post-title-link" itemprop="url">小鱼游泳题目详解</a>
+          
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              
+                
+              
+
+              <time title="创建时间：2019-10-14 22:12:41" itemprop="dateCreated datePublished" datetime="2019-10-14T22:12:41+08:00">2019-10-14</time>
+            </span>
+          
+            
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2019-10-17 23:00:52" itemprop="dateModified" datetime="2019-10-17T23:00:52+08:00">2019-10-17</time>
+              </span>
+            
+          
+
+          
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">本文字数：</span>
+              
+              <span>2.3k</span>
+            </span>
+          
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              
+              <span>2 分钟</span>
+            </span>
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="题目分析"><a href="#题目分析" class="headerlink" title="题目分析"></a>题目分析</h1><p>这一天，小鱼给自己的游泳时间做了精确的计时，它发现自己从a时b分一直游泳到当天的c时d分，请你帮小鱼计算一下，它这天一共游了多少时间呢？</p>
+<p>问题的重点在于统一单位。</p>
+<p>统一单位为分钟：a小时b分钟就是a * 60 + b分钟。c小时d分钟就是c * 60 + d分钟。时间差即为两个分钟的差。再转化出是几小时，几分钟即可。</p>
+<h1 id="常规做法"><a href="#常规做法" class="headerlink" title="常规做法"></a>常规做法</h1><h2 id="第一步：输入时间"><a href="#第一步：输入时间" class="headerlink" title="第一步：输入时间"></a>第一步：输入时间</h2><p>使用<strong>input</strong>指令输入输入时间，分开输入小时和分钟</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">a = input(<span class="string">'请输入开始的小时（24小时制）：'</span>)</span><br><span class="line">b = input(<span class="string">'请输入开始的分钟（24小时制）：'</span>)</span><br><span class="line">c = input(<span class="string">'请输入结束的小时（24小时制）：'</span>)</span><br><span class="line">d = input(<span class="string">'请输入结束的分钟（24小时制）：'</span>)</span><br></pre></td></tr></table></figure>
+
+<h2 id="第二步：时间转换"><a href="#第二步：时间转换" class="headerlink" title="第二步：时间转换"></a>第二步：时间转换</h2><p>把小时转换成分钟要乘以六十，再加上输入的分钟</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">e = int(a) * <span class="number">60</span> + int(b)</span><br><span class="line">f = int(c) * <span class="number">60</span> + int(d)</span><br></pre></td></tr></table></figure>
+
+<h2 id="第三步：时间计算"><a href="#第三步：时间计算" class="headerlink" title="第三步：时间计算"></a>第三步：时间计算</h2><p>用<strong>结束的时间（分钟）</strong>减去<strong>开始的时间（分钟）</strong>，算出总用时长</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">g = f - e</span><br></pre></td></tr></table></figure>
+
+<h2 id="第四步：转化为小时制"><a href="#第四步：转化为小时制" class="headerlink" title="第四步：转化为小时制"></a>第四步：转化为小时制</h2><p>把总共的分钟市场除六十，提取整数，余数为剩余的分钟时间</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">h = g // <span class="number">60</span></span><br><span class="line">i = g % <span class="number">60</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="第五步：输出"><a href="#第五步：输出" class="headerlink" title="第五步：输出"></a>第五步：输出</h2><p>记得转化字符串</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">print(<span class="string">'一共游泳'</span> + str(h) + <span class="string">'小时'</span> + str(i) + <span class="string">'分钟'</span>)</span><br></pre></td></tr></table></figure>
+
+<h2 id="代码示例"><a href="#代码示例" class="headerlink" title="代码示例"></a>代码示例</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">a = input(<span class="string">'请输入开始的小时（24小时制）：'</span>)   <span class="comment">#等待输入</span></span><br><span class="line">b = input(<span class="string">'请输入开始的分钟（24小时制）：'</span>)   <span class="comment">#等待输入</span></span><br><span class="line">c = input(<span class="string">'请输入结束的小时（24小时制）：'</span>)   <span class="comment">#等待输入</span></span><br><span class="line">d = input(<span class="string">'请输入结束的分钟（24小时制）：'</span>)   <span class="comment">#等待输入</span></span><br><span class="line">e = int(a) * <span class="number">60</span> + int(b)   <span class="comment">#把开始小时转换为分钟，并加上开始的分钟</span></span><br><span class="line">f = int(c) * <span class="number">60</span> + int(d)   <span class="comment">#把结束小时转换为分钟，并加上结束的分钟</span></span><br><span class="line">g = f - e   <span class="comment">#总分钟相见算出游泳的时间</span></span><br><span class="line">h = g // <span class="number">60</span>   <span class="comment">#整除算出小时</span></span><br><span class="line">i = g % <span class="number">60</span>   <span class="comment">#余数算出分钟</span></span><br><span class="line">print(<span class="string">'一共游泳'</span> + str(h) + <span class="string">'小时'</span> + str(i) + <span class="string">'分钟'</span>)   <span class="comment">#字符串输出</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="部分代码解释"><a href="#部分代码解释" class="headerlink" title="部分代码解释"></a>部分代码解释</h2><p>【//】为整除，【%】为余数</p>
+<p>整除就是进行除法计算，结果只保留整数，余数是小学学的↓</p>
+<p><img src="https://cykrldzp.goho.co:85/wp-content/uploads/2019/10/%E4%BD%99%E6%95%B0%E7%A4%BA%E4%BE%8B.jpg" alt="avatar"></p>
+<h1 id="借位做法（不推荐）"><a href="#借位做法（不推荐）" class="headerlink" title="借位做法（不推荐）"></a>借位做法（不推荐）</h1><p><strong>例如</strong>：开始的时间是6：30，结束的时间是7：20，正常我们人口算得出的时间是50分钟，在计算机里需要把小时和分钟拆开计算，即“结束小时-开始小时”“结束分钟-开始分钟”，这里还涉及到一个判定的条件，就我给的这个示例一样，结束的分钟数比开始的分钟数要小，所以减出来的就会有负数，这时候我们需要在小时上借1然后再进行运算</p>
+<h2 id="第一步：输入时间-1"><a href="#第一步：输入时间-1" class="headerlink" title="第一步：输入时间"></a>第一步：输入时间</h2><p>使用<strong>input</strong>指令输入输入时间，分开输入小时和分钟</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">a = input(<span class="string">'请输入开始的小时（24小时制）：'</span>)</span><br><span class="line">b = input(<span class="string">'请输入开始的分钟（24小时制）：'</span>)</span><br><span class="line">c = input(<span class="string">'请输入结束的小时（24小时制）：'</span>)</span><br><span class="line">d = input(<span class="string">'请输入结束的分钟（24小时制）：'</span>)</span><br></pre></td></tr></table></figure>
+
+<h2 id="第二步：分钟大小判定"><a href="#第二步：分钟大小判定" class="headerlink" title="第二步：分钟大小判定"></a>第二步：分钟大小判定</h2><p>如果结束分钟大于开始分钟，就不用借位，反之则需要借位，先用<strong>if</strong>进行判定</p>
+<p>如果<strong>d小于b</strong>即结束分钟小于开始分钟，则</p>
+<p>代码在下一步</p>
+<h2 id="第三步：借位运算"><a href="#第三步：借位运算" class="headerlink" title="第三步：借位运算"></a>第三步：借位运算</h2><p>在小时上，结束时间减去开始时间还要再减1</p>
+<p>在分钟上，因为已经借1了，所以在结束的分钟上加60（一小时为60分钟），再减去结束的分钟就不会有负数了</p>
+<p>记得输出</p>
+<p> <img src="https://cykrldzp.goho.co:85/wp-content/uploads/2019/10/%E6%97%B6%E9%97%B4%E5%80%9F%E4%BD%8D.jpg" alt="img"> </p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> d&lt;b:</span><br><span class="line">    e = int(c) - int(a) - <span class="number">1</span></span><br><span class="line">    f = (<span class="number">60</span> + int(b)) - int(d)</span><br><span class="line">    print(<span class="string">'一共游泳'</span> + str(e) + <span class="string">'时'</span> +str(f) + <span class="string">'分'</span>)</span><br></pre></td></tr></table></figure>
+
+<h2 id="第四步：不借位运算"><a href="#第四步：不借位运算" class="headerlink" title="第四步：不借位运算"></a>第四步：不借位运算</h2><p>如果d大于b，即结束分钟大于开始分钟，那么直接减法即可，这里需要使用<strong>else</strong>，即否则</p>
+<p>同时需要输出</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    g = int(c) - int(a)</span><br><span class="line">    f = int(d) - int(b)</span><br><span class="line">    print(<span class="string">'一共游泳'</span> + str(g) + <span class="string">'时'</span> +str(f) + <span class="string">'分'</span>)</span><br></pre></td></tr></table></figure>
+
+<h2 id="代码示例-1"><a href="#代码示例-1" class="headerlink" title="代码示例"></a>代码示例</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">a = input(<span class="string">'请输入开始的小时（24小时制）：'</span>)   <span class="comment">#等待输入</span></span><br><span class="line">b = input(<span class="string">'请输入开始的分钟（24小时制）：'</span>)   <span class="comment">#等待输入</span></span><br><span class="line">c = input(<span class="string">'请输入结束的小时（24小时制）：'</span>)   <span class="comment">#等待输入</span></span><br><span class="line">d = input(<span class="string">'请输入结束的分钟（24小时制）：'</span>)   <span class="comment">#等待输入</span></span><br><span class="line"><span class="keyword">if</span> d&lt;b:   <span class="comment">#if做状态判断，如果</span></span><br><span class="line">    e = int(c) - int(a) - <span class="number">1</span>   <span class="comment">#运算过程，将输入值转化为整数</span></span><br><span class="line">    f = (<span class="number">60</span> + int(b)) - int(d)   <span class="comment">#运算过程，将输入值转化为整数</span></span><br><span class="line">    print(<span class="string">'一共游泳'</span> + str(e) + <span class="string">'时'</span> +str(f) + <span class="string">'分'</span>)   <span class="comment">#输出结果，将数字转换为字符串</span></span><br><span class="line"><span class="keyword">else</span>:   <span class="comment">#包含在if判断里，否则</span></span><br><span class="line">    g = int(c) - int(a)   <span class="comment">#运算过程，将输入值转化为整数</span></span><br><span class="line">    f = int(d) - int(b)   <span class="comment">#运算过程，将输入值转化为整数</span></span><br><span class="line">    print(<span class="string">'一共游泳'</span> + str(g) + <span class="string">'时'</span> +str(f) + <span class="string">'分'</span>)   <span class="comment">#输出结果，将数字转换为字符串</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="部分代码解释-1"><a href="#部分代码解释-1" class="headerlink" title="部分代码解释"></a>部分代码解释</h3><p><strong>if</strong>语句没有学到，以后会学，大概的用法就是这样的，详细请见注释</p>
+<hr>
+<p><strong>文章作者：朱海天   未经允许禁止转载</strong></p>
+<p>如果有什么不会的记得联系我哦（仅限高一年级）</p>
+<p> <img src="https://cykrldzp.goho.co:85/wp-content/uploads/2019/10/f55731daf8e3f946bd695781829dd49.jpg" alt="img"> </p>
+
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+          <div class="post-eof"></div>
+        
+      </footer>
+          
+            <div class="post-symbolscount">
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">本文字数：</span>
+                
+                <!-- <span title="本文字数">10k</span> -->
+			  <span title="本文字数">
+                  1.3k字
+                </span>
+              
+  </div>
+  
+  
+  
+  </article>
+
+    
+        <article itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block home">
     <link itemprop="mainEntityOfPage" href="https://cykzht.github.io/2019/Python基础输入语句和数据类型转换/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1134,7 +1298,7 @@
         
           <a href="/archives/">
         
-          <span class="site-state-item-count">7</span>
+          <span class="site-state-item-count">8</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -1210,7 +1374,7 @@
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
     
-    <span title="站点总字数">13k</span>
+    <span title="站点总字数">15k</span>
 </div>
 <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
   
@@ -1222,8 +1386,8 @@
       <span class="post-meta-item-text">站点总字数：</span>
     
 	<span title="post.totalcount">
-     7.4k字 </span>
-    <!--<span title="站点总字数">13k</span>-->
+     8.7k字 </span>
+    <!--<span title="站点总字数">15k</span>-->
   
 
         
