@@ -55,17 +55,23 @@
   };
 </script>
 
-  <meta property="og:type" content="article">
-<meta property="og:title" content="高一11班">
-<meta property="og:url" content="https://cykzht.github.io/2019/高一11班/index.html">
+  <meta name="description" content="第五次作业">
+<meta name="keywords" content="Python编程">
+<meta property="og:type" content="article">
+<meta property="og:title" content="分割命令及列表概念">
+<meta property="og:url" content="https://cykzht.github.io/2019/分割命令及列表概念/index.html">
 <meta property="og:site_name" content="程俞客">
+<meta property="og:description" content="第五次作业">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https://cykrldzp.goho.co:85/wp-content/uploads/2019/09/11%E7%8F%AD%E6%B5%B7%E6%8A%A5.jpg">
-<meta property="og:updated_time" content="2019-09-30T07:20:26.494Z">
+<meta property="og:image" content="https://cykrldzp.goho.co:85/wp-content/uploads/2019/10/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7-2019-10-22-%E4%B8%8B%E5%8D%885.25.33-1024x63.png">
+<meta property="og:image" content="https://cykrldzp.goho.co:85/wp-content/uploads/2019/10/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7-2019-10-22-%E4%B8%8B%E5%8D%885.36.25-1024x63.png">
+<meta property="og:image" content="https://cykrldzp.goho.co:85/wp-content/uploads/2019/10/shili1.png">
+<meta property="og:updated_time" content="2019-10-24T13:53:34.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="高一11班">
-<meta name="twitter:image" content="https://cykrldzp.goho.co:85/wp-content/uploads/2019/09/11%E7%8F%AD%E6%B5%B7%E6%8A%A5.jpg">
-  <link rel="canonical" href="https://cykzht.github.io/2019/高一11班/">
+<meta name="twitter:title" content="分割命令及列表概念">
+<meta name="twitter:description" content="第五次作业">
+<meta name="twitter:image" content="https://cykrldzp.goho.co:85/wp-content/uploads/2019/10/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7-2019-10-22-%E4%B8%8B%E5%8D%885.25.33-1024x63.png">
+  <link rel="canonical" href="https://cykzht.github.io/2019/分割命令及列表概念/">
 
 
 <script id="page-configurations">
@@ -79,7 +85,7 @@
   };
 </script>
 
-  <title>高一11班 | 程俞客</title>
+  <title>分割命令及列表概念 | 程俞客</title>
   
 
 
@@ -227,7 +233,7 @@
   
   
   <div class="post-block post">
-    <link itemprop="mainEntityOfPage" href="https://cykzht.github.io/2019/高一11班/">
+    <link itemprop="mainEntityOfPage" href="https://cykzht.github.io/2019/分割命令及列表概念/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="大海Leo">
@@ -239,7 +245,7 @@
       <meta itemprop="name" content="程俞客">
     </span>
       <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">高一11班
+        <h1 class="post-title" itemprop="name headline">分割命令及列表概念
 
           
         </h1>
@@ -255,7 +261,7 @@
                 
               
 
-              <time title="创建时间：2019-09-08 14:13:01" itemprop="dateCreated datePublished" datetime="2019-09-08T14:13:01+08:00">2019-09-08</time>
+              <time title="创建时间：2019-09-29 22:59:09" itemprop="dateCreated datePublished" datetime="2019-09-29T22:59:09+08:00">2019-09-29</time>
             </span>
           
             
@@ -266,7 +272,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-09-30 15:20:26" itemprop="dateModified" datetime="2019-09-30T15:20:26+08:00">2019-09-30</time>
+                <time title="修改时间：2019-10-24 21:53:34" itemprop="dateModified" datetime="2019-10-24T21:53:34+08:00">2019-10-24</time>
               </span>
             
           
@@ -288,7 +294,7 @@
               
                 <span class="post-meta-item-text">本文字数：</span>
               
-              <span>0</span>
+              <span>1.2k</span>
             </span>
           
             <span class="post-meta-item" title="阅读时长">
@@ -311,7 +317,44 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p><img src="https://cykrldzp.goho.co:85/wp-content/uploads/2019/09/11%E7%8F%AD%E6%B5%B7%E6%8A%A5.jpg" alt="avatar"></p>
+        <p>第五次作业</p>
+<a id="more"></a>
+
+<h1 id="字符串的split-函数"><a href="#字符串的split-函数" class="headerlink" title="字符串的split()函数"></a>字符串的split()函数</h1><p>为什么要用列表分割呢，在输入数据的时候，Python会一次性将一行的数据均输入进来。但是，如果在输入时一行有多个数据时，就很难将数据一次性的转换成为所需要的数值。我们要输入的数据逐渐的变多，每输一个数字都要按一次回车，非常的麻烦，所以我们要一次输入完所有的数据，然后一个回车解决</p>
+<h2 id="使用方法"><a href="#使用方法" class="headerlink" title="使用方法"></a>使用方法</h2><p>split与单词的含义一样，分割。即以某种字符为分隔符，将一个字符串分割为若干部分。</p>
+<p>通过指定分隔符对字符串进行切片，并返回分割后的字符串列表（list）</p>
+<p>这个没有什么好讲的，具体请看示例：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">string = input(<span class="string">"请输入几个数字，用空格分开"</span>)</span><br><span class="line">a = string.split(<span class="string">" "</span>)</span><br><span class="line">print(a)</span><br></pre></td></tr></table></figure>
+
+<p>这段代码使用的方法是输入三个数，中间要加空格，<strong>例如【67 17 78】</strong>，具体运行示例如下：</p>
+<p><img src="https://cykrldzp.goho.co:85/wp-content/uploads/2019/10/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7-2019-10-22-%E4%B8%8B%E5%8D%885.25.33-1024x63.png" alt="img"></p>
+<p>这里面，给<strong>a</strong>的赋值是这个列表里面的数，如实例之中的显示效果：在[]中呈现了若干个字符串。这种存储形式，在Python中称之为列表，对列表，可以有很多种操作。其中最基础的就是遍历（也就是访问）。</p>
+<p>这里面注意，在<strong>string.split(“ “)</strong>里，引号里面的是空格，一定要打，str:表示为分隔符，默认为空格，但是不能为空(‘’)。若字符串中没有分隔符，则把整个字符串作为列表的一个元素</p>
+<p>​         例如：s.split(‘’)是不能运行的</p>
+<p>但其中的空格也可以换成别的符号，例如<strong>string.split(“.”)</strong>代码运行示例：</p>
+<p><img src="https://cykrldzp.goho.co:85/wp-content/uploads/2019/10/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7-2019-10-22-%E4%B8%8B%E5%8D%885.36.25-1024x63.png" alt="img"></p>
+<p> 在数字后面输入<strong>【.】</strong>在后面就会被自动替换出来</p>
+<h2 id="类型转换"><a href="#类型转换" class="headerlink" title="类型转换"></a>类型转换</h2><p>在这里，[]中的第一个内容称为第0个内容；第二个内容称之为第1个内容……依次编号。可以用a[0]、a[1]……进行访问，也可以直接用于转换</p>
+<p><strong>使用方法：</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">shu1 = a[<span class="number">0</span>]</span><br><span class="line">shu2 = a[<span class="number">1</span>]</span><br><span class="line">shu3 = a[<span class="number">2</span>]</span><br></pre></td></tr></table></figure>
+
+<p>因为计算机计数的顺序是从<strong>0</strong>开始的，所以要提取第一位数要输入0</p>
+<h1 id="家庭作业"><a href="#家庭作业" class="headerlink" title="家庭作业"></a>家庭作业</h1><h2 id="题目解析"><a href="#题目解析" class="headerlink" title="题目解析"></a>题目解析</h2><p><strong>请在同一行输入三个整数，用分割函数，将它分成三个部分，再对每个部分进行转换成为整数。最后计算这三个整数的和，并输出。</strong></p>
+<p>举个例子，当你输入【10 20 30】，把这个转换成列表形式，然后把这三个数加起来，即结果为60</p>
+<h2 id="第一步：输入数据和转化数据"><a href="#第一步：输入数据和转化数据" class="headerlink" title="第一步：输入数据和转化数据"></a>第一步：输入数据和转化数据</h2><p>使用<strong>input</strong>输入三个数，使用<strong>split</strong>转化为列表形式</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">a = input(<span class="string">'请输入三个数：'</span>)</span><br><span class="line">i = a.split(<span class="string">" "</span>)</span><br></pre></td></tr></table></figure>
+
+<h2 id="第二步：数据提取"><a href="#第二步：数据提取" class="headerlink" title="第二步：数据提取"></a>第二步：数据提取</h2><p>从列表<strong>「i」</strong>里提取第一、第二、第三个数，并要把它们转化为整数，方便后面的计算</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">j = int(i[<span class="number">0</span>])</span><br><span class="line">k = int(i[<span class="number">1</span>])</span><br><span class="line">l = int(i[<span class="number">2</span>])</span><br></pre></td></tr></table></figure>
+
+<h2 id="第三步：加法计算"><a href="#第三步：加法计算" class="headerlink" title="第三步：加法计算"></a>第三步：加法计算</h2><p>把三个数加起来就是了，别忘了输出</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">m = j + k + l</span><br><span class="line">print(<span class="string">"相加值为："</span>+str(m))</span><br></pre></td></tr></table></figure>
+
+<h2 id="代码示例"><a href="#代码示例" class="headerlink" title="代码示例"></a>代码示例</h2><p><img src="https://cykrldzp.goho.co:85/wp-content/uploads/2019/10/shili1.png" alt="img"></p>
+<p>请同学们手动敲代码，图片代码无法复制</p>
+<h2 id="部分代码解释"><a href="#部分代码解释" class="headerlink" title="部分代码解释"></a>部分代码解释</h2><p>4、5、6行的int为整数的转化，这一步可以不加，但后面要加。如果你不想加的话，后面的圆括号可以不要</p>
+<hr>
+<p><strong>文章作者：朱海天   未经允许禁止转载</strong></p>
 
     </div>
 
@@ -322,11 +365,24 @@
       
 
       <footer class="post-footer">
+          
+            
+          
+          <div class="post-tags">
+            
+              <a href="/tags/Python编程/" rel="tag"># Python编程</a>
+            
+          </div>
+        
 
         
 
           <div class="post-nav">
             <div class="post-nav-next post-nav-item">
+              
+                <a href="/2019/Python算术运算的练习/" rel="next" title="Python算数运算的练习">
+                  <i class="fa fa-chevron-left"></i> Python算数运算的练习
+                </a>
               
             </div>
 
@@ -334,8 +390,8 @@
 
             <div class="post-nav-prev post-nav-item">
               
-                <a href="/2019/Python环境安装教程/" rel="prev" title="Python环境安装教程">
-                  Python环境安装教程 <i class="fa fa-chevron-right"></i>
+                <a href="/2019/摆脱老师控制：极域电子教室破解教程/" rel="prev" title="摆脱老师控制：极域电子教室破解教程">
+                  摆脱老师控制：极域电子教室破解教程 <i class="fa fa-chevron-right"></i>
                 </a>
               
             </div>
@@ -354,9 +410,9 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <!-- <span title="本文字数">121</span> -->
+                <!-- <span title="本文字数">4.6k</span> -->
 			  <span title="本文字数">
-                  0字
+                  870字
                 </span>
               
   </div>
@@ -401,6 +457,8 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#字符串的split-函数"><span class="nav-number">1.</span> <span class="nav-text">字符串的split()函数</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#使用方法"><span class="nav-number">1.1.</span> <span class="nav-text">使用方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#类型转换"><span class="nav-number">1.2.</span> <span class="nav-text">类型转换</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#家庭作业"><span class="nav-number">2.</span> <span class="nav-text">家庭作业</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#题目解析"><span class="nav-number">2.1.</span> <span class="nav-text">题目解析</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第一步：输入数据和转化数据"><span class="nav-number">2.2.</span> <span class="nav-text">第一步：输入数据和转化数据</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第二步：数据提取"><span class="nav-number">2.3.</span> <span class="nav-text">第二步：数据提取</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第三步：加法计算"><span class="nav-number">2.4.</span> <span class="nav-text">第三步：加法计算</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#代码示例"><span class="nav-number">2.5.</span> <span class="nav-text">代码示例</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#部分代码解释"><span class="nav-number">2.6.</span> <span class="nav-text">部分代码解释</span></a></li></ol></li></ol></div>
+        
       </div>
       <!--/noindex-->
 
