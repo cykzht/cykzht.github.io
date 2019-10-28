@@ -65,8 +65,7 @@
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://cykrldzp.goho.co:85/wp-content/uploads/2019/10/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7-2019-10-22-%E4%B8%8B%E5%8D%885.25.33-1024x63.png">
 <meta property="og:image" content="https://cykrldzp.goho.co:85/wp-content/uploads/2019/10/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7-2019-10-22-%E4%B8%8B%E5%8D%885.36.25-1024x63.png">
-<meta property="og:image" content="https://cykrldzp.goho.co:85/wp-content/uploads/2019/10/shili1.png">
-<meta property="og:updated_time" content="2019-10-24T14:02:13.273Z">
+<meta property="og:updated_time" content="2019-10-28T10:34:17.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="分割命令及列表概念">
 <meta name="twitter:description" content="第五次作业">
@@ -261,11 +260,19 @@
                 
               
 
-              <time title="创建时间：2019-10-24 22:59:09 / 修改时间：22:02:13" itemprop="dateCreated datePublished" datetime="2019-10-24T22:59:09+08:00">2019-10-24</time>
+              <time title="创建时间：2019-09-29 22:59:09" itemprop="dateCreated datePublished" datetime="2019-09-29T22:59:09+08:00">2019-09-29</time>
             </span>
           
             
 
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2019-10-28 18:34:17" itemprop="dateModified" datetime="2019-10-28T18:34:17+08:00">2019-10-28</time>
+              </span>
             
           
 
@@ -286,7 +293,7 @@
               
                 <span class="post-meta-item-text">本文字数：</span>
               
-              <span>1.2k</span>
+              <span>3.1k</span>
             </span>
           
             <span class="post-meta-item" title="阅读时长">
@@ -296,7 +303,7 @@
               
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
               
-              <span>1 分钟</span>
+              <span>3 分钟</span>
             </span>
           
 
@@ -313,7 +320,7 @@
 <a id="more"></a>
 
 <h1 id="字符串的split-函数"><a href="#字符串的split-函数" class="headerlink" title="字符串的split()函数"></a>字符串的split()函数</h1><p>为什么要用列表分割呢，在输入数据的时候，Python会一次性将一行的数据均输入进来。但是，如果在输入时一行有多个数据时，就很难将数据一次性的转换成为所需要的数值。我们要输入的数据逐渐的变多，每输一个数字都要按一次回车，非常的麻烦，所以我们要一次输入完所有的数据，然后一个回车解决</p>
-<h2 id="使用方法"><a href="#使用方法" class="headerlink" title="使用方法"></a>使用方法</h2><p>split与单词的含义一样，分割。即以某种字符为分隔符，将一个字符串分割为若干部分。</p>
+<h2 id="使用方法"><a href="#使用方法" class="headerlink" title="使用方法"></a>使用方法</h2><p>split与单词的含义一样，分割。即以某种字符为分隔符，将一个字符串分割为若干部分</p>
 <p>通过指定分隔符对字符串进行切片，并返回分割后的字符串列表（list）</p>
 <p>这个没有什么好讲的，具体请看示例：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">string = input(<span class="string">"请输入几个数字，用空格分开"</span>)</span><br><span class="line">a = string.split(<span class="string">" "</span>)</span><br><span class="line">print(a)</span><br></pre></td></tr></table></figure>
@@ -342,9 +349,33 @@
 <h2 id="第三步：加法计算"><a href="#第三步：加法计算" class="headerlink" title="第三步：加法计算"></a>第三步：加法计算</h2><p>把三个数加起来就是了，别忘了输出</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">m = j + k + l</span><br><span class="line">print(<span class="string">"相加值为："</span>+str(m))</span><br></pre></td></tr></table></figure>
 
-<h2 id="代码示例"><a href="#代码示例" class="headerlink" title="代码示例"></a>代码示例</h2><p><img src="https://cykrldzp.goho.co:85/wp-content/uploads/2019/10/shili1.png" alt="img"></p>
-<p>请同学们手动敲代码，图片代码无法复制</p>
+<h2 id="代码示例"><a href="#代码示例" class="headerlink" title="代码示例"></a>代码示例</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">a = input(<span class="string">'请输入三个数：'</span>)   <span class="comment">#等待输入</span></span><br><span class="line">i = a.split(<span class="string">" "</span>)   <span class="comment">#转化为列表</span></span><br><span class="line">print(i)   <span class="comment">#输出列表</span></span><br><span class="line">j = int(i[<span class="number">0</span>])   <span class="comment">#提取第一个数</span></span><br><span class="line">k = int(i[<span class="number">1</span>])   <span class="comment">#提取第二个数</span></span><br><span class="line">l = int(i[<span class="number">2</span>])   <span class="comment">#提取第三个数</span></span><br><span class="line">m = j + k + l   <span class="comment">#三个数相加</span></span><br><span class="line">print(<span class="string">"相加值为："</span>+str(m))   <span class="comment">#输出结果，数字要转化为字符串</span></span><br></pre></td></tr></table></figure>
+
 <h2 id="部分代码解释"><a href="#部分代码解释" class="headerlink" title="部分代码解释"></a>部分代码解释</h2><p>4、5、6行的int为整数的转化，这一步可以不加，但后面要加。如果你不想加的话，后面的圆括号可以不要</p>
+<h1 id="额外作业"><a href="#额外作业" class="headerlink" title="额外作业"></a>额外作业</h1><h2 id="时间秒数转换"><a href="#时间秒数转换" class="headerlink" title="时间秒数转换"></a>时间秒数转换</h2><h3 id="题目解析-1"><a href="#题目解析-1" class="headerlink" title="题目解析"></a>题目解析</h3><p>给定一个时间：10:20:30，计算出，共有多少秒</p>
+<p>这里要先吧时间提取出来，10小时，20分钟，30秒，然后要全部转换成秒钟，小时要乘以3600，因为60✖️60即60秒乘60分钟等于3600秒，分钟乘以60，因为一分钟有60秒，秒钟就不用乘了</p>
+<h3 id="第一步：输入与分割"><a href="#第一步：输入与分割" class="headerlink" title="第一步：输入与分割"></a>第一步：输入与分割</h3><p>输入一个时间，格式为10:20:30这样的，即10小时20分钟30秒，这里需要注意：输入的时间中间使用<strong>冒号</strong>分割的，所以要以冒号作为列表的分割，即「:」</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">a = input(<span class="string">"请输入一个时间（格式00:00:00）："</span>)</span><br><span class="line">b = a.split(<span class="string">":"</span>)</span><br></pre></td></tr></table></figure>
+
+<h3 id="第二步：秒钟计算"><a href="#第二步：秒钟计算" class="headerlink" title="第二步：秒钟计算"></a>第二步：秒钟计算</h3><p>前面我说过，小时和分钟各乘以多少，这里直接提取然后乘法计算就行了，最后还要把这些秒钟加在一起，这里注意：运算需要将提取的数转化为整数才可以进行</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">c = int(b[<span class="number">0</span>]) * <span class="number">3600</span></span><br><span class="line">d = int(b[<span class="number">1</span>]) * <span class="number">60</span></span><br><span class="line">e = int(b[<span class="number">2</span>])</span><br><span class="line">f = c + d + e</span><br></pre></td></tr></table></figure>
+
+<h3 id="第三步：输出"><a href="#第三步：输出" class="headerlink" title="第三步：输出"></a>第三步：输出</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">print(<span class="string">'时间共：'</span> + str(f) + <span class="string">'秒'</span>)</span><br></pre></td></tr></table></figure>
+
+<h3 id="代码示例-1"><a href="#代码示例-1" class="headerlink" title="代码示例"></a>代码示例</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">a = input(<span class="string">"请输入一个时间（格式00:00:00）："</span>)   <span class="comment">#输入一个时间的大小，要使用英文输入</span></span><br><span class="line">b = a.split(<span class="string">":"</span>)   <span class="comment">#把a即输入的时间分割成列表形式</span></span><br><span class="line">c = int(b[<span class="number">0</span>]) * <span class="number">3600</span>   <span class="comment">#提取时间的第一位，即小时数，并转换位秒</span></span><br><span class="line">d = int(b[<span class="number">1</span>]) * <span class="number">60</span>   <span class="comment">#提取时间的第二位，即分钟数，并转换位秒</span></span><br><span class="line">e = int(b[<span class="number">2</span>])   <span class="comment">#提取时间的第三位，即秒钟数</span></span><br><span class="line">f = c + d + e   <span class="comment">#算出时间的总秒数</span></span><br><span class="line">print(<span class="string">'时间共：'</span> + str(f) + <span class="string">'秒'</span>)   <span class="comment">#输出，结果需要转换为字符串</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="时间相差"><a href="#时间相差" class="headerlink" title="时间相差"></a>时间相差</h2><h3 id="题目解析-2"><a href="#题目解析-2" class="headerlink" title="题目解析"></a>题目解析</h3><p>再给定一个时间：09:30:01，计算出，两个时间之间差多少秒</p>
+<p>这里需要输入两个时间（一个大一个小），两个相减算出相差的秒数</p>
+<h3 id="第一步：输入时间并转化为列表"><a href="#第一步：输入时间并转化为列表" class="headerlink" title="第一步：输入时间并转化为列表"></a>第一步：输入时间并转化为列表</h3><p>第一个较小的时间和第二个较大的时间，提取记得以冒号来提取</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">a = input(<span class="string">"请输入第一个时间（小）："</span>)</span><br><span class="line">b = input(<span class="string">"请输入第二个时间（大）："</span>)</span><br><span class="line">c = a.split(<span class="string">":"</span>)</span><br><span class="line">d = b.split(<span class="string">":"</span>)</span><br></pre></td></tr></table></figure>
+
+<h3 id="第二步：提取-数据的计算"><a href="#第二步：提取-数据的计算" class="headerlink" title="第二步：提取+数据的计算"></a>第二步：提取+数据的计算</h3><p>小时还是乘以3600，分钟乘以60，全部转换为秒，拿第二个时间减去第一个时间</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">e = int(c[<span class="number">0</span>]) * <span class="number">3600</span></span><br><span class="line">f = int(d[<span class="number">0</span>]) * <span class="number">3600</span></span><br><span class="line">g = int(c[<span class="number">1</span>]) * <span class="number">60</span></span><br><span class="line">h = int(d[<span class="number">1</span>]) * <span class="number">60</span></span><br><span class="line">i = int(c[<span class="number">2</span>])</span><br><span class="line">j = int(d[<span class="number">2</span>])</span><br><span class="line">k = e + g + i</span><br><span class="line">l = f + h + j</span><br><span class="line">m = l - k</span><br></pre></td></tr></table></figure>
+
+<h3 id="第三步：输出-1"><a href="#第三步：输出-1" class="headerlink" title="第三步：输出"></a>第三步：输出</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">print(<span class="string">'一共相差：'</span> + str(m) + <span class="string">'秒'</span>)</span><br></pre></td></tr></table></figure>
+
+<h3 id="代码示例-2"><a href="#代码示例-2" class="headerlink" title="代码示例"></a>代码示例</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">a = input(<span class="string">"请输入第一个时间（小）："</span>)   <span class="comment">#输入第一个小的时间，要使用英文输入</span></span><br><span class="line">b = input(<span class="string">"请输入第二个时间（大）："</span>)   <span class="comment">#输入第二个大的时间，要使用英文输入</span></span><br><span class="line">c = a.split(<span class="string">":"</span>)   <span class="comment">#第一个时间的分割</span></span><br><span class="line">d = b.split(<span class="string">":"</span>)   <span class="comment">#第二个时间的分割</span></span><br><span class="line">e = int(c[<span class="number">0</span>]) * <span class="number">3600</span>   <span class="comment">#提取第一个时间的第一位，即小时数，并转换位秒</span></span><br><span class="line">f = int(d[<span class="number">0</span>]) * <span class="number">3600</span>   <span class="comment">#提取第二个时间的第一位，即小时数，并转换位秒</span></span><br><span class="line">g = int(c[<span class="number">1</span>]) * <span class="number">60</span>   <span class="comment">#提取第一个时间的第二位，即分钟数，并转换位秒</span></span><br><span class="line">h = int(d[<span class="number">1</span>]) * <span class="number">60</span>   <span class="comment">#提取第二个时间的第二位，即分钟数，并转换位秒</span></span><br><span class="line">i = int(c[<span class="number">2</span>])   <span class="comment">#提取第一个时间的第三位，即秒钟数</span></span><br><span class="line">j = int(d[<span class="number">2</span>])   <span class="comment">#提取第二个时间的第三位，即秒钟数</span></span><br><span class="line">k = e + g + i   <span class="comment">#算出第一个时间总共的秒数</span></span><br><span class="line">l = f + h + j   <span class="comment">#算出第二个时间总共的秒数</span></span><br><span class="line">m = l - k   <span class="comment">#大的时间减小的时间</span></span><br><span class="line">print(<span class="string">'一共相差：'</span> + str(m) + <span class="string">'秒'</span>)   <span class="comment">#输出，结果需要转换为字符串</span></span><br></pre></td></tr></table></figure>
+
 <hr>
 <p><strong>文章作者：朱海天   未经允许禁止转载</strong></p>
 
@@ -372,8 +403,8 @@
           <div class="post-nav">
             <div class="post-nav-next post-nav-item">
               
-                <a href="/2019/三位数拆分，复杂计算/" rel="next" title="三位数的拆分">
-                  <i class="fa fa-chevron-left"></i> 三位数的拆分
+                <a href="/2019/世界你好HelloWord/" rel="next" title="世界你好：在Python里打印HelloWorld">
+                  <i class="fa fa-chevron-left"></i> 世界你好：在Python里打印HelloWorld
                 </a>
               
             </div>
@@ -381,6 +412,10 @@
             <span class="post-nav-divider"></span>
 
             <div class="post-nav-prev post-nav-item">
+              
+                <a href="/2019/Python算术运算的练习/" rel="prev" title="Python算数运算的练习">
+                  Python算数运算的练习 <i class="fa fa-chevron-right"></i>
+                </a>
               
             </div>
           </div>
@@ -398,9 +433,9 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <!-- <span title="本文字数">4.6k</span> -->
+                <!-- <span title="本文字数">14k</span> -->
 			  <span title="本文字数">
-                  870字
+                  1.9k字
                 </span>
               
   </div>
@@ -445,7 +480,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#字符串的split-函数"><span class="nav-number">1.</span> <span class="nav-text">字符串的split()函数</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#使用方法"><span class="nav-number">1.1.</span> <span class="nav-text">使用方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#类型转换"><span class="nav-number">1.2.</span> <span class="nav-text">类型转换</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#家庭作业"><span class="nav-number">2.</span> <span class="nav-text">家庭作业</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#题目解析"><span class="nav-number">2.1.</span> <span class="nav-text">题目解析</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第一步：输入数据和转化数据"><span class="nav-number">2.2.</span> <span class="nav-text">第一步：输入数据和转化数据</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第二步：数据提取"><span class="nav-number">2.3.</span> <span class="nav-text">第二步：数据提取</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第三步：加法计算"><span class="nav-number">2.4.</span> <span class="nav-text">第三步：加法计算</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#代码示例"><span class="nav-number">2.5.</span> <span class="nav-text">代码示例</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#部分代码解释"><span class="nav-number">2.6.</span> <span class="nav-text">部分代码解释</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#字符串的split-函数"><span class="nav-number">1.</span> <span class="nav-text">字符串的split()函数</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#使用方法"><span class="nav-number">1.1.</span> <span class="nav-text">使用方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#类型转换"><span class="nav-number">1.2.</span> <span class="nav-text">类型转换</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#家庭作业"><span class="nav-number">2.</span> <span class="nav-text">家庭作业</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#题目解析"><span class="nav-number">2.1.</span> <span class="nav-text">题目解析</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第一步：输入数据和转化数据"><span class="nav-number">2.2.</span> <span class="nav-text">第一步：输入数据和转化数据</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第二步：数据提取"><span class="nav-number">2.3.</span> <span class="nav-text">第二步：数据提取</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第三步：加法计算"><span class="nav-number">2.4.</span> <span class="nav-text">第三步：加法计算</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#代码示例"><span class="nav-number">2.5.</span> <span class="nav-text">代码示例</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#部分代码解释"><span class="nav-number">2.6.</span> <span class="nav-text">部分代码解释</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#额外作业"><span class="nav-number">3.</span> <span class="nav-text">额外作业</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#时间秒数转换"><span class="nav-number">3.1.</span> <span class="nav-text">时间秒数转换</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#题目解析-1"><span class="nav-number">3.1.1.</span> <span class="nav-text">题目解析</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第一步：输入与分割"><span class="nav-number">3.1.2.</span> <span class="nav-text">第一步：输入与分割</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第二步：秒钟计算"><span class="nav-number">3.1.3.</span> <span class="nav-text">第二步：秒钟计算</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第三步：输出"><span class="nav-number">3.1.4.</span> <span class="nav-text">第三步：输出</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#代码示例-1"><span class="nav-number">3.1.5.</span> <span class="nav-text">代码示例</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#时间相差"><span class="nav-number">3.2.</span> <span class="nav-text">时间相差</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#题目解析-2"><span class="nav-number">3.2.1.</span> <span class="nav-text">题目解析</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第一步：输入时间并转化为列表"><span class="nav-number">3.2.2.</span> <span class="nav-text">第一步：输入时间并转化为列表</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第二步：提取-数据的计算"><span class="nav-number">3.2.3.</span> <span class="nav-text">第二步：提取+数据的计算</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第三步：输出-1"><span class="nav-number">3.2.4.</span> <span class="nav-text">第三步：输出</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#代码示例-2"><span class="nav-number">3.2.5.</span> <span class="nav-text">代码示例</span></a></li></ol></li></ol></li></ol></div>
         
       </div>
       <!--/noindex-->
@@ -539,7 +574,7 @@
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
     
-    <span title="站点总字数">17k</span>
+    <span title="站点总字数">19k</span>
 </div>
 <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
   
@@ -551,8 +586,8 @@
       <span class="post-meta-item-text">站点总字数：</span>
     
 	<span title="post.totalcount">
-     9.6k字 </span>
-    <!--<span title="站点总字数">17k</span>-->
+     10.7k字 </span>
+    <!--<span title="站点总字数">19k</span>-->
   
 
         
