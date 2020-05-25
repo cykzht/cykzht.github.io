@@ -55,21 +55,21 @@
   };
 </script>
 
-  <meta name="description" content="第一次作业">
+  <meta name="description" content="逻辑运算">
 <meta name="keywords" content="Python编程">
 <meta property="og:type" content="article">
-<meta property="og:title" content="世界你好：在Python里打印HelloWorld">
-<meta property="og:url" content="https://cykzht.github.io/2019/世界你好HelloWord/index.html">
+<meta property="og:title" content="逻辑值与关系运算、逻辑运算">
+<meta property="og:url" content="https://cykzht.github.io/2020/逻辑运算/index.html">
 <meta property="og:site_name" content="程俞客">
-<meta property="og:description" content="第一次作业">
+<meta property="og:description" content="逻辑运算">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://www.g2022cyk.top:85/wp-content/uploads/2020/05/221.png">
-<meta property="og:updated_time" content="2020-05-25T03:36:29.063Z">
+<meta property="og:updated_time" content="2020-05-25T03:36:29.060Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="世界你好：在Python里打印HelloWorld">
-<meta name="twitter:description" content="第一次作业">
+<meta name="twitter:title" content="逻辑值与关系运算、逻辑运算">
+<meta name="twitter:description" content="逻辑运算">
 <meta name="twitter:image" content="https://www.g2022cyk.top:85/wp-content/uploads/2020/05/221.png">
-  <link rel="canonical" href="https://cykzht.github.io/2019/世界你好HelloWord/">
+  <link rel="canonical" href="https://cykzht.github.io/2020/逻辑运算/">
 
 
 <script id="page-configurations">
@@ -83,7 +83,7 @@
   };
 </script>
 
-  <title>世界你好：在Python里打印HelloWorld | 程俞客</title>
+  <title>逻辑值与关系运算、逻辑运算 | 程俞客</title>
   
 
 
@@ -231,7 +231,7 @@
   
   
   <div class="post-block post">
-    <link itemprop="mainEntityOfPage" href="https://cykzht.github.io/2019/世界你好HelloWord/">
+    <link itemprop="mainEntityOfPage" href="https://cykzht.github.io/2020/逻辑运算/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="大海Leo">
@@ -243,7 +243,7 @@
       <meta itemprop="name" content="程俞客">
     </span>
       <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">世界你好：在Python里打印HelloWorld
+        <h1 class="post-title" itemprop="name headline">逻辑值与关系运算、逻辑运算
 
           
         </h1>
@@ -259,7 +259,7 @@
                 
               
 
-              <time title="创建时间：2019-09-23 22:12:41" itemprop="dateCreated datePublished" datetime="2019-09-23T22:12:41+08:00">2019-09-23</time>
+              <time title="创建时间：2020-03-01 15:18:12" itemprop="dateCreated datePublished" datetime="2020-03-01T15:18:12+08:00">2020-03-01</time>
             </span>
           
             
@@ -292,7 +292,7 @@
               
                 <span class="post-meta-item-text">本文字数：</span>
               
-              <span>2.1k</span>
+              <span>1.4k</span>
             </span>
           
             <span class="post-meta-item" title="阅读时长">
@@ -302,7 +302,7 @@
               
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
               
-              <span>2 分钟</span>
+              <span>1 分钟</span>
             </span>
           
 
@@ -315,51 +315,119 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>第一次作业</p>
+        <p>逻辑运算</p>
 <a id="more"></a>
 
-<p>在python里，最简单也是最基本的输出显示项目就是<strong>“世界你好”</strong>了，这个世界代表着我们初入这个代码世界，而通往这个世界的钥匙就是<strong>print</strong>了</p>
+
+<h1 id="逻辑值（布尔值）"><a href="#逻辑值（布尔值）" class="headerlink" title="逻辑值（布尔值）"></a>逻辑值（布尔值）</h1><p>逻辑值只有两个，一个代表成立，一个代表不成立。</p>
+<p>一个是英文True,另外一个是英文False，注意大小写敏感。</p>
+<p>而在计算机中，为了方便使用，True对应一个数值1，False对应一个数值0。</p>
+<p>可以print(int(True))  和print(int(False))进行验证。</p>
+<h1 id="逻辑运算"><a href="#逻辑运算" class="headerlink" title="逻辑运算"></a>逻辑运算</h1><p>在需要将逻辑结果进行叠加时，单纯的关系运算很多时候力不从心。就需要有逻辑运算将关系运算的结果进行结合。</p>
+<p>逻辑运算在很多时候相当于语文语法中的连词，如并且、或者等。</p>
+<p>逻辑运算符有三个</p>
+<p>逻辑非运算：not</p>
+<p>逻辑与运算（并且）：and</p>
+<p>逻辑或运算（或者）：or</p>
+<h1 id="非运算结果"><a href="#非运算结果" class="headerlink" title="非运算结果"></a>非运算结果</h1><table>
+<thead>
+<tr>
+<th align="center">a的值</th>
+<th align="center">非运算结果（not a）</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">True</td>
+<td align="center">False</td>
+</tr>
+<tr>
+<td align="center">False</td>
+<td align="center">True</td>
+</tr>
+</tbody></table>
+<h1 id="与（并且）运算结果"><a href="#与（并且）运算结果" class="headerlink" title="与（并且）运算结果"></a>与（并且）运算结果</h1><table>
+<thead>
+<tr>
+<th><strong>a</strong></th>
+<th><strong>b</strong></th>
+<th><strong>a and b</strong>的结果</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>True</td>
+<td>True</td>
+<td>True</td>
+</tr>
+<tr>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr>
+<td>False</td>
+<td>True</td>
+<td>False</td>
+</tr>
+<tr>
+<td>False</td>
+<td>False</td>
+<td>False</td>
+</tr>
+</tbody></table>
+<p>即左右两边有False结果即为False</p>
+<h1 id="或（或者）运算结果"><a href="#或（或者）运算结果" class="headerlink" title="或（或者）运算结果"></a>或（或者）运算结果</h1><table>
+<thead>
+<tr>
+<th><strong>a</strong></th>
+<th><strong>b</strong></th>
+<th><strong>a or b</strong>的结果</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>True</td>
+<td>True</td>
+<td>True</td>
+</tr>
+<tr>
+<td>True</td>
+<td>False</td>
+<td>True</td>
+</tr>
+<tr>
+<td>False</td>
+<td>True</td>
+<td>True</td>
+</tr>
+<tr>
+<td>False</td>
+<td>False</td>
+<td>False</td>
+</tr>
+</tbody></table>
+<p>即左右两边有True结果即为True</p>
+<h1 id="关系运算和逻辑运算结合举例"><a href="#关系运算和逻辑运算结合举例" class="headerlink" title="关系运算和逻辑运算结合举例"></a>关系运算和逻辑运算结合举例</h1><p>如：</p>
+<p>a = 10 &gt; 5 and 5 &gt; 1即相当于 a = True and True，最后结果为：True</p>
+<p>这个写法也是最标准的。或者的用法也类似。</p>
+<p>其实上面的例子在Python也可以写成a = 10 &gt; 5 &gt; 1，最后的结果为True</p>
+<p>因为上面的例子在Python里被特殊解释为a = 10 &gt; 5 and 5 &gt; 1，这个是语法定义的。注意C等语言无法按照这个方式执行。</p>
+<p>但是，也要注意，如果你的式子是：a = (10 &gt; 5) &gt; 1，这个则相当于</p>
+<p>​     a = True &gt; 1也就是a = 1 &gt; 1最后的运算结果为False。</p>
+<p>也就是如果指定了分步运算，就必须按照分步的结果进行运算。</p>
+<h1 id="思考练习"><a href="#思考练习" class="headerlink" title="思考练习"></a>思考练习</h1><h2 id="最高成绩题"><a href="#最高成绩题" class="headerlink" title="最高成绩题"></a>最高成绩题</h2><h3 id="题目解析"><a href="#题目解析" class="headerlink" title="题目解析"></a>题目解析</h3><p><strong>期中考试，考试科目只有3门（假设而已），输入这三门的成绩，输出其中有几门达到了优秀（我们定义的优秀仍然为100-90这个分数段，当然我们的成绩输入是符合逻辑的，即最高100分，最低0分）</strong></p>
+<p>这道题的意思就是判断输入的这三个成绩是否高于90分，即达到优秀的标准</p>
+<h3 id="输入并拆分列表"><a href="#输入并拆分列表" class="headerlink" title="输入并拆分列表"></a>输入并拆分列表</h3><p>我们需要输入三科的成绩，这三个数要在一行里面，我们就要使用<strong>split</strong>的列表</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">a = input(<span class="string">"输入三门科目的成绩："</span>)</span><br><span class="line">b = a.split(<span class="string">" "</span>)</span><br><span class="line">c = int(b[<span class="number">0</span>])</span><br><span class="line">d = int(b[<span class="number">1</span>])</span><br><span class="line">e = int(b[<span class="number">2</span>])</span><br></pre></td></tr></table></figure>
+
+<h3 id="成绩比较"><a href="#成绩比较" class="headerlink" title="成绩比较"></a>成绩比较</h3><p>这里我们就要用到<strong>逻辑</strong>运算了，这里我们定义，如果成绩大于90，就满足条件，则为优秀，反馈值为1；如果低于90，就不满足条件，反馈值为0</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">f = c&gt;=<span class="number">90</span></span><br><span class="line">g = d&gt;=<span class="number">90</span></span><br><span class="line">h = e&gt;=<span class="number">90</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="结果的输出"><a href="#结果的输出" class="headerlink" title="结果的输出"></a>结果的输出</h3><p>每一科输出的结果都只能是0或1，把这些数加起来就能求出几科达到优秀，最后输出，把这些数值加起来</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">i = int(f) + int(g) + int(h)</span><br><span class="line">print(str(i)+<span class="string">"门优秀"</span>)</span><br></pre></td></tr></table></figure>
+
+<h3 id="代码示例"><a href="#代码示例" class="headerlink" title="代码示例"></a>代码示例</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#成绩是否优秀，逻辑运算</span></span><br><span class="line">a = input(<span class="string">"输入三门科目的成绩："</span>)</span><br><span class="line">b = a.split(<span class="string">" "</span>)</span><br><span class="line">c = int(b[<span class="number">0</span>])</span><br><span class="line">d = int(b[<span class="number">1</span>])</span><br><span class="line">e = int(b[<span class="number">2</span>])</span><br><span class="line">f = c&gt;=<span class="number">90</span></span><br><span class="line">g = d&gt;=<span class="number">90</span></span><br><span class="line">h = e&gt;=<span class="number">90</span></span><br><span class="line">i = int(f) + int(g) + int(h)</span><br><span class="line">print(str(i)+<span class="string">"门优秀"</span>)</span><br></pre></td></tr></table></figure>
+
 <hr>
-<h1 id="print的用法"><a href="#print的用法" class="headerlink" title="print的用法"></a>print的用法</h1><p>下面，我将会教大家如何使用print</p>
-<p>我们现在最常见的print的用法</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">print(<span class="number">666</span>)</span><br><span class="line">print(<span class="string">'世界你好！'</span>)</span><br><span class="line">print(<span class="string">"HelloWord"</span>)</span><br><span class="line">print(<span class="string">'''世界你好，</span></span><br><span class="line"><span class="string">这是第一Python程序'''</span>)</span><br></pre></td></tr></table></figure>
-
-<p>上面这些代码的区别，除了打印的内容不一样外，另外的区别就是引号的数量了，我会逐一为大家解释</p>
-<h2 id="单引号：识别机器语言"><a href="#单引号：识别机器语言" class="headerlink" title="单引号：识别机器语言"></a>单引号：识别机器语言</h2><p>在刚才的示例中，没加引号的代码写的是<strong>666</strong>，不加引号的特点事只能识别机器语言，即<strong>数字</strong>和运算类，输入的必须是整数即数字</p>
-<h3 id="代码实例"><a href="#代码实例" class="headerlink" title="代码实例"></a>代码实例</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">print(<span class="number">666</span>)</span><br><span class="line">print(<span class="number">6</span>+<span class="number">6</span>)</span><br></pre></td></tr></table></figure>
-
-<p>第一行代码的输出结果为<strong>666</strong></p>
-<p>第二行代码输出结果为<strong>12</strong></p>
-<p>第二代码输入的并不是输入的结果，因为是计算机语言里包含运算，所以就会直接输出结果了，这里的运算不仅包括加法，还有减法、乘法、除法包括乘方，即【+】【-】【* 】【/】【 **】，如果输入字符串会立马报错</p>
-<h2 id="单引号：任何字符的输出"><a href="#单引号：任何字符的输出" class="headerlink" title="单引号：任何字符的输出"></a>单引号：任何字符的输出</h2><p>单引号的意义就是你输入什么，他就会输出什么</p>
-<h3 id="代码示例"><a href="#代码示例" class="headerlink" title="代码示例"></a>代码示例</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">print(<span class="string">'666'</span>)</span><br><span class="line">print(<span class="string">'HelloWord'</span>)</span><br><span class="line">print(<span class="string">'6+6'</span>)</span><br><span class="line">print(<span class="string">'你是猪吗？'</span>)</span><br></pre></td></tr></table></figure>
-
-<p>输出的内容就是引号内的内容，但输入的内容必须要是字符串</p>
-<p>注意：第三行的输出内容为<strong>6+6</strong>，加引号后不会进行计算</p>
-<h2 id="双引号：用于特殊或冲突的情况"><a href="#双引号：用于特殊或冲突的情况" class="headerlink" title="双引号：用于特殊或冲突的情况"></a>双引号：用于特殊或冲突的情况</h2><p>双引号的用法和单引号一致，主要是用于含有冲突的符号</p>
-<h3 id="代码示例-1"><a href="#代码示例-1" class="headerlink" title="代码示例"></a>代码示例</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">print(<span class="string">"I'm a code editor."</span>)</span><br></pre></td></tr></table></figure>
-
-<p>输入的内容必须是字符串类型，如果内容里包含单引号的字符，可以使用双引号来进行显示，当然，双引号也可以用于显示任何字符</p>
-<h2 id="三引号：自动换行"><a href="#三引号：自动换行" class="headerlink" title="三引号：自动换行"></a>三引号：自动换行</h2><p>三引号的输出和单引号和双引号基本一致，但是它可以直接的进行换行</p>
-<h3 id="代码示例-2"><a href="#代码示例-2" class="headerlink" title="代码示例"></a>代码示例</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">print(<span class="string">'''世界你好，</span></span><br><span class="line"><span class="string">HelloWord！'''</span>)</span><br></pre></td></tr></table></figure>
-
-<p>这段代码输出的直接就是两行的内容，第一行输出<strong>世界你好，</strong>第二行输出HelloWord！</p>
-<p>引号内可以输入任何字符串</p>
-<p>如果是整数即数字需要换行，可以使用<strong>反斜杠+n</strong>换行</p>
-<p><strong>例如</strong></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">print(<span class="string">'1\n2'</span>)</span><br></pre></td></tr></table></figure>
-
-<p>输出的结果同为两行，第一行是<strong>1</strong>第二行是<strong>2</strong></p>
-<p>当然，还有输出完成不换行的</p>
-<p><strong>例如</strong></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">print(内容, end = “”)</span><br></pre></td></tr></table></figure>
-
-<p>输出完内容后不换行</p>
-<h2 id="字符串的拼接"><a href="#字符串的拼接" class="headerlink" title="字符串的拼接"></a>字符串的拼接</h2><p>这一部分的内容会在数据的类型中讲到，涉及到str字符串的转换</p>
-<h1 id="家庭作业"><a href="#家庭作业" class="headerlink" title="家庭作业"></a>家庭作业</h1><p>打印马里奥图片</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">print(<span class="string">'''                ********</span></span><br><span class="line"><span class="string">               ************</span></span><br><span class="line"><span class="string">               ####....#.</span></span><br><span class="line"><span class="string">             #..###.....##....</span></span><br><span class="line"><span class="string">             ###.......######              ###                 ###           ###           ###</span></span><br><span class="line"><span class="string">                ...........               #...#               #...#         #...#         #...#</span></span><br><span class="line"><span class="string">               ##*#######                 #.#.#               #.#.#         #.#.#         #.#.#</span></span><br><span class="line"><span class="string">            ####*******######             #.#.#               #.#.#         #.#.#         #.#.#</span></span><br><span class="line"><span class="string">           ...#***.****.*###....          #...#               #...#         #...#         #...#</span></span><br><span class="line"><span class="string">           ....**********##.....           ###                 ###           ###           ###</span></span><br><span class="line"><span class="string">           ....****    *****....</span></span><br><span class="line"><span class="string">             ####        ####</span></span><br><span class="line"><span class="string">           ######        ######</span></span><br><span class="line"><span class="string">##############################################################              ##################################</span></span><br><span class="line"><span class="string">#...#......#.##...#......#.##...#......#.##------------------#              #...#......#.##------------------#</span></span><br><span class="line"><span class="string">###########################################------------------#              ###############------------------#</span></span><br><span class="line"><span class="string">#..#....#....##..#....#....##..#....#....#####################              #..#....#....#####################</span></span><br><span class="line"><span class="string">##########################################    #----------#                  ##############    #----------#</span></span><br><span class="line"><span class="string">#.....#......##.....#......##.....#......#    #----------#                  #.....#......#    #----------#</span></span><br><span class="line"><span class="string">##########################################    #----------#                  ##############    #----------#</span></span><br><span class="line"><span class="string">#.#..#....#..##.#..#....#..##.#..#....#..#    #----------#                  #.#..#....#..#    #----------#</span></span><br><span class="line"><span class="string">##########################################    ############                  ##############    ############'''</span>)</span><br></pre></td></tr></table></figure>
-
-<hr>
+<p>源代码仓库<a href="https://github.com/cykzht/PythonCode" target="_blank" rel="noopener">Github地址</a></p>
 <p><strong>文章作者：朱海天  未经允许禁止转载</strong></p>
 <h1 id="支持作者"><a href="#支持作者" class="headerlink" title="支持作者"></a>支持作者</h1><p><a href="http://cykrldzp.byethost15.com" target="_blank" rel="noopener"><img src="https://www.g2022cyk.top:85/wp-content/uploads/2020/05/221.png" alt="img"></a></p>
 
@@ -387,8 +455,8 @@
           <div class="post-nav">
             <div class="post-nav-next post-nav-item">
               
-                <a href="/2019/Python环境安装教程/" rel="next" title="Python环境安装教程">
-                  <i class="fa fa-chevron-left"></i> Python环境安装教程
+                <a href="/2020/分支语句/" rel="next" title="分支语句if的用法">
+                  <i class="fa fa-chevron-left"></i> 分支语句if的用法
                 </a>
               
             </div>
@@ -397,8 +465,8 @@
 
             <div class="post-nav-prev post-nav-item">
               
-                <a href="/2019/Python算术运算的练习/" rel="prev" title="Python算数运算的练习">
-                  Python算数运算的练习 <i class="fa fa-chevron-right"></i>
+                <a href="/2020/for循环的运用/" rel="prev" title="for循环的讲解与运用">
+                  for循环的讲解与运用 <i class="fa fa-chevron-right"></i>
                 </a>
               
             </div>
@@ -417,9 +485,9 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <!-- <span title="本文字数">8.9k</span> -->
+                <!-- <span title="本文字数">6.4k</span> -->
 			  <span title="本文字数">
-                  743字
+                  896字
                 </span>
               
   </div>
@@ -464,7 +532,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#print的用法"><span class="nav-number">1.</span> <span class="nav-text">print的用法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#单引号：识别机器语言"><span class="nav-number">1.1.</span> <span class="nav-text">单引号：识别机器语言</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#代码实例"><span class="nav-number">1.1.1.</span> <span class="nav-text">代码实例</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#单引号：任何字符的输出"><span class="nav-number">1.2.</span> <span class="nav-text">单引号：任何字符的输出</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#代码示例"><span class="nav-number">1.2.1.</span> <span class="nav-text">代码示例</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#双引号：用于特殊或冲突的情况"><span class="nav-number">1.3.</span> <span class="nav-text">双引号：用于特殊或冲突的情况</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#代码示例-1"><span class="nav-number">1.3.1.</span> <span class="nav-text">代码示例</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三引号：自动换行"><span class="nav-number">1.4.</span> <span class="nav-text">三引号：自动换行</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#代码示例-2"><span class="nav-number">1.4.1.</span> <span class="nav-text">代码示例</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#字符串的拼接"><span class="nav-number">1.5.</span> <span class="nav-text">字符串的拼接</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#家庭作业"><span class="nav-number">2.</span> <span class="nav-text">家庭作业</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#支持作者"><span class="nav-number">3.</span> <span class="nav-text">支持作者</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#逻辑值（布尔值）"><span class="nav-number">1.</span> <span class="nav-text">逻辑值（布尔值）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#逻辑运算"><span class="nav-number">2.</span> <span class="nav-text">逻辑运算</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#非运算结果"><span class="nav-number">3.</span> <span class="nav-text">非运算结果</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#与（并且）运算结果"><span class="nav-number">4.</span> <span class="nav-text">与（并且）运算结果</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#或（或者）运算结果"><span class="nav-number">5.</span> <span class="nav-text">或（或者）运算结果</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#关系运算和逻辑运算结合举例"><span class="nav-number">6.</span> <span class="nav-text">关系运算和逻辑运算结合举例</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#思考练习"><span class="nav-number">7.</span> <span class="nav-text">思考练习</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#最高成绩题"><span class="nav-number">7.1.</span> <span class="nav-text">最高成绩题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#题目解析"><span class="nav-number">7.1.1.</span> <span class="nav-text">题目解析</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#输入并拆分列表"><span class="nav-number">7.1.2.</span> <span class="nav-text">输入并拆分列表</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#成绩比较"><span class="nav-number">7.1.3.</span> <span class="nav-text">成绩比较</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#结果的输出"><span class="nav-number">7.1.4.</span> <span class="nav-text">结果的输出</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#代码示例"><span class="nav-number">7.1.5.</span> <span class="nav-text">代码示例</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#支持作者"><span class="nav-number">8.</span> <span class="nav-text">支持作者</span></a></li></ol></div>
         
       </div>
       <!--/noindex-->
