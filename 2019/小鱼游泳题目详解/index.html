@@ -63,14 +63,14 @@
 <meta property="og:site_name" content="程俞客">
 <meta property="og:description" content="小鱼游泳题目详解">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https://www.g2022cyk.top:85/wp-content/uploads/2019/10/%E4%BD%99%E6%95%B0%E7%A4%BA%E4%BE%8B.jpg">
-<meta property="og:image" content="https://www.g2022cyk.top:85/wp-content/uploads/2019/10/%E6%97%B6%E9%97%B4%E5%80%9F%E4%BD%8D.jpg">
-<meta property="og:image" content="https://www.g2022cyk.top:85/wp-content/uploads/2020/05/221.png">
-<meta property="og:updated_time" content="2020-05-28T09:05:59.309Z">
+<meta property="og:image" content="https://www.g2022cyk.top/wp-content/uploads/2019/10/%E4%BD%99%E6%95%B0%E7%A4%BA%E4%BE%8B.jpg">
+<meta property="og:image" content="https://www.g2022cyk.top/wp-content/uploads/2019/10/%E6%97%B6%E9%97%B4%E5%80%9F%E4%BD%8D.jpg">
+<meta property="og:image" content="https://www.g2022cyk.top/wp-content/uploads/2020/05/221.png">
+<meta property="og:updated_time" content="2020-07-25T02:05:42.017Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="小鱼游泳题目详解">
 <meta name="twitter:description" content="小鱼游泳题目详解">
-<meta name="twitter:image" content="https://www.g2022cyk.top:85/wp-content/uploads/2019/10/%E4%BD%99%E6%95%B0%E7%A4%BA%E4%BE%8B.jpg">
+<meta name="twitter:image" content="https://www.g2022cyk.top/wp-content/uploads/2019/10/%E4%BD%99%E6%95%B0%E7%A4%BA%E4%BE%8B.jpg">
   <link rel="canonical" href="https://cykzht.github.io/2019/小鱼游泳题目详解/">
 
 
@@ -272,7 +272,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-05-28 17:05:59" itemprop="dateModified" datetime="2020-05-28T17:05:59+08:00">2020-05-28</time>
+                <time title="修改时间：2020-07-25 10:05:42" itemprop="dateModified" datetime="2020-07-25T10:05:42+08:00">2020-07-25</time>
               </span>
             
           
@@ -341,7 +341,7 @@
 
 <h2 id="部分代码解释"><a href="#部分代码解释" class="headerlink" title="部分代码解释"></a>部分代码解释</h2><p>【//】为整除，【%】为余数</p>
 <p>整除就是进行除法计算，结果只保留整数，余数是小学学的↓</p>
-<p><img src="https://www.g2022cyk.top:85/wp-content/uploads/2019/10/%E4%BD%99%E6%95%B0%E7%A4%BA%E4%BE%8B.jpg" alt="avatar"></p>
+<p><img src="https://www.g2022cyk.top/wp-content/uploads/2019/10/%E4%BD%99%E6%95%B0%E7%A4%BA%E4%BE%8B.jpg" alt="avatar"></p>
 <h1 id="借位做法（不推荐）"><a href="#借位做法（不推荐）" class="headerlink" title="借位做法（不推荐）"></a>借位做法（不推荐）</h1><p><strong>例如</strong>：开始的时间是6：30，结束的时间是7：20，正常我们人口算得出的时间是50分钟，在计算机里需要把小时和分钟拆开计算，即“结束小时-开始小时”“结束分钟-开始分钟”，这里还涉及到一个判定的条件，就我给的这个示例一样，结束的分钟数比开始的分钟数要小，所以减出来的就会有负数，这时候我们需要在小时上借1然后再进行运算</p>
 <h2 id="第一步：输入时间-1"><a href="#第一步：输入时间-1" class="headerlink" title="第一步：输入时间"></a>第一步：输入时间</h2><p>使用<strong>input</strong>指令输入输入时间，分开输入小时和分钟</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">a = input(<span class="string">'请输入开始的小时（24小时制）：'</span>)</span><br><span class="line">b = input(<span class="string">'请输入开始的分钟（24小时制）：'</span>)</span><br><span class="line">c = input(<span class="string">'请输入结束的小时（24小时制）：'</span>)</span><br><span class="line">d = input(<span class="string">'请输入结束的分钟（24小时制）：'</span>)</span><br></pre></td></tr></table></figure>
@@ -352,7 +352,7 @@
 <h2 id="第三步：借位运算"><a href="#第三步：借位运算" class="headerlink" title="第三步：借位运算"></a>第三步：借位运算</h2><p>在小时上，结束时间减去开始时间还要再减1</p>
 <p>在分钟上，因为已经借1了，所以在结束的分钟上加60（一小时为60分钟），再减去结束的分钟就不会有负数了</p>
 <p>记得输出</p>
-<p> <img src="https://www.g2022cyk.top:85/wp-content/uploads/2019/10/%E6%97%B6%E9%97%B4%E5%80%9F%E4%BD%8D.jpg" alt="img"> </p>
+<p> <img src="https://www.g2022cyk.top/wp-content/uploads/2019/10/%E6%97%B6%E9%97%B4%E5%80%9F%E4%BD%8D.jpg" alt="img"> </p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> d&lt;b:</span><br><span class="line">    e = int(c) - int(a) - <span class="number">1</span></span><br><span class="line">    f = (<span class="number">60</span> + int(b)) - int(d)</span><br><span class="line">    print(<span class="string">'一共游泳'</span> + str(e) + <span class="string">'时'</span> +str(f) + <span class="string">'分'</span>)</span><br></pre></td></tr></table></figure>
 
 <h2 id="第四步：不借位运算"><a href="#第四步：不借位运算" class="headerlink" title="第四步：不借位运算"></a>第四步：不借位运算</h2><p>如果d大于b，即结束分钟大于开始分钟，那么直接减法即可，这里需要使用<strong>else</strong>，即否则</p>
@@ -364,7 +364,7 @@
 <h3 id="部分代码解释-1"><a href="#部分代码解释-1" class="headerlink" title="部分代码解释"></a>部分代码解释</h3><p><strong>if</strong>语句没有学到，以后会学，大概的用法就是这样的，详细请见注释</p>
 <hr>
 <p><strong>文章作者：朱海天   未经允许禁止转载</strong></p>
-<h1 id="支持作者"><a href="#支持作者" class="headerlink" title="支持作者"></a>支持作者</h1><p><a href="http://cykrldzp.byethost15.com" target="_blank" rel="noopener"><img src="https://www.g2022cyk.top:85/wp-content/uploads/2020/05/221.png" alt="img"></a></p>
+<h1 id="支持作者"><a href="#支持作者" class="headerlink" title="支持作者"></a>支持作者</h1><p><a href="http://cykrldzp.byethost15.com" target="_blank" rel="noopener"><img src="https://www.g2022cyk.top/wp-content/uploads/2020/05/221.png" alt="img"></a></p>
 
     </div>
 
