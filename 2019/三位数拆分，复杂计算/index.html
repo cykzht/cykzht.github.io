@@ -63,16 +63,16 @@
 <meta property="og:site_name" content="程俞客">
 <meta property="og:description" content="第四次作业">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https://www.g2022cyk.top:85/wp-content/uploads/2019/10/%E4%BD%99%E6%95%B0%E7%A4%BA%E4%BE%8B.jpg">
-<meta property="og:image" content="https://www.g2022cyk.top:85/wp-content/uploads/2019/10/%E7%99%BE%E4%BD%8D%E6%95%B0.jpg">
-<meta property="og:image" content="https://www.g2022cyk.top:85/wp-content/uploads/2019/10/%E5%8D%81%E4%BD%8D%E6%95%B0.jpg">
-<meta property="og:image" content="https://www.g2022cyk.top:85/wp-content/uploads/2019/10/%E4%B8%AA%E4%BD%8D%E6%95%B0.jpg">
-<meta property="og:image" content="https://www.g2022cyk.top:85/wp-content/uploads/2019/10/%E6%8D%A2%E5%BA%8F.png">
-<meta property="og:updated_time" content="2022-03-27T15:15:41.697Z">
+<meta property="og:image" content="https://g2022cyk.top:85/wp-content/uploads/2019/10/%E4%BD%99%E6%95%B0%E7%A4%BA%E4%BE%8B.jpg">
+<meta property="og:image" content="https://g2022cyk.top:85/wp-content/uploads/2019/10/%E7%99%BE%E4%BD%8D%E6%95%B0.jpg">
+<meta property="og:image" content="https://g2022cyk.top:85/wp-content/uploads/2019/10/%E5%8D%81%E4%BD%8D%E6%95%B0.jpg">
+<meta property="og:image" content="https://g2022cyk.top:85/wp-content/uploads/2019/10/%E4%B8%AA%E4%BD%8D%E6%95%B0.jpg">
+<meta property="og:image" content="https://g2022cyk.top:85/wp-content/uploads/2019/10/%E6%8D%A2%E5%BA%8F.png">
+<meta property="og:updated_time" content="2022-05-14T16:14:12.764Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="三位数的拆分">
 <meta name="twitter:description" content="第四次作业">
-<meta name="twitter:image" content="https://www.g2022cyk.top:85/wp-content/uploads/2019/10/%E4%BD%99%E6%95%B0%E7%A4%BA%E4%BE%8B.jpg">
+<meta name="twitter:image" content="https://g2022cyk.top:85/wp-content/uploads/2019/10/%E4%BD%99%E6%95%B0%E7%A4%BA%E4%BE%8B.jpg">
   <link rel="canonical" href="https://hexo.g2022cyk.top/2019/三位数拆分，复杂计算/">
 
 
@@ -274,7 +274,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-03-27 23:15:41" itemprop="dateModified" datetime="2022-03-27T23:15:41+08:00">2022-03-27</time>
+                <time title="修改时间：2022-05-15 00:14:12" itemprop="dateModified" datetime="2022-05-15T00:14:12+08:00">2022-05-15</time>
               </span>
             
           
@@ -328,17 +328,17 @@
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">a = input(<span class="string">'请输入一个三位数：'</span>)</span><br></pre></td></tr></table></figure>
 
 <h2 id="2、数字的提取计算"><a href="#2、数字的提取计算" class="headerlink" title="2、数字的提取计算"></a>2、数字的提取计算</h2><p>这一步的计算我们会用到余数的计算，在代码中，它的符号是<strong>【%】</strong>，这是我们小学学的一个概念，我再给大家复习一下余数的概念</p>
-<p><img src="https://www.g2022cyk.top:85/wp-content/uploads/2019/10/%E4%BD%99%E6%95%B0%E7%A4%BA%E4%BE%8B.jpg" alt="avatar"></p>
+<p><img src="https://g2022cyk.top:85/wp-content/uploads/2019/10/%E4%BD%99%E6%95%B0%E7%A4%BA%E4%BE%8B.jpg" alt="avatar"></p>
 <p>这里百位数的提取就是输入的数字除以100</p>
-<p><img src="https://www.g2022cyk.top:85/wp-content/uploads/2019/10/%E7%99%BE%E4%BD%8D%E6%95%B0.jpg" alt="avatar"></p>
+<p><img src="https://g2022cyk.top:85/wp-content/uploads/2019/10/%E7%99%BE%E4%BD%8D%E6%95%B0.jpg" alt="avatar"></p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">b = int(a) / <span class="number">100</span></span><br></pre></td></tr></table></figure>
 
 <p>十位数提取需要先算出输入值100的余数，然后除以10</p>
-<p><img src="https://www.g2022cyk.top:85/wp-content/uploads/2019/10/%E5%8D%81%E4%BD%8D%E6%95%B0.jpg" alt="avatar"></p>
+<p><img src="https://g2022cyk.top:85/wp-content/uploads/2019/10/%E5%8D%81%E4%BD%8D%E6%95%B0.jpg" alt="avatar"></p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">c = int(a) % <span class="number">100</span> / <span class="number">10</span></span><br></pre></td></tr></table></figure>
 
 <p>个位数需要先100的余数，然后再来一个10的余数</p>
-<p><img src="https://www.g2022cyk.top:85/wp-content/uploads/2019/10/%E4%B8%AA%E4%BD%8D%E6%95%B0.jpg" alt="avatar"></p>
+<p><img src="https://g2022cyk.top:85/wp-content/uploads/2019/10/%E4%B8%AA%E4%BD%8D%E6%95%B0.jpg" alt="avatar"></p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">d = int(a) % <span class="number">100</span> % <span class="number">10</span></span><br></pre></td></tr></table></figure>
 
 <h2 id="3、整数转换"><a href="#3、整数转换" class="headerlink" title="3、整数转换"></a>3、整数转换</h2><p>因为这里算出来的除法有可能包含小数，所以我们要把整数提取出来</p>
@@ -372,7 +372,7 @@
 
 <h2 id="偷懒做法"><a href="#偷懒做法" class="headerlink" title="偷懒做法"></a>偷懒做法</h2><p>使用[::-1]进行顺序转换<strong>（不推荐）</strong></p>
 <p>具体用法如下</p>
-<p><img src="https://www.g2022cyk.top:85/wp-content/uploads/2019/10/%E6%8D%A2%E5%BA%8F.png" alt="avatar"></p>
+<p><img src="https://g2022cyk.top:85/wp-content/uploads/2019/10/%E6%8D%A2%E5%BA%8F.png" alt="avatar"></p>
 <h3 id="代码示例-3"><a href="#代码示例-3" class="headerlink" title="代码示例"></a>代码示例</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">str = input(<span class="string">'请输入一个三位数：'</span>)   <span class="comment">#等待输入输入</span></span><br><span class="line">print(str[::<span class="number">-1</span>])   <span class="comment">#取从后向前（相反）的元素</span></span><br></pre></td></tr></table></figure>
 
 <hr>
