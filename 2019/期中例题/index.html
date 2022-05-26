@@ -64,14 +64,14 @@
 <meta property="og:site_name" content="程俞客">
 <meta property="og:description" content="期中考试复习例题">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https://11.g2022cyk.top:86/wp-content/uploads/2019/10/3.png">
-<meta property="og:image" content="https://11.g2022cyk.top:86/wp-content/uploads/2019/10/2.png">
-<meta property="og:image" content="https://11.g2022cyk.top:86/wp-content/uploads/2019/10/1.png">
-<meta property="og:updated_time" content="2022-05-19T14:29:32.414Z">
+<meta property="og:image" content="https://11.g2022cyk.top:85/wp-content/uploads/2019/10/3.png">
+<meta property="og:image" content="https://11.g2022cyk.top:85/wp-content/uploads/2019/10/2.png">
+<meta property="og:image" content="https://11.g2022cyk.top:85/wp-content/uploads/2019/10/1.png">
+<meta property="og:updated_time" content="2022-05-26T06:27:07.013Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="信息课经典例题汇总">
 <meta name="twitter:description" content="期中考试复习例题">
-<meta name="twitter:image" content="https://11.g2022cyk.top:86/wp-content/uploads/2019/10/3.png">
+<meta name="twitter:image" content="https://11.g2022cyk.top:85/wp-content/uploads/2019/10/3.png">
   <link rel="canonical" href="https://hexo.g2022cyk.top/2019/期中例题/">
 
 
@@ -282,7 +282,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-05-19 22:29:32" itemprop="dateModified" datetime="2022-05-19T22:29:32+08:00">2022-05-19</time>
+                <time title="修改时间：2022-05-26 14:27:07" itemprop="dateModified" datetime="2022-05-26T14:27:07+08:00">2022-05-26</time>
               </span>
             
           
@@ -356,13 +356,13 @@
 <p>通过观察获得结果：第一类一定有8个，因为在角上。而第二类两个面的一定在棱上12 <em>（n - 2）个；第三个单独在一个面上（n - 2）</em> (n – 2) * 6个。</p>
 <h2 id="题目解析"><a href="#题目解析" class="headerlink" title="题目解析"></a>题目解析</h2><p>这里先讲一下第一、二、三类是什么意思</p>
 <h3 id="第一类"><a href="#第一类" class="headerlink" title="第一类"></a>第一类</h3><p>指某个魔方块有三面可以看见，即8个角，这个是固定的</p>
-<p><img src="https://11.g2022cyk.top:86/wp-content/uploads/2019/10/3.png" alt="img"></p>
+<p><img src="https://11.g2022cyk.top:85/wp-content/uploads/2019/10/3.png" alt="img"></p>
 <p>如图片标号所示，这样露出三个面的块就是第一类</p>
 <h3 id="第二类"><a href="#第二类" class="headerlink" title="第二类"></a>第二类</h3><p>指某个魔方块有两面可以看见，这个是魔方的12条棱上面的块，这个和魔方的阶数有关</p>
-<p><img src="https://11.g2022cyk.top:86/wp-content/uploads/2019/10/2.png" alt="img"></p>
+<p><img src="https://11.g2022cyk.top:85/wp-content/uploads/2019/10/2.png" alt="img"></p>
 <p>如图片标号所示，只露出两个面的魔方块</p>
 <h3 id="第三类"><a href="#第三类" class="headerlink" title="第三类"></a>第三类</h3><p>指某个魔方块仅有一面可以看见，就是魔方中间的块数了（二阶魔方没有）</p>
-<p><img src="https://11.g2022cyk.top:86/wp-content/uploads/2019/10/1.png" alt="img"></p>
+<p><img src="https://11.g2022cyk.top:85/wp-content/uploads/2019/10/1.png" alt="img"></p>
 <p>如图所示，标1的都是</p>
 <h2 id="代码示例-4"><a href="#代码示例-4" class="headerlink" title="代码示例"></a>代码示例</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">n = int(input(<span class="string">"请输入边长："</span>))</span><br><span class="line">y = <span class="number">8</span></span><br><span class="line">e = <span class="number">12</span> * (n - <span class="number">2</span>)</span><br><span class="line">s = <span class="number">6</span> * (n - <span class="number">2</span>) * (n - <span class="number">2</span>)</span><br><span class="line">print(<span class="string">"第一类有"</span>, y, <span class="string">"个"</span>)</span><br><span class="line">print(<span class="string">"第二类有"</span>, e, <span class="string">"个"</span>)</span><br><span class="line">print(<span class="string">"第三类有"</span>, s, <span class="string">"个"</span>)</span><br></pre></td></tr></table></figure>
 
