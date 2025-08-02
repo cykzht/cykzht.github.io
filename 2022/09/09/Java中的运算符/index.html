@@ -1,0 +1,959 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="x5-fullscreen" content="true">
+<meta name="full-screen" content="yes">
+<meta name="theme-color" content="#317EFB" />
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=0" name="viewport">
+<meta name="description" content="一、运算符在程序设计中经常要进行各种运算，从而达到改变变量值的目的。要实现运算，就要使用运算符。运算符是一种特殊的符号，用以表示数据的运算、赋值和比较等。 按照运算符功能来分，基本的运算符有下面几类：  算数运算符 赋值运算符 关系（比较）运算符 逻辑运算符 位运算符 条件（三元）运算符  1.1 算数运算符主要用来进行算数运算。按照参与运算的操作数的个数，又可以分为一元算数运算符和二元算数运算符">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Java中的运算符">
+<meta property="og:url" content="https://www.g2022cyk.top/2022/09/09/Java%E4%B8%AD%E7%9A%84%E8%BF%90%E7%AE%97%E7%AC%A6/">
+<meta property="og:site_name" content="程俞客&amp;称心号">
+<meta property="og:description" content="一、运算符在程序设计中经常要进行各种运算，从而达到改变变量值的目的。要实现运算，就要使用运算符。运算符是一种特殊的符号，用以表示数据的运算、赋值和比较等。 按照运算符功能来分，基本的运算符有下面几类：  算数运算符 赋值运算符 关系（比较）运算符 逻辑运算符 位运算符 条件（三元）运算符  1.1 算数运算符主要用来进行算数运算。按照参与运算的操作数的个数，又可以分为一元算数运算符和二元算数运算符">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://www.g2022cyk.top/img/404.jpg">
+<meta property="article:published_time" content="2022-09-09T07:20:06.000Z">
+<meta property="article:modified_time" content="2025-08-02T13:48:47.793Z">
+<meta property="article:author" content="程小客">
+<meta property="article:tag" content="Java编程">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://www.g2022cyk.top/img/404.jpg">
+
+    <meta name="keywords" content="程俞客称心号">
+
+
+<title >Java中的运算符</title>
+
+<!-- Favicon -->
+
+    <link href='/img/%E7%A7%B0%E5%BF%83%E5%8F%B7.png?v=2.2.6' rel='icon' type='image/png' sizes='16x16' ></link>
+
+
+    <link href='/img/%E7%A7%B0%E5%BF%83%E5%8F%B7.png?v=2.2.6' rel='icon' type='image/png' sizes='32x32' ></link>
+
+
+
+
+<!-- Plugin -->
+
+
+
+
+    
+<link rel="stylesheet" href="/css/plugins/bootstrap.row.css">
+
+    
+<link rel="stylesheet" href="https://unpkg.com/@fancyapps/ui@4.0/dist/fancybox.css">
+
+    
+    
+
+
+
+
+<!-- Icon -->
+
+    
+<link rel="stylesheet" href="/css/plugins/font-awesome.min.css">
+
+
+
+
+<!-- Variable -->
+<script>window.ASYNC_CONFIG = {"hostname":"www.g2022cyk.top","author":"程小客","root":"/","typed_text":null,"theme_version":"2.2.6","theme":{"switch":true,"default":"auto","language":"zh-Hans"},"favicon":{"logo":"img/称心号.png","icon16":"img/称心号.png","icon32":"img/称心号.png","apple_touch_icon":null,"webmanifest":null,"visibilitychange":false,"hidden":"/failure.ico","show_text":"(/≧▽≦/)咦！又好了！","hide_text":"(●—●)喔哟，崩溃啦！"},"i18n":{"placeholder":"搜索文章...","empty":"找不到您查询的内容: ${query}","hits":"找到 ${hits} 条结果","hits_time":"找到 ${hits} 条结果（用时 ${time} 毫秒）","author":"本文作者：","copyright_link":"本文链接：","copyright_license_title":"版权声明：","copyright_license_content":"本博客所有文章除特别声明外，均默认采用 undefined 许可协议。","copy_success":"复制成功","copy_failure":"复制失败","open_read_mode":"进入阅读模式","exit_read_mode":"退出阅读模式","notice_outdate_message":"距离上次更新已经 undefined 天了, 文章内容可能已经过时。","sticky":"置顶","just":"刚刚","min":"分钟前","hour":"小时前","day":"天前","month":"个月前"},"swup":false,"plugin":{"flickr_justified_gallery":"https://unpkg.com/flickr-justified-gallery@latest/dist/fjGallery.min.js"},"icons":{"sun":"far fa-sun","moon":"far fa-moon","play":"fas fa-play","email":"far fa-envelope","next":"fas fa-arrow-right","calendar":"far fa-calendar-alt","clock":"far fa-clock","user":"far fa-user","back_top":"fas fa-arrow-up","close":"fas fa-times","search":"fas fa-search","reward":"fas fa-hand-holding-usd","toc_tag":"fas fa-th-list","read":"fas fa-book-reader","arrows":"fas fa-arrows-alt-h","double_arrows":"fas fa-angle-double-down","copy":"fas fa-copy"},"icontype":"font","highlight":{"plugin":"highlighjs","theme":true,"copy":true,"lang":true,"title":"default","height_limit":false},"toc":{"post_title":true},"live_time":{"start_time":"09/10/2019 17:00:00","prefix":"博客已萌萌哒运行 undefined 天"},"danmu":{"enable":false,"el":".trm-banner"},"covers":"/img/block.jpg","creative_commons":{"license":"by-nc-sa","language":"deed.zh-hans"},"notice_outdate":{"enable":true,"style":"flat","limit_day":365,"position":"bottom"},"search":{"enable":true,"type":"local","href":"https://www.google.com/search?q=site:","domain":null,"path":"search.json"}};</script>
+<script id="async-page-config">window.PAGE_CONFIG = {"isPost":true,"isHome":false,"postUpdate":"2025-08-02 21:48:47"};</script>
+
+<!-- Theme mode css -->
+<link data-swup-theme rel="stylesheet" href="/css/index.css?v=2.2.6" id="trm-switch-style">
+<script>
+    let defaultMode = ASYNC_CONFIG.theme.default !=='auto' ?  ASYNC_CONFIG.theme.default : (window.matchMedia("(prefers-color-scheme: light)").matches ? 'style-light' : 'style-dark')
+    let catchMode = localStorage.getItem('theme-mode') || defaultMode;
+    let type = catchMode === 'style-dark' ? 'add' : 'remove';
+    document.documentElement.classList[type]('dark')
+</script>
+
+<!-- CDN -->
+
+
+    
+    
+
+
+
+<!-- Site Analytics -->
+
+
+    
+        <!-- Baidu Analytics -->
+        <script defer>
+            var _hmt = _hmt || [];
+            (function() {
+              var hm = document.createElement("script");
+              hm.src = "https://hm.baidu.com/hm.js?09ca4f4526f7e714a253c7329a59e212";
+              var s = document.getElementsByTagName("script")[0]; 
+              s.parentNode.insertBefore(hm, s);
+            })();
+        </script>
+     
+
+    
+
+    
+ 
+<!-- hexo injector head_end start --><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8847588120991439" crossorigin="anonymous"></script><!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.3.0"></head>
+
+<body>
+
+  <!-- app wrapper -->
+  <div class="trm-app-frame">
+
+    <!-- page preloader -->
+    <div class="trm-preloader">
+    <div class="trm-holder">
+        <div class="preloader">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+</div>
+    <!-- page preloader end -->
+
+    <!-- change mode preloader -->
+    <div class="trm-mode-swich-animation-frame">
+    <div class="trm-mode-swich-animation">
+        <i class="i-sun"><i class="iconfont far fa-sun"></i></i>
+        <div class="trm-horizon"></div>
+        <i class="i-moon"><i class="iconfont far fa-moon"></i></i>
+    </div>
+</div>
+    <!-- change mode preloader end -->
+
+      <!-- scroll container -->
+      <div id="trm-dynamic-content" class="trm-swup-animation">
+        <div id="trm-scroll-container" class="trm-scroll-container" style="opacity: 0">
+            <!-- top bar -->
+            <header class="trm-top-bar">
+	<div class="container">
+		<div class="trm-left-side">
+			<!-- logo -->
+<a href="/" class="trm-logo-frame trm-anima-link">
+    
+        <img alt="logo" src="/img/%E7%A7%B0%E5%BF%83%E5%8F%B7.png">
+    
+    
+        <div class="trm-logo-text">
+            Xiaoke<span>Chen</span>
+        </div>
+    
+</a>
+<!-- logo end -->
+		</div>
+		<div class="trm-right-side">
+			<!-- menu -->
+<div class="trm-menu">
+    <nav>
+        <ul>
+            
+            <li class="menu-item-has-children ">
+                <a  href="/" target="">
+                    首页
+                </a>
+                
+                <ul>
+                    
+                    <li>
+                        <a  href="https://www.shushichenxin.com" target="_blank">
+                            述事称心
+                        </a>
+                    </li>
+                    
+                </ul>
+                
+            </li>
+            
+            <li class="menu-item-has-children ">
+                <a  href="/archives/" target="">
+                    归档
+                </a>
+                
+            </li>
+            
+            <li class="menu-item-has-children ">
+                <a  href="/categories/" target="">
+                    分类
+                </a>
+                
+                <ul>
+                    
+                    <li>
+                        <a  href="/categories/%E4%B8%AD%E6%96%87%E6%9C%9F%E5%88%8A/" target="">
+                            中文
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a  href="/categories/%E8%8B%B1%E6%96%87%E6%9C%9F%E5%88%8A/" target="">
+                            英文
+                        </a>
+                    </li>
+                    
+                </ul>
+                
+            </li>
+            
+            <li class="menu-item-has-children ">
+                <a  href="/tags/" target="">
+                    标签
+                </a>
+                
+            </li>
+            
+            <li class="menu-item-has-children ">
+                <a  href="/links/" target="">
+                    友链
+                </a>
+                
+            </li>
+            
+            <li class="menu-item-has-children ">
+                <a  href="/about/" target="">
+                    关于
+                </a>
+                
+                <ul>
+                    
+                    <li>
+                        <a  href="/about/" target="">
+                            关于我
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a  href="https://www.shushichenxin.com/about/" target="_blank">
+                            关于述事称心
+                        </a>
+                    </li>
+                    
+                </ul>
+                
+            </li>
+            
+        </ul>
+    </nav>
+</div>
+<!-- menu end -->
+			
+    <!-- mode switcher place -->
+    <div class="trm-mode-switcher-place">
+        <div class="trm-mode-switcher">
+            <i class="iconfont far fa-sun"></i>
+            <input class="tgl tgl-light" id="trm-swich" type="checkbox">
+            <label class="trm-swich" for="trm-swich"></label>
+            <i class="iconfont far fa-moon"></i>
+        </div>
+    </div>
+    <!-- mode switcher place end -->
+
+			
+    
+    <div id="trm-search-btn" class="trm-search-btn">
+        <i class="iconfont fas fa-search"></i>
+    </div>
+     
+
+		</div>
+		<div class="trm-menu-btn">
+			<span></span>
+		</div>
+	</div>
+</header>
+            <!-- top bar end -->
+
+            <!-- body -->
+            
+<div class="trm-content-start">
+    <!-- banner -->
+    <div class="trm-banner">
+    
+    <!-- banner cover -->
+    <img style="object-position:top;object-fit:cover;" alt="banner" class="trm-banner-cover" src="/img/banner.png">
+    <!-- banner cover end -->
+    
+
+    <!-- banner content -->
+    <div class="trm-banner-content trm-overlay">
+        <div class="container">
+            <div class="row">
+                
+                <div class="col-lg-4"></div>
+                
+                <div class="col-lg-8">
+
+                    <!-- banner title -->
+                    <div class="trm-banner-text ">
+                        <div class="trm-label trm-mb-20">
+                            NEWS LETTER
+                        </div>
+                        <h1 class="trm-mb-30 trm-hsmb-font">
+                            Java中的运算符
+                        </h1>
+
+                        
+                            <ul class="trm-breadcrumbs trm-label">
+                                <li>
+                                    <a href="/" class="trm-anima-link">Home</a>
+                                </li>
+                                <li>
+                                    <span>
+                                        2022
+                                    </span>
+                                </li>
+                            </ul>
+                        
+                    </div>
+                    <!-- banner title end -->
+
+                    <!-- scroll hint -->
+                    <span id="scroll-triger" class="trm-scroll-hint-frame">
+                        <div class="trm-scroll-hint"></div>
+                        <span class="trm-label">Scroll down</span>
+                    </span>
+                    <!-- scroll hint end -->
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- banner content end -->
+</div>
+    <!-- banner end -->
+    <div class="container">
+        <div class="row">
+            
+                <div class="trm-page-sidebar col-lg-4 hidden-sm">
+                    <!-- main card -->
+                    <div class="trm-main-card-frame trm-sidebar">
+    <div class="trm-main-card"> 
+        <!-- card header -->
+<div class="trm-mc-header">
+    <div class="trm-avatar-frame trm-mb-20">
+        <img alt="Avatar" class="trm-avatar" src="/img/%E5%B1%9E%E5%AE%9E%E8%AF%9A%E5%BF%83.jpg">
+    </div>
+    <h5 class="trm-name trm-mb-15">
+        程小客
+    </h5>
+    
+</div>
+<!-- card header end -->
+        <!-- sidebar social -->
+
+<div class="trm-divider trm-mb-40 trm-mt-40"></div>
+<div class="trm-social">
+    
+        <a href="https://github.com/cykzht" title="Github" rel="nofollow" target="_blank">
+            <i class="iconfont fab fa-github"></i>
+        </a>
+    
+        <a href="https://space.bilibili.com/122529890" title="Bilibili" rel="nofollow" target="_blank">
+            <i class="iconfont fab fa-vimeo-v"></i>
+        </a>
+    
+</div>
+
+<!-- sidebar social end -->
+        <!-- info -->
+<div class="trm-divider trm-mb-40 trm-mt-40"></div>
+<ul class="trm-table trm-mb-20">
+    
+        <li>
+            <div class="trm-label">
+                地址:
+            </div>
+            <div class="trm-label trm-label-light">
+                帝都
+            </div>
+        </li>
+    
+</ul>
+<!-- info end -->
+
+        
+    <div class="trm-divider trm-mb-40 trm-mt-40"></div>
+    <!-- action button -->
+    <div class="text-center">
+        <a href="mailto:chengxiaoke@shushichenxin.com" class="trm-btn">
+            联系我
+            <i class="iconfont far fa-envelope"></i>
+        </a>
+    </div>
+    <!-- action button end -->
+
+    </div>
+</div>
+                    <!-- main card end -->
+                </div>
+            
+            <div class="trm-page-content col-lg-8">
+                <div id="trm-content" class="trm-content">
+                    <div class="trm-post-info row hidden-sm">
+    <div class="col-sm-4">
+        <div class="trm-card trm-label trm-label-light text-center">
+            <i class="iconfont far fa-calendar-alt trm-icon"></i><br>
+            09/09
+        </div>
+    </div>
+    <div class="col-sm-4">
+        <div class="trm-card trm-label trm-label-light text-center">
+            <i class="iconfont far fa-clock trm-icon"></i><br>
+            15:20
+        </div>
+    </div>
+    <div class="col-sm-4">
+        <div id="post-author" class="trm-card trm-label trm-label-light text-center">
+            <i class="iconfont far fa-user trm-icon"></i><br>
+            程小客
+        </div>
+    </div>
+</div>
+<div class="trm-card ">
+    <article id="article-container" class="trm-publication">
+    <h1 id="一、运算符"><a href="#一、运算符" class="headerlink" title="一、运算符"></a>一、运算符</h1><p>在程序设计中经常要进行各种运算，从而达到改变变量值的目的。要实现运算，就要使用运算符。运算符是一种特殊的符号，用以表示数据的运算、赋值和比较等。</p>
+<p>按照运算符功能来分，基本的运算符有下面几类：</p>
+<ul>
+<li>算数运算符</li>
+<li>赋值运算符</li>
+<li>关系（比较）运算符</li>
+<li>逻辑运算符</li>
+<li>位运算符</li>
+<li>条件（三元）运算符</li>
+</ul>
+<h2 id="1-1-算数运算符"><a href="#1-1-算数运算符" class="headerlink" title="1.1 算数运算符"></a>1.1 算数运算符</h2><p>主要用来进行算数运算。按照参与运算的操作数的个数，又可以分为一元算数运算符和二元算数运算符。</p>
+<h3 id="1-1-1-二元算数运算符"><a href="#1-1-1-二元算数运算符" class="headerlink" title="1.1.1 二元算数运算符"></a>1.1.1 二元算数运算符</h3><ul>
+<li><code>+</code> 加运算<ul>
+<li>表示两个操作数相加。<code>a + b</code></li>
+</ul>
+</li>
+<li><code>-</code> 减运算<ul>
+<li>表示两个操作数相减。<code>a - b</code></li>
+</ul>
+</li>
+<li><code>*</code> 乘运算<ul>
+<li>表示两个操作数相乘。<code>a * b</code></li>
+</ul>
+</li>
+<li><code>/</code> 除运算<ul>
+<li>表示两个操作数相除。<code>a / b</code></li>
+</ul>
+</li>
+<li><code>%</code> 取模运算<ul>
+<li><code>a % b</code>表示 a 除以 b 的余数。</li>
+</ul>
+</li>
+</ul>
+<p>说明：</p>
+<ul>
+<li><code>/</code> 除法运算<ul>
+<li>两个整数之间做除法运算时，只保留整数部分而舍弃小数部分。</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> <span class="variable">num1</span> <span class="operator">=</span> <span class="number">12</span>;</span><br><span class="line"><span class="type">int</span> <span class="variable">num2</span> <span class="operator">=</span> <span class="number">5</span>;</span><br><span class="line"><span class="type">int</span> <span class="variable">result1</span> <span class="operator">=</span> num1 / num2;</span><br><span class="line">System.out.println(result1);  <span class="comment">//2</span></span><br><span class="line"></span><br><span class="line"><span class="type">int</span> <span class="variable">result2</span> <span class="operator">=</span> num1 / num2 * num2;</span><br><span class="line">System.out.println(result2);  <span class="comment">//10</span></span><br><span class="line"></span><br><span class="line"><span class="type">double</span> <span class="variable">result3</span> <span class="operator">=</span> num1 / num2;</span><br><span class="line">System.out.println(result3);  <span class="comment">//2.0</span></span><br><span class="line"></span><br><span class="line"><span class="type">double</span> <span class="variable">result4</span> <span class="operator">=</span> num1 / num2 + <span class="number">0.0</span>;</span><br><span class="line">System.out.println(result4);  <span class="comment">//2.0</span></span><br><span class="line"></span><br><span class="line"><span class="type">double</span> <span class="variable">result5</span> <span class="operator">=</span> (num1 + <span class="number">0.0</span>) / num2;</span><br><span class="line">System.out.println(result5);  <span class="comment">//2.4</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><code>%</code> 取模运算<ul>
+<li>在除法运算时，一般我们要的结果是商，而取模运算，要的结果是余数。</li>
+<li>在有负整数参与运算时，结果的符号与被模数相同。</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> <span class="variable">num1</span> <span class="operator">=</span> <span class="number">17</span>;</span><br><span class="line"><span class="type">int</span> <span class="variable">num2</span> <span class="operator">=</span> <span class="number">5</span>;</span><br><span class="line"><span class="type">int</span> <span class="variable">result1</span> <span class="operator">=</span> num1 / num2;</span><br><span class="line"><span class="type">int</span> <span class="variable">result2</span> <span class="operator">=</span> num1 % num2;</span><br><span class="line">System.out.println(result1);  <span class="comment">//3</span></span><br><span class="line">System.out.println(result2);  <span class="comment">//2</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> <span class="variable">m1</span> <span class="operator">=</span> <span class="number">17</span>;</span><br><span class="line"><span class="type">int</span> <span class="variable">n1</span> <span class="operator">=</span> <span class="number">5</span>;</span><br><span class="line">System.out.println(<span class="string">&quot;m1 % n1 =&quot;</span> + m1 % n1);</span><br><span class="line"><span class="type">int</span> <span class="variable">m2</span> <span class="operator">=</span> -<span class="number">17</span>;</span><br><span class="line"><span class="type">int</span> <span class="variable">n2</span> <span class="operator">=</span> <span class="number">5</span>;</span><br><span class="line">System.out.println(<span class="string">&quot;m2 % n2 =&quot;</span> + m2 % n2);</span><br><span class="line"><span class="type">int</span> <span class="variable">m3</span> <span class="operator">=</span> <span class="number">17</span>;</span><br><span class="line"><span class="type">int</span> <span class="variable">n3</span> <span class="operator">=</span> -<span class="number">5</span>;</span><br><span class="line">System.out.println(<span class="string">&quot;m3 % n3 =&quot;</span> + m3 % n3);</span><br><span class="line"><span class="type">int</span> <span class="variable">m4</span> <span class="operator">=</span> -<span class="number">17</span>;</span><br><span class="line"><span class="type">int</span> <span class="variable">n4</span> <span class="operator">=</span> -<span class="number">5</span>;</span><br><span class="line">System.out.println(<span class="string">&quot;m4 % n4 =&quot;</span> + m4 % n4);</span><br></pre></td></tr></table></figure>
+
+<h3 id="1-1-2-一元算数运算符"><a href="#1-1-2-一元算数运算符" class="headerlink" title="1.1.2 一元算数运算符"></a>1.1.2 一元算数运算符</h3><ul>
+<li><code>+</code> 正号<ul>
+<li>表示一个正数</li>
+</ul>
+</li>
+<li><code>-</code> 负号<ul>
+<li>表示一个负数</li>
+</ul>
+</li>
+<li><code>++</code> 表示自增 1<ul>
+<li><code>(前)++</code> 例如 <code>++a</code></li>
+<li>先自增，然后参与运算</li>
+<li><code>(后)++</code> 例如 <code>a++</code></li>
+<li>先参与运算，然后自增</li>
+</ul>
+</li>
+<li><code>--</code> 表示自减 1<ul>
+<li><code>(前)--</code> 例如 <code>--a</code></li>
+<li>先自减，然后参与运算</li>
+<li><code>(后)--</code> 例如 <code>a--</code></li>
+<li>先参与运算，然后自减</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> <span class="variable">a1</span> <span class="operator">=</span> <span class="number">10</span>;</span><br><span class="line"><span class="type">int</span> <span class="variable">b1</span> <span class="operator">=</span> ++a1;</span><br><span class="line"><span class="type">int</span> <span class="variable">a2</span> <span class="operator">=</span> <span class="number">10</span>;</span><br><span class="line"><span class="type">int</span> <span class="variable">b2</span> <span class="operator">=</span> a2++;</span><br><span class="line">System.out.println(a1 + <span class="string">&quot;   &quot;</span> + b1);</span><br><span class="line">System.out.println(a2 + <span class="string">&quot;   &quot;</span> + b2);</span><br></pre></td></tr></table></figure>
+
+<p>注意：<code>a = a + 1</code>与<code>a++ 或者 ++a</code>的区别<br>自增、自减运算不会改变变量的数据类型。<br>自增、自减运算不能用于表达式，只能用于简单变量。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">short</span> <span class="variable">s</span> <span class="operator">=</span> <span class="number">10</span>;</span><br><span class="line">s = s + <span class="number">1</span>;  <span class="comment">//这里编译不通过</span></span><br><span class="line">s++;  <span class="comment">// s = 11</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="1-1-3-算数运算符使用练习"><a href="#1-1-3-算数运算符使用练习" class="headerlink" title="1.1.3 算数运算符使用练习"></a>1.1.3 算数运算符使用练习</h3><p>练习：说出下面代码的运行结果：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Exercise1</span> &#123;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">		<span class="type">int</span> <span class="variable">i1</span> <span class="operator">=</span> <span class="number">10</span>;</span><br><span class="line">		<span class="type">int</span> <span class="variable">i2</span> <span class="operator">=</span> <span class="number">20</span>;</span><br><span class="line">		<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> i1++;</span><br><span class="line">		System.out.println(<span class="string">&quot;i=&quot;</span> + i);</span><br><span class="line">		System.out.println(<span class="string">&quot;i1=&quot;</span> + i1);</span><br><span class="line">		i = ++i1;</span><br><span class="line">		System.out.println(<span class="string">&quot;i=&quot;</span> + i);</span><br><span class="line">		System.out.println(<span class="string">&quot;i1=&quot;</span> + i1);</span><br><span class="line">		i = i2--;</span><br><span class="line">		System.out.println(<span class="string">&quot;i=&quot;</span> + i);</span><br><span class="line">		System.out.println(<span class="string">&quot;i2=&quot;</span> + i2);</span><br><span class="line">		i = --i2;</span><br><span class="line">		System.out.println(<span class="string">&quot;i=&quot;</span> + i);</span><br><span class="line">		System.out.println(<span class="string">&quot;i2=&quot;</span> + i2);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/* 结果</span></span><br><span class="line"><span class="comment">i=10</span></span><br><span class="line"><span class="comment">i1=11</span></span><br><span class="line"><span class="comment">i=12</span></span><br><span class="line"><span class="comment">i1=12</span></span><br><span class="line"><span class="comment">i=20</span></span><br><span class="line"><span class="comment">i2=19</span></span><br><span class="line"><span class="comment">i=18</span></span><br><span class="line"><span class="comment">i2=18</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
+
+<p>练习：三位数的拆分，随意给出一个 100~999 的整数，打印显示它的个位数，十位数，百位数的值。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Exercise2</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">		<span class="type">int</span> <span class="variable">num</span> <span class="operator">=</span> <span class="number">996</span>;</span><br><span class="line">      </span><br><span class="line">        System.out.println(<span class="string">&quot;百位是&quot;</span> + num / <span class="number">100</span>);</span><br><span class="line">        System.out.println(<span class="string">&quot;十位是&quot;</span> + (num / <span class="number">10</span>) % <span class="number">10</span>);</span><br><span class="line">        System.out.println(<span class="string">&quot;个位是&quot;</span> + num % <span class="number">10</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/* 结果</span></span><br><span class="line"><span class="comment">百位是9</span></span><br><span class="line"><span class="comment">十位是9</span></span><br><span class="line"><span class="comment">个位是6</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="1-2、赋值运算符"><a href="#1-2、赋值运算符" class="headerlink" title="1.2、赋值运算符"></a>1.2、赋值运算符</h2><h3 id="1-2-1、基本赋值运算符"><a href="#1-2-1、基本赋值运算符" class="headerlink" title="1.2.1、基本赋值运算符"></a>1.2.1、基本赋值运算符</h3><p>赋值运算使用<code>=</code>作为运算符。表示将表达式的值赋给一个变量或者对象。其格式为：<br><code>变量或者对象 = 表达式;</code></p>
+<blockquote>
+<p>当赋值运算符两侧数据类型不一致时，需要按类型转换规则使用自动类型转换或者强制类型转换。<br>支持连续赋值。如<code>a=b=c=8;</code></p>
+</blockquote>
+<h3 id="1-2-2、扩展赋值运算符"><a href="#1-2-2、扩展赋值运算符" class="headerlink" title="1.2.2、扩展赋值运算符"></a>1.2.2、扩展赋值运算符</h3><p>在赋值符<code>=</code>前面加上其他运算符，即构成扩展赋值运算符。常用的有：</p>
+<ul>
+<li><code>+=</code><ul>
+<li><code>a += b</code>等效于<code>a = a + b</code></li>
+</ul>
+</li>
+<li><code>-=</code><ul>
+<li><code>a -= b</code>等效于<code>a = a - b</code></li>
+</ul>
+</li>
+<li><code>*=</code><ul>
+<li><code>a *= b</code>等效于<code>a = a * b</code></li>
+</ul>
+</li>
+<li><code>/=</code><ul>
+<li><code>a /= b</code>等效于<code>a = a / b</code></li>
+</ul>
+</li>
+<li><code>%=</code><ul>
+<li><code>a %= b</code>等效于<code>a = a % b</code></li>
+</ul>
+</li>
+</ul>
+<p>扩展赋值运算符不会改变操作数的类型：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">short</span> <span class="variable">s</span> <span class="operator">=</span> <span class="number">10</span>;</span><br><span class="line">s = s + <span class="number">2</span>;  <span class="comment">//编译不通过</span></span><br><span class="line">s += <span class="number">2</span>;</span><br><span class="line">System.out.println(s);  <span class="comment">//12</span></span><br></pre></td></tr></table></figure>
+
+<p>开发中如果希望变量实现 +1 的操作，有几种方法？<br>方式一：num &#x3D; num + 1;<br>方式二：num +&#x3D; 1;<br>方式三：num++;（推荐）</p>
+<h3 id="1-2-3、赋值运算练习"><a href="#1-2-3、赋值运算练习" class="headerlink" title="1.2.3、赋值运算练习"></a>1.2.3、赋值运算练习</h3><p>练习一：下面的代码中，语句一与语句二有什么区别？</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">short</span> <span class="variable">s</span> <span class="operator">=</span> <span class="number">3</span>;</span><br><span class="line">s = s + <span class="number">2</span>; <span class="comment">//语句一</span></span><br><span class="line">s += <span class="number">2</span>;  <span class="comment">//语句二</span></span><br></pre></td></tr></table></figure>
+
+<p>s+&#x3D;2可以等价成s &#x3D; s + 2。</p>
+<p>练习二：下面代码的输出结果是什么？</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">    <span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">1</span>;</span><br><span class="line">    i *= <span class="number">0.1</span>;</span><br><span class="line">    System.out.println(i);</span><br><span class="line">    i++;</span><br><span class="line">    System.out.println(i);</span><br><span class="line"><span class="comment">/* 结果</span></span><br><span class="line"><span class="comment">0</span></span><br><span class="line"><span class="comment">1</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
+
+<p>i为int类型，乘以0.1后会被强制转换。</p>
+<p>练习三：下面代码的输出结果是什么？</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">    <span class="type">int</span> <span class="variable">m</span> <span class="operator">=</span> <span class="number">2</span>;</span><br><span class="line">    <span class="type">int</span> <span class="variable">n</span> <span class="operator">=</span> <span class="number">3</span>;</span><br><span class="line">    n *= m++;</span><br><span class="line">    System.out.println(<span class="string">&quot;m=&quot;</span> + m);</span><br><span class="line">    System.out.println(<span class="string">&quot;n=&quot;</span> + n);</span><br><span class="line"><span class="comment">/* 结果</span></span><br><span class="line"><span class="comment">m=3</span></span><br><span class="line"><span class="comment">n=6</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
+
+<p>练习四：下面代码的输出结果是什么？</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">    <span class="type">int</span> <span class="variable">n</span> <span class="operator">=</span> <span class="number">10</span>;</span><br><span class="line">    n += (n++) + (++n);</span><br><span class="line">    System.out.println(n);</span><br><span class="line"><span class="comment">/* 结果</span></span><br><span class="line"><span class="comment">32</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
+
+<p>++n是先加后赋值；n++ 是先赋值后加。</p>
+<h2 id="1-3、关系（比较）运算符"><a href="#1-3、关系（比较）运算符" class="headerlink" title="1.3、关系（比较）运算符"></a>1.3、关系（比较）运算符</h2><p>关系运算符用于比较两个值之间的大小，结果返回 boolean 型的值 true 或 false</p>
+<ul>
+<li><code>&gt;</code> 大于</li>
+<li><code>&gt;=</code> 小于或等于</li>
+<li><code>&lt;</code> 小于</li>
+<li><code>&lt;=</code> 小于或等于</li>
+<li><code>==</code> 等于</li>
+<li><code>!=</code> 不等于</li>
+</ul>
+<p>注意：区分 <code>==</code> 和 <code>=</code> 的区别。</p>
+<h2 id="1-4、逻辑运算符"><a href="#1-4、逻辑运算符" class="headerlink" title="1.4、逻辑运算符"></a>1.4、逻辑运算符</h2><p>只有布尔类型的数据才能进行逻辑运算。</p>
+<blockquote>
+<p>关系型运算与逻辑运算的区别：<br>关系运算的结果是逻辑型，对操作数的类型没有限制<br>逻辑运算的操作数和结果都是逻辑型</p>
+</blockquote>
+<p>Java 中的逻辑运算符：</p>
+<ul>
+<li>逻辑与 两个操作数均为 true，结果才为 true<ul>
+<li><code>&amp;</code></li>
+<li><code>&amp;&amp;</code></li>
+</ul>
+</li>
+<li>逻辑或 两个操作数均为 false，结果才为 false<ul>
+<li><code>|</code></li>
+<li><code>||</code></li>
+</ul>
+</li>
+<li>逻辑非 对操作数取反<ul>
+<li><code>!</code></li>
+</ul>
+</li>
+<li>逻辑异或 两个操作数不同，结果才为 true<ul>
+<li><code>^</code></li>
+</ul>
+</li>
+</ul>
+<p><code>&amp;</code>和<code>&amp;&amp;</code>的区别：</p>
+<ul>
+<li>相同点：二者运算的结果相同</li>
+<li>相同点：当符号左侧的运算结果为 true 时，它们都会执行符号右侧的运算</li>
+<li>不同点：当符号左侧的运算结果为 false 时，虽然已经能够确定运算的结果一定为 false，<code>&amp;</code>仍然会执行符号右侧的运算，但<code>&amp;&amp;</code>不再执行</li>
+<li>实际开发中，一般使用的都是<code>&amp;&amp;</code></li>
+</ul>
+<p>参考以下的代码，体会<code>&amp;</code>和<code>&amp;&amp;</code>的区别：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">1</span>;</span><br><span class="line"><span class="type">boolean</span> <span class="variable">b1</span> <span class="operator">=</span> (i == <span class="number">3</span>) &amp; (++i &gt; <span class="number">0</span>);</span><br><span class="line">System.out.println(b1 + <span class="string">&quot;   &quot;</span> + i);</span><br><span class="line"><span class="type">boolean</span> <span class="variable">b2</span> <span class="operator">=</span> (i == <span class="number">3</span>) &amp;&amp; (++i &gt; <span class="number">0</span>);</span><br><span class="line">System.out.println(b2 + <span class="string">&quot;   &quot;</span> + i);</span><br></pre></td></tr></table></figure>
+
+<p><code>|</code>和<code>||</code>的区别：</p>
+<ul>
+<li>相同点：二者运算的结果相同</li>
+<li>相同点：当符号左侧的运算结果为 false 时，它们都会执行符号右侧的运算</li>
+<li>不同点：当符号左侧的结果为 true 时，虽然已经能够确定运算的结果一定为 true，<code>\</code>仍然会执行符号右侧的运算，但<code>||</code>不再执行</li>
+<li>实际开发中，一般使用的都是<code>||</code></li>
+</ul>
+<p>参考以下的代码，体会<code>|</code>和<code>||</code>的区别：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//代码段1</span></span><br><span class="line"><span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">1</span>;</span><br><span class="line"><span class="type">boolean</span> <span class="variable">b1</span> <span class="operator">=</span> (i == <span class="number">2</span>) | (++i &gt; <span class="number">0</span>);</span><br><span class="line">System.out.println(b1 + <span class="string">&quot;   &quot;</span> + i);</span><br><span class="line"><span class="type">boolean</span> <span class="variable">b2</span> <span class="operator">=</span> (i == <span class="number">2</span>) || (++i &gt; <span class="number">0</span>);</span><br><span class="line">System.out.println(b2 + <span class="string">&quot;   &quot;</span> + i);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//代码段2</span></span><br><span class="line"><span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">1</span>;</span><br><span class="line"><span class="type">boolean</span> <span class="variable">b2</span> <span class="operator">=</span> (i == <span class="number">2</span>) || (++i &gt; <span class="number">0</span>);</span><br><span class="line">System.out.println(b2 + <span class="string">&quot;   &quot;</span> + i);</span><br><span class="line"><span class="type">boolean</span> <span class="variable">b1</span> <span class="operator">=</span> (i == <span class="number">2</span>) | (++i &gt; <span class="number">0</span>);</span><br><span class="line">System.out.println(b1 + <span class="string">&quot;   &quot;</span> + i);</span><br></pre></td></tr></table></figure>
+
+<h2 id="1-5、位运算符"><a href="#1-5、位运算符" class="headerlink" title="1.5、位运算符"></a>1.5、位运算符</h2><p>实际开发工作中基本用不到，有兴趣的同学可以自行查找资料学习原码、反码和补码的内容后自行学习。</p>
+<h2 id="1-6、条件（三元）运算符"><a href="#1-6、条件（三元）运算符" class="headerlink" title="1.6、条件（三元）运算符"></a>1.6、条件（三元）运算符</h2><ul>
+<li>该运算符的格式：<code>条件表达式 ? 表达式1 : 表达式2</code></li>
+<li>说明：<ul>
+<li>条件表达式的结果为 boolean 类型</li>
+<li>条件表达式的结果为 true，则执行表达式 1。条件表达式的结果为 false，则执行表达式 2</li>
+<li>表达式 1 和表达式 2 的值的类型可以不同，但要求可以相容</li>
+<li>表达式 1 和表达式 2 也可以是三元运算符。即三元运算符是可以嵌套的。</li>
+</ul>
+</li>
+<li>凡是可以使用三元运算符的地方都可以改写为 if-else。反之，不成立。</li>
+<li>如果既可以使用三元运算符，也可以使用 if-else，那么优先选择三元运算符。原因：代码更简洁、运行效率更高。</li>
+</ul>
+<p>练习：获取两个整数当中的较大值。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> <span class="variable">m</span> <span class="operator">=</span> <span class="number">10</span>;</span><br><span class="line"><span class="type">int</span> <span class="variable">n</span> <span class="operator">=</span> <span class="number">100</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">//将条件表达式用括号括起来可以提高代码的可读性</span></span><br><span class="line"><span class="type">int</span> <span class="variable">max</span> <span class="operator">=</span> (m &gt; n) ? m : n;</span><br><span class="line">System.out.println(max);</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>思考：使用条件运算符求三个整数当中的较大值。</p>
+<h2 id="1-7、运算符的优先级"><a href="#1-7、运算符的优先级" class="headerlink" title="1.7、运算符的优先级"></a>1.7、运算符的优先级</h2><p>一般而言，单目运算符优先级较高，赋值运算符优先级较低。算术运算符优先级较高，关系和逻辑运算符优先级较低。多数运算符具有左结合性，单目运算符、三目运算符、赋值运算符具有右结合性。</p>
+<p>Java 语言中运算符的优先级共分为 14 级，其中 1 级最高，14 级最低。在同一个表达式中运算符优先级高的先执行。下图列出了所有的运算符的优先级以及结合性。</p>
+<p><img src="https://11.g2022cyk.top:8081/wp-content/uploads/2022/10/1667217480-priority.png" alt="优先级"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
+<p>源代码就是一份文档，源代码的可读性比代码运行效率更重要。</p>
+<ul>
+<li>不要把一个表达式写得过于复杂，如果一个表达式过于复杂，则把它分成几步来完成。</li>
+<li>不要过多地依赖运算符的优先级来控制表达式的执行顺序，这样可读性太差，尽量使用()来控制表达式的执行顺序。</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//下面代码的可读性非常差，不建议这样写代码</span></span><br><span class="line"><span class="type">int</span> <span class="variable">a</span> <span class="operator">=</span> <span class="number">5</span>;</span><br><span class="line"><span class="type">int</span> <span class="variable">b</span> <span class="operator">=</span> <span class="number">4</span>;</span><br><span class="line"><span class="type">int</span> <span class="variable">c</span> <span class="operator">=</span> a++ - --b * ++a / b-- &gt;&gt; <span class="number">2</span> % a--;</span><br><span class="line"></span><br><span class="line"><span class="comment">//执行结果和上面的代码一致，但可读性好很多</span></span><br><span class="line"><span class="type">int</span> <span class="variable">a</span> <span class="operator">=</span> <span class="number">5</span>;</span><br><span class="line"><span class="type">int</span> <span class="variable">b</span> <span class="operator">=</span> <span class="number">4</span>;</span><br><span class="line"><span class="type">int</span> <span class="variable">c</span> <span class="operator">=</span> (a++ - (--b * ++a / b--)) &gt;&gt; (<span class="number">2</span> % a--);</span><br><span class="line"></span><br><span class="line"><span class="comment">//执行的结果和上面的代码一致，可读性更好</span></span><br><span class="line"><span class="type">int</span> <span class="variable">temp1</span> <span class="operator">=</span> (a++) - (--b) * (++a) / (b--);</span><br><span class="line"><span class="type">int</span> <span class="variable">temp2</span> <span class="operator">=</span> <span class="number">2</span> % (a--);</span><br><span class="line"><span class="type">int</span> <span class="variable">c</span> <span class="operator">=</span> temp1 &gt;&gt; temp2;</span><br></pre></td></tr></table></figure>
+
+</article>
+    
+    
+
+<ul class="trm-post-copyright">
+    <li class="trm-post-copyright-author">
+        <strong>本文作者：</strong>
+        程小客
+    </li>
+    <li class="trm-post-copyright-link">
+        <strong>本文链接：</strong>
+        <a id="original-link" href="https://www.g2022cyk.top/2022/09/09/Java中的运算符/" title="Java中的运算符">https://www.g2022cyk.top/2022/09/09/Java中的运算符/</a>
+    </li>
+    <li class="trm-post-copyright-license">
+        <strong>版权声明：</strong>
+        本博客所有文章除特别声明外，均默认采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh-hans" target="_blank" rel="noopener" title="CC BY-NC-SA 4.0 ">CC BY-NC-SA 4.0</a> 许可协议。
+    </li>
+</ul>
+
+
+</div>
+<div class="trm-post-next-prev row">
+    <div class="col-lg-12">
+        <!-- title -->
+        <h5 class="trm-title-with-divider">
+            其他文章
+            <span data-number="02"></span>
+        </h5>
+    </div>
+    
+        <div class="col-lg-6">
+    <div class="trm-blog-card trm-scroll-animation">
+        <a href="/2022/09/09/Linux%E4%B8%8B%E5%AE%89%E8%A3%85Java%E7%8E%AF%E5%A2%83/" class="trm-cover-frame trm-anima-link">
+            
+            
+                <div class="trm-cover-img" data-random-img></div>
+            
+        </a>
+        
+        <div class="trm-card-descr">
+            <div class="trm-label trm-category trm-mb-20">
+                <a href=" /categories/%E4%B8%AD%E6%96%87%E6%9C%9F%E5%88%8A/">
+                    中文期刊
+                </a>
+            </div>
+            <h5>
+                <a href="/2022/09/09/Linux%E4%B8%8B%E5%AE%89%E8%A3%85Java%E7%8E%AF%E5%A2%83/" class="trm-anima-link">
+                    Linux下安装Java环境
+                </a>
+            </h5>
+            <div class="trm-divider trm-mb-20 trm-mt-20"></div>
+            <ul class="trm-card-data trm-label">
+                <li>22/09/09</li>
+                <li>15:20</li>
+                
+                
+            </ul>
+        </div>
+    </div>
+</div>
+    
+    
+        <div class="col-lg-6">
+    <div class="trm-blog-card trm-scroll-animation">
+        <a href="/2022/09/09/Java%E4%B8%AD%E7%9A%84%E5%8F%98%E9%87%8F%E3%80%81%E5%B8%B8%E9%87%8F%E4%B8%8E%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/" class="trm-cover-frame trm-anima-link">
+            
+            
+                <div class="trm-cover-img" data-random-img></div>
+            
+        </a>
+        
+        <div class="trm-card-descr">
+            <div class="trm-label trm-category trm-mb-20">
+                <a href=" /categories/%E4%B8%AD%E6%96%87%E6%9C%9F%E5%88%8A/">
+                    中文期刊
+                </a>
+            </div>
+            <h5>
+                <a href="/2022/09/09/Java%E4%B8%AD%E7%9A%84%E5%8F%98%E9%87%8F%E3%80%81%E5%B8%B8%E9%87%8F%E4%B8%8E%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/" class="trm-anima-link">
+                    Java中的变量、常量与数据类型
+                </a>
+            </h5>
+            <div class="trm-divider trm-mb-20 trm-mt-20"></div>
+            <ul class="trm-card-data trm-label">
+                <li>22/09/09</li>
+                <li>15:20</li>
+                
+                
+            </ul>
+        </div>
+    </div>
+</div>
+    
+</div>
+
+    
+
+    <div id="giscus-wrap" class="trm-card trm-scroll-animation comment-container"></div>
+<script data-swup-reload-script>
+    function loadGiscus() {
+        let nowTheme = document.documentElement.classList.contains('dark') ? 'transparent_dark' : 'light'
+        const config = {
+            src: 'https://giscus.app/client.js',
+            "data-repo": 'cykzht/cykzht.github.io',
+            "data-repo-id": 'MDEwOlJlcG9zaXRvcnkyMDI3MjY0OTg=',
+            "data-category": 'Announcements',
+            "data-category-id": 'DIC_kwDODBVcYs4Cts4-',
+            "data-mapping": 'url',
+            "data-reactions-enabled": '1',
+            "data-emit-metadata": '0',
+            "data-theme": nowTheme,
+            "data-lang": 'zh-CN',
+            crossorigin: "anonymous",
+            async: true
+        }
+        let ele = document.createElement('script')
+        for (let key in config) {
+            ele.setAttribute(key, config[key])
+        }
+        document.getElementById('giscus-wrap').insertAdjacentElement('afterbegin', ele)
+    }
+
+    function changeGiscusTheme() {
+        let theme = document.documentElement.classList.contains('dark') ? 'transparent_dark' : 'light'
+
+        function sendMessage(message) {
+            const iframe = document.querySelector('iframe.giscus-frame');
+            if (!iframe) return;
+            iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+        }
+
+        sendMessage({
+            setConfig: {
+                theme: theme
+            }
+        });
+    }
+
+    loadGiscus();
+</script>
+
+
+
+                    <div class="trm-divider footer-divider"></div>
+
+                    <!-- footer -->
+                    <footer class="trm-footer-card trm-scroll-animation">
+
+    
+        <div class="trm-footer-item">
+            <a rel="noopener" href="https://beian.miit.gov.cn/" target="_blank">京ICP备2022028753号-1</a>
+        </div>
+    
+
+    
+        <div class="trm-footer-item">
+            <span>© 2019 - 2025</span>
+            <span class="footer-separator"data-separator=" · "></span>
+            <span class="trm-accent-color">程小客</span>
+        </div>
+    
+
+      
+
+    
+        <div class="trm-footer-item blog-run-long"></div>
+     
+
+     
+</footer>
+                    <!-- footer end -->
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+            <!-- body end -->
+
+            
+
+    <div id="post-toc" class="trm-post-toc">
+      <div class="trm-post-toc-header">
+        目录导航
+				<span id="post-toc-top">
+					置顶
+				</span>
+      </div>
+      <div class="trm-post-toc-content">
+        <ol class="trm-toc"><li class="trm-toc-item trm-toc-level-1" title="一、运算符"><a rel="nofollow" class="trm-toc-link" href="#一、运算符"><span class="trm-toc-number">1.</span> <span class="trm-toc-text">一、运算符</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-2" title="1.1 算数运算符"><a rel="nofollow" class="trm-toc-link" href="#1-1-算数运算符"><span class="trm-toc-number">1.1.</span> <span class="trm-toc-text">1.1 算数运算符</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-3" title="1.1.1 二元算数运算符"><a rel="nofollow" class="trm-toc-link" href="#1-1-1-二元算数运算符"><span class="trm-toc-number">1.1.1.</span> <span class="trm-toc-text">1.1.1 二元算数运算符</span></a></li><li class="trm-toc-item trm-toc-level-3" title="1.1.2 一元算数运算符"><a rel="nofollow" class="trm-toc-link" href="#1-1-2-一元算数运算符"><span class="trm-toc-number">1.1.2.</span> <span class="trm-toc-text">1.1.2 一元算数运算符</span></a></li><li class="trm-toc-item trm-toc-level-3" title="1.1.3 算数运算符使用练习"><a rel="nofollow" class="trm-toc-link" href="#1-1-3-算数运算符使用练习"><span class="trm-toc-number">1.1.3.</span> <span class="trm-toc-text">1.1.3 算数运算符使用练习</span></a></li></ol></li><li class="trm-toc-item trm-toc-level-2" title="1.2、赋值运算符"><a rel="nofollow" class="trm-toc-link" href="#1-2、赋值运算符"><span class="trm-toc-number">1.2.</span> <span class="trm-toc-text">1.2、赋值运算符</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-3" title="1.2.1、基本赋值运算符"><a rel="nofollow" class="trm-toc-link" href="#1-2-1、基本赋值运算符"><span class="trm-toc-number">1.2.1.</span> <span class="trm-toc-text">1.2.1、基本赋值运算符</span></a></li><li class="trm-toc-item trm-toc-level-3" title="1.2.2、扩展赋值运算符"><a rel="nofollow" class="trm-toc-link" href="#1-2-2、扩展赋值运算符"><span class="trm-toc-number">1.2.2.</span> <span class="trm-toc-text">1.2.2、扩展赋值运算符</span></a></li><li class="trm-toc-item trm-toc-level-3" title="1.2.3、赋值运算练习"><a rel="nofollow" class="trm-toc-link" href="#1-2-3、赋值运算练习"><span class="trm-toc-number">1.2.3.</span> <span class="trm-toc-text">1.2.3、赋值运算练习</span></a></li></ol></li><li class="trm-toc-item trm-toc-level-2" title="1.3、关系（比较）运算符"><a rel="nofollow" class="trm-toc-link" href="#1-3、关系（比较）运算符"><span class="trm-toc-number">1.3.</span> <span class="trm-toc-text">1.3、关系（比较）运算符</span></a></li><li class="trm-toc-item trm-toc-level-2" title="1.4、逻辑运算符"><a rel="nofollow" class="trm-toc-link" href="#1-4、逻辑运算符"><span class="trm-toc-number">1.4.</span> <span class="trm-toc-text">1.4、逻辑运算符</span></a></li><li class="trm-toc-item trm-toc-level-2" title="1.5、位运算符"><a rel="nofollow" class="trm-toc-link" href="#1-5、位运算符"><span class="trm-toc-number">1.5.</span> <span class="trm-toc-text">1.5、位运算符</span></a></li><li class="trm-toc-item trm-toc-level-2" title="1.6、条件（三元）运算符"><a rel="nofollow" class="trm-toc-link" href="#1-6、条件（三元）运算符"><span class="trm-toc-number">1.6.</span> <span class="trm-toc-text">1.6、条件（三元）运算符</span></a></li><li class="trm-toc-item trm-toc-level-2" title="1.7、运算符的优先级"><a rel="nofollow" class="trm-toc-link" href="#1-7、运算符的优先级"><span class="trm-toc-number">1.7.</span> <span class="trm-toc-text">1.7、运算符的优先级</span></a></li></ol></li></ol>
+      </div>
+    </div>
+
+            
+<div class="trm-fixed-container">
+    
+        <div class="trm-fixed-btn post-toc-btn" data-title="目录">
+            <i class="iconfont fas fa-th-list"></i>
+        </div>
+    
+    
+        <div class="trm-fixed-btn" data-title="阅读模式" onclick="asyncFun.switchReadMode()">
+            <i class="iconfont fas fa-book-reader"></i>
+        </div>
+    
+    
+    <div id="trm-back-top" class="trm-fixed-btn" data-title="回到顶部">
+        <i class="iconfont fas fa-arrow-up"></i>
+    </div>
+</div>
+        </div>
+      </div>
+      <!-- scroll container end -->
+  </div>
+  <!-- app wrapper end -->
+
+  
+    <div class="trm-search-popup">
+        <div class="trm-search-wrapper">
+            <div class="form trm-search-form">
+                <div class="trm-search-input-icon">
+                    <i class="iconfont fas fa-search"></i>
+                </div>
+                <input class="trm-search-input" type="text" placeholder="搜索文章...">
+                <div class="trm-search-btn-close">
+                    <i class="iconfont fas fa-times"></i>
+                </div>
+            </div>
+            <div class="trm-search-result-container">
+                <div class="trm-search-empty">
+                    请输入关键词进行搜索
+                </div>
+            </div>
+            <div class="trm-search-footer">
+                <div class="trm-search-stats"></div>
+                <ul class="trm-search-commands">
+                    <li>
+                        <kbd class="command-palette-commands-key">
+                            <svg width="15" height="15" aria-label="Escape key" role="img">
+                                <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                    stroke-width="1.2">
+                                    <path
+                                        d="M13.6167 8.936c-.1065.3583-.6883.962-1.4875.962-.7993 0-1.653-.9165-1.653-2.1258v-.5678c0-1.2548.7896-2.1016 1.653-2.1016.8634 0 1.3601.4778 1.4875 1.0724M9 6c-.1352-.4735-.7506-.9219-1.46-.8972-.7092.0246-1.344.57-1.344 1.2166s.4198.8812 1.3445.9805C8.465 7.3992 8.968 7.9337 9 8.5c.032.5663-.454 1.398-1.4595 1.398C6.6593 9.898 6 9 5.963 8.4851m-1.4748.5368c-.2635.5941-.8099.876-1.5443.876s-1.7073-.6248-1.7073-2.204v-.4603c0-1.0416.721-2.131 1.7073-2.131.9864 0 1.6425 1.031 1.5443 2.2492h-2.956">
+                                    </path>
+                                </g>
+                            </svg>
+                        </kbd>
+                        <span class="command-palette-Label">to close</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+  <!-- Plugin -->
+
+
+
+
+    
+    
+<script src="https://unpkg.com/@fancyapps/ui@4.0/dist/fancybox.umd.js"></script>
+
+    
+
+    
+
+    
+        
+<script src="https://unpkg.com/hexo-generator-searchdb@1.4.0/dist/search.js"></script>
+
+        <script src="/js/plugins/local_search.js?v=2.2.6"></script>
+    
+
+    <!-- 数学公式 -->
+    
+
+    <!-- 评论插件 -->
+    
+        
+
+        
+    
+
+		
+
+
+
+
+    <!-- Service Worker -->
+    
+    <!-- baidu push -->
+    
+
+
+<script id="async-script" src="/js/main.js?v=2.2.6"></script>
+
+<!-- CDN -->
+
+
+    
+
+    
+
+    
+
+
+
+</body>
+
+</html>

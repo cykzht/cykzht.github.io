@@ -1,0 +1,846 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="x5-fullscreen" content="true">
+<meta name="full-screen" content="yes">
+<meta name="theme-color" content="#317EFB" />
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=0" name="viewport">
+<meta name="description" content="逻辑值（布尔值）逻辑值只有两个，一个代表成立，一个代表不成立。 一个是英文True,另外一个是英文False，注意大小写敏感。 而在计算机中，为了方便使用，True对应一个数值1，False对应一个数值0。 可以print(int(True))  和print(int(False))进行验证。 逻辑运算在需要将逻辑结果进行叠加时，单纯的关系运算很多时候力不从心。就需要有逻辑运算将关系运算的结果进行">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Python的逻辑值与关系运算、逻辑运算">
+<meta property="og:url" content="https://www.g2022cyk.top/2019/11/18/Python%E7%9A%84%E9%80%BB%E8%BE%91%E8%BF%90%E7%AE%97/">
+<meta property="og:site_name" content="程俞客&amp;称心号">
+<meta property="og:description" content="逻辑值（布尔值）逻辑值只有两个，一个代表成立，一个代表不成立。 一个是英文True,另外一个是英文False，注意大小写敏感。 而在计算机中，为了方便使用，True对应一个数值1，False对应一个数值0。 可以print(int(True))  和print(int(False))进行验证。 逻辑运算在需要将逻辑结果进行叠加时，单纯的关系运算很多时候力不从心。就需要有逻辑运算将关系运算的结果进行">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2019-11-18T09:43:33.000Z">
+<meta property="article:modified_time" content="2025-08-02T13:48:26.348Z">
+<meta property="article:author" content="程小客">
+<meta property="article:tag" content="Python编程">
+<meta name="twitter:card" content="summary">
+
+    <meta name="keywords" content="程俞客称心号">
+
+
+<title >Python的逻辑值与关系运算、逻辑运算</title>
+
+<!-- Favicon -->
+
+    <link href='/img/%E7%A7%B0%E5%BF%83%E5%8F%B7.png?v=2.2.6' rel='icon' type='image/png' sizes='16x16' ></link>
+
+
+    <link href='/img/%E7%A7%B0%E5%BF%83%E5%8F%B7.png?v=2.2.6' rel='icon' type='image/png' sizes='32x32' ></link>
+
+
+
+
+<!-- Plugin -->
+
+
+
+
+    
+<link rel="stylesheet" href="/css/plugins/bootstrap.row.css">
+
+    
+<link rel="stylesheet" href="https://unpkg.com/@fancyapps/ui@4.0/dist/fancybox.css">
+
+    
+    
+
+
+
+
+<!-- Icon -->
+
+    
+<link rel="stylesheet" href="/css/plugins/font-awesome.min.css">
+
+
+
+
+<!-- Variable -->
+<script>window.ASYNC_CONFIG = {"hostname":"www.g2022cyk.top","author":"程小客","root":"/","typed_text":null,"theme_version":"2.2.6","theme":{"switch":true,"default":"auto","language":"zh-Hans"},"favicon":{"logo":"img/称心号.png","icon16":"img/称心号.png","icon32":"img/称心号.png","apple_touch_icon":null,"webmanifest":null,"visibilitychange":false,"hidden":"/failure.ico","show_text":"(/≧▽≦/)咦！又好了！","hide_text":"(●—●)喔哟，崩溃啦！"},"i18n":{"placeholder":"搜索文章...","empty":"找不到您查询的内容: ${query}","hits":"找到 ${hits} 条结果","hits_time":"找到 ${hits} 条结果（用时 ${time} 毫秒）","author":"本文作者：","copyright_link":"本文链接：","copyright_license_title":"版权声明：","copyright_license_content":"本博客所有文章除特别声明外，均默认采用 undefined 许可协议。","copy_success":"复制成功","copy_failure":"复制失败","open_read_mode":"进入阅读模式","exit_read_mode":"退出阅读模式","notice_outdate_message":"距离上次更新已经 undefined 天了, 文章内容可能已经过时。","sticky":"置顶","just":"刚刚","min":"分钟前","hour":"小时前","day":"天前","month":"个月前"},"swup":false,"plugin":{"flickr_justified_gallery":"https://unpkg.com/flickr-justified-gallery@latest/dist/fjGallery.min.js"},"icons":{"sun":"far fa-sun","moon":"far fa-moon","play":"fas fa-play","email":"far fa-envelope","next":"fas fa-arrow-right","calendar":"far fa-calendar-alt","clock":"far fa-clock","user":"far fa-user","back_top":"fas fa-arrow-up","close":"fas fa-times","search":"fas fa-search","reward":"fas fa-hand-holding-usd","toc_tag":"fas fa-th-list","read":"fas fa-book-reader","arrows":"fas fa-arrows-alt-h","double_arrows":"fas fa-angle-double-down","copy":"fas fa-copy"},"icontype":"font","highlight":{"plugin":"highlighjs","theme":true,"copy":true,"lang":true,"title":"default","height_limit":false},"toc":{"post_title":true},"live_time":{"start_time":"09/10/2019 17:00:00","prefix":"博客已萌萌哒运行 undefined 天"},"danmu":{"enable":false,"el":".trm-banner"},"covers":"/img/block.jpg","creative_commons":{"license":"by-nc-sa","language":"deed.zh-hans"},"notice_outdate":{"enable":true,"style":"flat","limit_day":365,"position":"bottom"},"search":{"enable":true,"type":"local","href":"https://www.google.com/search?q=site:","domain":null,"path":"search.json"}};</script>
+<script id="async-page-config">window.PAGE_CONFIG = {"isPost":true,"isHome":false,"postUpdate":"2025-08-02 21:48:26"};</script>
+
+<!-- Theme mode css -->
+<link data-swup-theme rel="stylesheet" href="/css/index.css?v=2.2.6" id="trm-switch-style">
+<script>
+    let defaultMode = ASYNC_CONFIG.theme.default !=='auto' ?  ASYNC_CONFIG.theme.default : (window.matchMedia("(prefers-color-scheme: light)").matches ? 'style-light' : 'style-dark')
+    let catchMode = localStorage.getItem('theme-mode') || defaultMode;
+    let type = catchMode === 'style-dark' ? 'add' : 'remove';
+    document.documentElement.classList[type]('dark')
+</script>
+
+<!-- CDN -->
+
+
+    
+    
+
+
+
+<!-- Site Analytics -->
+
+
+    
+        <!-- Baidu Analytics -->
+        <script defer>
+            var _hmt = _hmt || [];
+            (function() {
+              var hm = document.createElement("script");
+              hm.src = "https://hm.baidu.com/hm.js?09ca4f4526f7e714a253c7329a59e212";
+              var s = document.getElementsByTagName("script")[0]; 
+              s.parentNode.insertBefore(hm, s);
+            })();
+        </script>
+     
+
+    
+
+    
+ 
+<!-- hexo injector head_end start --><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8847588120991439" crossorigin="anonymous"></script><!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.3.0"></head>
+
+<body>
+
+  <!-- app wrapper -->
+  <div class="trm-app-frame">
+
+    <!-- page preloader -->
+    <div class="trm-preloader">
+    <div class="trm-holder">
+        <div class="preloader">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+</div>
+    <!-- page preloader end -->
+
+    <!-- change mode preloader -->
+    <div class="trm-mode-swich-animation-frame">
+    <div class="trm-mode-swich-animation">
+        <i class="i-sun"><i class="iconfont far fa-sun"></i></i>
+        <div class="trm-horizon"></div>
+        <i class="i-moon"><i class="iconfont far fa-moon"></i></i>
+    </div>
+</div>
+    <!-- change mode preloader end -->
+
+      <!-- scroll container -->
+      <div id="trm-dynamic-content" class="trm-swup-animation">
+        <div id="trm-scroll-container" class="trm-scroll-container" style="opacity: 0">
+            <!-- top bar -->
+            <header class="trm-top-bar">
+	<div class="container">
+		<div class="trm-left-side">
+			<!-- logo -->
+<a href="/" class="trm-logo-frame trm-anima-link">
+    
+        <img alt="logo" src="/img/%E7%A7%B0%E5%BF%83%E5%8F%B7.png">
+    
+    
+        <div class="trm-logo-text">
+            Xiaoke<span>Chen</span>
+        </div>
+    
+</a>
+<!-- logo end -->
+		</div>
+		<div class="trm-right-side">
+			<!-- menu -->
+<div class="trm-menu">
+    <nav>
+        <ul>
+            
+            <li class="menu-item-has-children ">
+                <a  href="/" target="">
+                    首页
+                </a>
+                
+                <ul>
+                    
+                    <li>
+                        <a  href="https://www.shushichenxin.com" target="_blank">
+                            述事称心
+                        </a>
+                    </li>
+                    
+                </ul>
+                
+            </li>
+            
+            <li class="menu-item-has-children ">
+                <a  href="/archives/" target="">
+                    归档
+                </a>
+                
+            </li>
+            
+            <li class="menu-item-has-children ">
+                <a  href="/categories/" target="">
+                    分类
+                </a>
+                
+                <ul>
+                    
+                    <li>
+                        <a  href="/categories/%E4%B8%AD%E6%96%87%E6%9C%9F%E5%88%8A/" target="">
+                            中文
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a  href="/categories/%E8%8B%B1%E6%96%87%E6%9C%9F%E5%88%8A/" target="">
+                            英文
+                        </a>
+                    </li>
+                    
+                </ul>
+                
+            </li>
+            
+            <li class="menu-item-has-children ">
+                <a  href="/tags/" target="">
+                    标签
+                </a>
+                
+            </li>
+            
+            <li class="menu-item-has-children ">
+                <a  href="/links/" target="">
+                    友链
+                </a>
+                
+            </li>
+            
+            <li class="menu-item-has-children ">
+                <a  href="/about/" target="">
+                    关于
+                </a>
+                
+                <ul>
+                    
+                    <li>
+                        <a  href="/about/" target="">
+                            关于我
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a  href="https://www.shushichenxin.com/about/" target="_blank">
+                            关于述事称心
+                        </a>
+                    </li>
+                    
+                </ul>
+                
+            </li>
+            
+        </ul>
+    </nav>
+</div>
+<!-- menu end -->
+			
+    <!-- mode switcher place -->
+    <div class="trm-mode-switcher-place">
+        <div class="trm-mode-switcher">
+            <i class="iconfont far fa-sun"></i>
+            <input class="tgl tgl-light" id="trm-swich" type="checkbox">
+            <label class="trm-swich" for="trm-swich"></label>
+            <i class="iconfont far fa-moon"></i>
+        </div>
+    </div>
+    <!-- mode switcher place end -->
+
+			
+    
+    <div id="trm-search-btn" class="trm-search-btn">
+        <i class="iconfont fas fa-search"></i>
+    </div>
+     
+
+		</div>
+		<div class="trm-menu-btn">
+			<span></span>
+		</div>
+	</div>
+</header>
+            <!-- top bar end -->
+
+            <!-- body -->
+            
+<div class="trm-content-start">
+    <!-- banner -->
+    <div class="trm-banner">
+    
+    <!-- banner cover -->
+    <img style="object-position:top;object-fit:cover;" alt="banner" class="trm-banner-cover" src="/img/banner.png">
+    <!-- banner cover end -->
+    
+
+    <!-- banner content -->
+    <div class="trm-banner-content trm-overlay">
+        <div class="container">
+            <div class="row">
+                
+                <div class="col-lg-4"></div>
+                
+                <div class="col-lg-8">
+
+                    <!-- banner title -->
+                    <div class="trm-banner-text ">
+                        <div class="trm-label trm-mb-20">
+                            NEWS LETTER
+                        </div>
+                        <h1 class="trm-mb-30 trm-hsmb-font">
+                            Python的逻辑值与关系运算、逻辑运算
+                        </h1>
+
+                        
+                            <ul class="trm-breadcrumbs trm-label">
+                                <li>
+                                    <a href="/" class="trm-anima-link">Home</a>
+                                </li>
+                                <li>
+                                    <span>
+                                        2019
+                                    </span>
+                                </li>
+                            </ul>
+                        
+                    </div>
+                    <!-- banner title end -->
+
+                    <!-- scroll hint -->
+                    <span id="scroll-triger" class="trm-scroll-hint-frame">
+                        <div class="trm-scroll-hint"></div>
+                        <span class="trm-label">Scroll down</span>
+                    </span>
+                    <!-- scroll hint end -->
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- banner content end -->
+</div>
+    <!-- banner end -->
+    <div class="container">
+        <div class="row">
+            
+                <div class="trm-page-sidebar col-lg-4 hidden-sm">
+                    <!-- main card -->
+                    <div class="trm-main-card-frame trm-sidebar">
+    <div class="trm-main-card"> 
+        <!-- card header -->
+<div class="trm-mc-header">
+    <div class="trm-avatar-frame trm-mb-20">
+        <img alt="Avatar" class="trm-avatar" src="/img/%E5%B1%9E%E5%AE%9E%E8%AF%9A%E5%BF%83.jpg">
+    </div>
+    <h5 class="trm-name trm-mb-15">
+        程小客
+    </h5>
+    
+</div>
+<!-- card header end -->
+        <!-- sidebar social -->
+
+<div class="trm-divider trm-mb-40 trm-mt-40"></div>
+<div class="trm-social">
+    
+        <a href="https://github.com/cykzht" title="Github" rel="nofollow" target="_blank">
+            <i class="iconfont fab fa-github"></i>
+        </a>
+    
+        <a href="https://space.bilibili.com/122529890" title="Bilibili" rel="nofollow" target="_blank">
+            <i class="iconfont fab fa-vimeo-v"></i>
+        </a>
+    
+</div>
+
+<!-- sidebar social end -->
+        <!-- info -->
+<div class="trm-divider trm-mb-40 trm-mt-40"></div>
+<ul class="trm-table trm-mb-20">
+    
+        <li>
+            <div class="trm-label">
+                地址:
+            </div>
+            <div class="trm-label trm-label-light">
+                帝都
+            </div>
+        </li>
+    
+</ul>
+<!-- info end -->
+
+        
+    <div class="trm-divider trm-mb-40 trm-mt-40"></div>
+    <!-- action button -->
+    <div class="text-center">
+        <a href="mailto:chengxiaoke@shushichenxin.com" class="trm-btn">
+            联系我
+            <i class="iconfont far fa-envelope"></i>
+        </a>
+    </div>
+    <!-- action button end -->
+
+    </div>
+</div>
+                    <!-- main card end -->
+                </div>
+            
+            <div class="trm-page-content col-lg-8">
+                <div id="trm-content" class="trm-content">
+                    <div class="trm-post-info row hidden-sm">
+    <div class="col-sm-4">
+        <div class="trm-card trm-label trm-label-light text-center">
+            <i class="iconfont far fa-calendar-alt trm-icon"></i><br>
+            11/18
+        </div>
+    </div>
+    <div class="col-sm-4">
+        <div class="trm-card trm-label trm-label-light text-center">
+            <i class="iconfont far fa-clock trm-icon"></i><br>
+            17:43
+        </div>
+    </div>
+    <div class="col-sm-4">
+        <div id="post-author" class="trm-card trm-label trm-label-light text-center">
+            <i class="iconfont far fa-user trm-icon"></i><br>
+            程小客
+        </div>
+    </div>
+</div>
+<div class="trm-card ">
+    <article id="article-container" class="trm-publication">
+    <h1 id="逻辑值（布尔值）"><a href="#逻辑值（布尔值）" class="headerlink" title="逻辑值（布尔值）"></a>逻辑值（布尔值）</h1><p>逻辑值只有两个，一个代表成立，一个代表不成立。</p>
+<p>一个是英文True,另外一个是英文False，注意大小写敏感。</p>
+<p>而在计算机中，为了方便使用，True对应一个数值1，False对应一个数值0。</p>
+<p>可以print(int(True))  和print(int(False))进行验证。</p>
+<h1 id="逻辑运算"><a href="#逻辑运算" class="headerlink" title="逻辑运算"></a>逻辑运算</h1><p>在需要将逻辑结果进行叠加时，单纯的关系运算很多时候力不从心。就需要有逻辑运算将关系运算的结果进行结合。</p>
+<p>逻辑运算在很多时候相当于语文语法中的连词，如并且、或者等。</p>
+<p>逻辑运算符有三个</p>
+<p>逻辑非运算：not</p>
+<p>逻辑与运算（并且）：and</p>
+<p>逻辑或运算（或者）：or</p>
+<h1 id="非运算结果"><a href="#非运算结果" class="headerlink" title="非运算结果"></a>非运算结果</h1><table>
+<thead>
+<tr>
+<th align="center">a的值</th>
+<th align="center">非运算结果（not a）</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">True</td>
+<td align="center">False</td>
+</tr>
+<tr>
+<td align="center">False</td>
+<td align="center">True</td>
+</tr>
+</tbody></table>
+<h1 id="与（并且）运算结果"><a href="#与（并且）运算结果" class="headerlink" title="与（并且）运算结果"></a>与（并且）运算结果</h1><table>
+<thead>
+<tr>
+<th><strong>a</strong></th>
+<th><strong>b</strong></th>
+<th><strong>a and b</strong>的结果</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>True</td>
+<td>True</td>
+<td>True</td>
+</tr>
+<tr>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr>
+<td>False</td>
+<td>True</td>
+<td>False</td>
+</tr>
+<tr>
+<td>False</td>
+<td>False</td>
+<td>False</td>
+</tr>
+</tbody></table>
+<p>即左右两边有False结果即为False。</p>
+<h1 id="或（或者）运算结果"><a href="#或（或者）运算结果" class="headerlink" title="或（或者）运算结果"></a>或（或者）运算结果</h1><table>
+<thead>
+<tr>
+<th><strong>a</strong></th>
+<th><strong>b</strong></th>
+<th><strong>a or b</strong>的结果</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>True</td>
+<td>True</td>
+<td>True</td>
+</tr>
+<tr>
+<td>True</td>
+<td>False</td>
+<td>True</td>
+</tr>
+<tr>
+<td>False</td>
+<td>True</td>
+<td>True</td>
+</tr>
+<tr>
+<td>False</td>
+<td>False</td>
+<td>False</td>
+</tr>
+</tbody></table>
+<p>即左右两边有True结果即为True。</p>
+<h1 id="关系运算和逻辑运算结合举例"><a href="#关系运算和逻辑运算结合举例" class="headerlink" title="关系运算和逻辑运算结合举例"></a>关系运算和逻辑运算结合举例</h1><p>如：</p>
+<p>a &#x3D; 10 &gt; 5 and 5 &gt; 1即相当于 a &#x3D; True and True，最后结果为：True</p>
+<p>这个写法也是最标准的。或者的用法也类似。</p>
+<p>其实上面的例子在Python也可以写成a &#x3D; 10 &gt; 5 &gt; 1，最后的结果为True</p>
+<p>因为上面的例子在Python里被特殊解释为a &#x3D; 10 &gt; 5 and 5 &gt; 1，这个是语法定义的。注意C等语言无法按照这个方式执行。</p>
+<p>但是，也要注意，如果你的式子是：a &#x3D; (10 &gt; 5) &gt; 1，这个则相当于a &#x3D; True &gt; 1也就是a &#x3D; 1 &gt; 1最后的运算结果为False。</p>
+<p>也就是如果指定了分步运算，就必须按照分步的结果进行运算。</p>
+<h1 id="思考练习"><a href="#思考练习" class="headerlink" title="思考练习"></a>思考练习</h1><h2 id="最高成绩题"><a href="#最高成绩题" class="headerlink" title="最高成绩题"></a>最高成绩题</h2><h3 id="题目解析"><a href="#题目解析" class="headerlink" title="题目解析"></a>题目解析</h3><p><strong>期中考试，考试科目只有3门（假设而已），输入这三门的成绩，输出其中有几门达到了优秀（我们定义的优秀仍然为100-90这个分数段，当然我们的成绩输入是符合逻辑的，即最高100分，最低0分）</strong></p>
+<p>这道题的意思就是判断输入的这三个成绩是否高于90分，即达到优秀的标准</p>
+<h3 id="输入并拆分列表"><a href="#输入并拆分列表" class="headerlink" title="输入并拆分列表"></a>输入并拆分列表</h3><p>我们需要输入三科的成绩，这三个数要在一行里面，我们就要使用<strong>split</strong>的列表</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">a = <span class="built_in">input</span>(<span class="string">&quot;输入三门科目的成绩：&quot;</span>)</span><br><span class="line">b = a.split(<span class="string">&quot; &quot;</span>)</span><br><span class="line">c = <span class="built_in">int</span>(b[<span class="number">0</span>])</span><br><span class="line">d = <span class="built_in">int</span>(b[<span class="number">1</span>])</span><br><span class="line">e = <span class="built_in">int</span>(b[<span class="number">2</span>])</span><br></pre></td></tr></table></figure>
+
+<h3 id="成绩比较"><a href="#成绩比较" class="headerlink" title="成绩比较"></a>成绩比较</h3><p>这里我们就要用到<strong>逻辑</strong>运算了，这里我们定义，如果成绩大于90，就满足条件，则为优秀，反馈值为1；如果低于90，就不满足条件，反馈值为0</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">f = c&gt;=<span class="number">90</span></span><br><span class="line">g = d&gt;=<span class="number">90</span></span><br><span class="line">h = e&gt;=<span class="number">90</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="结果的输出"><a href="#结果的输出" class="headerlink" title="结果的输出"></a>结果的输出</h3><p>每一科输出的结果都只能是0或1，把这些数加起来就能求出几科达到优秀，最后输出，把这些数值加起来</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">i = <span class="built_in">int</span>(f) + <span class="built_in">int</span>(g) + <span class="built_in">int</span>(h)</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">str</span>(i)+<span class="string">&quot;门优秀&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+<h3 id="代码示例"><a href="#代码示例" class="headerlink" title="代码示例"></a>代码示例</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#成绩是否优秀，逻辑运算</span></span><br><span class="line">a = <span class="built_in">input</span>(<span class="string">&quot;输入三门科目的成绩：&quot;</span>)</span><br><span class="line">b = a.split(<span class="string">&quot; &quot;</span>)</span><br><span class="line">c = <span class="built_in">int</span>(b[<span class="number">0</span>])</span><br><span class="line">d = <span class="built_in">int</span>(b[<span class="number">1</span>])</span><br><span class="line">e = <span class="built_in">int</span>(b[<span class="number">2</span>])</span><br><span class="line">f = c&gt;=<span class="number">90</span></span><br><span class="line">g = d&gt;=<span class="number">90</span></span><br><span class="line">h = e&gt;=<span class="number">90</span></span><br><span class="line">i = <span class="built_in">int</span>(f) + <span class="built_in">int</span>(g) + <span class="built_in">int</span>(h)</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">str</span>(i)+<span class="string">&quot;门优秀&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+
+</article>
+    
+    
+
+<ul class="trm-post-copyright">
+    <li class="trm-post-copyright-author">
+        <strong>本文作者：</strong>
+        程小客
+    </li>
+    <li class="trm-post-copyright-link">
+        <strong>本文链接：</strong>
+        <a id="original-link" href="https://www.g2022cyk.top/2019/11/18/Python的逻辑运算/" title="Python的逻辑值与关系运算、逻辑运算">https://www.g2022cyk.top/2019/11/18/Python的逻辑运算/</a>
+    </li>
+    <li class="trm-post-copyright-license">
+        <strong>版权声明：</strong>
+        本博客所有文章除特别声明外，均默认采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh-hans" target="_blank" rel="noopener" title="CC BY-NC-SA 4.0 ">CC BY-NC-SA 4.0</a> 许可协议。
+    </li>
+</ul>
+
+
+</div>
+<div class="trm-post-next-prev row">
+    <div class="col-lg-12">
+        <!-- title -->
+        <h5 class="trm-title-with-divider">
+            其他文章
+            <span data-number="02"></span>
+        </h5>
+    </div>
+    
+        <div class="col-lg-6">
+    <div class="trm-blog-card trm-scroll-animation">
+        <a href="/2019/11/20/%E5%88%86%E6%94%AF%E8%AF%AD%E5%8F%A5/" class="trm-cover-frame trm-anima-link">
+            
+            
+                <div class="trm-cover-img" data-random-img></div>
+            
+        </a>
+        
+        <div class="trm-card-descr">
+            <div class="trm-label trm-category trm-mb-20">
+                <a href=" /categories/%E4%B8%AD%E6%96%87%E6%9C%9F%E5%88%8A/">
+                    中文期刊
+                </a>
+            </div>
+            <h5>
+                <a href="/2019/11/20/%E5%88%86%E6%94%AF%E8%AF%AD%E5%8F%A5/" class="trm-anima-link">
+                    Python的分支语句if的用法
+                </a>
+            </h5>
+            <div class="trm-divider trm-mb-20 trm-mt-20"></div>
+            <ul class="trm-card-data trm-label">
+                <li>19/11/20</li>
+                <li>17:43</li>
+                
+                
+            </ul>
+        </div>
+    </div>
+</div>
+    
+    
+        <div class="col-lg-6">
+    <div class="trm-blog-card trm-scroll-animation">
+        <a href="/2019/10/14/%E5%B0%8F%E9%B1%BC%E6%B8%B8%E6%B3%B3%E9%A2%98%E7%9B%AE%E8%AF%A6%E8%A7%A3/" class="trm-cover-frame trm-anima-link">
+            
+            
+                <div class="trm-cover-img" data-random-img></div>
+            
+        </a>
+        
+        <div class="trm-card-descr">
+            <div class="trm-label trm-category trm-mb-20">
+                <a href=" /categories/%E4%B8%AD%E6%96%87%E6%9C%9F%E5%88%8A/">
+                    中文期刊
+                </a>
+            </div>
+            <h5>
+                <a href="/2019/10/14/%E5%B0%8F%E9%B1%BC%E6%B8%B8%E6%B3%B3%E9%A2%98%E7%9B%AE%E8%AF%A6%E8%A7%A3/" class="trm-anima-link">
+                    小鱼游泳题目详解
+                </a>
+            </h5>
+            <div class="trm-divider trm-mb-20 trm-mt-20"></div>
+            <ul class="trm-card-data trm-label">
+                <li>19/10/14</li>
+                <li>22:12</li>
+                
+                
+            </ul>
+        </div>
+    </div>
+</div>
+    
+</div>
+
+    
+
+    <div id="giscus-wrap" class="trm-card trm-scroll-animation comment-container"></div>
+<script data-swup-reload-script>
+    function loadGiscus() {
+        let nowTheme = document.documentElement.classList.contains('dark') ? 'transparent_dark' : 'light'
+        const config = {
+            src: 'https://giscus.app/client.js',
+            "data-repo": 'cykzht/cykzht.github.io',
+            "data-repo-id": 'MDEwOlJlcG9zaXRvcnkyMDI3MjY0OTg=',
+            "data-category": 'Announcements',
+            "data-category-id": 'DIC_kwDODBVcYs4Cts4-',
+            "data-mapping": 'url',
+            "data-reactions-enabled": '1',
+            "data-emit-metadata": '0',
+            "data-theme": nowTheme,
+            "data-lang": 'zh-CN',
+            crossorigin: "anonymous",
+            async: true
+        }
+        let ele = document.createElement('script')
+        for (let key in config) {
+            ele.setAttribute(key, config[key])
+        }
+        document.getElementById('giscus-wrap').insertAdjacentElement('afterbegin', ele)
+    }
+
+    function changeGiscusTheme() {
+        let theme = document.documentElement.classList.contains('dark') ? 'transparent_dark' : 'light'
+
+        function sendMessage(message) {
+            const iframe = document.querySelector('iframe.giscus-frame');
+            if (!iframe) return;
+            iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+        }
+
+        sendMessage({
+            setConfig: {
+                theme: theme
+            }
+        });
+    }
+
+    loadGiscus();
+</script>
+
+
+
+                    <div class="trm-divider footer-divider"></div>
+
+                    <!-- footer -->
+                    <footer class="trm-footer-card trm-scroll-animation">
+
+    
+        <div class="trm-footer-item">
+            <a rel="noopener" href="https://beian.miit.gov.cn/" target="_blank">京ICP备2022028753号-1</a>
+        </div>
+    
+
+    
+        <div class="trm-footer-item">
+            <span>© 2019 - 2025</span>
+            <span class="footer-separator"data-separator=" · "></span>
+            <span class="trm-accent-color">程小客</span>
+        </div>
+    
+
+      
+
+    
+        <div class="trm-footer-item blog-run-long"></div>
+     
+
+     
+</footer>
+                    <!-- footer end -->
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+            <!-- body end -->
+
+            
+
+    <div id="post-toc" class="trm-post-toc">
+      <div class="trm-post-toc-header">
+        目录导航
+				<span id="post-toc-top">
+					置顶
+				</span>
+      </div>
+      <div class="trm-post-toc-content">
+        <ol class="trm-toc"><li class="trm-toc-item trm-toc-level-1" title="逻辑值（布尔值）"><a rel="nofollow" class="trm-toc-link" href="#逻辑值（布尔值）"><span class="trm-toc-number">1.</span> <span class="trm-toc-text">逻辑值（布尔值）</span></a></li><li class="trm-toc-item trm-toc-level-1" title="逻辑运算"><a rel="nofollow" class="trm-toc-link" href="#逻辑运算"><span class="trm-toc-number">2.</span> <span class="trm-toc-text">逻辑运算</span></a></li><li class="trm-toc-item trm-toc-level-1" title="非运算结果"><a rel="nofollow" class="trm-toc-link" href="#非运算结果"><span class="trm-toc-number">3.</span> <span class="trm-toc-text">非运算结果</span></a></li><li class="trm-toc-item trm-toc-level-1" title="与（并且）运算结果"><a rel="nofollow" class="trm-toc-link" href="#与（并且）运算结果"><span class="trm-toc-number">4.</span> <span class="trm-toc-text">与（并且）运算结果</span></a></li><li class="trm-toc-item trm-toc-level-1" title="或（或者）运算结果"><a rel="nofollow" class="trm-toc-link" href="#或（或者）运算结果"><span class="trm-toc-number">5.</span> <span class="trm-toc-text">或（或者）运算结果</span></a></li><li class="trm-toc-item trm-toc-level-1" title="关系运算和逻辑运算结合举例"><a rel="nofollow" class="trm-toc-link" href="#关系运算和逻辑运算结合举例"><span class="trm-toc-number">6.</span> <span class="trm-toc-text">关系运算和逻辑运算结合举例</span></a></li><li class="trm-toc-item trm-toc-level-1" title="思考练习"><a rel="nofollow" class="trm-toc-link" href="#思考练习"><span class="trm-toc-number">7.</span> <span class="trm-toc-text">思考练习</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-2" title="最高成绩题"><a rel="nofollow" class="trm-toc-link" href="#最高成绩题"><span class="trm-toc-number">7.1.</span> <span class="trm-toc-text">最高成绩题</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-3" title="题目解析"><a rel="nofollow" class="trm-toc-link" href="#题目解析"><span class="trm-toc-number">7.1.1.</span> <span class="trm-toc-text">题目解析</span></a></li><li class="trm-toc-item trm-toc-level-3" title="输入并拆分列表"><a rel="nofollow" class="trm-toc-link" href="#输入并拆分列表"><span class="trm-toc-number">7.1.2.</span> <span class="trm-toc-text">输入并拆分列表</span></a></li><li class="trm-toc-item trm-toc-level-3" title="成绩比较"><a rel="nofollow" class="trm-toc-link" href="#成绩比较"><span class="trm-toc-number">7.1.3.</span> <span class="trm-toc-text">成绩比较</span></a></li><li class="trm-toc-item trm-toc-level-3" title="结果的输出"><a rel="nofollow" class="trm-toc-link" href="#结果的输出"><span class="trm-toc-number">7.1.4.</span> <span class="trm-toc-text">结果的输出</span></a></li><li class="trm-toc-item trm-toc-level-3" title="代码示例"><a rel="nofollow" class="trm-toc-link" href="#代码示例"><span class="trm-toc-number">7.1.5.</span> <span class="trm-toc-text">代码示例</span></a></li></ol></li></ol></li></ol>
+      </div>
+    </div>
+
+            
+<div class="trm-fixed-container">
+    
+        <div class="trm-fixed-btn post-toc-btn" data-title="目录">
+            <i class="iconfont fas fa-th-list"></i>
+        </div>
+    
+    
+        <div class="trm-fixed-btn" data-title="阅读模式" onclick="asyncFun.switchReadMode()">
+            <i class="iconfont fas fa-book-reader"></i>
+        </div>
+    
+    
+    <div id="trm-back-top" class="trm-fixed-btn" data-title="回到顶部">
+        <i class="iconfont fas fa-arrow-up"></i>
+    </div>
+</div>
+        </div>
+      </div>
+      <!-- scroll container end -->
+  </div>
+  <!-- app wrapper end -->
+
+  
+    <div class="trm-search-popup">
+        <div class="trm-search-wrapper">
+            <div class="form trm-search-form">
+                <div class="trm-search-input-icon">
+                    <i class="iconfont fas fa-search"></i>
+                </div>
+                <input class="trm-search-input" type="text" placeholder="搜索文章...">
+                <div class="trm-search-btn-close">
+                    <i class="iconfont fas fa-times"></i>
+                </div>
+            </div>
+            <div class="trm-search-result-container">
+                <div class="trm-search-empty">
+                    请输入关键词进行搜索
+                </div>
+            </div>
+            <div class="trm-search-footer">
+                <div class="trm-search-stats"></div>
+                <ul class="trm-search-commands">
+                    <li>
+                        <kbd class="command-palette-commands-key">
+                            <svg width="15" height="15" aria-label="Escape key" role="img">
+                                <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                    stroke-width="1.2">
+                                    <path
+                                        d="M13.6167 8.936c-.1065.3583-.6883.962-1.4875.962-.7993 0-1.653-.9165-1.653-2.1258v-.5678c0-1.2548.7896-2.1016 1.653-2.1016.8634 0 1.3601.4778 1.4875 1.0724M9 6c-.1352-.4735-.7506-.9219-1.46-.8972-.7092.0246-1.344.57-1.344 1.2166s.4198.8812 1.3445.9805C8.465 7.3992 8.968 7.9337 9 8.5c.032.5663-.454 1.398-1.4595 1.398C6.6593 9.898 6 9 5.963 8.4851m-1.4748.5368c-.2635.5941-.8099.876-1.5443.876s-1.7073-.6248-1.7073-2.204v-.4603c0-1.0416.721-2.131 1.7073-2.131.9864 0 1.6425 1.031 1.5443 2.2492h-2.956">
+                                    </path>
+                                </g>
+                            </svg>
+                        </kbd>
+                        <span class="command-palette-Label">to close</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+  <!-- Plugin -->
+
+
+
+
+    
+    
+<script src="https://unpkg.com/@fancyapps/ui@4.0/dist/fancybox.umd.js"></script>
+
+    
+
+    
+
+    
+        
+<script src="https://unpkg.com/hexo-generator-searchdb@1.4.0/dist/search.js"></script>
+
+        <script src="/js/plugins/local_search.js?v=2.2.6"></script>
+    
+
+    <!-- 数学公式 -->
+    
+
+    <!-- 评论插件 -->
+    
+        
+
+        
+    
+
+		
+
+
+
+
+    <!-- Service Worker -->
+    
+    <!-- baidu push -->
+    
+
+
+<script id="async-script" src="/js/main.js?v=2.2.6"></script>
+
+<!-- CDN -->
+
+
+    
+
+    
+
+    
+
+
+
+</body>
+
+</html>

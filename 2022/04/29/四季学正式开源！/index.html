@@ -1,0 +1,808 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="x5-fullscreen" content="true">
+<meta name="full-screen" content="yes">
+<meta name="theme-color" content="#317EFB" />
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=0" name="viewport">
+<meta name="description" content="四季学已正式发布并保持开源！ 1https:&#x2F;&#x2F;github.com&#x2F;cykzht&#x2F;season-zhixue  介绍四季学——退学网，可以绕过某学网的限制，获取到自己真实的成绩。 正如它的名字一样，这是一个会变换四季的程序，每次启动的时候都会重新选择一个季节作为主题季节。     程序原理网站整体的框架使用Python+Flask+HTML+layui开发，本项目的诞生离不开zhixuewan">
+<meta property="og:type" content="article">
+<meta property="og:title" content="四季学正式开源！">
+<meta property="og:url" content="https://www.g2022cyk.top/2022/04/29/%E5%9B%9B%E5%AD%A3%E5%AD%A6%E6%AD%A3%E5%BC%8F%E5%BC%80%E6%BA%90%EF%BC%81/">
+<meta property="og:site_name" content="程俞客&amp;称心号">
+<meta property="og:description" content="四季学已正式发布并保持开源！ 1https:&#x2F;&#x2F;github.com&#x2F;cykzht&#x2F;season-zhixue  介绍四季学——退学网，可以绕过某学网的限制，获取到自己真实的成绩。 正如它的名字一样，这是一个会变换四季的程序，每次启动的时候都会重新选择一个季节作为主题季节。     程序原理网站整体的框架使用Python+Flask+HTML+layui开发，本项目的诞生离不开zhixuewan">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://www.g2022cyk.top/img/404.jpg">
+<meta property="og:image" content="https://www.g2022cyk.top/img/404.jpg">
+<meta property="og:image" content="https://www.g2022cyk.top/img/404.jpg">
+<meta property="og:image" content="https://www.g2022cyk.top/img/404.jpg">
+<meta property="og:image" content="https://www.g2022cyk.top/img/404.jpg">
+<meta property="article:published_time" content="2022-04-29T00:59:07.000Z">
+<meta property="article:modified_time" content="2025-08-02T13:49:43.530Z">
+<meta property="article:author" content="程小客">
+<meta property="article:tag" content="退学网">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://www.g2022cyk.top/img/404.jpg">
+
+    <meta name="keywords" content="程俞客称心号">
+
+
+<title >四季学正式开源！</title>
+
+<!-- Favicon -->
+
+    <link href='/img/%E7%A7%B0%E5%BF%83%E5%8F%B7.png?v=2.2.6' rel='icon' type='image/png' sizes='16x16' ></link>
+
+
+    <link href='/img/%E7%A7%B0%E5%BF%83%E5%8F%B7.png?v=2.2.6' rel='icon' type='image/png' sizes='32x32' ></link>
+
+
+
+
+<!-- Plugin -->
+
+
+
+
+    
+<link rel="stylesheet" href="/css/plugins/bootstrap.row.css">
+
+    
+<link rel="stylesheet" href="https://unpkg.com/@fancyapps/ui@4.0/dist/fancybox.css">
+
+    
+    
+
+
+
+
+<!-- Icon -->
+
+    
+<link rel="stylesheet" href="/css/plugins/font-awesome.min.css">
+
+
+
+
+<!-- Variable -->
+<script>window.ASYNC_CONFIG = {"hostname":"www.g2022cyk.top","author":"程小客","root":"/","typed_text":null,"theme_version":"2.2.6","theme":{"switch":true,"default":"auto","language":"zh-Hans"},"favicon":{"logo":"img/称心号.png","icon16":"img/称心号.png","icon32":"img/称心号.png","apple_touch_icon":null,"webmanifest":null,"visibilitychange":false,"hidden":"/failure.ico","show_text":"(/≧▽≦/)咦！又好了！","hide_text":"(●—●)喔哟，崩溃啦！"},"i18n":{"placeholder":"搜索文章...","empty":"找不到您查询的内容: ${query}","hits":"找到 ${hits} 条结果","hits_time":"找到 ${hits} 条结果（用时 ${time} 毫秒）","author":"本文作者：","copyright_link":"本文链接：","copyright_license_title":"版权声明：","copyright_license_content":"本博客所有文章除特别声明外，均默认采用 undefined 许可协议。","copy_success":"复制成功","copy_failure":"复制失败","open_read_mode":"进入阅读模式","exit_read_mode":"退出阅读模式","notice_outdate_message":"距离上次更新已经 undefined 天了, 文章内容可能已经过时。","sticky":"置顶","just":"刚刚","min":"分钟前","hour":"小时前","day":"天前","month":"个月前"},"swup":false,"plugin":{"flickr_justified_gallery":"https://unpkg.com/flickr-justified-gallery@latest/dist/fjGallery.min.js"},"icons":{"sun":"far fa-sun","moon":"far fa-moon","play":"fas fa-play","email":"far fa-envelope","next":"fas fa-arrow-right","calendar":"far fa-calendar-alt","clock":"far fa-clock","user":"far fa-user","back_top":"fas fa-arrow-up","close":"fas fa-times","search":"fas fa-search","reward":"fas fa-hand-holding-usd","toc_tag":"fas fa-th-list","read":"fas fa-book-reader","arrows":"fas fa-arrows-alt-h","double_arrows":"fas fa-angle-double-down","copy":"fas fa-copy"},"icontype":"font","highlight":{"plugin":"highlighjs","theme":true,"copy":true,"lang":true,"title":"default","height_limit":false},"toc":{"post_title":true},"live_time":{"start_time":"09/10/2019 17:00:00","prefix":"博客已萌萌哒运行 undefined 天"},"danmu":{"enable":false,"el":".trm-banner"},"covers":"/img/block.jpg","creative_commons":{"license":"by-nc-sa","language":"deed.zh-hans"},"notice_outdate":{"enable":true,"style":"flat","limit_day":365,"position":"bottom"},"search":{"enable":true,"type":"local","href":"https://www.google.com/search?q=site:","domain":null,"path":"search.json"}};</script>
+<script id="async-page-config">window.PAGE_CONFIG = {"isPost":true,"isHome":false,"postUpdate":"2025-08-02 21:49:43"};</script>
+
+<!-- Theme mode css -->
+<link data-swup-theme rel="stylesheet" href="/css/index.css?v=2.2.6" id="trm-switch-style">
+<script>
+    let defaultMode = ASYNC_CONFIG.theme.default !=='auto' ?  ASYNC_CONFIG.theme.default : (window.matchMedia("(prefers-color-scheme: light)").matches ? 'style-light' : 'style-dark')
+    let catchMode = localStorage.getItem('theme-mode') || defaultMode;
+    let type = catchMode === 'style-dark' ? 'add' : 'remove';
+    document.documentElement.classList[type]('dark')
+</script>
+
+<!-- CDN -->
+
+
+    
+    
+
+
+
+<!-- Site Analytics -->
+
+
+    
+        <!-- Baidu Analytics -->
+        <script defer>
+            var _hmt = _hmt || [];
+            (function() {
+              var hm = document.createElement("script");
+              hm.src = "https://hm.baidu.com/hm.js?09ca4f4526f7e714a253c7329a59e212";
+              var s = document.getElementsByTagName("script")[0]; 
+              s.parentNode.insertBefore(hm, s);
+            })();
+        </script>
+     
+
+    
+
+    
+ 
+<!-- hexo injector head_end start --><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8847588120991439" crossorigin="anonymous"></script><!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.3.0"></head>
+
+<body>
+
+  <!-- app wrapper -->
+  <div class="trm-app-frame">
+
+    <!-- page preloader -->
+    <div class="trm-preloader">
+    <div class="trm-holder">
+        <div class="preloader">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+</div>
+    <!-- page preloader end -->
+
+    <!-- change mode preloader -->
+    <div class="trm-mode-swich-animation-frame">
+    <div class="trm-mode-swich-animation">
+        <i class="i-sun"><i class="iconfont far fa-sun"></i></i>
+        <div class="trm-horizon"></div>
+        <i class="i-moon"><i class="iconfont far fa-moon"></i></i>
+    </div>
+</div>
+    <!-- change mode preloader end -->
+
+      <!-- scroll container -->
+      <div id="trm-dynamic-content" class="trm-swup-animation">
+        <div id="trm-scroll-container" class="trm-scroll-container" style="opacity: 0">
+            <!-- top bar -->
+            <header class="trm-top-bar">
+	<div class="container">
+		<div class="trm-left-side">
+			<!-- logo -->
+<a href="/" class="trm-logo-frame trm-anima-link">
+    
+        <img alt="logo" src="/img/%E7%A7%B0%E5%BF%83%E5%8F%B7.png">
+    
+    
+        <div class="trm-logo-text">
+            Xiaoke<span>Chen</span>
+        </div>
+    
+</a>
+<!-- logo end -->
+		</div>
+		<div class="trm-right-side">
+			<!-- menu -->
+<div class="trm-menu">
+    <nav>
+        <ul>
+            
+            <li class="menu-item-has-children ">
+                <a  href="/" target="">
+                    首页
+                </a>
+                
+                <ul>
+                    
+                    <li>
+                        <a  href="https://www.shushichenxin.com" target="_blank">
+                            述事称心
+                        </a>
+                    </li>
+                    
+                </ul>
+                
+            </li>
+            
+            <li class="menu-item-has-children ">
+                <a  href="/archives/" target="">
+                    归档
+                </a>
+                
+            </li>
+            
+            <li class="menu-item-has-children ">
+                <a  href="/categories/" target="">
+                    分类
+                </a>
+                
+                <ul>
+                    
+                    <li>
+                        <a  href="/categories/%E4%B8%AD%E6%96%87%E6%9C%9F%E5%88%8A/" target="">
+                            中文
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a  href="/categories/%E8%8B%B1%E6%96%87%E6%9C%9F%E5%88%8A/" target="">
+                            英文
+                        </a>
+                    </li>
+                    
+                </ul>
+                
+            </li>
+            
+            <li class="menu-item-has-children ">
+                <a  href="/tags/" target="">
+                    标签
+                </a>
+                
+            </li>
+            
+            <li class="menu-item-has-children ">
+                <a  href="/links/" target="">
+                    友链
+                </a>
+                
+            </li>
+            
+            <li class="menu-item-has-children ">
+                <a  href="/about/" target="">
+                    关于
+                </a>
+                
+                <ul>
+                    
+                    <li>
+                        <a  href="/about/" target="">
+                            关于我
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a  href="https://www.shushichenxin.com/about/" target="_blank">
+                            关于述事称心
+                        </a>
+                    </li>
+                    
+                </ul>
+                
+            </li>
+            
+        </ul>
+    </nav>
+</div>
+<!-- menu end -->
+			
+    <!-- mode switcher place -->
+    <div class="trm-mode-switcher-place">
+        <div class="trm-mode-switcher">
+            <i class="iconfont far fa-sun"></i>
+            <input class="tgl tgl-light" id="trm-swich" type="checkbox">
+            <label class="trm-swich" for="trm-swich"></label>
+            <i class="iconfont far fa-moon"></i>
+        </div>
+    </div>
+    <!-- mode switcher place end -->
+
+			
+    
+    <div id="trm-search-btn" class="trm-search-btn">
+        <i class="iconfont fas fa-search"></i>
+    </div>
+     
+
+		</div>
+		<div class="trm-menu-btn">
+			<span></span>
+		</div>
+	</div>
+</header>
+            <!-- top bar end -->
+
+            <!-- body -->
+            
+<div class="trm-content-start">
+    <!-- banner -->
+    <div class="trm-banner">
+    
+    <!-- banner cover -->
+    <img style="object-position:top;object-fit:cover;" alt="banner" class="trm-banner-cover" src="/img/banner.png">
+    <!-- banner cover end -->
+    
+
+    <!-- banner content -->
+    <div class="trm-banner-content trm-overlay">
+        <div class="container">
+            <div class="row">
+                
+                <div class="col-lg-4"></div>
+                
+                <div class="col-lg-8">
+
+                    <!-- banner title -->
+                    <div class="trm-banner-text ">
+                        <div class="trm-label trm-mb-20">
+                            NEWS LETTER
+                        </div>
+                        <h1 class="trm-mb-30 trm-hsmb-font">
+                            四季学正式开源！
+                        </h1>
+
+                        
+                            <ul class="trm-breadcrumbs trm-label">
+                                <li>
+                                    <a href="/" class="trm-anima-link">Home</a>
+                                </li>
+                                <li>
+                                    <span>
+                                        2022
+                                    </span>
+                                </li>
+                            </ul>
+                        
+                    </div>
+                    <!-- banner title end -->
+
+                    <!-- scroll hint -->
+                    <span id="scroll-triger" class="trm-scroll-hint-frame">
+                        <div class="trm-scroll-hint"></div>
+                        <span class="trm-label">Scroll down</span>
+                    </span>
+                    <!-- scroll hint end -->
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- banner content end -->
+</div>
+    <!-- banner end -->
+    <div class="container">
+        <div class="row">
+            
+                <div class="trm-page-sidebar col-lg-4 hidden-sm">
+                    <!-- main card -->
+                    <div class="trm-main-card-frame trm-sidebar">
+    <div class="trm-main-card"> 
+        <!-- card header -->
+<div class="trm-mc-header">
+    <div class="trm-avatar-frame trm-mb-20">
+        <img alt="Avatar" class="trm-avatar" src="/img/%E5%B1%9E%E5%AE%9E%E8%AF%9A%E5%BF%83.jpg">
+    </div>
+    <h5 class="trm-name trm-mb-15">
+        程小客
+    </h5>
+    
+</div>
+<!-- card header end -->
+        <!-- sidebar social -->
+
+<div class="trm-divider trm-mb-40 trm-mt-40"></div>
+<div class="trm-social">
+    
+        <a href="https://github.com/cykzht" title="Github" rel="nofollow" target="_blank">
+            <i class="iconfont fab fa-github"></i>
+        </a>
+    
+        <a href="https://space.bilibili.com/122529890" title="Bilibili" rel="nofollow" target="_blank">
+            <i class="iconfont fab fa-vimeo-v"></i>
+        </a>
+    
+</div>
+
+<!-- sidebar social end -->
+        <!-- info -->
+<div class="trm-divider trm-mb-40 trm-mt-40"></div>
+<ul class="trm-table trm-mb-20">
+    
+        <li>
+            <div class="trm-label">
+                地址:
+            </div>
+            <div class="trm-label trm-label-light">
+                帝都
+            </div>
+        </li>
+    
+</ul>
+<!-- info end -->
+
+        
+    <div class="trm-divider trm-mb-40 trm-mt-40"></div>
+    <!-- action button -->
+    <div class="text-center">
+        <a href="mailto:chengxiaoke@shushichenxin.com" class="trm-btn">
+            联系我
+            <i class="iconfont far fa-envelope"></i>
+        </a>
+    </div>
+    <!-- action button end -->
+
+    </div>
+</div>
+                    <!-- main card end -->
+                </div>
+            
+            <div class="trm-page-content col-lg-8">
+                <div id="trm-content" class="trm-content">
+                    <div class="trm-post-info row hidden-sm">
+    <div class="col-sm-4">
+        <div class="trm-card trm-label trm-label-light text-center">
+            <i class="iconfont far fa-calendar-alt trm-icon"></i><br>
+            04/29
+        </div>
+    </div>
+    <div class="col-sm-4">
+        <div class="trm-card trm-label trm-label-light text-center">
+            <i class="iconfont far fa-clock trm-icon"></i><br>
+            08:59
+        </div>
+    </div>
+    <div class="col-sm-4">
+        <div id="post-author" class="trm-card trm-label trm-label-light text-center">
+            <i class="iconfont far fa-user trm-icon"></i><br>
+            程小客
+        </div>
+    </div>
+</div>
+<div class="trm-card ">
+    <article id="article-container" class="trm-publication">
+    <p><img src="https://11.g2022cyk.top:8081/wp-content/uploads/2022/03/1648472807-%E5%B1%95%E7%A4%BA-%E6%89%8B%E6%9C%BA-scaled.jpg" alt="img"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
+<p>四季学已正式发布并保持<a target="_blank" rel="noopener" href="https://github.com/cykzht/season-zhixue">开源</a>！</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://github.com/cykzht/season-zhixue</span><br></pre></td></tr></table></figure>
+
+<h1 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h1><p>四季学——退学网，可以绕过某学网的限制，获取到自己真实的成绩。</p>
+<p>正如它的名字一样，这是一个会变换四季的程序，每次启动的时候都会重新选择一个季节作为主题季节。</p>
+<p><img src="https://11.g2022cyk.top:8081/wp-content/uploads/2022/03/1648472921-%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20220328204155.png" alt="img"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
+<p><img src="https://11.g2022cyk.top:8081/wp-content/uploads/2022/03/1648472878-%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20220328204132.png" alt="img"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
+<p><img src="https://11.g2022cyk.top:8081/wp-content/uploads/2022/03/1648472889-%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20220328204139.png" alt="img"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
+<p><img src="https://11.g2022cyk.top:8081/wp-content/uploads/2022/03/1648472866-%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20220328204202.png" alt="img"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
+<h1 id="程序原理"><a href="#程序原理" class="headerlink" title="程序原理"></a>程序原理</h1><p>网站整体的框架使用Python+Flask+HTML+layui开发，本项目的诞生离不开<a target="_blank" rel="noopener" href="https://github.com/anwenhu/zhixuewang-python">zhixuewang</a>、<a target="_blank" rel="noopener" href="https://gitee.com/sentsin/layui">layui</a>、<a href="https://gitee.com/link?target=https://github.com/pallets/flask">Flask</a>等开源库，感谢这些开发者为开源社区做出的贡献。</p>
+<h2 id="Web服务"><a href="#Web服务" class="headerlink" title="Web服务"></a>Web服务</h2><p>使用Python的Flask框架返回页面信息。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">form flask <span class="keyword">import</span> *</span><br><span class="line"></span><br><span class="line">app = Flask(__name__, static_url_path=<span class="string">&#x27;&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="meta">@app.route(<span class="params"><span class="string">&#x27;/&#x27;</span>, methods=[<span class="string">&#x27;GET&#x27;</span>, <span class="string">&#x27;POST&#x27;</span>]</span>)</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">index</span>():</span><br><span class="line">    <span class="string">&quot;&quot;&quot;返回登录页面&quot;&quot;&quot;</span></span><br><span class="line">	<span class="keyword">return</span> render_template(<span class="string">&#x27;index.html&#x27;</span>)</span><br><span class="line">app.run(host=<span class="string">&#x27;0.0.0.0&#x27;</span>, port=<span class="number">5000</span>)</span><br></pre></td></tr></table></figure>
+
+<h2 id="季节更新"><a href="#季节更新" class="headerlink" title="季节更新"></a>季节更新</h2><p>随机选取一个季节，返回相对应的颜色和背景图片。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">get_season</span>():</span><br><span class="line">    <span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line"><span class="string">    随机选取季节</span></span><br><span class="line"><span class="string">    slog: 季节名</span></span><br><span class="line"><span class="string">    pic: 背景图片</span></span><br><span class="line"><span class="string">    color: 主题颜色</span></span><br><span class="line"><span class="string">    &#x27;&#x27;&#x27;</span></span><br><span class="line">    ran = random.randint(<span class="number">1</span>, <span class="number">4</span>)</span><br><span class="line">    <span class="keyword">if</span> (ran == <span class="number">1</span>):</span><br><span class="line">        slog = <span class="string">&#x27;退学网——秋&#x27;</span></span><br><span class="line">        color = <span class="string">&#x27;#e5bc00&#x27;</span></span><br><span class="line">        pic = <span class="string">&#x27;images/web_login_bg1.webp&#x27;</span></span><br><span class="line">    <span class="keyword">elif</span> (ran == <span class="number">2</span>):</span><br><span class="line">        slog = <span class="string">&#x27;退学网——夏&#x27;</span></span><br><span class="line">        color = <span class="string">&#x27;#50e45c&#x27;</span></span><br><span class="line">        pic = <span class="string">&#x27;images/web_login_bg2.webp&#x27;</span></span><br><span class="line">    <span class="keyword">elif</span> (ran == <span class="number">3</span>):</span><br><span class="line">        slog = <span class="string">&#x27;退学网——春&#x27;</span></span><br><span class="line">        color = <span class="string">&#x27;#f1beea&#x27;</span></span><br><span class="line">        pic = <span class="string">&#x27;images/web_login_bg3.webp&#x27;</span></span><br><span class="line">    <span class="keyword">elif</span> (ran == <span class="number">4</span>):</span><br><span class="line">        slog = <span class="string">&#x27;退学网——冬&#x27;</span></span><br><span class="line">        color = <span class="string">&#x27;#27A9E3&#x27;</span></span><br><span class="line">        pic = <span class="string">&#x27;images/web_login_bg4.webp&#x27;</span></span><br><span class="line">    <span class="keyword">return</span> slog, pic, color</span><br></pre></td></tr></table></figure>
+
+<h2 id="用户登录"><a href="#用户登录" class="headerlink" title="用户登录"></a>用户登录</h2><p>获取网站的session以及用户信息（来自<a target="_blank" rel="noopener" href="https://github.com/anwenhu/zhixuewang-python">zhixuewang</a>库）。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> zhixuewang.student <span class="keyword">import</span> StudentAccount</span><br><span class="line"><span class="keyword">from</span> zhixuewang.exceptions <span class="keyword">import</span> UserNotFoundError, UserOrPassError, LoginError, RoleError</span><br><span class="line"><span class="keyword">import</span> json</span><br><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">get_session</span>(<span class="params">username: <span class="built_in">str</span>, password: <span class="built_in">str</span>, _<span class="built_in">type</span>: <span class="built_in">str</span> = <span class="string">&quot;auto&quot;</span></span>) -&gt; requests.Session:</span><br><span class="line">    <span class="string">&quot;&quot;&quot;通过用户名和密码获取session&quot;&quot;&quot;</span></span><br><span class="line">    <span class="keyword">if</span> <span class="built_in">len</span>(password) != <span class="number">32</span>:</span><br><span class="line">        password = encode_password(password)</span><br><span class="line">    session = get_basic_session()</span><br><span class="line">    r = session.get(Url.SSO_URL)</span><br><span class="line">    json_obj = json.loads(r.text.strip().replace(<span class="string">&quot;\\&quot;</span>, <span class="string">&quot;&quot;</span>).replace(<span class="string">&quot;&#x27;&quot;</span>, <span class="string">&quot;&quot;</span>)[<span class="number">1</span>:-<span class="number">1</span>])</span><br><span class="line">    <span class="keyword">if</span> json_obj[<span class="string">&quot;code&quot;</span>] != <span class="number">1000</span>:</span><br><span class="line">        <span class="keyword">raise</span> LoginError(json_obj[<span class="string">&quot;data&quot;</span>])</span><br><span class="line">    lt = json_obj[<span class="string">&quot;data&quot;</span>][<span class="string">&quot;lt&quot;</span>]</span><br><span class="line">    execution = json_obj[<span class="string">&quot;data&quot;</span>][<span class="string">&quot;execution&quot;</span>]</span><br><span class="line">    r = session.get(Url.SSO_URL,</span><br><span class="line">                    params=&#123;</span><br><span class="line">                        <span class="string">&quot;encode&quot;</span>: <span class="string">&quot;true&quot;</span>,</span><br><span class="line">                        <span class="string">&quot;sourceappname&quot;</span>: <span class="string">&quot;tkyh,tkyh&quot;</span>,</span><br><span class="line">                        <span class="string">&quot;_eventId&quot;</span>: <span class="string">&quot;submit&quot;</span>,</span><br><span class="line">                        <span class="string">&quot;appid&quot;</span>: <span class="string">&quot;zx-container-client&quot;</span>,</span><br><span class="line">                        <span class="string">&quot;client&quot;</span>: <span class="string">&quot;web&quot;</span>,</span><br><span class="line">                        <span class="string">&quot;type&quot;</span>: <span class="string">&quot;loginByNormal&quot;</span>,</span><br><span class="line">                        <span class="string">&quot;key&quot;</span>: _<span class="built_in">type</span>,</span><br><span class="line">                        <span class="string">&quot;lt&quot;</span>: lt,</span><br><span class="line">                        <span class="string">&quot;execution&quot;</span>: execution,</span><br><span class="line">                        <span class="string">&quot;customLogoutUrl&quot;</span>: <span class="string">&quot;https://www.zhixue.com/login.html&quot;</span>,</span><br><span class="line">                        <span class="string">&quot;username&quot;</span>: username,</span><br><span class="line">                        <span class="string">&quot;password&quot;</span>: password</span><br><span class="line">                    &#125;)</span><br><span class="line">    json_obj = json.loads(r.text.strip().replace(<span class="string">&quot;\\&quot;</span>, <span class="string">&quot;&quot;</span>).replace(<span class="string">&quot;&#x27;&quot;</span>, <span class="string">&quot;&quot;</span>)[<span class="number">1</span>:-<span class="number">1</span>])</span><br><span class="line">    <span class="keyword">if</span> json_obj[<span class="string">&quot;code&quot;</span>] != <span class="number">1001</span>:</span><br><span class="line">        <span class="keyword">if</span> json_obj[<span class="string">&quot;code&quot;</span>] == <span class="number">1002</span>:</span><br><span class="line">            <span class="keyword">raise</span> UserOrPassError()</span><br><span class="line">        <span class="keyword">if</span> json_obj[<span class="string">&quot;code&quot;</span>] == <span class="number">2009</span>:</span><br><span class="line">            <span class="keyword">raise</span> UserNotFoundError()</span><br><span class="line">        <span class="keyword">raise</span> LoginError(json_obj[<span class="string">&quot;data&quot;</span>])</span><br><span class="line">    ticket = json_obj[<span class="string">&quot;data&quot;</span>][<span class="string">&quot;st&quot;</span>]</span><br><span class="line">    session.post(Url.SERVICE_URL, data=&#123;</span><br><span class="line">        <span class="string">&quot;action&quot;</span>: <span class="string">&quot;login&quot;</span>,</span><br><span class="line">        <span class="string">&quot;ticket&quot;</span>: ticket,</span><br><span class="line">    &#125;)</span><br><span class="line">    session.cookies.<span class="built_in">set</span>(<span class="string">&quot;uname&quot;</span>, base64_encode(username))</span><br><span class="line">    session.cookies.<span class="built_in">set</span>(<span class="string">&quot;pwd&quot;</span>, base64_encode(password))</span><br><span class="line">    <span class="keyword">return</span> session</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">login_student</span>(<span class="params">username: <span class="built_in">str</span>, password: <span class="built_in">str</span></span>) -&gt; StudentAccount:</span><br><span class="line">    <span class="string">&quot;&quot;&quot;通过用户名和密码登录学生账号&quot;&quot;&quot;</span></span><br><span class="line">    session = get_session(username, password)</span><br><span class="line">    student = StudentAccount(session)</span><br><span class="line">    <span class="keyword">return</span> student.set_base_info()</span><br><span class="line"></span><br><span class="line">zxw = login_student(username, password)</span><br></pre></td></tr></table></figure>
+
+<h2 id="登录实现"><a href="#登录实现" class="headerlink" title="登录实现"></a>登录实现</h2><p>使用HTML的form表单提交POST请求，返回到Flask并进行登录。</p>
+<h3 id="前端"><a href="#前端" class="headerlink" title="前端"></a>前端</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">class</span>=<span class="string">&quot;layui-form&quot;</span> <span class="attr">method</span>=<span class="string">&quot;post&quot;</span> <span class="attr">action</span>=<span class="string">&quot;&#123;&#123;url_for(&#x27;index&#x27;)&#125;&#125;&quot;</span> <span class="attr">autocomplete</span>=<span class="string">&quot;on&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;layui-form-item&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">input</span> <span class="attr">name</span>=<span class="string">&quot;username&quot;</span> <span class="attr">class</span>=<span class="string">&quot;layui-input&quot;</span> <span class="attr">style</span>=<span class="string">&quot;height: 45px;&quot;</span> <span class="attr">placeholder</span>=<span class="string">&quot;用户名&quot;</span> <span class="attr">required</span>=<span class="string">&quot;&quot;</span> <span class="attr">type</span>=<span class="string">&quot;text&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;layui-form-item&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">input</span> <span class="attr">name</span>=<span class="string">&quot;password&quot;</span> <span class="attr">class</span>=<span class="string">&quot;layui-input&quot;</span> <span class="attr">style</span>=<span class="string">&quot;height: 45px;&quot;</span> <span class="attr">placeholder</span>=<span class="string">&quot;密码&quot;</span> <span class="attr">required</span>=<span class="string">&quot;&quot;</span> <span class="attr">type</span>=<span class="string">&quot;password&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">label</span>&gt;</span>记住用户名<span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;checkbox&quot;</span> <span class="attr">name</span>=<span class="string">&quot;remember_user&quot;</span> <span class="attr">id</span>=<span class="string">&quot;remember_user&quot;</span> <span class="attr">lay-skin</span>=<span class="string">&quot;primary&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;layui-form-item&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">p</span> <span class="attr">align</span>=<span class="string">&quot;center&quot;</span> <span class="attr">style</span>=<span class="string">&quot;font-size:20px;color:#FF0000&quot;</span>&gt;</span>&#123;&#123; message &#125;&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;layui-form-item&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">input</span> <span class="attr">lay-submit</span> <span class="attr">lay-filter</span>=<span class="string">&quot;login&quot;</span> <span class="attr">class</span>=<span class="string">&quot;layui-btn layui-btn-lg layui-btn-normal&quot;</span> <span class="attr">value</span>=<span class="string">&quot;登录&quot;</span></span></span><br><span class="line"><span class="tag">            <span class="attr">style</span>=<span class="string">&quot;width:100%;font-size: 18px;height: 48px;&quot;</span> <span class="attr">type</span>=<span class="string">&quot;submit&quot;</span> <span class="attr">name</span>=<span class="string">&quot;login&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="后端"><a href="#后端" class="headerlink" title="后端"></a>后端</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> zhixuewang <span class="keyword">import</span> login_student</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> (request.method == <span class="string">&#x27;POST&#x27;</span>):</span><br><span class="line">	username = request.form.get(<span class="string">&quot;username&quot;</span>)</span><br><span class="line">    password = request.form.get(<span class="string">&quot;password&quot;</span>)</span><br><span class="line">    session[<span class="string">&#x27;username&#x27;</span>] = username</span><br><span class="line">    session[<span class="string">&#x27;password&#x27;</span>] = password</span><br><span class="line"></span><br><span class="line">username = session.get(<span class="string">&#x27;username&#x27;</span>)</span><br><span class="line">password = session.get(<span class="string">&#x27;password&#x27;</span>)</span><br><span class="line">exam = request.args.get(<span class="string">&#x27;exam&#x27;</span>)</span><br><span class="line"><span class="keyword">try</span>:</span><br><span class="line">	zxw = login_student(username, password)</span><br><span class="line">    exams = zxw.get_exams()</span><br><span class="line"><span class="keyword">except</span> Exception <span class="keyword">as</span> e:</span><br><span class="line">    session.clear()</span><br><span class="line">    <span class="keyword">return</span> render_template(<span class="string">&quot;index.html&quot;</span>, season=season, message=e)</span><br></pre></td></tr></table></figure>
+
+<h2 id="获取考试"><a href="#获取考试" class="headerlink" title="获取考试"></a>获取考试</h2><p>调用API获取所有考试。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> json</span><br><span class="line"><span class="keyword">from</span> typing <span class="keyword">import</span> <span class="type">List</span>, <span class="type">Tuple</span>, <span class="type">Union</span></span><br><span class="line"><span class="keyword">from</span> zhixuewang.models <span class="keyword">import</span> (ExtendedList, Exam, Mark, Subject, SubjectScore,</span><br><span class="line">                               StuClass, School, Sex, Grade, Phase, ExtraRank, ExamInfo,</span><br><span class="line">                               StuPerson, StuPersonList)</span><br><span class="line"><span class="keyword">from</span> zhixuewang.exceptions <span class="keyword">import</span> UserDefunctError, PageConnectionError, PageInformationError</span><br><span class="line"><span class="keyword">from</span> json <span class="keyword">import</span> JSONDecodeError</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">get_page_exam</span>(<span class="params">self, page_index: <span class="built_in">int</span></span>) -&gt; <span class="type">Tuple</span>[ExtendedList[Exam], <span class="built_in">bool</span>]:</span><br><span class="line">        <span class="string">&quot;&quot;&quot;获取指定页数的考试列表&quot;&quot;&quot;</span></span><br><span class="line">        <span class="variable language_">self</span>.update_login_status()</span><br><span class="line">        exams: ExtendedList[Exam] = ExtendedList()</span><br><span class="line">        r = <span class="variable language_">self</span>._session.get(Url.GET_EXAM_URL,</span><br><span class="line">                              params=&#123;</span><br><span class="line">                                  <span class="string">&quot;pageIndex&quot;</span>: page_index,</span><br><span class="line">                                  <span class="string">&quot;pageSize&quot;</span>: <span class="number">10</span></span><br><span class="line">                              &#125;,</span><br><span class="line">                              headers=<span class="variable language_">self</span>._get_auth_header())</span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> r.ok:</span><br><span class="line">            <span class="keyword">raise</span> PageConnectionError(</span><br><span class="line">                <span class="string">f&quot;get_page_exam中出错, 状态码为<span class="subst">&#123;r.status_code&#125;</span>&quot;</span>)</span><br><span class="line">        <span class="keyword">try</span>:</span><br><span class="line">            json_data = r.json()[<span class="string">&quot;result&quot;</span>]</span><br><span class="line">            <span class="keyword">for</span> exam_data <span class="keyword">in</span> json_data[<span class="string">&quot;examList&quot;</span>]:</span><br><span class="line">                exam = Exam(</span><br><span class="line">                    <span class="built_in">id</span>=exam_data[<span class="string">&quot;examId&quot;</span>],</span><br><span class="line">                    name=exam_data[<span class="string">&quot;examName&quot;</span>]</span><br><span class="line">                )</span><br><span class="line">                exam.create_time = exam_data[<span class="string">&quot;examCreateDateTime&quot;</span>]</span><br><span class="line">                exams.append(exam)</span><br><span class="line">            hasNextPage: <span class="built_in">bool</span> = json_data[<span class="string">&quot;hasNextPage&quot;</span>]</span><br><span class="line">        <span class="keyword">except</span> (JSONDecodeError, KeyError) <span class="keyword">as</span> e:</span><br><span class="line">            <span class="keyword">raise</span> PageInformationError(</span><br><span class="line">                <span class="string">f&quot;get_page_exam中网页内容发生改变, 错误为<span class="subst">&#123;e&#125;</span>, 内容为\n<span class="subst">&#123;r.text&#125;</span>&quot;</span>)</span><br><span class="line">        <span class="keyword">return</span> exams, hasNextPage</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">get_exams</span>(<span class="params">self</span>) -&gt; ExtendedList[Exam]:</span><br><span class="line">        <span class="string">&quot;&quot;&quot;获取所有考试&quot;&quot;&quot;</span></span><br><span class="line">        </span><br><span class="line">        <span class="comment"># 缓存</span></span><br><span class="line">        <span class="keyword">if</span> <span class="built_in">len</span>(<span class="variable language_">self</span>.exams) &gt; <span class="number">0</span>:</span><br><span class="line">            latest_exam = <span class="variable language_">self</span>.get_latest_exam()</span><br><span class="line">            <span class="keyword">if</span> <span class="variable language_">self</span>.exams[<span class="number">0</span>].<span class="built_in">id</span> == latest_exam.<span class="built_in">id</span>:</span><br><span class="line">                <span class="keyword">return</span> <span class="variable language_">self</span>.exams</span><br><span class="line"></span><br><span class="line">        exams: ExtendedList[Exam] = ExtendedList()</span><br><span class="line">        i = <span class="number">1</span></span><br><span class="line">        check = <span class="literal">True</span></span><br><span class="line">        <span class="keyword">while</span> check:</span><br><span class="line">            cur_exams, check = <span class="variable language_">self</span>.get_page_exam(i)</span><br><span class="line">            exams.extend(cur_exams)</span><br><span class="line">            i += <span class="number">1</span></span><br><span class="line">        <span class="variable language_">self</span>.exams = exams</span><br><span class="line">        <span class="keyword">return</span> exams</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="获取成绩"><a href="#获取成绩" class="headerlink" title="获取成绩"></a>获取成绩</h2><p>调用API获取最新一次的成绩或指定的考试成绩（该版本为魔改版）。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> json</span><br><span class="line"><span class="keyword">from</span> typing <span class="keyword">import</span> <span class="type">List</span>, <span class="type">Tuple</span>, <span class="type">Union</span></span><br><span class="line"><span class="keyword">from</span> zhixuewang.models <span class="keyword">import</span> (ExtendedList, Exam, Mark, Subject, SubjectScore,</span><br><span class="line">                               StuClass, School, Sex, Grade, Phase, ExtraRank, ExamInfo,</span><br><span class="line">                               StuPerson, StuPersonList)</span><br><span class="line"><span class="keyword">from</span> zhixuewang.exceptions <span class="keyword">import</span> UserDefunctError, PageConnectionError, PageInformationError</span><br><span class="line"><span class="keyword">from</span> json <span class="keyword">import</span> JSONDecodeError</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">__get_self_mark</span>(<span class="params">self, exam: Exam, has_total_score: <span class="built_in">bool</span></span>) -&gt; Mark:</span><br><span class="line">        <span class="variable language_">self</span>.update_login_status()</span><br><span class="line">        mark = Mark(exam=exam, person=<span class="variable language_">self</span>)</span><br><span class="line">        r = <span class="variable language_">self</span>._session.get(Url.GET_MARK_URL,</span><br><span class="line">                              params=&#123;<span class="string">&quot;examId&quot;</span>: exam.<span class="built_in">id</span>&#125;,</span><br><span class="line">                              headers=<span class="variable language_">self</span>._get_auth_header())</span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> r.ok:</span><br><span class="line">            <span class="keyword">raise</span> PageConnectionError(</span><br><span class="line">                <span class="string">f&quot;__get_self_mark中出错, 状态码为<span class="subst">&#123;r.status_code&#125;</span>&quot;</span>)</span><br><span class="line">        <span class="keyword">try</span>:</span><br><span class="line">            json_data = r.json()</span><br><span class="line">            json_data = json_data[<span class="string">&quot;result&quot;</span>]</span><br><span class="line">            <span class="comment"># exam.name = json_data[&quot;total_score&quot;][&quot;examName&quot;]</span></span><br><span class="line">            <span class="comment"># exam.id = json_data[&quot;total_score&quot;][&quot;examId&quot;]</span></span><br><span class="line">            <span class="keyword">for</span> subject <span class="keyword">in</span> json_data[<span class="string">&quot;paperList&quot;</span>]:</span><br><span class="line">                subject_score = SubjectScore(</span><br><span class="line">                    score=subject[<span class="string">&quot;userScore&quot;</span>],</span><br><span class="line">                    subject=Subject(</span><br><span class="line">                        <span class="built_in">id</span>=subject[<span class="string">&quot;paperId&quot;</span>],</span><br><span class="line">                        name=subject[<span class="string">&quot;subjectName&quot;</span>],</span><br><span class="line">                        code=subject[<span class="string">&quot;subjectCode&quot;</span>],</span><br><span class="line">                        standard_score=subject[<span class="string">&quot;standardScore&quot;</span>],</span><br><span class="line">                        exam_id=exam.<span class="built_in">id</span>),</span><br><span class="line">                    person=StuPerson()</span><br><span class="line">                )</span><br><span class="line">                <span class="comment"># subject_score.create_time = 0</span></span><br><span class="line">                mark.append(subject_score)</span><br><span class="line">            total_score = json_data.get(<span class="string">&quot;totalScore&quot;</span>)</span><br><span class="line">            <span class="keyword">if</span> has_total_score <span class="keyword">and</span> total_score:</span><br><span class="line">                subject_score = SubjectScore(</span><br><span class="line">                    score=total_score[<span class="string">&quot;userScore&quot;</span>],</span><br><span class="line">                    subject=Subject(</span><br><span class="line">                        <span class="built_in">id</span>=<span class="string">&quot;&quot;</span>,</span><br><span class="line">                        name=total_score[<span class="string">&quot;subjectName&quot;</span>],</span><br><span class="line">                        code=<span class="string">&quot;99&quot;</span>,</span><br><span class="line">                        standard_score=total_score[<span class="string">&quot;standardScore&quot;</span>],</span><br><span class="line">                        exam_id=exam.<span class="built_in">id</span>,</span><br><span class="line">                    ),</span><br><span class="line">                    person=StuPerson(),</span><br><span class="line">                    class_rank=exam.class_rank,</span><br><span class="line">                    grade_rank=exam.grade_rank</span><br><span class="line">                )</span><br><span class="line">                <span class="comment"># subject_score.create_time = 0</span></span><br><span class="line">                mark.append(subject_score)</span><br><span class="line">            <span class="variable language_">self</span>._set_exam_rank(mark)</span><br><span class="line">        <span class="keyword">except</span> (JSONDecodeError, KeyError) <span class="keyword">as</span> e:</span><br><span class="line">            <span class="keyword">if</span>(<span class="keyword">not</span> mark):</span><br><span class="line">                <span class="keyword">raise</span> PageInformationError(<span class="string">&quot;本次考场的成绩不可查询&quot;</span>)</span><br><span class="line">            <span class="keyword">return</span> mark</span><br><span class="line">        <span class="keyword">return</span> mark</span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">get_self_mark</span>(<span class="params">self,</span></span><br><span class="line"><span class="params">                      exam_data: <span class="type">Union</span>[Exam, <span class="built_in">str</span>] = <span class="string">&quot;&quot;</span>,</span></span><br><span class="line"><span class="params">                      has_total_score: <span class="built_in">bool</span> = <span class="literal">True</span></span>) -&gt; Mark:</span><br><span class="line">        <span class="string">&quot;&quot;&quot;获取指定考试的成绩&quot;&quot;&quot;</span></span><br><span class="line">        exam = <span class="variable language_">self</span>.get_exam(exam_data)</span><br><span class="line">        <span class="keyword">if</span> exam <span class="keyword">is</span> <span class="literal">None</span>:</span><br><span class="line">            <span class="keyword">return</span> Mark()</span><br><span class="line">        <span class="keyword">return</span> <span class="variable language_">self</span>.__get_self_mark(exam, has_total_score)</span><br><span class="line"></span><br><span class="line">exams = zxw.get_exams()</span><br><span class="line">a = zxw.get_self_mark(exams[<span class="number">0</span>])</span><br></pre></td></tr></table></figure>
+
+<h2 id="表格呈现"><a href="#表格呈现" class="headerlink" title="表格呈现"></a>表格呈现</h2><p>根据返回来的成绩生成表格。</p>
+<h3 id="前端-1"><a href="#前端-1" class="headerlink" title="前端"></a>前端</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;login&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">center</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">table</span> <span class="attr">border</span>=<span class="string">&quot;1px&quot;</span> <span class="attr">width</span>=<span class="string">&quot;300&quot;</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">caption</span> <span class="attr">style</span>=<span class="string">&quot;font-size: 23px&quot;</span>&gt;</span></span><br><span class="line">        &#123;&#123;title&#125;&#125;</span><br><span class="line">      <span class="tag">&lt;/<span class="name">caption</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">tr</span> <span class="attr">style</span>=<span class="string">&quot;background: #ee0000&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">th</span> <span class="attr">style</span>=<span class="string">&quot;font-size: 20px&quot;</span>&gt;</span>科目<span class="tag">&lt;/<span class="name">th</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">th</span> <span class="attr">style</span>=<span class="string">&quot;font-size: 20px&quot;</span>&gt;</span>分数<span class="tag">&lt;/<span class="name">th</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">      &#123;% for row in data %&#125;</span><br><span class="line">      <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">th</span> <span class="attr">style</span>=<span class="string">&quot;font-size: 20px&quot;</span>&gt;</span>&#123;&#123; row[0] &#125;&#125;<span class="tag">&lt;/<span class="name">th</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">th</span> <span class="attr">style</span>=<span class="string">&quot;font-size: 20px&quot;</span>&gt;</span>&#123;&#123; row[1] &#125;&#125;<span class="tag">&lt;/<span class="name">th</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">      &#123;% endfor %&#125;</span><br><span class="line">    <span class="tag">&lt;/<span class="name">table</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">center</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="后端-1"><a href="#后端-1" class="headerlink" title="后端"></a>后端</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> <span class="built_in">len</span>(exams) != <span class="number">0</span>:</span><br><span class="line">	data = []</span><br><span class="line">    examlist = []</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> exams:</span><br><span class="line">		data.append(i.<span class="built_in">id</span>)</span><br><span class="line">        examlist.append((i.<span class="built_in">id</span>, i.name))</span><br><span class="line">    <span class="keyword">if</span> (exam):</span><br><span class="line">    	<span class="keyword">if</span> (exam <span class="keyword">in</span> data):</span><br><span class="line">        	<span class="keyword">try</span>:</span><br><span class="line">            	a = zxw.get_self_mark(exam)</span><br><span class="line">            <span class="keyword">except</span> Exception <span class="keyword">as</span> e:</span><br><span class="line">            	<span class="keyword">return</span> render_template(<span class="string">&quot;examlist.html&quot;</span>, data=examlist, season=season, avatar=avatar, message=<span class="string">&quot;本场考试未扫描&quot;</span>)</span><br><span class="line">            msg = a.person.name+<span class="string">&#x27;-&#x27;</span>+a.exam.name</span><br><span class="line">            data = []</span><br><span class="line">            <span class="keyword">for</span> i <span class="keyword">in</span> a:</span><br><span class="line">            	<span class="keyword">if</span> (i.class_rank):</span><br><span class="line">                	data.append((i.subject.name, i.score, i.class_rank))</span><br><span class="line">                 <span class="keyword">else</span>:</span><br><span class="line">                    data.append((i.subject.name, i.score))</span><br><span class="line">            <span class="keyword">return</span> render_template(<span class="string">&quot;zhixue.html&quot;</span>, data=data, season=season, title=msg, avatar=avatar)</span><br><span class="line">		<span class="keyword">else</span>:</span><br><span class="line">            <span class="keyword">return</span> render_template(<span class="string">&quot;examlist.html&quot;</span>, data=examlist, season=season, avatar=avatar, message=<span class="string">&quot;该考试不可查询&quot;</span>)</span><br><span class="line">	<span class="keyword">else</span>:</span><br><span class="line">		<span class="keyword">return</span> render_template(<span class="string">&quot;examlist.html&quot;</span>, data=examlist, season=season, avatar=avatar)</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">	<span class="keyword">return</span> render_template(<span class="string">&quot;index.html&quot;</span>, season=season, message=<span class="string">&#x27;未检测到考试&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+<h2 id="自动登录"><a href="#自动登录" class="headerlink" title="自动登录"></a>自动登录</h2><p>使用<a target="_blank" rel="noopener" href="https://gitee.com/sentsin/layui">layui</a>的框架进行二次开发。把账号密码通过cookie的方式存储在用户设备里，每次登录的时候自动填充（有一些浏览器不支持cookie）。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br></pre></td><td class="code"><pre><span class="line">&lt;script src=<span class="string">&quot;js/jquery-3.6.0.min.js&quot;</span>&gt;&lt;/script&gt;</span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;js/jquery.cookie.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;js/layui.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">	layui.<span class="title function_">use</span>([<span class="string">&#x27;form&#x27;</span>], <span class="keyword">function</span> (<span class="params"></span>) &#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">		<span class="keyword">var</span> form = layui.<span class="property">form</span>,</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">			layer = layui.<span class="property">layer</span>;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml"></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">		<span class="comment">/*记住用户名和密码*/</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">		<span class="keyword">if</span> ($.<span class="title function_">cookie</span>(<span class="string">&quot;remember_user&quot;</span>)) &#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">			$(<span class="string">&quot;#remember_user&quot;</span>).<span class="title function_">prop</span>(<span class="string">&quot;checked&quot;</span>, <span class="literal">true</span>);</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">			form.<span class="title function_">val</span>(<span class="string">&quot;add_form&quot;</span>, &#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">				<span class="string">&quot;username&quot;</span>: $.<span class="title function_">cookie</span>(<span class="string">&quot;user_name&quot;</span>),</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">				<span class="string">&quot;password&quot;</span>: $.<span class="title function_">cookie</span>(<span class="string">&quot;user_password&quot;</span>)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">			&#125;)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">		&#125;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">		<span class="comment">// 进行登录操作</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">		form.<span class="title function_">on</span>(<span class="string">&#x27;submit(login)&#x27;</span>, <span class="keyword">function</span> (<span class="params">data</span>) &#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">			data = data.<span class="property">field</span>;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">			<span class="keyword">if</span> (data.<span class="property">username</span> == <span class="string">&#x27;&#x27;</span>) &#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">				layer.<span class="title function_">msg</span>(<span class="string">&#x27;用户名不能为空&#x27;</span>);</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">				<span class="keyword">return</span> <span class="literal">false</span>;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">			&#125;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">			<span class="keyword">if</span> (data.<span class="property">password</span> == <span class="string">&#x27;&#x27;</span>) &#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">				layer.<span class="title function_">msg</span>(<span class="string">&#x27;密码不能为空&#x27;</span>);</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">				<span class="keyword">return</span> <span class="literal">false</span>;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">			&#125;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">			<span class="comment">//勾选记住密码</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">			<span class="keyword">if</span> (data.<span class="property">remember_user</span> == <span class="string">&quot;on&quot;</span>) &#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">				<span class="keyword">var</span> user_name = data.<span class="property">username</span>;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">				<span class="keyword">var</span> user_password = data.<span class="property">password</span>;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">				$.<span class="title function_">cookie</span>(<span class="string">&quot;remember_user&quot;</span>, <span class="string">&quot;true&quot;</span>, &#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">					<span class="attr">expires</span>: <span class="number">7</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">				&#125;); <span class="comment">// 存储一个带7天期限的 cookie</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">				$.<span class="title function_">cookie</span>(<span class="string">&quot;user_name&quot;</span>, user_name, &#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">					<span class="attr">expires</span>: <span class="number">7</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">				&#125;); <span class="comment">// 存储一个带7天期限的 cookie</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">				$.<span class="title function_">cookie</span>(<span class="string">&quot;user_password&quot;</span>, user_password, &#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">					<span class="attr">expires</span>: <span class="number">7</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">				&#125;); <span class="comment">// 存储一个带7天期限的 cookie</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">			&#125; <span class="keyword">else</span> &#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">				$.<span class="title function_">cookie</span>(<span class="string">&quot;remember_user&quot;</span>, <span class="string">&quot;false&quot;</span>, &#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">					<span class="attr">expires</span>: -<span class="number">1</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">				&#125;); <span class="comment">// 删除 cookie</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">				$.<span class="title function_">cookie</span>(<span class="string">&quot;user_name&quot;</span>, <span class="string">&#x27;&#x27;</span>, &#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">					<span class="attr">expires</span>: -<span class="number">1</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">				&#125;);</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">				$.<span class="title function_">cookie</span>(<span class="string">&quot;user_password&quot;</span>, <span class="string">&#x27;&#x27;</span>, &#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">					<span class="attr">expires</span>: -<span class="number">1</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">				&#125;);</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">			&#125;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">			<span class="keyword">return</span> <span class="literal">true</span>;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">		&#125;);</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">	&#125;);</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml"></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
+
+<h1 id="使用说明"><a href="#使用说明" class="headerlink" title="使用说明"></a>使用说明</h1><h2 id="所需环境"><a href="#所需环境" class="headerlink" title="所需环境"></a>所需环境</h2><p>使用pip指令安装。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">pip3 install flask</span><br><span class="line">pip3 install zhixuewang</span><br></pre></td></tr></table></figure>
+
+<h2 id="启用程序"><a href="#启用程序" class="headerlink" title="启用程序"></a>启用程序</h2><p>1、安装好所需的库之后运行Python程序（开箱即用）。</p>
+<p>2、访问<a target="_blank" rel="noopener" href="http://127.0.0.1:5000/">http://127.0.0.1:5000/</a>访问四季学网站。</p>
+<p>3、输入某学网的账号和密码即可查询最新一次的考试成绩。</p>
+<h2 id="部署程序"><a href="#部署程序" class="headerlink" title="部署程序"></a>部署程序</h2><p>如果你要把程序运行在服务器上，建议使用WSGI方式启动。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip3 install gevent</span><br></pre></td></tr></table></figure>
+
+<p>在代码里添加</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> gevent <span class="keyword">import</span> pywsgi</span><br><span class="line"></span><br><span class="line"><span class="comment">#app.run(host=&#x27;0.0.0.0&#x27;, port=5000)</span></span><br><span class="line">server = pywsgi.WSGIServer((<span class="string">&#x27;0.0.0.0&#x27;</span>, <span class="number">5000</span>), app)</span><br><span class="line">server.serve_forever()</span><br></pre></td></tr></table></figure>
+
+<p>或者使用<a target="_blank" rel="noopener" href="https://github.com/benoitc/gunicorn">gunicorn</a>启动。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip3 install gunicorn</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gunicorn app:app</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>app是flask的启动python文件，我们这是app.py，</li>
+<li>app则是flask应用程序实例，我们app.py里实例名为app</li>
+</ul>
+<h1 id="Flask教程"><a href="#Flask教程" class="headerlink" title="Flask教程"></a>Flask教程</h1>
+</article>
+    
+    
+
+<ul class="trm-post-copyright">
+    <li class="trm-post-copyright-author">
+        <strong>本文作者：</strong>
+        程小客
+    </li>
+    <li class="trm-post-copyright-link">
+        <strong>本文链接：</strong>
+        <a id="original-link" href="https://www.g2022cyk.top/2022/04/29/四季学正式开源！/" title="四季学正式开源！">https://www.g2022cyk.top/2022/04/29/四季学正式开源！/</a>
+    </li>
+    <li class="trm-post-copyright-license">
+        <strong>版权声明：</strong>
+        本博客所有文章除特别声明外，均默认采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh-hans" target="_blank" rel="noopener" title="CC BY-NC-SA 4.0 ">CC BY-NC-SA 4.0</a> 许可协议。
+    </li>
+</ul>
+
+
+</div>
+<div class="trm-post-next-prev row">
+    <div class="col-lg-12">
+        <!-- title -->
+        <h5 class="trm-title-with-divider">
+            其他文章
+            <span data-number="02"></span>
+        </h5>
+    </div>
+    
+        <div class="col-lg-6">
+    <div class="trm-blog-card trm-scroll-animation">
+        <a href="/2022/09/09/%E4%BA%86%E8%A7%A3JDK%E3%80%81JRE%20%E4%B8%8E%20JVM/" class="trm-cover-frame trm-anima-link">
+            
+            
+                <div class="trm-cover-img" data-random-img></div>
+            
+        </a>
+        
+        <div class="trm-card-descr">
+            <div class="trm-label trm-category trm-mb-20">
+                <a href=" /categories/%E4%B8%AD%E6%96%87%E6%9C%9F%E5%88%8A/">
+                    中文期刊
+                </a>
+            </div>
+            <h5>
+                <a href="/2022/09/09/%E4%BA%86%E8%A7%A3JDK%E3%80%81JRE%20%E4%B8%8E%20JVM/" class="trm-anima-link">
+                    了解JDK、JRE 与 JVM
+                </a>
+            </h5>
+            <div class="trm-divider trm-mb-20 trm-mt-20"></div>
+            <ul class="trm-card-data trm-label">
+                <li>22/09/09</li>
+                <li>15:20</li>
+                
+                
+            </ul>
+        </div>
+    </div>
+</div>
+    
+    
+        <div class="col-lg-6">
+    <div class="trm-blog-card trm-scroll-animation">
+        <a href="/2020/04/24/%E6%89%8B%E6%9C%BA%E8%BF%90%E8%A1%8CPython/" class="trm-cover-frame trm-anima-link">
+            
+            
+                <img alt="cover" class="no-fancybox" src="https://11.g2022cyk.top:8081/wp-content/uploads/2020/04/12d7643a6033101c2a06e9072fe4cd5-1024x973.jpg">
+            
+        </a>
+        
+        <div class="trm-card-descr">
+            <div class="trm-label trm-category trm-mb-20">
+                <a href=" /categories/%E4%B8%AD%E6%96%87%E6%9C%9F%E5%88%8A/">
+                    中文期刊
+                </a>
+            </div>
+            <h5>
+                <a href="/2020/04/24/%E6%89%8B%E6%9C%BA%E8%BF%90%E8%A1%8CPython/" class="trm-anima-link">
+                    家里没有电脑？教你用手机编写Python程序
+                </a>
+            </h5>
+            <div class="trm-divider trm-mb-20 trm-mt-20"></div>
+            <ul class="trm-card-data trm-label">
+                <li>20/04/24</li>
+                <li>14:35</li>
+                
+                
+            </ul>
+        </div>
+    </div>
+</div>
+    
+</div>
+
+    
+
+    <div id="giscus-wrap" class="trm-card trm-scroll-animation comment-container"></div>
+<script data-swup-reload-script>
+    function loadGiscus() {
+        let nowTheme = document.documentElement.classList.contains('dark') ? 'transparent_dark' : 'light'
+        const config = {
+            src: 'https://giscus.app/client.js',
+            "data-repo": 'cykzht/cykzht.github.io',
+            "data-repo-id": 'MDEwOlJlcG9zaXRvcnkyMDI3MjY0OTg=',
+            "data-category": 'Announcements',
+            "data-category-id": 'DIC_kwDODBVcYs4Cts4-',
+            "data-mapping": 'url',
+            "data-reactions-enabled": '1',
+            "data-emit-metadata": '0',
+            "data-theme": nowTheme,
+            "data-lang": 'zh-CN',
+            crossorigin: "anonymous",
+            async: true
+        }
+        let ele = document.createElement('script')
+        for (let key in config) {
+            ele.setAttribute(key, config[key])
+        }
+        document.getElementById('giscus-wrap').insertAdjacentElement('afterbegin', ele)
+    }
+
+    function changeGiscusTheme() {
+        let theme = document.documentElement.classList.contains('dark') ? 'transparent_dark' : 'light'
+
+        function sendMessage(message) {
+            const iframe = document.querySelector('iframe.giscus-frame');
+            if (!iframe) return;
+            iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+        }
+
+        sendMessage({
+            setConfig: {
+                theme: theme
+            }
+        });
+    }
+
+    loadGiscus();
+</script>
+
+
+
+                    <div class="trm-divider footer-divider"></div>
+
+                    <!-- footer -->
+                    <footer class="trm-footer-card trm-scroll-animation">
+
+    
+        <div class="trm-footer-item">
+            <a rel="noopener" href="https://beian.miit.gov.cn/" target="_blank">京ICP备2022028753号-1</a>
+        </div>
+    
+
+    
+        <div class="trm-footer-item">
+            <span>© 2019 - 2025</span>
+            <span class="footer-separator"data-separator=" · "></span>
+            <span class="trm-accent-color">程小客</span>
+        </div>
+    
+
+      
+
+    
+        <div class="trm-footer-item blog-run-long"></div>
+     
+
+     
+</footer>
+                    <!-- footer end -->
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+            <!-- body end -->
+
+            
+
+    <div id="post-toc" class="trm-post-toc">
+      <div class="trm-post-toc-header">
+        目录导航
+				<span id="post-toc-top">
+					置顶
+				</span>
+      </div>
+      <div class="trm-post-toc-content">
+        <ol class="trm-toc"><li class="trm-toc-item trm-toc-level-1" title="介绍"><a rel="nofollow" class="trm-toc-link" href="#介绍"><span class="trm-toc-number">1.</span> <span class="trm-toc-text">介绍</span></a></li><li class="trm-toc-item trm-toc-level-1" title="程序原理"><a rel="nofollow" class="trm-toc-link" href="#程序原理"><span class="trm-toc-number">2.</span> <span class="trm-toc-text">程序原理</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-2" title="Web服务"><a rel="nofollow" class="trm-toc-link" href="#Web服务"><span class="trm-toc-number">2.1.</span> <span class="trm-toc-text">Web服务</span></a></li><li class="trm-toc-item trm-toc-level-2" title="季节更新"><a rel="nofollow" class="trm-toc-link" href="#季节更新"><span class="trm-toc-number">2.2.</span> <span class="trm-toc-text">季节更新</span></a></li><li class="trm-toc-item trm-toc-level-2" title="用户登录"><a rel="nofollow" class="trm-toc-link" href="#用户登录"><span class="trm-toc-number">2.3.</span> <span class="trm-toc-text">用户登录</span></a></li><li class="trm-toc-item trm-toc-level-2" title="登录实现"><a rel="nofollow" class="trm-toc-link" href="#登录实现"><span class="trm-toc-number">2.4.</span> <span class="trm-toc-text">登录实现</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-3" title="前端"><a rel="nofollow" class="trm-toc-link" href="#前端"><span class="trm-toc-number">2.4.1.</span> <span class="trm-toc-text">前端</span></a></li><li class="trm-toc-item trm-toc-level-3" title="后端"><a rel="nofollow" class="trm-toc-link" href="#后端"><span class="trm-toc-number">2.4.2.</span> <span class="trm-toc-text">后端</span></a></li></ol></li><li class="trm-toc-item trm-toc-level-2" title="获取考试"><a rel="nofollow" class="trm-toc-link" href="#获取考试"><span class="trm-toc-number">2.5.</span> <span class="trm-toc-text">获取考试</span></a></li><li class="trm-toc-item trm-toc-level-2" title="获取成绩"><a rel="nofollow" class="trm-toc-link" href="#获取成绩"><span class="trm-toc-number">2.6.</span> <span class="trm-toc-text">获取成绩</span></a></li><li class="trm-toc-item trm-toc-level-2" title="表格呈现"><a rel="nofollow" class="trm-toc-link" href="#表格呈现"><span class="trm-toc-number">2.7.</span> <span class="trm-toc-text">表格呈现</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-3" title="前端"><a rel="nofollow" class="trm-toc-link" href="#前端-1"><span class="trm-toc-number">2.7.1.</span> <span class="trm-toc-text">前端</span></a></li><li class="trm-toc-item trm-toc-level-3" title="后端"><a rel="nofollow" class="trm-toc-link" href="#后端-1"><span class="trm-toc-number">2.7.2.</span> <span class="trm-toc-text">后端</span></a></li></ol></li><li class="trm-toc-item trm-toc-level-2" title="自动登录"><a rel="nofollow" class="trm-toc-link" href="#自动登录"><span class="trm-toc-number">2.8.</span> <span class="trm-toc-text">自动登录</span></a></li></ol></li><li class="trm-toc-item trm-toc-level-1" title="使用说明"><a rel="nofollow" class="trm-toc-link" href="#使用说明"><span class="trm-toc-number">3.</span> <span class="trm-toc-text">使用说明</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-2" title="所需环境"><a rel="nofollow" class="trm-toc-link" href="#所需环境"><span class="trm-toc-number">3.1.</span> <span class="trm-toc-text">所需环境</span></a></li><li class="trm-toc-item trm-toc-level-2" title="启用程序"><a rel="nofollow" class="trm-toc-link" href="#启用程序"><span class="trm-toc-number">3.2.</span> <span class="trm-toc-text">启用程序</span></a></li><li class="trm-toc-item trm-toc-level-2" title="部署程序"><a rel="nofollow" class="trm-toc-link" href="#部署程序"><span class="trm-toc-number">3.3.</span> <span class="trm-toc-text">部署程序</span></a></li></ol></li><li class="trm-toc-item trm-toc-level-1" title="Flask教程"><a rel="nofollow" class="trm-toc-link" href="#Flask教程"><span class="trm-toc-number">4.</span> <span class="trm-toc-text">Flask教程</span></a></li></ol>
+      </div>
+    </div>
+
+            
+<div class="trm-fixed-container">
+    
+        <div class="trm-fixed-btn post-toc-btn" data-title="目录">
+            <i class="iconfont fas fa-th-list"></i>
+        </div>
+    
+    
+        <div class="trm-fixed-btn" data-title="阅读模式" onclick="asyncFun.switchReadMode()">
+            <i class="iconfont fas fa-book-reader"></i>
+        </div>
+    
+    
+    <div id="trm-back-top" class="trm-fixed-btn" data-title="回到顶部">
+        <i class="iconfont fas fa-arrow-up"></i>
+    </div>
+</div>
+        </div>
+      </div>
+      <!-- scroll container end -->
+  </div>
+  <!-- app wrapper end -->
+
+  
+    <div class="trm-search-popup">
+        <div class="trm-search-wrapper">
+            <div class="form trm-search-form">
+                <div class="trm-search-input-icon">
+                    <i class="iconfont fas fa-search"></i>
+                </div>
+                <input class="trm-search-input" type="text" placeholder="搜索文章...">
+                <div class="trm-search-btn-close">
+                    <i class="iconfont fas fa-times"></i>
+                </div>
+            </div>
+            <div class="trm-search-result-container">
+                <div class="trm-search-empty">
+                    请输入关键词进行搜索
+                </div>
+            </div>
+            <div class="trm-search-footer">
+                <div class="trm-search-stats"></div>
+                <ul class="trm-search-commands">
+                    <li>
+                        <kbd class="command-palette-commands-key">
+                            <svg width="15" height="15" aria-label="Escape key" role="img">
+                                <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                    stroke-width="1.2">
+                                    <path
+                                        d="M13.6167 8.936c-.1065.3583-.6883.962-1.4875.962-.7993 0-1.653-.9165-1.653-2.1258v-.5678c0-1.2548.7896-2.1016 1.653-2.1016.8634 0 1.3601.4778 1.4875 1.0724M9 6c-.1352-.4735-.7506-.9219-1.46-.8972-.7092.0246-1.344.57-1.344 1.2166s.4198.8812 1.3445.9805C8.465 7.3992 8.968 7.9337 9 8.5c.032.5663-.454 1.398-1.4595 1.398C6.6593 9.898 6 9 5.963 8.4851m-1.4748.5368c-.2635.5941-.8099.876-1.5443.876s-1.7073-.6248-1.7073-2.204v-.4603c0-1.0416.721-2.131 1.7073-2.131.9864 0 1.6425 1.031 1.5443 2.2492h-2.956">
+                                    </path>
+                                </g>
+                            </svg>
+                        </kbd>
+                        <span class="command-palette-Label">to close</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+  <!-- Plugin -->
+
+
+
+
+    
+    
+<script src="https://unpkg.com/@fancyapps/ui@4.0/dist/fancybox.umd.js"></script>
+
+    
+
+    
+
+    
+        
+<script src="https://unpkg.com/hexo-generator-searchdb@1.4.0/dist/search.js"></script>
+
+        <script src="/js/plugins/local_search.js?v=2.2.6"></script>
+    
+
+    <!-- 数学公式 -->
+    
+
+    <!-- 评论插件 -->
+    
+        
+
+        
+    
+
+		
+
+
+
+
+    <!-- Service Worker -->
+    
+    <!-- baidu push -->
+    
+
+
+<script id="async-script" src="/js/main.js?v=2.2.6"></script>
+
+<!-- CDN -->
+
+
+    
+
+    
+
+    
+
+
+
+</body>
+
+</html>
