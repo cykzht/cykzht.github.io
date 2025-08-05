@@ -1,817 +1,357 @@
-<!DOCTYPE html>
-<html lang="zh-CN">
-
-<head>
-  <meta http-equiv="content-type" content="text/html; charset=utf-8">
-<meta name="x5-fullscreen" content="true">
-<meta name="full-screen" content="yes">
-<meta name="theme-color" content="#317EFB" />
-<meta content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=0" name="viewport">
-<meta name="description" content="一、Arduino IDE安装 在baidu搜索Arduino，进入[Arduino官网](Arduino - Home)。   在官网的上方找到并点击software选项。   往下滑找到Legacy IDE (1.8.X)版本，虽然最新版2.0版本已经发布，但笔者只尝试过用1.8的版本进行8266的开发，据说2.0使用了VScode的编译环境，不过在笔者的电脑上它甚至没法修改语言，所以本教程还">
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>ESP8266+Arduino开发环境搭建 | 程俞客&amp;称心号</title><meta name="author" content="程小客,zhuhaitian@shushichenxin.com"><meta name="copyright" content="程小客"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="一、Arduino IDE安装 在baidu搜索Arduino，进入[Arduino官网](Arduino - Home)。   在官网的上方找到并点击software选项。   往下滑找到Legacy IDE (1.8.X)版本，虽然最新版2.0版本已经发布，但笔者只尝试过用1.8的版本进行8266的开发，据说2.0使用了VScode的编译环境，不过在笔者的电脑上它甚至没法修改语言，所以本教程还">
 <meta property="og:type" content="article">
 <meta property="og:title" content="ESP8266+Arduino开发环境搭建">
 <meta property="og:url" content="https://www.g2022cyk.top/2022/12/14/ESP8266+Arduino%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/">
 <meta property="og:site_name" content="程俞客&amp;称心号">
 <meta property="og:description" content="一、Arduino IDE安装 在baidu搜索Arduino，进入[Arduino官网](Arduino - Home)。   在官网的上方找到并点击software选项。   往下滑找到Legacy IDE (1.8.X)版本，虽然最新版2.0版本已经发布，但笔者只尝试过用1.8的版本进行8266的开发，据说2.0使用了VScode的编译环境，不过在笔者的电脑上它甚至没法修改语言，所以本教程还">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://www.g2022cyk.top/img/404.jpg">
-<meta property="og:image" content="https://www.g2022cyk.top/img/404.jpg">
-<meta property="og:image" content="https://www.g2022cyk.top/img/404.jpg">
-<meta property="og:image" content="https://www.g2022cyk.top/img/404.jpg">
-<meta property="og:image" content="https://www.g2022cyk.top/img/404.jpg">
-<meta property="og:image" content="https://www.g2022cyk.top/img/404.jpg">
-<meta property="og:image" content="https://www.g2022cyk.top/img/404.jpg">
-<meta property="og:image" content="https://www.g2022cyk.top/img/404.jpg">
-<meta property="og:image" content="https://www.g2022cyk.top/img/404.jpg">
-<meta property="og:image" content="https://www.g2022cyk.top/img/404.jpg">
-<meta property="og:image" content="https://www.g2022cyk.top/img/404.jpg">
-<meta property="og:image" content="https://www.g2022cyk.top/img/404.jpg">
-<meta property="og:image" content="https://www.g2022cyk.top/img/404.jpg">
-<meta property="og:image" content="https://www.g2022cyk.top/img/404.jpg">
-<meta property="og:image" content="https://www.g2022cyk.top/img/404.jpg">
-<meta property="og:image" content="https://www.g2022cyk.top/img/404.jpg">
-<meta property="og:image" content="https://www.g2022cyk.top/img/404.jpg">
-<meta property="og:image" content="https://www.g2022cyk.top/img/404.jpg">
+<meta property="og:image" content="https://www.g2022cyk.top/img/%E5%B1%9E%E5%AE%9E%E8%AF%9A%E5%BF%83.jpg">
 <meta property="article:published_time" content="2022-12-14T01:00:00.000Z">
 <meta property="article:modified_time" content="2025-08-03T14:07:07.961Z">
 <meta property="article:author" content="程小客">
 <meta property="article:tag" content="Arduino">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://www.g2022cyk.top/img/404.jpg">
+<meta name="twitter:image" content="https://www.g2022cyk.top/img/%E5%B1%9E%E5%AE%9E%E8%AF%9A%E5%BF%83.jpg"><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "ESP8266+Arduino开发环境搭建",
+  "url": "https://www.g2022cyk.top/2022/12/14/ESP8266+Arduino%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/",
+  "image": "https://www.g2022cyk.top/img/%E5%B1%9E%E5%AE%9E%E8%AF%9A%E5%BF%83.jpg",
+  "datePublished": "2022-12-14T01:00:00.000Z",
+  "dateModified": "2025-08-03T14:07:07.961Z",
+  "author": [
+    {
+      "@type": "Person",
+      "name": "程小客",
+      "url": "https://www.g2022cyk.top"
+    }
+  ]
+}</script><link rel="shortcut icon" href="/img/%E7%A7%B0%E5%BF%83%E5%8F%B7.png"><link rel="canonical" href="https://www.g2022cyk.top/2022/12/14/ESP8266+Arduino%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//hm.baidu.com"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
 
-    <meta name="keywords" content="程俞客,称心号">
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
 
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
 
-<title >ESP8266+Arduino开发环境搭建</title>
-
-<!-- Favicon -->
-
-    <link href='/img/%E7%A7%B0%E5%BF%83%E5%8F%B7.png?v=2.2.6' rel='icon' type='image/png' sizes='16x16' ></link>
-
-
-    <link href='/img/%E7%A7%B0%E5%BF%83%E5%8F%B7.png?v=2.2.6' rel='icon' type='image/png' sizes='32x32' ></link>
-
-
-
-
-<!-- Plugin -->
-
-
-
-
+      const theme = saveToLocal.get('theme')
     
-<link rel="stylesheet" href="/css/plugins/bootstrap.row.css">
-
-    
-<link rel="stylesheet" href="https://unpkg.com/@fancyapps/ui@4.0/dist/fancybox.css">
-
-    
-    
-
-
-
-
-<!-- Icon -->
-
-    
-<link rel="stylesheet" href="/css/plugins/font-awesome.min.css">
-
-
-
-
-<!-- Variable -->
-<script>window.ASYNC_CONFIG = {"hostname":"www.g2022cyk.top","author":"程小客","root":"/","typed_text":null,"theme_version":"2.2.6","theme":{"switch":true,"default":"auto","language":"zh-Hans"},"favicon":{"logo":"img/称心号.png","icon16":"img/称心号.png","icon32":"img/称心号.png","apple_touch_icon":null,"webmanifest":null,"visibilitychange":false,"hidden":"/failure.ico","show_text":"(/≧▽≦/)咦！又好了！","hide_text":"(●—●)喔哟，崩溃啦！"},"i18n":{"placeholder":"搜索文章...","empty":"找不到您查询的内容: ${query}","hits":"找到 ${hits} 条结果","hits_time":"找到 ${hits} 条结果（用时 ${time} 毫秒）","author":"本文作者：","copyright_link":"本文链接：","copyright_license_title":"版权声明：","copyright_license_content":"本博客所有文章除特别声明外，均默认采用 undefined 许可协议。","copy_success":"复制成功","copy_failure":"复制失败","open_read_mode":"进入阅读模式","exit_read_mode":"退出阅读模式","notice_outdate_message":"距离上次更新已经 undefined 天了, 文章内容可能已经过时。","sticky":"置顶","just":"刚刚","min":"分钟前","hour":"小时前","day":"天前","month":"个月前"},"swup":false,"plugin":{"flickr_justified_gallery":"https://unpkg.com/flickr-justified-gallery@latest/dist/fjGallery.min.js"},"icons":{"sun":"far fa-sun","moon":"far fa-moon","play":"fas fa-play","email":"far fa-envelope","next":"fas fa-arrow-right","calendar":"far fa-calendar-alt","clock":"far fa-clock","user":"far fa-user","back_top":"fas fa-arrow-up","close":"fas fa-times","search":"fas fa-search","reward":"fas fa-hand-holding-usd","toc_tag":"fas fa-th-list","read":"fas fa-book-reader","arrows":"fas fa-arrows-alt-h","double_arrows":"fas fa-angle-double-down","copy":"fas fa-copy"},"icontype":"font","highlight":{"plugin":"highlighjs","theme":true,"copy":true,"lang":true,"title":"default","height_limit":false},"toc":{"post_title":true},"live_time":{"start_time":"09/10/2019 17:00:00","prefix":"博客已萌萌哒运行 undefined 天"},"danmu":{"enable":false,"el":".trm-banner"},"covers":"/img/block.jpg","creative_commons":{"license":"by-nc-sa","language":"deed.zh-hans"},"notice_outdate":{"enable":true,"style":"flat","limit_day":365,"position":"bottom"},"search":{"enable":true,"type":"local","href":"https://www.google.com/search?q=site:","domain":null,"path":"search.json"}};</script>
-<script id="async-page-config">window.PAGE_CONFIG = {"isPost":true,"isHome":false,"postUpdate":"2025-08-03 22:07:07"};</script>
-
-<!-- Theme mode css -->
-<link data-swup-theme rel="stylesheet" href="/css/index.css?v=2.2.6" id="trm-switch-style">
-<script>
-    let defaultMode = ASYNC_CONFIG.theme.default !=='auto' ?  ASYNC_CONFIG.theme.default : (window.matchMedia("(prefers-color-scheme: light)").matches ? 'style-light' : 'style-dark')
-    let catchMode = localStorage.getItem('theme-mode') || defaultMode;
-    let type = catchMode === 'style-dark' ? 'add' : 'remove';
-    document.documentElement.classList[type]('dark')
-</script>
-
-<!-- CDN -->
-
-
-    
-    
-
-
-
-<!-- Site Analytics -->
-
-
-    
-        <!-- Baidu Analytics -->
-        <script defer>
-            var _hmt = _hmt || [];
-            (function() {
-              var hm = document.createElement("script");
-              hm.src = "https://hm.baidu.com/hm.js?09ca4f4526f7e714a253c7329a59e212";
-              var s = document.getElementsByTagName("script")[0]; 
-              s.parentNode.insertBefore(hm, s);
-            })();
-        </script>
-     
-
-    
-
-    
- 
-<!-- hexo injector head_end start --><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8847588120991439" crossorigin="anonymous"></script><!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.3.0"></head>
-
-<body>
-
-  <!-- app wrapper -->
-  <div class="trm-app-frame">
-
-    <!-- page preloader -->
-    <div class="trm-preloader">
-    <div class="trm-holder">
-        <div class="preloader">
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-        </div>
-    </div>
-</div>
-    <!-- page preloader end -->
-
-    <!-- change mode preloader -->
-    <div class="trm-mode-swich-animation-frame">
-    <div class="trm-mode-swich-animation">
-        <i class="i-sun"><i class="iconfont far fa-sun"></i></i>
-        <div class="trm-horizon"></div>
-        <i class="i-moon"><i class="iconfont far fa-moon"></i></i>
-    </div>
-</div>
-    <!-- change mode preloader end -->
-
-      <!-- scroll container -->
-      <div id="trm-dynamic-content" class="trm-swup-animation">
-        <div id="trm-scroll-container" class="trm-scroll-container" style="opacity: 0">
-            <!-- top bar -->
-            <header class="trm-top-bar">
-	<div class="container">
-		<div class="trm-left-side">
-			<!-- logo -->
-<a href="/" class="trm-logo-frame trm-anima-link">
-    
-        <img alt="logo" src="/img/%E7%A7%B0%E5%BF%83%E5%8F%B7.png">
-    
-    
-        <div class="trm-logo-text">
-            Xiaoke<span>Chen</span>
-        </div>
-    
-</a>
-<!-- logo end -->
-		</div>
-		<div class="trm-right-side">
-			<!-- menu -->
-<div class="trm-menu">
-    <nav>
-        <ul>
-            
-            <li class="menu-item-has-children ">
-                <a  href="/" target="">
-                    首页
-                </a>
-                
-                <ul>
-                    
-                    <li>
-                        <a  href="https://www.shushichenxin.com" target="_blank">
-                            述事称心
-                        </a>
-                    </li>
-                    
-                </ul>
-                
-            </li>
-            
-            <li class="menu-item-has-children ">
-                <a  href="/archives/" target="">
-                    归档
-                </a>
-                
-            </li>
-            
-            <li class="menu-item-has-children ">
-                <a  href="/categories/" target="">
-                    分类
-                </a>
-                
-                <ul>
-                    
-                    <li>
-                        <a  href="/categories/%E4%B8%AD%E6%96%87%E6%9C%9F%E5%88%8A/" target="">
-                            中文
-                        </a>
-                    </li>
-                    
-                    <li>
-                        <a  href="/categories/%E8%8B%B1%E6%96%87%E6%9C%9F%E5%88%8A/" target="">
-                            英文
-                        </a>
-                    </li>
-                    
-                </ul>
-                
-            </li>
-            
-            <li class="menu-item-has-children ">
-                <a  href="/tags/" target="">
-                    标签
-                </a>
-                
-            </li>
-            
-            <li class="menu-item-has-children ">
-                <a  href="/links/" target="">
-                    友链
-                </a>
-                
-            </li>
-            
-            <li class="menu-item-has-children ">
-                <a  href="/about/" target="">
-                    关于
-                </a>
-                
-                <ul>
-                    
-                    <li>
-                        <a  href="/about/" target="">
-                            关于我
-                        </a>
-                    </li>
-                    
-                    <li>
-                        <a  href="https://www.shushichenxin.com/about/" target="_blank">
-                            关于述事称心
-                        </a>
-                    </li>
-                    
-                </ul>
-                
-            </li>
-            
-        </ul>
-    </nav>
-</div>
-<!-- menu end -->
-			
-    <!-- mode switcher place -->
-    <div class="trm-mode-switcher-place">
-        <div class="trm-mode-switcher">
-            <i class="iconfont far fa-sun"></i>
-            <input class="tgl tgl-light" id="trm-swich" type="checkbox">
-            <label class="trm-swich" for="trm-swich"></label>
-            <i class="iconfont far fa-moon"></i>
-        </div>
-    </div>
-    <!-- mode switcher place end -->
-
-			
-    
-    <div id="trm-search-btn" class="trm-search-btn">
-        <i class="iconfont fas fa-search"></i>
-    </div>
-     
-
-		</div>
-		<div class="trm-menu-btn">
-			<span></span>
-		</div>
-	</div>
-</header>
-            <!-- top bar end -->
-
-            <!-- body -->
-            
-<div class="trm-content-start">
-    <!-- banner -->
-    <div class="trm-banner">
-    
-    <!-- banner cover -->
-    <img style="object-position:top;object-fit:cover;" alt="banner" class="trm-banner-cover" src="/img/banner.png">
-    <!-- banner cover end -->
-    
-
-    <!-- banner content -->
-    <div class="trm-banner-content trm-overlay">
-        <div class="container">
-            <div class="row">
-                
-                <div class="col-lg-4"></div>
-                
-                <div class="col-lg-8">
-
-                    <!-- banner title -->
-                    <div class="trm-banner-text ">
-                        <div class="trm-label trm-mb-20">
-                            NEWS LETTER
-                        </div>
-                        <h1 class="trm-mb-30 trm-hsmb-font">
-                            ESP8266+Arduino开发环境搭建
-                        </h1>
-
-                        
-                            <ul class="trm-breadcrumbs trm-label">
-                                <li>
-                                    <a href="/" class="trm-anima-link">Home</a>
-                                </li>
-                                <li>
-                                    <span>
-                                        2022
-                                    </span>
-                                </li>
-                            </ul>
-                        
-                    </div>
-                    <!-- banner title end -->
-
-                    <!-- scroll hint -->
-                    <span id="scroll-triger" class="trm-scroll-hint-frame">
-                        <div class="trm-scroll-hint"></div>
-                        <span class="trm-label">Scroll down</span>
-                    </span>
-                    <!-- scroll hint end -->
-
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- banner content end -->
-</div>
-    <!-- banner end -->
-    <div class="container">
-        <div class="row">
-            
-                <div class="trm-page-sidebar col-lg-4 hidden-sm">
-                    <!-- main card -->
-                    <div class="trm-main-card-frame trm-sidebar">
-    <div class="trm-main-card"> 
-        <!-- card header -->
-<div class="trm-mc-header">
-    <div class="trm-avatar-frame trm-mb-20">
-        <img alt="Avatar" class="trm-avatar" src="/img/%E5%B1%9E%E5%AE%9E%E8%AF%9A%E5%BF%83.jpg">
-    </div>
-    <h5 class="trm-name trm-mb-15">
-        程小客
-    </h5>
-    
-</div>
-<!-- card header end -->
-        <!-- sidebar social -->
-
-<div class="trm-divider trm-mb-40 trm-mt-40"></div>
-<div class="trm-social">
-    
-        <a href="https://github.com/cykzht" title="Github" rel="nofollow" target="_blank">
-            <i class="iconfont fab fa-github"></i>
-        </a>
-    
-        <a href="https://space.bilibili.com/122529890" title="Bilibili" rel="nofollow" target="_blank">
-            <i class="iconfont fab fa-vimeo-v"></i>
-        </a>
-    
-</div>
-
-<!-- sidebar social end -->
-        <!-- info -->
-<div class="trm-divider trm-mb-40 trm-mt-40"></div>
-<ul class="trm-table trm-mb-20">
-    
-        <li>
-            <div class="trm-label">
-                地址:
-            </div>
-            <div class="trm-label trm-label-light">
-                帝都
-            </div>
-        </li>
-    
-</ul>
-<!-- info end -->
-
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
         
-    <div class="trm-divider trm-mb-40 trm-mt-40"></div>
-    <!-- action button -->
-    <div class="text-center">
-        <a href="mailto:chengxiaoke@shushichenxin.com" class="trm-btn">
-            联系我
-            <i class="iconfont far fa-envelope"></i>
-        </a>
-    </div>
-    <!-- action button end -->
-
-    </div>
-</div>
-                    <!-- main card end -->
-                </div>
-            
-            <div class="trm-page-content col-lg-8">
-                <div id="trm-content" class="trm-content">
-                    <div class="trm-post-info row hidden-sm">
-    <div class="col-sm-4">
-        <div class="trm-card trm-label trm-label-light text-center">
-            <i class="iconfont far fa-calendar-alt trm-icon"></i><br>
-            12/14
-        </div>
-    </div>
-    <div class="col-sm-4">
-        <div class="trm-card trm-label trm-label-light text-center">
-            <i class="iconfont far fa-clock trm-icon"></i><br>
-            09:00
-        </div>
-    </div>
-    <div class="col-sm-4">
-        <div id="post-author" class="trm-card trm-label trm-label-light text-center">
-            <i class="iconfont far fa-user trm-icon"></i><br>
-            程小客
-        </div>
-    </div>
-</div>
-<div class="trm-card ">
-    <article id="article-container" class="trm-publication">
-    <h1 id="一、Arduino-IDE安装"><a href="#一、Arduino-IDE安装" class="headerlink" title="一、Arduino IDE安装"></a>一、Arduino IDE安装</h1><ol>
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script async="async" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><script>(adsbygoogle = window.adsbygoogle || []).push({
+  google_ad_client: 'ca-pub-8847588120991439',
+  enable_page_level_ads: 'true'
+});</script><script>var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?09ca4f4526f7e714a253c7329a59e212";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+btf.addGlobalFn('pjaxComplete', () => {
+  _hmt.push(['_trackPageview',window.location.pathname])
+}, 'baidu_analytics')
+</script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.json","preload":false,"top_n_per_article":1,"unescape":false,"languages":{"hits_empty":"未找到符合您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":false,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":false},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"limitCount":150,"languages":{"author":"作者: 程小客","link":"链接: ","source":"来源: 程俞客&称心号","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  lightbox: 'FancyBox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: true,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'ESP8266+Arduino开发环境搭建',
+  isHighlightShrink: false,
+  isToc: true,
+  pageType: 'post'
+}</script><meta name="generator" content="Hexo 7.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="/img/%E5%B1%9E%E5%AE%9E%E8%AF%9A%E5%BF%83.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">57</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">18</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">1</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><span class="site-page group hide"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/categories/%E4%B8%AD%E6%96%87%E6%9C%9F%E5%88%8A/"><i class="fa-fw fas fa-language"></i><span> 中文</span></a></li><li><a class="site-page child" href="/categories/%E8%8B%B1%E6%96%87%E6%9C%9F%E5%88%8A/"><i class="fa-fw fas fa-globe"></i><span> 英文</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/links/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于我</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url(/img/default.jpg);"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><img class="site-icon" src="/img/%E7%A7%B0%E5%BF%83%E5%8F%B7.png" alt="Logo"><span class="site-name">程俞客&amp;称心号</span></a><a class="nav-page-title" href="/"><span class="site-name">ESP8266+Arduino开发环境搭建</span><span class="site-name"><i class="fa-solid fa-circle-arrow-left"></i><span>  返回首页</span></span></a></span><div id="menus"><div id="search-button"><span class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></span></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><span class="site-page group hide"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/categories/%E4%B8%AD%E6%96%87%E6%9C%9F%E5%88%8A/"><i class="fa-fw fas fa-language"></i><span> 中文</span></a></li><li><a class="site-page child" href="/categories/%E8%8B%B1%E6%96%87%E6%9C%9F%E5%88%8A/"><i class="fa-fw fas fa-globe"></i><span> 英文</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/links/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于我</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="post-info"><h1 class="post-title">ESP8266+Arduino开发环境搭建</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2022-12-14T01:00:00.000Z" title="发表于 2022-12-14 09:00:00">2022-12-14</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2025-08-03T14:07:07.961Z" title="更新于 2025-08-03 22:07:07">2025-08-03</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E4%B8%AD%E6%96%87%E6%9C%9F%E5%88%8A/">中文期刊</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">总字数:</span><span class="word-count">574</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>1分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">浏览量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="container post-content" id="article-container"><h1 id="一、Arduino-IDE安装"><a href="#一、Arduino-IDE安装" class="headerlink" title="一、Arduino IDE安装"></a>一、Arduino IDE安装</h1><ol>
 <li><p>在<code>baidu</code>搜索<code>Arduino</code>，进入[Arduino官网](<a target="_blank" rel="noopener" href="https://www.arduino.cc/">Arduino - Home</a>)。</p>
-<p><img src="https://11.g2022cyk.top:8081/wp-content/uploads/2022/10/1666521325-image-20221023183516273.png" alt="baidu"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
+<p><img src="https://11.g2022cyk.top:8081/wp-content/uploads/2022/10/1666521325-image-20221023183516273.png" alt="baidu"></p>
 </li>
 <li><p>在官网的上方找到并点击<code>software</code>选项。</p>
-<p><img src="https://11.g2022cyk.top:8081/wp-content/uploads/2022/10/1666521441-image-20221023183713918.png" alt="官网"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
+<p><img src="https://11.g2022cyk.top:8081/wp-content/uploads/2022/10/1666521441-image-20221023183713918.png" alt="官网"></p>
 </li>
 <li><p>往下滑找到<code>Legacy IDE (1.8.X)</code>版本，虽然最新版2.0版本已经发布，但笔者只尝试过用1.8的版本进行8266的开发，据说2.0使用了VScode的编译环境，不过在笔者的电脑上它甚至没法修改语言，所以本教程还是基于1.8的版本。根据你的系统版本下载相对应的软件版本，笔者这里使用的是Windows11，就选择下载第一个。注意，千万不要下载Windows app版本，这个是微软商店的链接，相较于安装版本有许多阉割，没有安装版开发那么顺畅。</p>
-<p><img src="https://11.g2022cyk.top:8081/wp-content/uploads/2022/10/1666608909-image-20221024185500616.png" alt="image-20221024185500616"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
+<p><img src="https://11.g2022cyk.top:8081/wp-content/uploads/2022/10/1666608909-image-20221024185500616.png" alt="image-20221024185500616"></p>
 </li>
 <li><p>这一步是捐赠的环节，我们直接点击<code>Just Download</code>，如果你恰好财力雄厚，觉得这个开发软件很不错，也可以尝试捐赠一波。</p>
-<p><img src="https://11.g2022cyk.top:8081/wp-content/uploads/2022/10/1666521735-image-20221023184207657.png" alt="捐赠"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
+<p><img src="https://11.g2022cyk.top:8081/wp-content/uploads/2022/10/1666521735-image-20221023184207657.png" alt="捐赠"></p>
 </li>
 <li><p>下载好后是一个exe文件，我们直接双击安装。</p>
-<p><img src="https://11.g2022cyk.top:8081/wp-content/uploads/2022/10/1666592262-5ad5089ce68871d33c0a7e5578b3466.png" alt="img"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
+<p><img src="https://11.g2022cyk.top:8081/wp-content/uploads/2022/10/1666592262-5ad5089ce68871d33c0a7e5578b3466.png" alt="img"></p>
 </li>
 <li><p>安装过程就一路<code>Next</code>，中间可能会有提示安装驱动，点击<code>安装</code>即可。</p>
-<p><img src="https://11.g2022cyk.top:8081/wp-content/uploads/2022/10/1666592265-c0d55635f0cca637131ec7fc8241932.png" alt="img"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
-<p><img src="https://11.g2022cyk.top:8081/wp-content/uploads/2022/10/1666592267-0eeb5aff95d01e1418fcda993185d4f.png" alt="img"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
-<p><img src="https://11.g2022cyk.top:8081/wp-content/uploads/2022/10/1666592268-8f241225b10cd9785af3ca20a002473.png" alt="img"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
-<p><img src="https://11.g2022cyk.top:8081/wp-content/uploads/2022/10/1666609159-4237abecc72b92ef1820e79cef8b5bf.png" alt="img"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
+<p><img src="https://11.g2022cyk.top:8081/wp-content/uploads/2022/10/1666592265-c0d55635f0cca637131ec7fc8241932.png" alt="img"></p>
+<p><img src="https://11.g2022cyk.top:8081/wp-content/uploads/2022/10/1666592267-0eeb5aff95d01e1418fcda993185d4f.png" alt="img"></p>
+<p><img src="https://11.g2022cyk.top:8081/wp-content/uploads/2022/10/1666592268-8f241225b10cd9785af3ca20a002473.png" alt="img"></p>
+<p><img src="https://11.g2022cyk.top:8081/wp-content/uploads/2022/10/1666609159-4237abecc72b92ef1820e79cef8b5bf.png" alt="img"></p>
 </li>
 </ol>
 <h1 id="二、8266环境配置"><a href="#二、8266环境配置" class="headerlink" title="二、8266环境配置"></a>二、8266环境配置</h1><h2 id="2-1-自动下载8266开发板资料"><a href="#2-1-自动下载8266开发板资料" class="headerlink" title="2.1 自动下载8266开发板资料"></a>2.1 自动下载8266开发板资料</h2><ol>
 <li><p>点击右上角的<code>文件——首选项</code>。</p>
-<p><img src="https://11.g2022cyk.top:8081/wp-content/uploads/2022/10/1666592291-a46c6d27ad3628c9e8f59cfe0038362.jpg" alt="img"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
+<p><img src="https://11.g2022cyk.top:8081/wp-content/uploads/2022/10/1666592291-a46c6d27ad3628c9e8f59cfe0038362.jpg" alt="img"></p>
 </li>
 <li><p>在<code>附加开发板管理器网址</code>一栏填写如下地址：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://arduino.esp8266.com/stable/package_esp8266com_index.json</span><br></pre></td></tr></table></figure>
 
 <p>点击<code>好</code>来保存。</p>
-<p><img src="https://11.g2022cyk.top:8081/wp-content/uploads/2022/10/1666592295-695ea578924c321f3f3698e66e87d14.png" alt="img"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
+<p><img src="https://11.g2022cyk.top:8081/wp-content/uploads/2022/10/1666592295-695ea578924c321f3f3698e66e87d14.png" alt="img"></p>
 </li>
 <li><p>在顶部菜单栏点击<code>工具——开发板——开发板管理器</code>。</p>
-<p><img src="https://11.g2022cyk.top:8081/wp-content/uploads/2022/10/1666592314-df182d995a60dc56f44601041680901.jpg" alt="img"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
+<p><img src="https://11.g2022cyk.top:8081/wp-content/uploads/2022/10/1666592314-df182d995a60dc56f44601041680901.jpg" alt="img"></p>
 </li>
 <li><p>在里面搜索<code>8266</code>，下载对应版本的开发板资源包</p>
-<p><img src="https://11.g2022cyk.top:8081/wp-content/uploads/2022/10/1666592332-820fcfeed05eaf1fc9d43c824c2b9c3.png" alt="img"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
+<p><img src="https://11.g2022cyk.top:8081/wp-content/uploads/2022/10/1666592332-820fcfeed05eaf1fc9d43c824c2b9c3.png" alt="img"></p>
 <p><strong>需要注意的是，不同版本的8266开发板资源包的代码编写方式不同，请务必参考您下载的代码所使用的8266开发版本。</strong></p>
 </li>
 <li><p>在<code>工具——开发板</code>中就可以看到ESP8266了。</p>
-<p><img src="https://11.g2022cyk.top:8081/wp-content/uploads/2022/10/1666592343-afcd87a7bbd242187e3029e570964f6.jpg" alt="img"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
+<p><img src="https://11.g2022cyk.top:8081/wp-content/uploads/2022/10/1666592343-afcd87a7bbd242187e3029e570964f6.jpg" alt="img"></p>
 </li>
 </ol>
 <h2 id="2-2-手动下载8266开发板资料"><a href="#2-2-手动下载8266开发板资料" class="headerlink" title="2.2 手动下载8266开发板资料"></a>2.2 手动下载8266开发板资料</h2><p>由于部分网友冲浪的速度不够快，会导致开发板资料下载失败，下面提供一个手动安装8266开发板资料包的方法。</p>
-<p><img src="https://11.g2022cyk.top:8081/wp-content/uploads/2022/10/1666592335-c0f0b25e886b67c5e1c70f71242768b.png" alt="img"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
+<p><img src="https://11.g2022cyk.top:8081/wp-content/uploads/2022/10/1666592335-c0f0b25e886b67c5e1c70f71242768b.png" alt="img"></p>
 <ol>
 <li><p>下载<code>8266_package</code>包，是一个exe程序，直接双击打开它，程序会自动安装8266开发环境。</p>
 <p>下载链接1：</p>
 <p><a target="_blank" rel="noopener" href="https://g2022cyk.top/?u=https://pan.baidu.com/s/1Q67WF1B1QGaO04g6i-U7aQ">https://pan.baidu.com/s/1Q67WF1B1QGaO04g6i-U7aQ</a><br>提取码：8266</p>
 <p><a target="_blank" rel="noopener" href="https://g2022cyk.top/?u=https://afdian.net/item?plan_id=45564748539c11edb71652540025c377">下载链接2</a></p>
-<p><img src="https://11.g2022cyk.top:8081/wp-content/uploads/2022/10/1666592337-0f21a6faa624d0353ddf1e0360bc289.png" alt="img"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
-<p><img src="https://11.g2022cyk.top:8081/wp-content/uploads/2022/10/1666592341-4db5f7bb326a76fdf0f6ea4700bc330.png" alt="img"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
+<p><img src="https://11.g2022cyk.top:8081/wp-content/uploads/2022/10/1666592337-0f21a6faa624d0353ddf1e0360bc289.png" alt="img"></p>
+<p><img src="https://11.g2022cyk.top:8081/wp-content/uploads/2022/10/1666592341-4db5f7bb326a76fdf0f6ea4700bc330.png" alt="img"></p>
 </li>
 <li><p>安装好后直接在<code>工具——开发板</code>中就可以看到ESP8266了。</p>
-<p><img src="https://11.g2022cyk.top:8081/wp-content/uploads/2022/10/1666592343-afcd87a7bbd242187e3029e570964f6.jpg" alt="img"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
+<p><img src="https://11.g2022cyk.top:8081/wp-content/uploads/2022/10/1666592343-afcd87a7bbd242187e3029e570964f6.jpg" alt="img"></p>
 </li>
 </ol>
+<div id="post-outdate-notice" data="{&quot;limitDay&quot;:365,&quot;messagePrev&quot;:&quot;已经过了&quot;,&quot;messageNext&quot;:&quot;天自上次更新，文章内容可能已过时。&quot;,&quot;postUpdate&quot;:&quot;2025-08-03 22:07:07&quot;}" hidden></div></article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="https://www.g2022cyk.top">程小客</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="https://www.g2022cyk.top/2022/12/14/ESP8266+Arduino%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/">https://www.g2022cyk.top/2022/12/14/ESP8266+Arduino%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来源 <a href="https://www.g2022cyk.top" target="_blank">程俞客&称心号</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/Arduino/">Arduino</a></div><div class="post-share"><div class="social-share" data-image="/img/%E5%B1%9E%E5%AE%9E%E8%AF%9A%E5%BF%83.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><div class="ads-wrap"><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8847588120991439" crossorigin="anonymous"></script> <ins class="adsbygoogle" style="display:block; text-align:center;" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-8847588120991439" data-ad-slot="2452641706"></ins> <script> (adsbygoogle = window.adsbygoogle || []).push({}); </script></div><nav class="pagination-post" id="pagination"><a class="pagination-related" href="/2022/12/14/%E8%A7%A3%E5%86%B3Windows7%E5%AE%89%E8%A3%85VMware%20tools%E6%8A%A5%E9%94%99%E9%97%AE%E9%A2%98/" title="解决Windows7安装VMware tools报错问题"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info"><div class="info-1"><div class="info-item-1">上一篇</div><div class="info-item-2">解决Windows7安装VMware tools报错问题</div></div><div class="info-2"><div class="info-item-1">解决Windows7安装VMware tools报错问题安装的时候遇到如下报错是驱动无法安装导致的。  安装程序无法自动安装 Virtual Machine Communication InterfaceSockets (VSock) 驱动程序。必须手动安装此驱动得序。  这个是来自VMware官方的解释。  大意是Windows7已经停止更新，版本过于老旧，因为VMware tools使用的是最新的代码签名，老版的不能支持。 解决方案 下载kb4474419补丁包。  下载链接：官方地址   备份地址  选择Windows7版本的，点击右侧的Download。  新页面下，我们还需要点击一次才能开始下载。   下载好后是一个.msu文件，我们同样双击运行它。   点击是来安装。    安装好之后需要重启一次计算机。   重启完成后重新安装VMware tools即可。   </div></div></div></a><a class="pagination-related" href="/2022/12/13/%E6%95%99%E4%BD%A0%E5%9C%A82022%E5%B9%B4%E5%AE%89%E8%A3%85Flash%E7%BA%AF%E5%87%80%E7%89%88/" title="教你在2022年安装Flash纯净版"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-right"><div class="info-1"><div class="info-item-1">下一篇</div><div class="info-item-2">教你在2022年安装Flash纯净版</div></div><div class="info-2"><div class="info-item-1">Flash安装教程（知乎@田源提供）虽然Flash已经退出了历史的舞台，但是仍然有一些网站基于Flash运行，本篇文章教大家如何在电脑上安装Flash。 本篇文章是安装IE浏览器的ActiveX，由于Chrome已经完全移除Flash组件，故本文不再介绍。 方法1：Clean Flash Player（推荐）这个是基于中国版魔改的版本，去除了广告和流氓软件，并且安装界面简洁，一步到位。  Clean Flash with Standalone Player下载  备份链接    在GitLab上找到最新版的Installer即可。 下载之后，进行安装，按照图示翻译及个人偏好安装。  同意条款。   选择要安装的版本。   是否安装本地播放器，即swf播放器。   是否安装Debug版本。   安装。    安装完成。    方法2：中国版下载（知乎@田源提供）Adobe 官方页面已不提供Flash下载，劝退大家卸载Flash，并且警惕第三方下载源可能含有恶意软件的同时，Adobe与国内的重庆重橙网络科技有限公司为广大国内用户提供“特供版”的FlashPlayer。  Flash ...</div></div></div></a></nav><hr class="custom-hr"/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="giscus-wrap"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/img/%E5%B1%9E%E5%AE%9E%E8%AF%9A%E5%BF%83.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">程小客</div><div class="author-info-description">述事称心社团下的程序部门和影像部门</div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">57</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">18</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">1</div></a></div><a id="card-info-btn" href="mailto:zhuhaitian@shushichenxin.com"><i class="fas fa-envelope"></i><span>联系我</span></a><div class="card-info-social-icons"><a class="social-icon" href="https://github.com/cykzht" target="_blank" title="Github"><i class="fab fa-github" style="color: #hdhfbb;"></i></a><a class="social-icon" href="mailto:zhuhaitian@shushichenxin.com" target="_blank" title="Email"><i class="fas fa-envelope" style="color: #000000;"></i></a><a class="social-icon" href="https://space.bilibili.com/122529890" target="_blank" title="Bilibili"><i class="fab fa-bilibili" style="color: #00A1D6;"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">程俞客，用心讲好每一个故事</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%80%E3%80%81Arduino-IDE%E5%AE%89%E8%A3%85"><span class="toc-number">1.</span> <span class="toc-text">一、Arduino IDE安装</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%8C%E3%80%818266%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE"><span class="toc-number">2.</span> <span class="toc-text">二、8266环境配置</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#2-1-%E8%87%AA%E5%8A%A8%E4%B8%8B%E8%BD%BD8266%E5%BC%80%E5%8F%91%E6%9D%BF%E8%B5%84%E6%96%99"><span class="toc-number">2.1.</span> <span class="toc-text">2.1 自动下载8266开发板资料</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-2-%E6%89%8B%E5%8A%A8%E4%B8%8B%E8%BD%BD8266%E5%BC%80%E5%8F%91%E6%9D%BF%E8%B5%84%E6%96%99"><span class="toc-number">2.2.</span> <span class="toc-text">2.2 手动下载8266开发板资料</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2024/11/19/TensorFlow%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/" title="TensorFlow安装教程"><img src="https://11.g2022cyk.top:8081/wp-content/uploads/2025/08/1754229626-ten.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="TensorFlow安装教程"/></a><div class="content"><a class="title" href="/2024/11/19/TensorFlow%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/" title="TensorFlow安装教程">TensorFlow安装教程</a><time datetime="2024-11-19T14:12:41.000Z" title="发表于 2024-11-19 22:12:41">2024-11-19</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/12/22/%E5%86%8D%E8%A7%81%E9%80%80%E5%AD%A6%E7%BD%91/" title="再见退学网"><img src="https://11.g2022cyk.top:8081/wp-content/uploads/2025/08/1754144143-show.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="再见退学网"/></a><div class="content"><a class="title" href="/2023/12/22/%E5%86%8D%E8%A7%81%E9%80%80%E5%AD%A6%E7%BD%91/" title="再见退学网">再见退学网</a><time datetime="2023-12-22T10:20:00.000Z" title="发表于 2023-12-22 18:20:00">2023-12-22</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/12/22/%E6%99%BA%E5%AD%A6%E7%BD%91%EF%BC%9A%E5%9C%A8%E6%89%8B%E6%9C%BA%E4%B8%8A%E8%BD%BB%E6%9D%BE%E6%9F%A5%E5%88%86/" title="智学网：在手机上轻松查分"><img src="https://11.g2022cyk.top:8081/wp-content/uploads/2025/08/1754144268-Screenshot_2023-12-20-16-56-51-556_com.pipipig.zhixue.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="智学网：在手机上轻松查分"/></a><div class="content"><a class="title" href="/2023/12/22/%E6%99%BA%E5%AD%A6%E7%BD%91%EF%BC%9A%E5%9C%A8%E6%89%8B%E6%9C%BA%E4%B8%8A%E8%BD%BB%E6%9D%BE%E6%9F%A5%E5%88%86/" title="智学网：在手机上轻松查分">智学网：在手机上轻松查分</a><time datetime="2023-12-22T10:20:00.000Z" title="发表于 2023-12-22 18:20:00">2023-12-22</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/06/10/%E9%AB%98%E8%80%83%E8%87%AA%E7%94%B1%E6%97%B6%E5%85%89%EF%BC%8C%E8%BF%BD%E5%AF%BB%E6%97%A0%E9%99%90%E5%8F%AF%E8%83%BD%EF%BC%81/" title="高考自由时光，追寻无限可能！"><img src="https://11.g2022cyk.top:8081/wp-content/uploads/2025/08/1754232678-3d78ebd227a90bc1aa594bedc8afbaf0.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="高考自由时光，追寻无限可能！"/></a><div class="content"><a class="title" href="/2023/06/10/%E9%AB%98%E8%80%83%E8%87%AA%E7%94%B1%E6%97%B6%E5%85%89%EF%BC%8C%E8%BF%BD%E5%AF%BB%E6%97%A0%E9%99%90%E5%8F%AF%E8%83%BD%EF%BC%81/" title="高考自由时光，追寻无限可能！">高考自由时光，追寻无限可能！</a><time datetime="2023-06-10T11:01:00.000Z" title="发表于 2023-06-10 19:01:00">2023-06-10</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/06/10/%E9%AB%98%E8%80%83%E5%AE%8C%E7%BB%93%E7%AF%87%EF%BC%8C%E6%96%B0%E7%9A%84%E5%BE%81%E7%A8%8B%E5%8D%B3%E5%B0%86%E5%BC%80%E5%90%AF/" title="高考完结篇，新的征程即将开启"><img src="https://11.g2022cyk.top:8081/wp-content/uploads/2023/06/1686541068-2023.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="高考完结篇，新的征程即将开启"/></a><div class="content"><a class="title" href="/2023/06/10/%E9%AB%98%E8%80%83%E5%AE%8C%E7%BB%93%E7%AF%87%EF%BC%8C%E6%96%B0%E7%9A%84%E5%BE%81%E7%A8%8B%E5%8D%B3%E5%B0%86%E5%BC%80%E5%90%AF/" title="高考完结篇，新的征程即将开启">高考完结篇，新的征程即将开启</a><time datetime="2023-06-10T11:00:00.000Z" title="发表于 2023-06-10 19:00:00">2023-06-10</time></div></div></div></div><div class="card-widget ads-wrap"><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8847588120991439" crossorigin="anonymous"></script> <!-- 主页 --> <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-8847588120991439" data-ad-slot="2050189169" data-ad-format="auto" data-full-width-responsive="true"></ins> <script> (adsbygoogle = window.adsbygoogle || []).push({}); </script></div></div></div></main><footer id="footer" style="background-image: url(/img/default.jpg);"><div class="footer-other"><div class="footer-copyright"><span class="copyright">&copy;&nbsp;2019 - 2025 By 程小客</span></div><div class="footer_custom_text"><a target="_blank" rel="noopener" href="https://beian.miit.gov.cn/"><span>备案号：京ICP备2022028753号-1</span></a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="前往评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/"></script><div class="js-pjax"><script>(() => {
+  const runMermaid = ele => {
+    window.loadMermaid = true
+    const theme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'default'
 
-</article>
-    
-    
+    ele.forEach((item, index) => {
+      const mermaidSrc = item.firstElementChild
+      const mermaidThemeConfig = `%%{init:{ 'theme':'${theme}'}}%%\n`
+      const mermaidID = `mermaid-${index}`
+      const mermaidDefinition = mermaidThemeConfig + mermaidSrc.textContent
 
-<ul class="trm-post-copyright">
-    <li class="trm-post-copyright-author">
-        <strong>本文作者：</strong>
-        程小客
-    </li>
-    <li class="trm-post-copyright-link">
-        <strong>本文链接：</strong>
-        <a id="original-link" href="https://www.g2022cyk.top/2022/12/14/ESP8266+Arduino开发环境搭建/" title="ESP8266+Arduino开发环境搭建">https://www.g2022cyk.top/2022/12/14/ESP8266+Arduino开发环境搭建/</a>
-    </li>
-    <li class="trm-post-copyright-license">
-        <strong>版权声明：</strong>
-        本博客所有文章除特别声明外，均默认采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh-hans" target="_blank" rel="noopener" title="CC BY-NC-SA 4.0 ">CC BY-NC-SA 4.0</a> 许可协议。
-    </li>
-</ul>
+      const renderFn = mermaid.render(mermaidID, mermaidDefinition)
+      const renderMermaid = svg => {
+        mermaidSrc.insertAdjacentHTML('afterend', svg)
+      }
 
+      // mermaid v9 and v10 compatibility
+      typeof renderFn === 'string' ? renderMermaid(renderFn) : renderFn.then(({ svg }) => renderMermaid(svg))
+    })
+  }
 
-</div>
-<div class="trm-post-next-prev row">
-    <div class="col-lg-12">
-        <!-- title -->
-        <h5 class="trm-title-with-divider">
-            其他文章
-            <span data-number="02"></span>
-        </h5>
-    </div>
-    
-        <div class="col-lg-6">
-    <div class="trm-blog-card trm-scroll-animation">
-        <a href="/2022/12/20/%E6%96%B0%E8%A7%86%E9%87%8E/" class="trm-cover-frame trm-anima-link">
-            
-            
-                <div class="trm-cover-img" data-random-img></div>
-            
-        </a>
-        
-        <div class="trm-card-descr">
-            <div class="trm-label trm-category trm-mb-20">
-                <a href=" /categories/%E4%B8%AD%E6%96%87%E6%9C%9F%E5%88%8A/">
-                    中文期刊
-                </a>
-            </div>
-            <h5>
-                <a href="/2022/12/20/%E6%96%B0%E8%A7%86%E9%87%8E/" class="trm-anima-link">
-                    在Windows10或Windows11上运行Unipus高校外语教学平台
-                </a>
-            </h5>
-            <div class="trm-divider trm-mb-20 trm-mt-20"></div>
-            <ul class="trm-card-data trm-label">
-                <li>22/12/20</li>
-                <li>12:12</li>
-                
-                
-            </ul>
-        </div>
-    </div>
-</div>
-    
-    
-        <div class="col-lg-6">
-    <div class="trm-blog-card trm-scroll-animation">
-        <a href="/2022/12/14/%E8%A7%A3%E5%86%B3Windows7%E5%AE%89%E8%A3%85VMware%20tools%E6%8A%A5%E9%94%99%E9%97%AE%E9%A2%98/" class="trm-cover-frame trm-anima-link">
-            
-            
-                <div class="trm-cover-img" data-random-img></div>
-            
-        </a>
-        
-        <div class="trm-card-descr">
-            <div class="trm-label trm-category trm-mb-20">
-                <a href=" /categories/%E4%B8%AD%E6%96%87%E6%9C%9F%E5%88%8A/">
-                    中文期刊
-                </a>
-            </div>
-            <h5>
-                <a href="/2022/12/14/%E8%A7%A3%E5%86%B3Windows7%E5%AE%89%E8%A3%85VMware%20tools%E6%8A%A5%E9%94%99%E9%97%AE%E9%A2%98/" class="trm-anima-link">
-                    解决Windows7安装VMware tools报错问题
-                </a>
-            </h5>
-            <div class="trm-divider trm-mb-20 trm-mt-20"></div>
-            <ul class="trm-card-data trm-label">
-                <li>22/12/14</li>
-                <li>09:00</li>
-                
-                
-            </ul>
-        </div>
-    </div>
-</div>
-    
-</div>
+  const codeToMermaid = () => {
+    const codeMermaidEle = document.querySelectorAll('pre > code.mermaid')
+    if (codeMermaidEle.length === 0) return
 
-    
+    codeMermaidEle.forEach(ele => {
+      const preEle = document.createElement('pre')
+      preEle.className = 'mermaid-src'
+      preEle.hidden = true
+      preEle.textContent = ele.textContent
+      const newEle = document.createElement('div')
+      newEle.className = 'mermaid-wrap'
+      newEle.appendChild(preEle)
+      ele.parentNode.replaceWith(newEle)
+    })
+  }
 
-    <div id="giscus-wrap" class="trm-card trm-scroll-animation comment-container"></div>
-<script data-swup-reload-script>
-    function loadGiscus() {
-        let nowTheme = document.documentElement.classList.contains('dark') ? 'transparent_dark' : 'light'
-        const config = {
-            src: 'https://giscus.app/client.js',
-            "data-repo": 'cykzht/cykzht.github.io',
-            "data-repo-id": 'MDEwOlJlcG9zaXRvcnkyMDI3MjY0OTg=',
-            "data-category": 'Announcements',
-            "data-category-id": 'DIC_kwDODBVcYs4Cts4-',
-            "data-mapping": 'url',
-            "data-reactions-enabled": '1',
-            "data-emit-metadata": '0',
-            "data-theme": nowTheme,
-            "data-lang": 'zh-CN',
-            crossorigin: "anonymous",
-            async: true
-        }
-        let ele = document.createElement('script')
-        for (let key in config) {
-            ele.setAttribute(key, config[key])
-        }
-        document.getElementById('giscus-wrap').insertAdjacentElement('afterbegin', ele)
+  const loadMermaid = () => {
+    if (true) codeToMermaid()
+    const $mermaid = document.querySelectorAll('#article-container .mermaid-wrap')
+    if ($mermaid.length === 0) return
+
+    const runMermaidFn = () => runMermaid($mermaid)
+    btf.addGlobalFn('themeChange', runMermaidFn, 'mermaid')
+    window.loadMermaid ? runMermaidFn() : btf.getScript('https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js').then(runMermaidFn)
+  }
+
+  btf.addGlobalFn('encrypt', loadMermaid, 'mermaid')
+  window.pjax ? loadMermaid() : document.addEventListener('DOMContentLoaded', loadMermaid)
+})()</script><script>(() => {
+  const isShuoshuo = GLOBAL_CONFIG_SITE.pageType === 'shuoshuo'
+  const option = null
+
+  const getGiscusTheme = theme => theme === 'dark' ? 'dark' : 'light'
+
+  const createScriptElement = config => {
+    const ele = document.createElement('script')
+    Object.entries(config).forEach(([key, value]) => {
+      ele.setAttribute(key, value)
+    })
+    return ele
+  }
+
+  const loadGiscus = (el = document, key) => {
+    const mappingConfig = isShuoshuo
+      ? { 'data-mapping': 'specific', 'data-term': key }
+      : { 'data-mapping': (option && option['data-mapping']) || 'pathname' }
+
+    const giscusConfig = {
+      src: 'https://giscus.app/client.js',
+      'data-repo': 'cykzht/cykzht.github.io',
+      'data-repo-id': 'MDEwOlJlcG9zaXRvcnkyMDI3MjY0OTg=',
+      'data-category-id': 'DIC_kwDODBVcYs4Cts4-',
+      'data-theme': getGiscusTheme(document.documentElement.getAttribute('data-theme')),
+      'data-reactions-enabled': '1',
+      crossorigin: 'anonymous',
+      async: true,
+      ...option,
+      ...mappingConfig
     }
 
-    function changeGiscusTheme() {
-        let theme = document.documentElement.classList.contains('dark') ? 'transparent_dark' : 'light'
+    const scriptElement = createScriptElement(giscusConfig)
 
-        function sendMessage(message) {
-            const iframe = document.querySelector('iframe.giscus-frame');
-            if (!iframe) return;
-            iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+    el.querySelector('#giscus-wrap').appendChild(scriptElement)
+
+    if (isShuoshuo) {
+      window.shuoshuoComment.destroyGiscus = () => {
+        if (el.children.length) {
+          el.innerHTML = ''
+          el.classList.add('no-comment')
         }
-
-        sendMessage({
-            setConfig: {
-                theme: theme
-            }
-        });
+      }
     }
+  }
 
-    loadGiscus();
-</script>
+  const changeGiscusTheme = theme => {
+    const iframe = document.querySelector('#giscus-wrap iframe')
+    if (iframe) {
+      const message = {
+        giscus: {
+          setConfig: {
+            theme: getGiscusTheme(theme)
+          }
+        }
+      }
+      iframe.contentWindow.postMessage(message, 'https://giscus.app')
+    }
+  }
 
+  btf.addGlobalFn('themeChange', changeGiscusTheme, 'giscus')
 
+  if (isShuoshuo) {
+    'Giscus' === 'Giscus'
+      ? window.shuoshuoComment = { loadComment: loadGiscus }
+      : window.loadOtherComment = loadGiscus
+    return
+  }
 
-                    <div class="trm-divider footer-divider"></div>
-
-                    <!-- footer -->
-                    <footer class="trm-footer-card trm-scroll-animation">
-
-    
-        <div class="trm-footer-item">
-            <a rel="noopener" href="https://beian.miit.gov.cn/" target="_blank">京ICP备2022028753号-1</a>
-        </div>
-    
-
-    
-        <div class="trm-footer-item">
-            <span>© 2019 - 2025</span>
-            <span class="footer-separator"data-separator=" · "></span>
-            <span class="trm-accent-color">程小客</span>
-        </div>
-    
-
-      
-
-    
-        <div class="trm-footer-item blog-run-long"></div>
-     
-
-     
-</footer>
-                    <!-- footer end -->
-
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-            <!-- body end -->
-
-            
-
-    <div id="post-toc" class="trm-post-toc">
-      <div class="trm-post-toc-header">
-        目录导航
-				<span id="post-toc-top">
-					置顶
-				</span>
-      </div>
-      <div class="trm-post-toc-content">
-        <ol class="trm-toc"><li class="trm-toc-item trm-toc-level-1" title="一、Arduino IDE安装"><a rel="nofollow" class="trm-toc-link" href="#一、Arduino-IDE安装"><span class="trm-toc-number">1.</span> <span class="trm-toc-text">一、Arduino IDE安装</span></a></li><li class="trm-toc-item trm-toc-level-1" title="二、8266环境配置"><a rel="nofollow" class="trm-toc-link" href="#二、8266环境配置"><span class="trm-toc-number">2.</span> <span class="trm-toc-text">二、8266环境配置</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-2" title="2.1 自动下载8266开发板资料"><a rel="nofollow" class="trm-toc-link" href="#2-1-自动下载8266开发板资料"><span class="trm-toc-number">2.1.</span> <span class="trm-toc-text">2.1 自动下载8266开发板资料</span></a></li><li class="trm-toc-item trm-toc-level-2" title="2.2 手动下载8266开发板资料"><a rel="nofollow" class="trm-toc-link" href="#2-2-手动下载8266开发板资料"><span class="trm-toc-number">2.2.</span> <span class="trm-toc-text">2.2 手动下载8266开发板资料</span></a></li></ol></li></ol>
-      </div>
-    </div>
-
-            
-<div class="trm-fixed-container">
-    
-        <div class="trm-fixed-btn post-toc-btn" data-title="目录">
-            <i class="iconfont fas fa-th-list"></i>
-        </div>
-    
-    
-        <div class="trm-fixed-btn" data-title="阅读模式" onclick="asyncFun.switchReadMode()">
-            <i class="iconfont fas fa-book-reader"></i>
-        </div>
-    
-    
-    <div id="trm-back-top" class="trm-fixed-btn" data-title="回到顶部">
-        <i class="iconfont fas fa-arrow-up"></i>
-    </div>
-</div>
-        </div>
-      </div>
-      <!-- scroll container end -->
-  </div>
-  <!-- app wrapper end -->
-
-  
-    <div class="trm-search-popup">
-        <div class="trm-search-wrapper">
-            <div class="form trm-search-form">
-                <div class="trm-search-input-icon">
-                    <i class="iconfont fas fa-search"></i>
-                </div>
-                <input class="trm-search-input" type="text" placeholder="搜索文章...">
-                <div class="trm-search-btn-close">
-                    <i class="iconfont fas fa-times"></i>
-                </div>
-            </div>
-            <div class="trm-search-result-container">
-                <div class="trm-search-empty">
-                    请输入关键词进行搜索
-                </div>
-            </div>
-            <div class="trm-search-footer">
-                <div class="trm-search-stats"></div>
-                <ul class="trm-search-commands">
-                    <li>
-                        <kbd class="command-palette-commands-key">
-                            <svg width="15" height="15" aria-label="Escape key" role="img">
-                                <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                    stroke-width="1.2">
-                                    <path
-                                        d="M13.6167 8.936c-.1065.3583-.6883.962-1.4875.962-.7993 0-1.653-.9165-1.653-2.1258v-.5678c0-1.2548.7896-2.1016 1.653-2.1016.8634 0 1.3601.4778 1.4875 1.0724M9 6c-.1352-.4735-.7506-.9219-1.46-.8972-.7092.0246-1.344.57-1.344 1.2166s.4198.8812 1.3445.9805C8.465 7.3992 8.968 7.9337 9 8.5c.032.5663-.454 1.398-1.4595 1.398C6.6593 9.898 6 9 5.963 8.4851m-1.4748.5368c-.2635.5941-.8099.876-1.5443.876s-1.7073-.6248-1.7073-2.204v-.4603c0-1.0416.721-2.131 1.7073-2.131.9864 0 1.6425 1.031 1.5443 2.2492h-2.956">
-                                    </path>
-                                </g>
-                            </svg>
-                        </kbd>
-                        <span class="command-palette-Label">to close</span>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </div>
-
-  <!-- Plugin -->
-
-
-
-
-    
-    
-<script src="https://unpkg.com/@fancyapps/ui@4.0/dist/fancybox.umd.js"></script>
-
-    
-
-    
-
-    
-        
-<script src="https://unpkg.com/hexo-generator-searchdb@1.4.0/dist/search.js"></script>
-
-        <script src="/js/plugins/local_search.js?v=2.2.6"></script>
-    
-
-    <!-- 数学公式 -->
-    
-
-    <!-- 评论插件 -->
-    
-        
-
-        
-    
-
-		
-
-
-
-
-    <!-- Service Worker -->
-    
-    <!-- baidu push -->
-    
-
-
-<script id="async-script" src="/js/main.js?v=2.2.6"></script>
-
-<!-- CDN -->
-
-
-    
-
-    
-
-    
-
-
-
-</body>
-
-</html>
+  if ('Giscus' === 'Giscus' || !false) {
+    if (false) btf.loadComment(document.getElementById('giscus-wrap'), loadGiscus)
+    else loadGiscus()
+  } else {
+    window.loadOtherComment = loadGiscus
+  }
+})()</script></div><canvas class="fireworks" mobile="false"></canvas><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/fireworks.min.js"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="text-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js"></script></div></div></body></html>
