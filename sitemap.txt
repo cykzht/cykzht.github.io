@@ -1,3 +1,4 @@
+https://www.g2022cyk.top/about/
 https://www.g2022cyk.top/links/
 https://www.g2022cyk.top/tags/
 https://www.g2022cyk.top/categories/
@@ -58,7 +59,6 @@ https://www.g2022cyk.top/2019/10/05/%E6%91%86%E8%84%B1%E8%80%81%E5%B8%88%E6%8E%A
 https://www.g2022cyk.top/2023/12/22/%E6%99%BA%E5%AD%A6%E7%BD%91%EF%BC%9A%E5%9C%A8%E6%89%8B%E6%9C%BA%E4%B8%8A%E8%BD%BB%E6%9D%BE%E6%9F%A5%E5%88%86/
 https://www.g2022cyk.top/2023/12/22/%E5%86%8D%E8%A7%81%E9%80%80%E5%AD%A6%E7%BD%91/
 https://www.g2022cyk.top/2024/11/19/TensorFlow%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/
-https://www.g2022cyk.top/about/
 https://www.g2022cyk.top/
 https://www.g2022cyk.top/tags/Arduino/
 https://www.g2022cyk.top/tags/vue%E7%BC%96%E7%A8%8B/
@@ -75,7 +75,7 @@ https://www.g2022cyk.top/tags/%E7%94%B5%E8%B7%AF%E8%AE%BE%E8%AE%A1/
 https://www.g2022cyk.top/tags/Python%E9%A2%98%E7%9B%AE/
 https://www.g2022cyk.top/tags/%E7%BB%8F%E9%AA%8C%E5%88%86%E4%BA%AB/
 https://www.g2022cyk.top/tags/%E7%A8%8B%E5%BA%8F%E5%8F%91%E5%B8%83/
-https://www.g2022cyk.top/tags/Flash/
 https://www.g2022cyk.top/tags/Bug/
 https://www.g2022cyk.top/tags/%E9%AB%98%E8%80%83/
+https://www.g2022cyk.top/tags/Flash/
 https://www.g2022cyk.top/categories/%E4%B8%AD%E6%96%87%E6%9C%9F%E5%88%8A/
