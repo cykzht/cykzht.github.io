@@ -1,0 +1,396 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>ESP8266+Arduino Development Environment Setup | 程俞客&amp;称心号</title><meta name="author" content="程小客,zhuhaitian@shushichenxin.com"><meta name="copyright" content="程小客"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="Detailed steps for installing the Arduino IDE, as well as the automatic and manual configuration methods for the ESP8266 development board in the Arduino environment.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ESP8266+Arduino Development Environment Setup">
+<meta property="og:url" content="https://www.g2022cyk.top/2022/12/14/ESP8266_Arduino_Development_Environment_Setup/">
+<meta property="og:site_name" content="程俞客&amp;称心号">
+<meta property="og:description" content="Detailed steps for installing the Arduino IDE, as well as the automatic and manual configuration methods for the ESP8266 development board in the Arduino environment.">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://11.g2022cyk.top:8081/wp-content/uploads/2025/08/1754398663-arduinofengmian.webp">
+<meta property="article:published_time" content="2022-12-14T01:00:00.000Z">
+<meta property="article:modified_time" content="2025-08-07T07:09:39.149Z">
+<meta property="article:author" content="程小客">
+<meta property="article:tag" content="Arduino">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://11.g2022cyk.top:8081/wp-content/uploads/2025/08/1754398663-arduinofengmian.webp"><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "ESP8266+Arduino Development Environment Setup",
+  "url": "https://www.g2022cyk.top/2022/12/14/ESP8266_Arduino_Development_Environment_Setup/",
+  "image": "https://11.g2022cyk.top:8081/wp-content/uploads/2025/08/1754398663-arduinofengmian.webp",
+  "datePublished": "2022-12-14T01:00:00.000Z",
+  "dateModified": "2025-08-07T07:09:39.149Z",
+  "author": [
+    {
+      "@type": "Person",
+      "name": "程小客",
+      "url": "https://www.g2022cyk.top"
+    }
+  ]
+}</script><link rel="shortcut icon" href="/img/%E7%A7%B0%E5%BF%83%E5%8F%B7.png"><link rel="canonical" href="https://www.g2022cyk.top/2022/12/14/ESP8266_Arduino_Development_Environment_Setup/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//hm.baidu.com"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script async="async" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><script>(adsbygoogle = window.adsbygoogle || []).push({
+  google_ad_client: 'ca-pub-8847588120991439',
+  enable_page_level_ads: 'true'
+});</script><script>var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?09ca4f4526f7e714a253c7329a59e212";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+btf.addGlobalFn('pjaxComplete', () => {
+  _hmt.push(['_trackPageview',window.location.pathname])
+}, 'baidu_analytics')
+</script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.json","preload":false,"top_n_per_article":1,"unescape":false,"languages":{"hits_empty":"未找到符合您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":false,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":false},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"limitCount":150,"languages":{"author":"作者: 程小客","link":"链接: ","source":"来源: 程俞客&称心号","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: true,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: true,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'ESP8266+Arduino Development Environment Setup',
+  isHighlightShrink: false,
+  isToc: true,
+  pageType: 'post'
+}</script><meta name="generator" content="Hexo 7.3.0"></head><body><script>window.paceOptions = {
+  restartOnPushState: false
+}
+
+btf.addGlobalFn('pjaxSend', () => {
+  Pace.restart()
+}, 'pace_restart')
+
+</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pace-js/themes/blue/pace-theme-minimal.min.css"/><script src="https://cdn.jsdelivr.net/npm/pace-js/pace.min.js"></script><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/%E5%B1%9E%E5%AE%9E%E8%AF%9A%E5%BF%83.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">112</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">34</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">2</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><span class="site-page group hide"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/categories/%E4%B8%AD%E6%96%87%E6%9C%9F%E5%88%8A/"><i class="fa-fw fas fa-language"></i><span> 中文</span></a></li><li><a class="site-page child" href="/categories/%E8%8B%B1%E6%96%87%E6%9C%9F%E5%88%8A/"><i class="fa-fw fas fa-globe"></i><span> 英文</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/links/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于我</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url(https://11.g2022cyk.top:8081/wp-content/uploads/2025/08/1754398663-arduinofengmian.webp);"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><img class="site-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/%E7%A7%B0%E5%BF%83%E5%8F%B7.png" alt="Logo"><span class="site-name">程俞客&amp;称心号</span></a><a class="nav-page-title" href="/"><span class="site-name">ESP8266+Arduino Development Environment Setup</span><span class="site-name"><i class="fa-solid fa-circle-arrow-left"></i><span>  返回首页</span></span></a></span><div id="menus"><div id="search-button"><span class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></span></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><span class="site-page group hide"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/categories/%E4%B8%AD%E6%96%87%E6%9C%9F%E5%88%8A/"><i class="fa-fw fas fa-language"></i><span> 中文</span></a></li><li><a class="site-page child" href="/categories/%E8%8B%B1%E6%96%87%E6%9C%9F%E5%88%8A/"><i class="fa-fw fas fa-globe"></i><span> 英文</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/links/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于我</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="post-info"><h1 class="post-title">ESP8266+Arduino Development Environment Setup</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2022-12-14T01:00:00.000Z" title="发表于 2022-12-14 09:00:00">2022-12-14</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2025-08-07T07:09:39.149Z" title="更新于 2025-08-07 15:09:39">2025-08-07</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E8%8B%B1%E6%96%87%E6%9C%9F%E5%88%8A/">英文期刊</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">总字数:</span><span class="word-count">432</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>2分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">浏览量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="container post-content" id="article-container"><h1>I. Arduino IDE Installation</h1>
+<ol>
+<li>
+<p>Search for <code>Arduino</code> on <code>baidu</code>, and go to the [Arduino official website](<a target="_blank" rel="noopener" href="https://www.arduino.cc/">Arduino - Home</a>).</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://11.g2022cyk.top:8081/wp-content/uploads/2022/10/1666521325-image-20221023183516273.png" alt="baidu"></p>
+</li>
+<li>
+<p>Find and click the <code>software</code> option at the top of the official website.</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://11.g2022cyk.top:8081/wp-content/uploads/2022/10/1666521441-image-20221023183713918.png" alt="Official Website"></p>
+</li>
+<li>
+<p>Scroll down to find the <code>Legacy IDE (1.8.X)</code> version. Although the latest version 2.0 has been released, the author has only tried developing 8266 using version 1.8. It is said that version 2.0 uses the VScode compilation environment, but on the author’s computer, it couldn’t even change the language. Therefore, this tutorial is based on version 1.8. Download the corresponding software version according to your system version. The author is using Windows 11, so the first one is selected. Note that you should definitely not download the Windows app version, as this is a Microsoft Store link, and compared to the installation version, it has many cutbacks, making development less smooth.</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://11.g2022cyk.top:8081/wp-content/uploads/2022/10/1666608909-image-20221024185500616.png" alt="image-20221024185500616"></p>
+</li>
+<li>
+<p>This is the donation step. We simply click <code>Just Download</code>. If you happen to be generous and think this development software is great, you can also try donating.</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://11.g2022cyk.top:8081/wp-content/uploads/2022/10/1666521735-image-20221023184207657.png" alt="Donation"></p>
+</li>
+<li>
+<p>After downloading, it is an exe file. We simply double-click to install.</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://11.g2022cyk.top:8081/wp-content/uploads/2022/10/1666592262-5ad5089ce68871d33c0a7e5578b3466.png" alt="img"></p>
+</li>
+<li>
+<p>The installation process is just a series of <code>Next</code> steps. There may be prompts to install drivers along the way; just click <code>Install</code>.</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://11.g2022cyk.top:8081/wp-content/uploads/2022/10/1666592265-c0d55635f0cca637131ec7fc8241932.png" alt="img"></p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://11.g2022cyk.top:8081/wp-content/uploads/2022/10/1666592267-0eeb5aff95d01e1418fcda993185d4f.png" alt="img"></p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://11.g2022cyk.top:8081/wp-content/uploads/2022/10/1666592268-8f241225b10cd9785af3ca20a002473.png" alt="img"></p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://11.g2022cyk.top:8081/wp-content/uploads/2022/10/1666609159-4237abecc72b92ef1820e79cef8b5bf.png" alt="img"></p>
+</li>
+</ol>
+<h1>II. 8266 Environment Configuration</h1>
+<h2 id="2-1-Automatic-Download-of-8266-Development-Board-Resources">2.1 Automatic Download of 8266 Development Board Resources</h2>
+<ol>
+<li>
+<p>Click <code>File</code> -&gt; <code>Preferences</code> in the upper right corner.</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://11.g2022cyk.top:8081/wp-content/uploads/2022/10/1666592291-a46c6d27ad3628c9e8f59cfe0038362.jpg" alt="img"></p>
+</li>
+<li>
+<p>Enter the following address in the <code>Additional Board Manager URLs</code> field:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://arduino.esp8266.com/stable/package_esp8266com_index.json</span><br></pre></td></tr></table></figure>
+<p>Click <code>OK</code> to save.</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://11.g2022cyk.top:8081/wp-content/uploads/2022/10/1666592295-695ea578924c321f3f3698e66e87d14.png" alt="img"></p>
+</li>
+<li>
+<p>Click <code>Tools</code> -&gt; <code>Board</code> -&gt; <code>Board Manager</code> in the top menu bar.</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://11.g2022cyk.top:8081/wp-content/uploads/2022/10/1666592314-df182d995a60dc56f44601041680901.jpg" alt="img"></p>
+</li>
+<li>
+<p>Search for <code>8266</code> inside and download the corresponding version of the development board resource package.</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://11.g2022cyk.top:8081/wp-content/uploads/2022/10/1666592332-820fcfeed05eaf1fc9d43c824c2b9c3.png" alt="img"></p>
+<p><strong>Note that the code writing method for different versions of the 8266 development board resource packages is different. Please be sure to refer to the version of the 8266 development board used by the code you downloaded.</strong></p>
+</li>
+<li>
+<p>You can then see ESP8266 in <code>Tools</code> -&gt; <code>Board</code>.</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://11.g2022cyk.top:8081/wp-content/uploads/2022/10/1666592343-afcd87a7bbd242187e3029e570964f6.jpg" alt="img"></p>
+</li>
+</ol>
+<h2 id="2-2-Manual-Download-of-8266-Development-Board-Resources">2.2 Manual Download of 8266 Development Board Resources</h2>
+<p>Some users may find that downloading the development board resources fails due to slow browsing speeds. Below is a method for manually installing the 8266 development board resource package.</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://11.g2022cyk.top:8081/wp-content/uploads/2022/10/1666592335-c0f0b25e886b67c5e1c70f71242768b.png" alt="img"></p>
+<ol>
+<li>
+<p>Download the <code>8266_package</code>, which is an exe program. Simply double-click to open it, and the program will automatically install the 8266 development environment.</p>
+<p>Download link 1:</p>
+<p>[<a target="_blank" rel="noopener" href="https://pan.baidu.com/s/1Q67WF1B1QGaO04g6i-U7aQ">https://pan.baidu.com/s/1Q67WF1B1QGaO04g6i-U7aQ</a>](<a target="_blank" rel="noopener" href="https://g2022cyk.top/?u=https%3A%2F%2Fpan.baidu.com%2Fs%2F1Q67WF1B1QGaO04g6i-U7aQ">https://g2022cyk.top/?u=https%3A%2F%2Fpan.baidu.com%2Fs%2F1Q67WF1B1QGaO04g6i-U7aQ</a>]<br>
+Password: 8266</p>
+<p><a target="_blank" rel="noopener" href="https://g2022cyk.top/?u=https%3A%2F%2Fafdian.net%2Fitem%3Fplan_id%3D45564748539c11edb71652540025c377">Download link 2</a></p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://11.g2022cyk.top:8081/wp-content/uploads/2022/10/1666592337-0f21a6faa624d0353ddf1e0360bc289.png" alt="img"></p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://11.g2022cyk.top:8081/wp-content/uploads/2022/10/1666592341-4db5f7bb326a76fdf0f6ea4700bc330.png" alt="img"></p>
+</li>
+<li>
+<p>After installation, you can directly see ESP8266 in <code>Tools</code> -&gt; <code>Board</code>.</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://11.g2022cyk.top:8081/wp-content/uploads/2022/10/1666592343-afcd87a7bbd242187e3029e570964f6.jpg" alt="img"></p>
+</li>
+</ol>
+<div id="post-outdate-notice" data="{&quot;limitDay&quot;:365,&quot;messagePrev&quot;:&quot;已经过了&quot;,&quot;messageNext&quot;:&quot;天自上次更新，文章内容可能已过时。&quot;,&quot;postUpdate&quot;:&quot;2025-08-07 15:09:39&quot;}" hidden></div></article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="https://www.g2022cyk.top">程小客</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="https://www.g2022cyk.top/2022/12/14/ESP8266_Arduino_Development_Environment_Setup/">https://www.g2022cyk.top/2022/12/14/ESP8266_Arduino_Development_Environment_Setup/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来源 <a href="https://www.g2022cyk.top" target="_blank">程俞客&称心号</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/Arduino/">Arduino</a></div><div class="post-share"><div class="social-share" data-image="https://11.g2022cyk.top:8081/wp-content/uploads/2025/08/1754398663-arduinofengmian.webp" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><a class="pagination-related" href="/2022/12/14/resolve-windows7-install-vmware-tools-error/" title="Solving the Error Issue When Installing VMware Tools on Windows 7"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://11.g2022cyk.top:8081/wp-content/uploads/2025/08/1754395938-vmtool.webp" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="info"><div class="info-1"><div class="info-item-1">上一篇</div><div class="info-item-2">Solving the Error Issue When Installing VMware Tools on Windows 7</div></div><div class="info-2"><div class="info-item-1">Solving the Error Issue When Installing VMware Tools on Windows 7 The error encountered during installation is caused by the failure to install drivers.  The installer cannot automatically install the Virtual Machine Communication Interface Sockets (VSock) driver. This driver must be manually installed.  This is the explanation provided by VMware officially.  The gist is that Windows 7 has stopped receiving updates and is too old, as VMware tools use the latest code signing, and older version...</div></div></div></a><a class="pagination-related" href="/2022/12/14/ESP8266+Arduino%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/" title="ESP8266+Arduino开发环境搭建"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://11.g2022cyk.top:8081/wp-content/uploads/2025/08/1754398663-arduinofengmian.webp" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="info text-right"><div class="info-1"><div class="info-item-1">下一篇</div><div class="info-item-2">ESP8266+Arduino开发环境搭建</div></div><div class="info-2"><div class="info-item-1">一、Arduino IDE安装   在baidu搜索Arduino，进入[Arduino官网](Arduino - Home)。    在官网的上方找到并点击software选项。    往下滑找到Legacy IDE (1.8.X)版本，虽然最新版2.0版本已经发布，但笔者只尝试过用1.8的版本进行8266的开发，据说2.0使用了VScode的编译环境，不过在笔者的电脑上它甚至没法修改语言，所以本教程还是基于1.8的版本。根据你的系统版本下载相对应的软件版本，笔者这里使用的是Windows11，就选择下载第一个。注意，千万不要下载Windows app版本，这个是微软商店的链接，相较于安装版本有许多阉割，没有安装版开发那么顺畅。    这一步是捐赠的环节，我们直接点击Just Download，如果你恰好财力雄厚，觉得这个开发软件很不错，也可以尝试捐赠一波。    下载好后是一个exe文件，我们直接双击安装。    安装过程就一路Next，中间可能会有提示安装驱动，点击安装即可。       二、8266环境配置 2.1 自动下载8266开发板资料   点击右上角的文件——首选...</div></div></div></a></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><a class="pagination-related" href="/2022/12/14/ESP8266+Arduino%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/" title="ESP8266+Arduino开发环境搭建"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://11.g2022cyk.top:8081/wp-content/uploads/2025/08/1754398663-arduinofengmian.webp" alt="cover"><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2022-12-14</div><div class="info-item-2">ESP8266+Arduino开发环境搭建</div></div><div class="info-2"><div class="info-item-1">一、Arduino IDE安装   在baidu搜索Arduino，进入[Arduino官网](Arduino - Home)。    在官网的上方找到并点击software选项。    往下滑找到Legacy IDE (1.8.X)版本，虽然最新版2.0版本已经发布，但笔者只尝试过用1.8的版本进行8266的开发，据说2.0使用了VScode的编译环境，不过在笔者的电脑上它甚至没法修改语言，所以本教程还是基于1.8的版本。根据你的系统版本下载相对应的软件版本，笔者这里使用的是Windows11，就选择下载第一个。注意，千万不要下载Windows app版本，这个是微软商店的链接，相较于安装版本有许多阉割，没有安装版开发那么顺畅。    这一步是捐赠的环节，我们直接点击Just Download，如果你恰好财力雄厚，觉得这个开发软件很不错，也可以尝试捐赠一波。    下载好后是一个exe文件，我们直接双击安装。    安装过程就一路Next，中间可能会有提示安装驱动，点击安装即可。       二、8266环境配置 2.1 自动下载8266开发板资料   点击右上角的文件——首选...</div></div></div></a></div></div><hr class="custom-hr"/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="giscus-wrap"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/%E5%B1%9E%E5%AE%9E%E8%AF%9A%E5%BF%83.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">程小客</div><div class="author-info-description">述事称心社团下的程序部门和影像部门</div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">112</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">34</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">2</div></a></div><a id="card-info-btn" href="mailto:zhuhaitian@shushichenxin.com"><i class="fas fa-envelope"></i><span>联系我</span></a><div class="card-info-social-icons"><a class="social-icon" href="https://github.com/cykzht" target="_blank" title="Github"><i class="fab fa-github" style="color: #hdhfbb;"></i></a><a class="social-icon" href="mailto:zhuhaitian@shushichenxin.com" target="_blank" title="Email"><i class="fas fa-envelope" style="color: #000000;"></i></a><a class="social-icon" href="https://space.bilibili.com/122529890" target="_blank" title="Bilibili"><i class="fab fa-bilibili" style="color: #00A1D6;"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">欢迎大家去<a href="https://www.shushichenxin.com/" target="_blank">述事称心</a>逛逛！</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">I. Arduino IDE Installation</span></a></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">2.</span> <span class="toc-text">II. 8266 Environment Configuration</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#2-1-Automatic-Download-of-8266-Development-Board-Resources"><span class="toc-number">2.1.</span> <span class="toc-text">2.1 Automatic Download of 8266 Development Board Resources</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-2-Manual-Download-of-8266-Development-Board-Resources"><span class="toc-number">2.2.</span> <span class="toc-text">2.2 Manual Download of 8266 Development Board Resources</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2024/11/19/TensorFlow%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/" title="TensorFlow安装教程"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://11.g2022cyk.top:8081/wp-content/uploads/2025/08/1754229626-ten.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="TensorFlow安装教程"/></a><div class="content"><a class="title" href="/2024/11/19/TensorFlow%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/" title="TensorFlow安装教程">TensorFlow安装教程</a><time datetime="2024-11-19T14:12:41.000Z" title="发表于 2024-11-19 22:12:41">2024-11-19</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/11/19/tensorflow_installation_guide/" title="TensorFlow Installation Tutorial"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://11.g2022cyk.top:8081/wp-content/uploads/2025/08/1754229626-ten.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="TensorFlow Installation Tutorial"/></a><div class="content"><a class="title" href="/2024/11/19/tensorflow_installation_guide/" title="TensorFlow Installation Tutorial">TensorFlow Installation Tutorial</a><time datetime="2024-11-19T14:12:41.000Z" title="发表于 2024-11-19 22:12:41">2024-11-19</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/12/22/goodbye_school_dropout_website/" title="Farewell to TuitionDrop"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://11.g2022cyk.top:8081/wp-content/uploads/2025/08/1754144143-show.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Farewell to TuitionDrop"/></a><div class="content"><a class="title" href="/2023/12/22/goodbye_school_dropout_website/" title="Farewell to TuitionDrop">Farewell to TuitionDrop</a><time datetime="2023-12-22T10:20:00.000Z" title="发表于 2023-12-22 18:20:00">2023-12-22</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/12/22/smartlearn_net_easily_check_scores_on_phone/" title="Zhixue.com: Easily Check Scores on Your Mobile Device"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://11.g2022cyk.top:8081/wp-content/uploads/2025/08/1754144268-Screenshot_2023-12-20-16-56-51-556_com.pipipig.zhixue.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Zhixue.com: Easily Check Scores on Your Mobile Device"/></a><div class="content"><a class="title" href="/2023/12/22/smartlearn_net_easily_check_scores_on_phone/" title="Zhixue.com: Easily Check Scores on Your Mobile Device">Zhixue.com: Easily Check Scores on Your Mobile Device</a><time datetime="2023-12-22T10:20:00.000Z" title="发表于 2023-12-22 18:20:00">2023-12-22</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/12/22/%E5%86%8D%E8%A7%81%E9%80%80%E5%AD%A6%E7%BD%91/" title="再见退学网"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://11.g2022cyk.top:8081/wp-content/uploads/2025/08/1754144143-show.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="再见退学网"/></a><div class="content"><a class="title" href="/2023/12/22/%E5%86%8D%E8%A7%81%E9%80%80%E5%AD%A6%E7%BD%91/" title="再见退学网">再见退学网</a><time datetime="2023-12-22T10:20:00.000Z" title="发表于 2023-12-22 18:20:00">2023-12-22</time></div></div></div></div></div></div></main><footer id="footer" style="background-image: url(https://11.g2022cyk.top:8081/wp-content/uploads/2025/08/1754398663-arduinofengmian.webp);"><div class="footer-other"><div class="footer-copyright"><span class="copyright">&copy;&nbsp;2019 - 2025 By 程小客</span></div><div class="footer_custom_text"><a target="_blank" rel="noopener" href="https://beian.miit.gov.cn/"><span>备案号：京ICP备2022028753号-1</span></a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="前往评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js"></script><div class="js-pjax"><script>(async () => {
+  const showKatex = () => {
+    document.querySelectorAll('#article-container .katex').forEach(el => el.classList.add('katex-show'))
+  }
+
+  if (!window.katex_js_css) {
+    window.katex_js_css = true
+    await btf.getCSS('https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css')
+    if (false) {
+      await btf.getScript('https://cdn.jsdelivr.net/npm/katex/dist/contrib/copy-tex.min.js')
+    }
+  }
+
+  showKatex()
+})()</script><script>(() => {
+  const runMermaid = ele => {
+    window.loadMermaid = true
+    const theme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'default'
+
+    ele.forEach((item, index) => {
+      const mermaidSrc = item.firstElementChild
+      const mermaidThemeConfig = `%%{init:{ 'theme':'${theme}'}}%%\n`
+      const mermaidID = `mermaid-${index}`
+      const mermaidDefinition = mermaidThemeConfig + mermaidSrc.textContent
+
+      const renderFn = mermaid.render(mermaidID, mermaidDefinition)
+      const renderMermaid = svg => {
+        mermaidSrc.insertAdjacentHTML('afterend', svg)
+      }
+
+      // mermaid v9 and v10 compatibility
+      typeof renderFn === 'string' ? renderMermaid(renderFn) : renderFn.then(({ svg }) => renderMermaid(svg))
+    })
+  }
+
+  const codeToMermaid = () => {
+    const codeMermaidEle = document.querySelectorAll('pre > code.mermaid')
+    if (codeMermaidEle.length === 0) return
+
+    codeMermaidEle.forEach(ele => {
+      const preEle = document.createElement('pre')
+      preEle.className = 'mermaid-src'
+      preEle.hidden = true
+      preEle.textContent = ele.textContent
+      const newEle = document.createElement('div')
+      newEle.className = 'mermaid-wrap'
+      newEle.appendChild(preEle)
+      ele.parentNode.replaceWith(newEle)
+    })
+  }
+
+  const loadMermaid = () => {
+    if (true) codeToMermaid()
+    const $mermaid = document.querySelectorAll('#article-container .mermaid-wrap')
+    if ($mermaid.length === 0) return
+
+    const runMermaidFn = () => runMermaid($mermaid)
+    btf.addGlobalFn('themeChange', runMermaidFn, 'mermaid')
+    window.loadMermaid ? runMermaidFn() : btf.getScript('https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js').then(runMermaidFn)
+  }
+
+  btf.addGlobalFn('encrypt', loadMermaid, 'mermaid')
+  window.pjax ? loadMermaid() : document.addEventListener('DOMContentLoaded', loadMermaid)
+})()</script><script>(() => {
+  const isShuoshuo = GLOBAL_CONFIG_SITE.pageType === 'shuoshuo'
+  const option = null
+
+  const getGiscusTheme = theme => theme === 'dark' ? 'dark' : 'light'
+
+  const createScriptElement = config => {
+    const ele = document.createElement('script')
+    Object.entries(config).forEach(([key, value]) => {
+      ele.setAttribute(key, value)
+    })
+    return ele
+  }
+
+  const loadGiscus = (el = document, key) => {
+    const mappingConfig = isShuoshuo
+      ? { 'data-mapping': 'specific', 'data-term': key }
+      : { 'data-mapping': (option && option['data-mapping']) || 'pathname' }
+
+    const giscusConfig = {
+      src: 'https://giscus.app/client.js',
+      'data-repo': 'cykzht/cykzht.github.io',
+      'data-repo-id': 'MDEwOlJlcG9zaXRvcnkyMDI3MjY0OTg=',
+      'data-category-id': 'DIC_kwDODBVcYs4Cts4-',
+      'data-theme': getGiscusTheme(document.documentElement.getAttribute('data-theme')),
+      'data-reactions-enabled': '1',
+      crossorigin: 'anonymous',
+      async: true,
+      ...option,
+      ...mappingConfig
+    }
+
+    const scriptElement = createScriptElement(giscusConfig)
+
+    el.querySelector('#giscus-wrap').appendChild(scriptElement)
+
+    if (isShuoshuo) {
+      window.shuoshuoComment.destroyGiscus = () => {
+        if (el.children.length) {
+          el.innerHTML = ''
+          el.classList.add('no-comment')
+        }
+      }
+    }
+  }
+
+  const changeGiscusTheme = theme => {
+    const iframe = document.querySelector('#giscus-wrap iframe')
+    if (iframe) {
+      const message = {
+        giscus: {
+          setConfig: {
+            theme: getGiscusTheme(theme)
+          }
+        }
+      }
+      iframe.contentWindow.postMessage(message, 'https://giscus.app')
+    }
+  }
+
+  btf.addGlobalFn('themeChange', changeGiscusTheme, 'giscus')
+
+  if (isShuoshuo) {
+    'Giscus' === 'Giscus'
+      ? window.shuoshuoComment = { loadComment: loadGiscus }
+      : window.loadOtherComment = loadGiscus
+    return
+  }
+
+  if ('Giscus' === 'Giscus' || !false) {
+    if (false) btf.loadComment(document.getElementById('giscus-wrap'), loadGiscus)
+    else loadGiscus()
+  } else {
+    window.loadOtherComment = loadGiscus
+  }
+})()</script></div><canvas class="fireworks" mobile="false"></canvas><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/fireworks.min.js"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="text-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js"></script></div></div></body></html>

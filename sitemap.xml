@@ -2,144 +2,513 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://www.g2022cyk.top/2023/01/30/%E6%A1%8C%E9%9D%A2%E5%AF%BC%E8%88%AA%E4%B8%8A%E4%BD%8D%E6%9C%BA/</loc>
+    <loc>https://www.g2022cyk.top/2022/12/31/read_sitemap_xml_with_php/</loc>
     
-    <lastmod>2025-08-05</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.g2022cyk.top/2022/12/21/PHP-sql%E8%AF%AD%E5%8F%A5%E9%A2%84%E5%A4%84%E7%90%86/</loc>
-    
-    <lastmod>2025-08-05</lastmod>
+    <lastmod>2025-08-07</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://www.g2022cyk.top/2022/12/28/ThinkPHP6%E5%A4%9A%E5%BA%94%E7%94%A8%E6%A8%A1%E5%BC%8F/</loc>
+    <loc>https://www.g2022cyk.top/2022/12/28/ThinkPHP6-Multi-Application-Mode/</loc>
     
-    <lastmod>2025-08-05</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.g2022cyk.top/2022/12/21/ThinkPHP6.0%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E9%83%A8%E7%BD%B2/</loc>
-    
-    <lastmod>2025-08-05</lastmod>
+    <lastmod>2025-08-07</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://www.g2022cyk.top/2022/12/31/PHP%E4%BD%BF%E7%94%A8curl%E4%B8%8B%E8%BD%BD%E6%96%87%E4%BB%B6%E5%88%B0%E6%9C%8D%E5%8A%A1%E5%99%A8/</loc>
+    <loc>https://www.g2022cyk.top/2023/05/04/Developing_Desktop_Applications_With_PyWebView/</loc>
     
-    <lastmod>2025-08-05</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.g2022cyk.top/2022/12/21/PHP%E8%BF%9E%E6%8E%A5mysql%E6%95%B0%E6%8D%AE%E5%BA%93/</loc>
-    
-    <lastmod>2025-08-05</lastmod>
+    <lastmod>2025-08-07</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://www.g2022cyk.top/2022/12/31/PHP%E6%8F%90%E4%BA%A4%E7%BD%91%E7%AB%99%E9%93%BE%E6%8E%A5%E5%88%B0%E7%99%BE%E5%BA%A6%E7%AB%99%E9%95%BF/</loc>
+    <loc>https://www.g2022cyk.top/2022/12/14/ESP8266_Arduino_Development_Environment_Setup/</loc>
     
-    <lastmod>2025-08-05</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.g2022cyk.top/2022/12/31/PHP%E8%AF%BB%E5%8F%96sitemap.xml%E6%96%87%E4%BB%B6/</loc>
-    
-    <lastmod>2025-08-05</lastmod>
+    <lastmod>2025-08-07</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://www.g2022cyk.top/2022/12/31/%E8%AE%A9PHP%E8%87%AA%E5%8A%A8%E8%AF%BB%E5%8F%96sitemap%E5%B9%B6%E6%8F%90%E4%BA%A4%E7%99%BE%E5%BA%A6%E7%AB%99%E9%95%BF/</loc>
+    <loc>https://www.g2022cyk.top/2022/12/22/Hyper-V_Install_Windows7/</loc>
     
-    <lastmod>2025-08-05</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.g2022cyk.top/2022/11/09/Nginx%E4%B8%8B%E7%9A%84%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86/</loc>
-    
-    <lastmod>2025-08-05</lastmod>
+    <lastmod>2025-08-07</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://www.g2022cyk.top/2022/12/20/%E6%96%B0%E8%A7%86%E9%87%8E/</loc>
+    <loc>https://www.g2022cyk.top/2019/11/20/branch_statement/</loc>
     
-    <lastmod>2025-08-05</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.g2022cyk.top/2022/12/14/ESP8266+Arduino%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/</loc>
-    
-    <lastmod>2025-08-05</lastmod>
+    <lastmod>2025-08-07</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://www.g2022cyk.top/2023/02/01/%E6%A1%8C%E9%9D%A2%E5%AF%BC%E8%88%AA%E5%8F%91%E5%B8%83/</loc>
+    <loc>https://www.g2022cyk.top/2023/01/11/create-vue-project-with-zero-instructions/</loc>
     
-    <lastmod>2025-08-05</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.g2022cyk.top/2022/12/13/%E6%95%99%E4%BD%A0%E5%9C%A82022%E5%B9%B4%E5%AE%89%E8%A3%85Flash%E7%BA%AF%E5%87%80%E7%89%88/</loc>
-    
-    <lastmod>2025-08-05</lastmod>
+    <lastmod>2025-08-07</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://www.g2022cyk.top/2022/12/31/%E6%88%91%E7%9A%84%E4%B8%96%E7%95%8C(Java%E7%89%88)%E5%8E%9F%E7%89%88%E6%9C%8D%E5%BC%80%E6%9C%8D%E6%95%99%E7%A8%8B/</loc>
+    <loc>https://www.g2022cyk.top/2023/01/30/desktop_navigation_host_computer/</loc>
     
-    <lastmod>2025-08-05</lastmod>
+    <lastmod>2025-08-07</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://www.g2022cyk.top/2022/12/31/%E6%88%91%E7%9A%84%E4%B8%96%E7%95%8C%E5%9F%BA%E5%B2%A9%E7%89%88(%E6%89%8B%E6%9C%BA%E7%89%88)%E5%8E%9F%E7%89%88%E5%BC%80%E6%9C%8D%E6%95%99%E7%A8%8B/</loc>
+    <loc>https://www.g2022cyk.top/2023/02/01/desktop_navigation_release/</loc>
     
-    <lastmod>2025-08-05</lastmod>
+    <lastmod>2025-08-07</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.g2022cyk.top/2019/10/05/escape_teacher_control_jydz_electronic_classroom_hack_tutorial/</loc>
+    
+    <lastmod>2025-08-07</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.g2022cyk.top/2023/06/10/final_chinese_exams_epilogue_new_journey_to_be_started/</loc>
+    
+    <lastmod>2025-08-07</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.g2022cyk.top/2023/01/02/four-in-one-pcb-card/</loc>
+    
+    <lastmod>2025-08-07</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.g2022cyk.top/2022/09/12/first_java_program/</loc>
+    
+    <lastmod>2025-08-07</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.g2022cyk.top/2023/12/22/goodbye_school_dropout_website/</loc>
+    
+    <lastmod>2025-08-07</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.g2022cyk.top/2023/06/10/gaokao_free_time_chasing_infinite_possibilities/</loc>
+    
+    <lastmod>2025-08-07</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.g2022cyk.top/2023/02/22/incident_report_221_school_leaving_abnormal_event/</loc>
+    
+    <lastmod>2025-08-07</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.g2022cyk.top/2022/11/09/Java_Automatic_Campus_Network_Login/</loc>
+    
+    <lastmod>2025-08-07</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.g2022cyk.top/2022/09/09/Java-Development-Environment-Eclipse-Installation/</loc>
+    
+    <lastmod>2025-08-07</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.g2022cyk.top/2022/09/09/Java_code_standard/</loc>
+    
+    <lastmod>2025-08-07</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.g2022cyk.top/2022/09/09/Java_Development_Environment_JDK_Installation_Tutorial/</loc>
+    
+    <lastmod>2025-08-07</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.g2022cyk.top/2022/09/09/Java_operators/</loc>
+    
+    <lastmod>2025-08-07</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.g2022cyk.top/2022/12/10/install-hyper-v-virtual-machine/</loc>
+    
+    <lastmod>2025-08-07</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.g2022cyk.top/2022/09/09/install_java_environment_on_linux/</loc>
+    
+    <lastmod>2025-08-07</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.g2022cyk.top/2022/12/09/install-vmware-vm/</loc>
+    
+    <lastmod>2025-08-07</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.g2022cyk.top/2022/12/22/installing_windows_7_in_vmware_virtual_machine/</loc>
+    
+    <lastmod>2025-08-07</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.g2022cyk.top/2022/09/09/java_branch_statement_if_usage/</loc>
+    
+    <lastmod>2025-08-07</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.g2022cyk.top/2022/09/09/java_language_overview/</loc>
+    
+    <lastmod>2025-08-07</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.g2022cyk.top/2022/09/11/java_scanner_usage_for_inputting_data_from_keyboard/</loc>
+    
+    <lastmod>2025-08-07</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.g2022cyk.top/2022/09/09/Java_variables_constants_and_data_types/</loc>
+    
+    <lastmod>2025-08-07</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.g2022cyk.top/2019/10/14/little_fish_swimming_exercise_explanation/</loc>
+    
+    <lastmod>2025-08-07</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.g2022cyk.top/2022/12/21/PHP-prepared_statements_sql/</loc>
+    
+    <lastmod>2025-08-07</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.g2022cyk.top/2019/10/09/Python_Basic_Data_Types_and_Type_Conversion/</loc>
+    
+    <lastmod>2025-08-07</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.g2022cyk.top/2019/11/18/Python_Logical_Operators/</loc>
+    
+    <lastmod>2025-08-07</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.g2022cyk.top/2019/10/09/Python_basic_statements_practice_questions/</loc>
+    
+    <lastmod>2025-08-07</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.g2022cyk.top/2022/12/31/my_world_java_original_server_launch_tutorial/</loc>
+    
+    <lastmod>2025-08-07</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.g2022cyk.top/2022/12/31/my_world_rock_version_mobile_original_server_tutorial/</loc>
+    
+    <lastmod>2025-08-07</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.g2022cyk.top/2022/12/31/my_world_rock_version_mobile_plugin_server_tutorial/</loc>
+    
+    <lastmod>2025-08-07</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.g2022cyk.top/2022/11/09/nginx_reverse_proxy/</loc>
+    
+    <lastmod>2025-08-07</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.g2022cyk.top/2022/12/20/new_vision/</loc>
+    
+    <lastmod>2025-08-07</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.g2022cyk.top/2020/04/24/phone_run_python/</loc>
+    
+    <lastmod>2025-08-07</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.g2022cyk.top/2022/12/21/php_connect_mysql_database/</loc>
+    
+    <lastmod>2025-08-07</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.g2022cyk.top/2022/09/10/program_flow_and_sequential_structure/</loc>
+    
+    <lastmod>2025-08-07</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.g2022cyk.top/2022/12/31/php_submit_website_link_to_baidu/</loc>
+    
+    <lastmod>2025-08-07</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.g2022cyk.top/2019/09/16/python_environment_installation_tutorial/</loc>
+    
+    <lastmod>2025-08-07</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.g2022cyk.top/2022/12/31/php_use_curl_download_file_to_server/</loc>
+    
+    <lastmod>2025-08-07</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.g2022cyk.top/2019/09/23/python_output/</loc>
+    
+    <lastmod>2025-08-07</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.g2022cyk.top/2019/10/09/python_input_statement_usage/</loc>
+    
+    <lastmod>2025-08-07</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.g2022cyk.top/2022/12/31/read_sitemap_Automatically_and_Submit_to_Baidu_Webmaster/</loc>
+    
+    <lastmod>2025-08-07</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.g2022cyk.top/2022/12/14/resolve-windows7-install-vmware-tools-error/</loc>
+    
+    <lastmod>2025-08-07</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.g2022cyk.top/2023/12/22/smartlearn_net_easily_check_scores_on_phone/</loc>
+    
+    <lastmod>2025-08-07</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.g2022cyk.top/2022/04/29/spring_fall_winter_summer_open_source_release/</loc>
+    
+    <lastmod>2025-08-07</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.g2022cyk.top/2023/01/10/start-windows-11-android-subsystem/</loc>
+    
+    <lastmod>2025-08-07</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.g2022cyk.top/2022/12/13/teach-you-install-flash-pure-version-in-2022/</loc>
+    
+    <lastmod>2025-08-07</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.g2022cyk.top/2024/11/19/tensorflow_installation_guide/</loc>
+    
+    <lastmod>2025-08-07</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.g2022cyk.top/2022/12/21/ThinkPHP6.0_Development_Environment_Deployment/</loc>
+    
+    <lastmod>2025-08-07</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.g2022cyk.top/2022/09/09/understanding_jdk_jre_and_jvm/</loc>
+    
+    <lastmod>2025-08-07</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.g2022cyk.top/2023/12/22/%E5%86%8D%E8%A7%81%E9%80%80%E5%AD%A6%E7%BD%91/</loc>
+    
+    <lastmod>2025-08-07</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -148,187 +517,61 @@
   <url>
     <loc>https://www.g2022cyk.top/2022/12/31/%E6%88%91%E7%9A%84%E4%B8%96%E7%95%8C%E5%9F%BA%E5%B2%A9%E7%89%88(%E6%89%8B%E6%9C%BA%E7%89%88)%E6%8F%92%E4%BB%B6%E7%89%88%E5%BC%80%E6%9C%8D%E6%95%99%E7%A8%8B/</loc>
     
-    <lastmod>2025-08-05</lastmod>
+    <lastmod>2025-08-07</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://www.g2022cyk.top/2022/04/29/%E5%9B%9B%E5%AD%A3%E5%AD%A6%E6%AD%A3%E5%BC%8F%E5%BC%80%E6%BA%90%EF%BC%81/</loc>
+    <loc>https://www.g2022cyk.top/2023/01/30/%E6%A1%8C%E9%9D%A2%E5%AF%BC%E8%88%AA%E4%B8%8A%E4%BD%8D%E6%9C%BA/</loc>
     
-    <lastmod>2025-08-05</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.g2022cyk.top/2023/01/10/%E5%90%AF%E5%8A%A8Win11%E7%9A%84%E5%AE%89%E5%8D%93%E5%AD%90%E7%B3%BB%E7%BB%9F/</loc>
-    
-    <lastmod>2025-08-05</lastmod>
+    <lastmod>2025-08-07</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://www.g2022cyk.top/2019/10/09/Python%E8%BE%93%E5%85%A5%E8%AF%AD%E5%8F%A5input%E7%9A%84%E4%BD%BF%E7%94%A8/</loc>
+    <loc>https://www.g2022cyk.top/2023/12/22/%E6%99%BA%E5%AD%A6%E7%BD%91%EF%BC%9A%E5%9C%A8%E6%89%8B%E6%9C%BA%E4%B8%8A%E8%BD%BB%E6%9D%BE%E6%9F%A5%E5%88%86/</loc>
     
-    <lastmod>2025-08-05</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.g2022cyk.top/2019/10/09/Python%E5%9F%BA%E7%A1%80%E8%AF%AD%E5%8F%A5%E7%BB%83%E4%B9%A0%E9%A2%98/</loc>
-    
-    <lastmod>2025-08-05</lastmod>
+    <lastmod>2025-08-07</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://www.g2022cyk.top/2019/09/16/Python%E7%8E%AF%E5%A2%83%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/</loc>
+    <loc>https://www.g2022cyk.top/2023/06/10/%E9%AB%98%E8%80%83%E8%87%AA%E7%94%B1%E6%97%B6%E5%85%89%EF%BC%8C%E8%BF%BD%E5%AF%BB%E6%97%A0%E9%99%90%E5%8F%AF%E8%83%BD%EF%BC%81/</loc>
     
-    <lastmod>2025-08-05</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.g2022cyk.top/2019/09/23/Python%E7%9A%84%E8%BE%93%E5%87%BA/</loc>
-    
-    <lastmod>2025-08-05</lastmod>
+    <lastmod>2025-08-07</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://www.g2022cyk.top/2019/10/09/Python%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E4%B8%8E%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2/</loc>
+    <loc>https://www.g2022cyk.top/2023/06/10/%E9%AB%98%E8%80%83%E5%AE%8C%E7%BB%93%E7%AF%87%EF%BC%8C%E6%96%B0%E7%9A%84%E5%BE%81%E7%A8%8B%E5%8D%B3%E5%B0%86%E5%BC%80%E5%90%AF/</loc>
     
-    <lastmod>2025-08-05</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.g2022cyk.top/2019/11/18/Python%E7%9A%84%E9%80%BB%E8%BE%91%E8%BF%90%E7%AE%97/</loc>
-    
-    <lastmod>2025-08-05</lastmod>
+    <lastmod>2025-08-07</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://www.g2022cyk.top/2019/10/14/%E5%B0%8F%E9%B1%BC%E6%B8%B8%E6%B3%B3%E9%A2%98%E7%9B%AE%E8%AF%A6%E8%A7%A3/</loc>
+    <loc>https://www.g2022cyk.top/2023/02/22/%E8%AE%B0%E9%80%80%E5%AD%A6%E7%BD%912.21%E5%BC%82%E5%B8%B8%E4%BA%8B%E6%95%85/</loc>
     
-    <lastmod>2025-08-05</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.g2022cyk.top/2019/11/20/%E5%88%86%E6%94%AF%E8%AF%AD%E5%8F%A5/</loc>
-    
-    <lastmod>2025-08-05</lastmod>
+    <lastmod>2025-08-07</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://www.g2022cyk.top/2022/09/09/Java%E4%B8%AD%E7%9A%84%E8%BF%90%E7%AE%97%E7%AC%A6/</loc>
+    <loc>https://www.g2022cyk.top/2022/12/31/%E8%AE%A9PHP%E8%87%AA%E5%8A%A8%E8%AF%BB%E5%8F%96sitemap%E5%B9%B6%E6%8F%90%E4%BA%A4%E7%99%BE%E5%BA%A6%E7%AB%99%E9%95%BF/</loc>
     
-    <lastmod>2025-08-05</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.g2022cyk.top/2022/09/09/Java%E4%B8%AD%E7%9A%84%E5%8F%98%E9%87%8F%E3%80%81%E5%B8%B8%E9%87%8F%E4%B8%8E%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/</loc>
-    
-    <lastmod>2025-08-05</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.g2022cyk.top/2022/11/09/Java%E5%AE%9E%E7%8E%B0%E6%A0%A1%E5%9B%AD%E7%BD%91%E8%87%AA%E5%8A%A8%E7%99%BB%E5%BD%95/</loc>
-    
-    <lastmod>2025-08-05</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.g2022cyk.top/2022/09/09/Java%E7%9A%84%E5%88%86%E6%94%AF%E8%AF%AD%E5%8F%A5if%E7%9A%84%E7%94%A8%E6%B3%95/</loc>
-    
-    <lastmod>2025-08-05</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.g2022cyk.top/2022/09/12/%E7%AC%AC%E4%B8%80%E4%B8%AAJava%E7%A8%8B%E5%BA%8F/</loc>
-    
-    <lastmod>2025-08-05</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.g2022cyk.top/2022/09/11/%E4%BB%8E%E9%94%AE%E7%9B%98%E8%BE%93%E5%85%A5%E6%95%B0%E6%8D%AEJava%E4%B8%ADScanner%E7%9A%84%E4%BD%BF%E7%94%A8/</loc>
-    
-    <lastmod>2025-08-05</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.g2022cyk.top/2022/09/10/%E7%A8%8B%E5%BA%8F%E6%B5%81%E7%A8%8B%E4%B8%8E%E9%A1%BA%E5%BA%8F%E7%BB%93%E6%9E%84/</loc>
-    
-    <lastmod>2025-08-05</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.g2022cyk.top/2022/10/10/Windows7%E5%AE%89%E8%A3%85Internet%20Explorer11/</loc>
-    
-    <lastmod>2025-08-05</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.g2022cyk.top/2019/10/05/%E6%91%86%E8%84%B1%E8%80%81%E5%B8%88%E6%8E%A7%E5%88%B6%EF%BC%9A%E6%9E%81%E5%9F%9F%E7%94%B5%E5%AD%90%E6%95%99%E5%AE%A4%E7%A0%B4%E8%A7%A3%E6%95%99%E7%A8%8B/</loc>
-    
-    <lastmod>2025-08-05</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.g2022cyk.top/2023/01/11/0%E6%8C%87%E4%BB%A4%E5%BF%AB%E9%80%9F%E5%88%9B%E5%BB%BAvue%E9%A1%B9%E7%9B%AE/</loc>
-    
-    <lastmod>2025-08-05</lastmod>
+    <lastmod>2025-08-07</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -337,7 +580,430 @@
   <url>
     <loc>https://www.g2022cyk.top/2022/12/14/%E8%A7%A3%E5%86%B3Windows7%E5%AE%89%E8%A3%85VMware%20tools%E6%8A%A5%E9%94%99%E9%97%AE%E9%A2%98/</loc>
     
-    <lastmod>2025-08-05</lastmod>
+    <lastmod>2025-08-07</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.g2022cyk.top/2022/09/12/%E7%AC%AC%E4%B8%80%E4%B8%AAJava%E7%A8%8B%E5%BA%8F/</loc>
+    
+    <lastmod>2025-08-07</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.g2022cyk.top/2022/09/10/%E7%A8%8B%E5%BA%8F%E6%B5%81%E7%A8%8B%E4%B8%8E%E9%A1%BA%E5%BA%8F%E7%BB%93%E6%9E%84/</loc>
+    
+    <lastmod>2025-08-07</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.g2022cyk.top/2023/02/01/%E6%A1%8C%E9%9D%A2%E5%AF%BC%E8%88%AA%E5%8F%91%E5%B8%83/</loc>
+    
+    <lastmod>2025-08-07</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.g2022cyk.top/2022/12/13/%E6%95%99%E4%BD%A0%E5%9C%A82022%E5%B9%B4%E5%AE%89%E8%A3%85Flash%E7%BA%AF%E5%87%80%E7%89%88/</loc>
+    
+    <lastmod>2025-08-07</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.g2022cyk.top/2019/10/05/%E6%91%86%E8%84%B1%E8%80%81%E5%B8%88%E6%8E%A7%E5%88%B6%EF%BC%9A%E6%9E%81%E5%9F%9F%E7%94%B5%E5%AD%90%E6%95%99%E5%AE%A4%E7%A0%B4%E8%A7%A3%E6%95%99%E7%A8%8B/</loc>
+    
+    <lastmod>2025-08-07</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.g2022cyk.top/2020/04/24/%E6%89%8B%E6%9C%BA%E8%BF%90%E8%A1%8CPython/</loc>
+    
+    <lastmod>2025-08-07</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.g2022cyk.top/2019/10/14/%E5%B0%8F%E9%B1%BC%E6%B8%B8%E6%B3%B3%E9%A2%98%E7%9B%AE%E8%AF%A6%E8%A7%A3/</loc>
+    
+    <lastmod>2025-08-07</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.g2022cyk.top/2022/12/09/%E5%AE%89%E8%A3%85VMware%E8%99%9A%E6%8B%9F%E6%9C%BA/</loc>
+    
+    <lastmod>2025-08-07</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.g2022cyk.top/2022/12/10/%E5%AE%89%E8%A3%85Hyper-V%E8%99%9A%E6%8B%9F%E6%9C%BA/</loc>
+    
+    <lastmod>2025-08-07</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.g2022cyk.top/2022/12/22/%E5%9C%A8VMware%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B8%AD%E5%AE%89%E8%A3%85Windows7/</loc>
+    
+    <lastmod>2025-08-07</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.g2022cyk.top/2022/04/29/%E5%9B%9B%E5%AD%A3%E5%AD%A6%E6%AD%A3%E5%BC%8F%E5%BC%80%E6%BA%90%EF%BC%81/</loc>
+    
+    <lastmod>2025-08-07</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.g2022cyk.top/2022/12/31/%E6%88%91%E7%9A%84%E4%B8%96%E7%95%8C%E5%9F%BA%E5%B2%A9%E7%89%88(%E6%89%8B%E6%9C%BA%E7%89%88)%E5%8E%9F%E7%89%88%E5%BC%80%E6%9C%8D%E6%95%99%E7%A8%8B/</loc>
+    
+    <lastmod>2025-08-07</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.g2022cyk.top/2022/12/31/%E6%88%91%E7%9A%84%E4%B8%96%E7%95%8C(Java%E7%89%88)%E5%8E%9F%E7%89%88%E6%9C%8D%E5%BC%80%E6%9C%8D%E6%95%99%E7%A8%8B/</loc>
+    
+    <lastmod>2025-08-07</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.g2022cyk.top/2023/01/02/%E5%9B%9B%E5%90%88%E4%B8%80PCB%E5%8D%A1%E7%89%87/</loc>
+    
+    <lastmod>2025-08-07</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.g2022cyk.top/2023/01/10/%E5%90%AF%E5%8A%A8Win11%E7%9A%84%E5%AE%89%E5%8D%93%E5%AD%90%E7%B3%BB%E7%BB%9F/</loc>
+    
+    <lastmod>2025-08-07</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.g2022cyk.top/2019/11/20/%E5%88%86%E6%94%AF%E8%AF%AD%E5%8F%A5/</loc>
+    
+    <lastmod>2025-08-07</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.g2022cyk.top/2023/05/04/%E4%BD%BF%E7%94%A8PyWebViwe%E5%BC%80%E5%8F%91%E6%A1%8C%E9%9D%A2%E5%BA%94%E7%94%A8/</loc>
+    
+    <lastmod>2025-08-07</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.g2022cyk.top/2022/09/11/%E4%BB%8E%E9%94%AE%E7%9B%98%E8%BE%93%E5%85%A5%E6%95%B0%E6%8D%AEJava%E4%B8%ADScanner%E7%9A%84%E4%BD%BF%E7%94%A8/</loc>
+    
+    <lastmod>2025-08-07</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.g2022cyk.top/2022/09/09/%E4%BA%86%E8%A7%A3JDK%E3%80%81JRE%20%E4%B8%8E%20JVM/</loc>
+    
+    <lastmod>2025-08-07</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.g2022cyk.top/2022/12/28/ThinkPHP6%E5%A4%9A%E5%BA%94%E7%94%A8%E6%A8%A1%E5%BC%8F/</loc>
+    
+    <lastmod>2025-08-07</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.g2022cyk.top/2022/12/21/ThinkPHP6.0%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E9%83%A8%E7%BD%B2/</loc>
+    
+    <lastmod>2025-08-07</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.g2022cyk.top/2024/11/19/TensorFlow%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/</loc>
+    
+    <lastmod>2025-08-07</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.g2022cyk.top/2019/10/09/Python%E8%BE%93%E5%85%A5%E8%AF%AD%E5%8F%A5input%E7%9A%84%E4%BD%BF%E7%94%A8/</loc>
+    
+    <lastmod>2025-08-07</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.g2022cyk.top/2019/11/18/Python%E7%9A%84%E9%80%BB%E8%BE%91%E8%BF%90%E7%AE%97/</loc>
+    
+    <lastmod>2025-08-07</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.g2022cyk.top/2019/09/23/Python%E7%9A%84%E8%BE%93%E5%87%BA/</loc>
+    
+    <lastmod>2025-08-07</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.g2022cyk.top/2022/12/20/%E6%96%B0%E8%A7%86%E9%87%8E/</loc>
+    
+    <lastmod>2025-08-07</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.g2022cyk.top/2022/12/21/PHP-sql%E8%AF%AD%E5%8F%A5%E9%A2%84%E5%A4%84%E7%90%86/</loc>
+    
+    <lastmod>2025-08-07</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.g2022cyk.top/2019/10/09/Python%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E4%B8%8E%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2/</loc>
+    
+    <lastmod>2025-08-07</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.g2022cyk.top/2019/09/16/Python%E7%8E%AF%E5%A2%83%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/</loc>
+    
+    <lastmod>2025-08-07</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.g2022cyk.top/2019/10/09/Python%E5%9F%BA%E7%A1%80%E8%AF%AD%E5%8F%A5%E7%BB%83%E4%B9%A0%E9%A2%98/</loc>
+    
+    <lastmod>2025-08-07</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.g2022cyk.top/2022/12/21/PHP%E8%BF%9E%E6%8E%A5mysql%E6%95%B0%E6%8D%AE%E5%BA%93/</loc>
+    
+    <lastmod>2025-08-07</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.g2022cyk.top/2022/12/31/PHP%E8%AF%BB%E5%8F%96sitemap.xml%E6%96%87%E4%BB%B6/</loc>
+    
+    <lastmod>2025-08-07</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.g2022cyk.top/2022/12/31/PHP%E6%8F%90%E4%BA%A4%E7%BD%91%E7%AB%99%E9%93%BE%E6%8E%A5%E5%88%B0%E7%99%BE%E5%BA%A6%E7%AB%99%E9%95%BF/</loc>
+    
+    <lastmod>2025-08-07</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.g2022cyk.top/2022/12/31/PHP%E4%BD%BF%E7%94%A8curl%E4%B8%8B%E8%BD%BD%E6%96%87%E4%BB%B6%E5%88%B0%E6%9C%8D%E5%8A%A1%E5%99%A8/</loc>
+    
+    <lastmod>2025-08-07</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.g2022cyk.top/2022/11/09/Nginx%E4%B8%8B%E7%9A%84%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86/</loc>
+    
+    <lastmod>2025-08-07</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.g2022cyk.top/2022/09/09/Linux%E4%B8%8B%E5%AE%89%E8%A3%85Java%E7%8E%AF%E5%A2%83/</loc>
+    
+    <lastmod>2025-08-07</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.g2022cyk.top/2022/09/09/Java%E7%9A%84%E5%88%86%E6%94%AF%E8%AF%AD%E5%8F%A5if%E7%9A%84%E7%94%A8%E6%B3%95/</loc>
+    
+    <lastmod>2025-08-07</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.g2022cyk.top/2022/09/09/Java%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83eclipse%E7%9A%84%E5%AE%89%E8%A3%85/</loc>
+    
+    <lastmod>2025-08-07</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.g2022cyk.top/2022/09/09/Java%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83JDK%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/</loc>
+    
+    <lastmod>2025-08-07</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.g2022cyk.top/2022/11/09/Java%E5%AE%9E%E7%8E%B0%E6%A0%A1%E5%9B%AD%E7%BD%91%E8%87%AA%E5%8A%A8%E7%99%BB%E5%BD%95/</loc>
+    
+    <lastmod>2025-08-07</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.g2022cyk.top/2022/09/09/Java%E5%86%99%E4%BB%A3%E7%A0%81%E8%A7%84%E8%8C%83/</loc>
+    
+    <lastmod>2025-08-07</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.g2022cyk.top/2022/09/09/Java%E4%B8%AD%E7%9A%84%E8%BF%90%E7%AE%97%E7%AC%A6/</loc>
+    
+    <lastmod>2025-08-07</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.g2022cyk.top/2022/09/09/Java%E4%B8%AD%E7%9A%84%E5%8F%98%E9%87%8F%E3%80%81%E5%B8%B8%E9%87%8F%E4%B8%8E%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/</loc>
+    
+    <lastmod>2025-08-07</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.g2022cyk.top/2022/09/09/Java%20%E8%AF%AD%E8%A8%80%E6%A6%82%E8%BF%B0/</loc>
+    
+    <lastmod>2025-08-07</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.g2022cyk.top/2022/12/22/Hyper-V%E5%AE%89%E8%A3%85Windows7/</loc>
+    
+    <lastmod>2025-08-07</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.g2022cyk.top/2022/12/14/ESP8266+Arduino%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/</loc>
+    
+    <lastmod>2025-08-07</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.g2022cyk.top/2023/01/11/0%E6%8C%87%E4%BB%A4%E5%BF%AB%E9%80%9F%E5%88%9B%E5%BB%BAvue%E9%A1%B9%E7%9B%AE/</loc>
+    
+    <lastmod>2025-08-07</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -379,181 +1045,10 @@
     <priority>0.6</priority>
   </url>
   
-  <url>
-    <loc>https://www.g2022cyk.top/2022/12/22/Hyper-V%E5%AE%89%E8%A3%85Windows7/</loc>
-    
-    <lastmod>2025-08-05</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.g2022cyk.top/2022/12/22/%E5%9C%A8VMware%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B8%AD%E5%AE%89%E8%A3%85Windows7/</loc>
-    
-    <lastmod>2025-08-05</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.g2022cyk.top/2022/12/09/%E5%AE%89%E8%A3%85VMware%E8%99%9A%E6%8B%9F%E6%9C%BA/</loc>
-    
-    <lastmod>2025-08-05</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.g2022cyk.top/2022/12/10/%E5%AE%89%E8%A3%85Hyper-V%E8%99%9A%E6%8B%9F%E6%9C%BA/</loc>
-    
-    <lastmod>2025-08-05</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.g2022cyk.top/2023/06/10/%E9%AB%98%E8%80%83%E8%87%AA%E7%94%B1%E6%97%B6%E5%85%89%EF%BC%8C%E8%BF%BD%E5%AF%BB%E6%97%A0%E9%99%90%E5%8F%AF%E8%83%BD%EF%BC%81/</loc>
-    
-    <lastmod>2025-08-03</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.g2022cyk.top/2023/06/10/%E9%AB%98%E8%80%83%E5%AE%8C%E7%BB%93%E7%AF%87%EF%BC%8C%E6%96%B0%E7%9A%84%E5%BE%81%E7%A8%8B%E5%8D%B3%E5%B0%86%E5%BC%80%E5%90%AF/</loc>
-    
-    <lastmod>2025-08-03</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.g2022cyk.top/2023/02/22/%E8%AE%B0%E9%80%80%E5%AD%A6%E7%BD%912.21%E5%BC%82%E5%B8%B8%E4%BA%8B%E6%95%85/</loc>
-    
-    <lastmod>2025-08-03</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.g2022cyk.top/2023/05/04/%E4%BD%BF%E7%94%A8PyWebViwe%E5%BC%80%E5%8F%91%E6%A1%8C%E9%9D%A2%E5%BA%94%E7%94%A8/</loc>
-    
-    <lastmod>2025-08-03</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.g2022cyk.top/2022/09/09/Java%20%E8%AF%AD%E8%A8%80%E6%A6%82%E8%BF%B0/</loc>
-    
-    <lastmod>2025-08-03</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.g2022cyk.top/2023/01/02/%E5%9B%9B%E5%90%88%E4%B8%80PCB%E5%8D%A1%E7%89%87/</loc>
-    
-    <lastmod>2025-08-03</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.g2022cyk.top/2022/09/09/%E4%BA%86%E8%A7%A3JDK%E3%80%81JRE%20%E4%B8%8E%20JVM/</loc>
-    
-    <lastmod>2025-08-03</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.g2022cyk.top/2022/09/09/Java%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83eclipse%E7%9A%84%E5%AE%89%E8%A3%85/</loc>
-    
-    <lastmod>2025-08-03</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.g2022cyk.top/2022/09/09/Linux%E4%B8%8B%E5%AE%89%E8%A3%85Java%E7%8E%AF%E5%A2%83/</loc>
-    
-    <lastmod>2025-08-03</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.g2022cyk.top/2022/09/09/Java%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83JDK%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/</loc>
-    
-    <lastmod>2025-08-03</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.g2022cyk.top/2022/09/09/Java%E5%86%99%E4%BB%A3%E7%A0%81%E8%A7%84%E8%8C%83/</loc>
-    
-    <lastmod>2025-08-03</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.g2022cyk.top/2020/04/24/%E6%89%8B%E6%9C%BA%E8%BF%90%E8%A1%8CPython/</loc>
-    
-    <lastmod>2025-08-03</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.g2022cyk.top/2023/12/22/%E6%99%BA%E5%AD%A6%E7%BD%91%EF%BC%9A%E5%9C%A8%E6%89%8B%E6%9C%BA%E4%B8%8A%E8%BD%BB%E6%9D%BE%E6%9F%A5%E5%88%86/</loc>
-    
-    <lastmod>2025-08-03</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.g2022cyk.top/2023/12/22/%E5%86%8D%E8%A7%81%E9%80%80%E5%AD%A6%E7%BD%91/</loc>
-    
-    <lastmod>2025-08-03</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.g2022cyk.top/2024/11/19/TensorFlow%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/</loc>
-    
-    <lastmod>2025-08-03</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
 
   <url>
     <loc>https://www.g2022cyk.top/</loc>
-    <lastmod>2025-08-06</lastmod>
+    <lastmod>2025-08-07</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -561,133 +1056,238 @@
   
   <url>
     <loc>https://www.g2022cyk.top/tags/vue%E7%BC%96%E7%A8%8B/</loc>
-    <lastmod>2025-08-06</lastmod>
+    <lastmod>2025-08-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://www.g2022cyk.top/tags/Arduino/</loc>
-    <lastmod>2025-08-06</lastmod>
+    <lastmod>2025-08-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.g2022cyk.top/tags/Python-Programming/</loc>
+    <lastmod>2025-08-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://www.g2022cyk.top/tags/%E8%99%9A%E6%8B%9F%E6%9C%BA/</loc>
-    <lastmod>2025-08-06</lastmod>
+    <lastmod>2025-08-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://www.g2022cyk.top/tags/Java%E7%BC%96%E7%A8%8B/</loc>
-    <lastmod>2025-08-06</lastmod>
+    <lastmod>2025-08-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.g2022cyk.top/tags/Virtual-Machine/</loc>
+    <lastmod>2025-08-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.g2022cyk.top/tags/Java-Programming/</loc>
+    <lastmod>2025-08-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://www.g2022cyk.top/tags/Nginx/</loc>
-    <lastmod>2025-08-06</lastmod>
+    <lastmod>2025-08-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.g2022cyk.top/tags/PHP-Programming/</loc>
+    <lastmod>2025-08-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://www.g2022cyk.top/tags/PHP%E7%BC%96%E7%A8%8B/</loc>
-    <lastmod>2025-08-06</lastmod>
+    <lastmod>2025-08-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://www.g2022cyk.top/tags/Python%E7%BC%96%E7%A8%8B/</loc>
-    <lastmod>2025-08-06</lastmod>
+    <lastmod>2025-08-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://www.g2022cyk.top/tags/TensorFlow/</loc>
-    <lastmod>2025-08-06</lastmod>
+    <lastmod>2025-08-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://www.g2022cyk.top/tags/IE/</loc>
-    <lastmod>2025-08-06</lastmod>
+    <loc>https://www.g2022cyk.top/tags/Vue-Programming/</loc>
+    <lastmod>2025-08-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://www.g2022cyk.top/tags/%E9%80%80%E5%AD%A6%E7%BD%91/</loc>
-    <lastmod>2025-08-06</lastmod>
+    <loc>https://www.g2022cyk.top/tags/Program-Release/</loc>
+    <lastmod>2025-08-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://www.g2022cyk.top/tags/%E7%94%B5%E8%B7%AF%E8%AE%BE%E8%AE%A1/</loc>
-    <lastmod>2025-08-06</lastmod>
+    <loc>https://www.g2022cyk.top/tags/Jiyu/</loc>
+    <lastmod>2025-08-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://www.g2022cyk.top/tags/%E5%AE%89%E5%8D%93/</loc>
-    <lastmod>2025-08-06</lastmod>
+    <loc>https://www.g2022cyk.top/tags/Gaokao/</loc>
+    <lastmod>2025-08-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://www.g2022cyk.top/tags/Python%E9%A2%98%E7%9B%AE/</loc>
-    <lastmod>2025-08-06</lastmod>
+    <loc>https://www.g2022cyk.top/tags/Circuit-Design/</loc>
+    <lastmod>2025-08-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://www.g2022cyk.top/tags/%E6%9E%81%E5%9F%9F/</loc>
-    <lastmod>2025-08-06</lastmod>
+    <loc>https://www.g2022cyk.top/tags/TuitionDrop/</loc>
+    <lastmod>2025-08-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://www.g2022cyk.top/tags/%E7%A8%8B%E5%BA%8F%E5%8F%91%E5%B8%83/</loc>
-    <lastmod>2025-08-06</lastmod>
+    <loc>https://www.g2022cyk.top/tags/Tuixuewang/</loc>
+    <lastmod>2025-08-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://www.g2022cyk.top/tags/%E7%BB%8F%E9%AA%8C%E5%88%86%E4%BA%AB/</loc>
-    <lastmod>2025-08-06</lastmod>
+    <loc>https://www.g2022cyk.top/tags/Python-Problems/</loc>
+    <lastmod>2025-08-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://www.g2022cyk.top/tags/Flash/</loc>
-    <lastmod>2025-08-06</lastmod>
+    <loc>https://www.g2022cyk.top/tags/Experience-Sharing/</loc>
+    <lastmod>2025-08-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://www.g2022cyk.top/tags/Bug/</loc>
-    <lastmod>2025-08-06</lastmod>
+    <lastmod>2025-08-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.g2022cyk.top/tags/Quitting-School-Website/</loc>
+    <lastmod>2025-08-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.g2022cyk.top/tags/TuitionFreeNet/</loc>
+    <lastmod>2025-08-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.g2022cyk.top/tags/Android/</loc>
+    <lastmod>2025-08-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.g2022cyk.top/tags/Flash/</loc>
+    <lastmod>2025-08-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.g2022cyk.top/tags/%E9%80%80%E5%AD%A6%E7%BD%91/</loc>
+    <lastmod>2025-08-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.g2022cyk.top/tags/%E5%AE%89%E5%8D%93/</loc>
+    <lastmod>2025-08-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.g2022cyk.top/tags/%E7%94%B5%E8%B7%AF%E8%AE%BE%E8%AE%A1/</loc>
+    <lastmod>2025-08-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.g2022cyk.top/tags/Python%E9%A2%98%E7%9B%AE/</loc>
+    <lastmod>2025-08-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.g2022cyk.top/tags/%E6%9E%81%E5%9F%9F/</loc>
+    <lastmod>2025-08-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.g2022cyk.top/tags/%E7%BB%8F%E9%AA%8C%E5%88%86%E4%BA%AB/</loc>
+    <lastmod>2025-08-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.g2022cyk.top/tags/%E7%A8%8B%E5%BA%8F%E5%8F%91%E5%B8%83/</loc>
+    <lastmod>2025-08-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://www.g2022cyk.top/tags/%E9%AB%98%E8%80%83/</loc>
-    <lastmod>2025-08-06</lastmod>
+    <lastmod>2025-08-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
@@ -696,7 +1296,14 @@
   
   <url>
     <loc>https://www.g2022cyk.top/categories/%E4%B8%AD%E6%96%87%E6%9C%9F%E5%88%8A/</loc>
-    <lastmod>2025-08-06</lastmod>
+    <lastmod>2025-08-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.g2022cyk.top/categories/%E8%8B%B1%E6%96%87%E6%9C%9F%E5%88%8A/</loc>
+    <lastmod>2025-08-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
