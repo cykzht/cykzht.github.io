@@ -1,6 +1,6 @@
 <!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><!-- hexo injector head_begin start -->
     <script>
-      window.LivePhotoConfig = {"enable":true,"autoplay":true,"hover_to_play":true,"touch_to_play":true,"lazy_load":true,"threshold":0.8,"badge":true,"badge_text":"Live | 点击预览图片","badge_position":"bottom-left","loading_animation":false,"preload":"auto","weixin_disable_autoplay":true,"hover_delay":200,"touch_delay":50,"click_to_play":false,"keep_observing":false};
+      window.LivePhotoConfig = {"enable":true,"autoplay":true,"hover_to_play":true,"touch_to_play":true,"lazy_load":true,"threshold":0.8,"badge":true,"badge_text":"Live","badge_position":"bottom-left","loading_animation":false,"preload":"auto","weixin_disable_autoplay":true,"hover_delay":200,"touch_delay":50,"click_to_play":false,"keep_observing":false};
     </script>
   <style>/* Live Photo 容器 */
 .live-photo-container {
@@ -16,6 +16,11 @@
 .live-photo-container:hover {
   transform: translateY(-2px);
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+}
+
+/* 微信环境下的容器样式 */
+.live-photo-container.weixin-environment {
+  cursor: pointer;
 }
 
 /* 静态图片 */
@@ -57,6 +62,7 @@
   -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
   z-index: 10;
+  animation: badge-pulse 2s infinite;
 }
 
 .live-badge::before {
@@ -89,23 +95,8 @@
   right: 12px;
 }
 
-/* 微信环境播放提示 */
-.weixin-play-hint {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background: rgba(0, 0, 0, 0.7);
-  color: white;
-  padding: 10px 15px;
-  border-radius: 20px;
-  font-size: 14px;
-  z-index: 15;
-  pointer-events: none;
-  animation: weixin-pulse 2s infinite;
-}
 
-@keyframes weixin-pulse {
+@keyframes badge-pulse {
   0% { opacity: 0.7; }
   50% { opacity: 1; }
   100% { opacity: 0.7; }
@@ -610,9 +601,10 @@ class LivePhoto {
       this.config.hover_to_play = false;
       this.config.touch_to_play = false;
       this.config.click_to_play = true; // 确保点击播放启用
+      this.config.badge_text = this.config.badge_text + ' | 点击播放';
       
       // 添加微信环境提示
-      // this.addWeixinHint();
+      this.container.classList.add('weixin-environment');
     }
     
     // 绑定事件
@@ -625,16 +617,6 @@ class LivePhoto {
     return ua.includes('micromessenger');
   }
   
-  // 添加微信环境提示
-  addWeixinHint() {
-    const hint = document.createElement('div');
-    hint.className = 'weixin-play-hint';
-    hint.innerHTML = '点击查看动态效果';
-    this.container.appendChild(hint);
-    
-    // 添加微信环境类名
-    this.container.classList.add('weixin-environment');
-  }
   
   // 绑定事件
   bindEvents() {
@@ -756,11 +738,7 @@ class LivePhoto {
     this.video.classList.add('playing');
     this.showLoading();
     
-    // 隐藏微信提示
-    const weixinHint = this.container.querySelector('.weixin-play-hint');
-    if (weixinHint) {
-      weixinHint.style.display = 'none';
-    }
+
     
     // 播放视频
     const playPromise = this.video.play();
