@@ -12,6 +12,8 @@
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   max-width: 100%;
+  line-height: 0; /* 修复白边的关键属性 */
+  display: block; /* 确保容器是块级元素 */
 }
 
 .live-photo-container:hover {
@@ -19,11 +21,14 @@
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
 }
 
-/* 静态图片 */
+/* 静态图片 - 修复白边 */
 .live-photo-static {
   width: 100%;
-  display: block;
-  transition: opacity 0.3s;
+  display: block; /* 消除图片下方的白边 */
+  /* Removed vertical-align as it is not applicable for block elements */
+  border: none; /* 确保没有边框 */
+  padding: 0; /* 确保没有内边距 */
+  margin: 0; /* 确保没有外边距 */
 }
 
 /* 视频元素 */
@@ -36,6 +41,7 @@
   object-fit: cover;
   opacity: 0;
   transition: opacity 0.3s;
+  border-radius: 12px;
 }
 
 .live-photo-video.playing {
@@ -53,7 +59,7 @@
   display: flex;
   align-items: center;
   gap: 4px;
-  -webkit-backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px); /* Safari support */
   backdrop-filter: blur(10px);
   z-index: 10;
 }
@@ -114,27 +120,7 @@
   margin-top: 8px;
   font-size: 14px;
   color: #666;
-}
-
-/* 触摸设备提示 */
-.live-touch-hint {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background: rgba(0, 0, 0, 0.7);
-  color: white;
-  padding: 8px 12px;
-  border-radius: 20px;
-  font-size: 12px;
-  opacity: 0;
-  transition: opacity 0.3s;
-  pointer-events: none;
-  z-index: 5;
-}
-
-.live-photo-container.touch-hint .live-touch-hint {
-  opacity: 1;
+  line-height: 1.4; /* 恢复正常的行高 */
 }
 
 /* 响应式设计 */
@@ -167,19 +153,6 @@
   .live-badge.top-left,
   .live-badge.top-right {
     top: 8px;
-  }
-  
-  /* 移动端触摸提示 */
-  .live-touch-hint {
-    font-size: 11px;
-    padding: 6px 10px;
-  }
-}
-
-/* 桌面端悬停提示 */
-@media (hover: hover) {
-  .live-photo-container:hover .live-touch-hint {
-    opacity: 1;
   }
 }
 
@@ -668,7 +641,7 @@ class LivePhoto {
       this.container.addEventListener('touchcancel', () => this.handleTouchEnd());
     }
     
-    // 点击事件作为备用（如果用户希望）
+    // 点击事件作为备用
     if (this.config.click_to_play) {
       this.container.addEventListener('click', (e) => {
         // 防止触摸设备上的重复触发
@@ -689,7 +662,8 @@ class LivePhoto {
   
   // 检测是否为触摸事件
   isTouchEvent(e) {
-    return e.pointerType === 'touch' || e.sourceCapabilities && e.sourceCapabilities.firesTouchEvents;
+    return e.pointerType === 'touch' || 
+           (e.sourceCapabilities && e.sourceCapabilities.firesTouchEvents);
   }
   
   // 处理悬停开始
