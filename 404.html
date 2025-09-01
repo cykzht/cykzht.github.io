@@ -151,11 +151,6 @@
     top: 8px;
   }
 
-  /* 移动端微信提示 */
-  .weixin-play-hint {
-    font-size: 12px;
-    padding: 8px 12px;
-  }
 }
 
 
@@ -487,7 +482,7 @@ class LivePhoto {
       this.config.autoplay = false;
       this.config.hover_to_play = true;
       this.config.touch_to_play = true;
-      this.config.click_to_play = false; // 确保点击播放启用
+      this.config.click_to_play = true; // 确保点击播放启用
       
       // 修改微信环境下的badge
       this.modifyWeixinBadge();
@@ -643,11 +638,6 @@ class LivePhoto {
     this.video.classList.add('playing');
     this.showLoading();
     
-    // 隐藏微信badge的脉冲效果
-    const weixinBadge = this.container.querySelector('.weixin-badge');
-    if (weixinBadge) {
-      weixinBadge.classList.remove('weixin-pulse');
-    }
     
     // 播放视频
     const playPromise = this.video.play();
