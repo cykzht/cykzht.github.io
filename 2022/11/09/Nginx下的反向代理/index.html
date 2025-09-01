@@ -1,6 +1,6 @@
 <!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><!-- hexo injector head_begin start -->
     <script>
-      window.LivePhotoConfig = {"enable":true,"autoplay":true,"hover_to_play":true,"touch_to_play":true,"lazy_load":true,"threshold":0.8,"badge":true,"badge_text":"Live","badge_position":"bottom-left","loading_animation":true,"preload":"auto","hover_delay":300,"touch_delay":100,"keep_observing":false};
+      window.LivePhotoConfig = {"enable":true,"autoplay":true,"hover_to_play":true,"touch_to_play":true,"lazy_load":true,"threshold":0.8,"badge":true,"badge_text":"Live","badge_position":"bottom-left","loading_animation":true,"preload":"auto","hover_delay":300,"touch_delay":100,"click_to_play":false,"keep_observing":false};
     </script>
   <style>/* Live Photo 容器 */
 .live-photo-container {
@@ -180,6 +180,88 @@
 @media (hover: hover) {
   .live-photo-container:hover .live-touch-hint {
     opacity: 1;
+  }
+}
+
+/* 多图布局样式 */
+.image-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 20px 0;
+  gap: 20px;
+}
+
+.image-column {
+  flex: 1;
+  min-width: 250px;
+}
+
+/* Grid布局 */
+.image-grid-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  margin: 20px 0;
+}
+
+.grid-item {
+  position: relative;
+}
+
+/* 浮动布局 */
+.image-float-container {
+  width: 100%;
+  margin: 20px 0;
+}
+
+.float-image {
+  float: left;
+  width: calc(50% - 10px);
+  margin-right: 20px;
+}
+
+.float-image:nth-child(2n) {
+  margin-right: 0;
+}
+
+.clearfix {
+  clear: both;
+}
+
+/* 普通图片样式 */
+.regular-image {
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.regular-image:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+  .image-grid {
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .image-column {
+    width: 100%;
+  }
+  
+  .image-grid-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .float-image {
+    width: 100%;
+    margin-right: 0;
+    margin-bottom: 15px;
+    float: none;
   }
 }</style><!-- hexo injector head_begin end --><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>Nginx下的反向代理 | 程俞客&amp;称心号</title><meta name="author" content="程小客,zhuhaitian@shushichenxin.com"><meta name="copyright" content="程小客"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="本文介绍了在Nginx中配置反向代理的方法，包括主应用接口、静态文件、多应用代理等场景的配置示例，解决了多应用代理时的常见问题。">
 <meta property="og:type" content="article">
@@ -553,55 +635,34 @@ class LivePhoto {
     this.isPlaying = false;
     this.hoverTimeout = null;
     this.touchTimeout = null;
-    this.isTouchDevice = this.detectTouchDevice();
-    
-    // 添加触摸提示元素
-    if (this.isTouchDevice && this.config.touch_to_play) {
-      this.addTouchHint();
-    }
     
     // 绑定事件
     this.bindEvents();
   }
   
-  // 检测是否为触摸设备
-  detectTouchDevice() {
-    // 判断是否为Windows触摸设备
-    if (navigator.userAgent.includes('Windows')) {
-      return false;
-    }
-    return 'ontouchstart' in window || navigator.maxTouchPoints > 0;
-  }
-  
-  // 添加触摸提示
-  addTouchHint() {
-    const hint = document.createElement('div');
-    hint.className = 'live-touch-hint';
-    hint.textContent = '触摸查看动态效果';
-    this.container.appendChild(hint);
-    
-    // 添加触摸提示类
-    this.container.classList.add('touch-hint');
-    
-    // 3秒后隐藏提示
-    setTimeout(() => {
-      this.container.classList.remove('touch-hint');
-    }, 3000);
-  }
-  
   // 绑定事件
   bindEvents() {
     // 桌面端：鼠标悬停播放
-    if (this.config.hover_to_play && !this.isTouchDevice) {
+    if (this.config.hover_to_play) {
       this.container.addEventListener('mouseenter', () => this.handleHoverStart());
       this.container.addEventListener('mouseleave', () => this.handleHoverEnd());
     }
     
-    // 移动端：触摸播放
-    if (this.config.touch_to_play && this.isTouchDevice) {
+    // 移动端/触摸设备：触摸播放
+    if (this.config.touch_to_play) {
       this.container.addEventListener('touchstart', (e) => this.handleTouchStart(e));
       this.container.addEventListener('touchend', () => this.handleTouchEnd());
       this.container.addEventListener('touchcancel', () => this.handleTouchEnd());
+    }
+    
+    // 点击事件作为备用（如果用户希望）
+    if (this.config.click_to_play) {
+      this.container.addEventListener('click', (e) => {
+        // 防止触摸设备上的重复触发
+        if (!this.isTouchEvent(e)) {
+          this.play();
+        }
+      });
     }
     
     // 监听视频结束事件
@@ -611,6 +672,11 @@ class LivePhoto {
     this.video.addEventListener('loadstart', () => this.showLoading());
     this.video.addEventListener('canplay', () => this.hideLoading());
     this.video.addEventListener('error', () => this.hideLoading());
+  }
+  
+  // 检测是否为触摸事件
+  isTouchEvent(e) {
+    return e.pointerType === 'touch' || e.sourceCapabilities && e.sourceCapabilities.firesTouchEvents;
   }
   
   // 处理悬停开始
@@ -689,9 +755,6 @@ class LivePhoto {
     this.staticImage.style.opacity = 0;
     this.video.classList.add('playing');
     this.showLoading();
-    
-    // 隐藏触摸提示
-    this.container.classList.remove('touch-hint');
     
     // 播放视频
     const playPromise = this.video.play();
