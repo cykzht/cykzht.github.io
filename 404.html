@@ -1,6 +1,6 @@
 <!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><!-- hexo injector head_begin start -->
     <script>
-      window.LivePhotoConfig = {"enable":true,"autoplay":true,"hover_to_play":true,"touch_to_play":true,"lazy_load":false,"threshold":0.3,"badge":true,"badge_text":"Live","badge_position":"bottom-left","loading_animation":false,"preload":"auto","hover_delay":200,"touch_delay":50,"click_to_play":false,"keep_observing":false};
+      window.LivePhotoConfig = {"enable":true,"autoplay":true,"hover_to_play":true,"touch_to_play":true,"lazy_load":true,"threshold":0.8,"badge":true,"badge_text":"Live","badge_position":"bottom-left","loading_animation":false,"preload":"auto","weixin_disable_autoplay":true,"hover_delay":200,"touch_delay":50,"click_to_play":false,"keep_observing":false};
     </script>
   <style>/* Live Photo 容器 */
 .live-photo-container {
@@ -89,6 +89,28 @@
   right: 12px;
 }
 
+/* 微信环境播放提示 */
+.weixin-play-hint {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 10px 15px;
+  border-radius: 20px;
+  font-size: 14px;
+  z-index: 15;
+  pointer-events: none;
+  animation: weixin-pulse 2s infinite;
+}
+
+@keyframes weixin-pulse {
+  0% { opacity: 0.7; }
+  50% { opacity: 1; }
+  100% { opacity: 0.7; }
+}
+
 /* 加载指示器 */
 .live-loading {
   position: absolute;
@@ -148,7 +170,12 @@
   .live-badge.top-right {
     top: 8px;
   }
-  
+
+  /* 移动端微信提示 */
+  .weixin-play-hint {
+    font-size: 12px;
+    padding: 8px 12px;
+  }
 }
 
 
@@ -473,27 +500,59 @@ class LivePhoto {
     this.isPlaying = false;
     this.hoverTimeout = null;
     this.touchTimeout = null;
+    this.isWeixin = this.detectWeixinBrowser();
+    
+    // 在微信环境中调整配置
+    if (this.isWeixin && this.config.weixin_disable_autoplay) {
+      this.config.autoplay = false;
+      this.config.hover_to_play = false;
+      this.config.touch_to_play = false;
+      this.config.click_to_play = true; // 确保点击播放启用
+      
+      // 添加微信环境提示
+      this.addWeixinHint();
+    }
     
     // 绑定事件
     this.bindEvents();
   }
   
+  // 检测微信浏览器
+  detectWeixinBrowser() {
+    const ua = navigator.userAgent.toLowerCase();
+    return ua.includes('micromessenger');
+  }
+  
+  // 添加微信环境提示
+  addWeixinHint() {
+    const hint = document.createElement('div');
+    hint.className = 'weixin-play-hint';
+    hint.innerHTML = '点击查看动态效果';
+    this.container.appendChild(hint);
+    
+    // 添加微信环境类名
+    this.container.classList.add('weixin-environment');
+  }
+  
   // 绑定事件
   bindEvents() {
-    // 桌面端：鼠标悬停播放
-    if (this.config.hover_to_play) {
-      this.container.addEventListener('mouseenter', () => this.handleHoverStart());
-      this.container.addEventListener('mouseleave', () => this.handleHoverEnd());
+    // 如果不是微信环境或者微信环境中不禁用自动播放，则绑定相应事件
+    if (!this.isWeixin || !this.config.weixin_disable_autoplay) {
+      // 桌面端：鼠标悬停播放
+      if (this.config.hover_to_play) {
+        this.container.addEventListener('mouseenter', () => this.handleHoverStart());
+        this.container.addEventListener('mouseleave', () => this.handleHoverEnd());
+      }
+      
+      // 移动端/触摸设备：触摸播放
+      if (this.config.touch_to_play) {
+        this.container.addEventListener('touchstart', (e) => this.handleTouchStart(e));
+        this.container.addEventListener('touchend', () => this.handleTouchEnd());
+        this.container.addEventListener('touchcancel', () => this.handleTouchEnd());
+      }
     }
     
-    // 移动端/触摸设备：触摸播放
-    if (this.config.touch_to_play) {
-      this.container.addEventListener('touchstart', (e) => this.handleTouchStart(e));
-      this.container.addEventListener('touchend', () => this.handleTouchEnd());
-      this.container.addEventListener('touchcancel', () => this.handleTouchEnd());
-    }
-    
-    // 点击事件作为备用
+    // 点击事件 - 在微信环境中这是主要的交互方式
     if (this.config.click_to_play) {
       this.container.addEventListener('click', (e) => {
         // 防止触摸设备上的重复触发
@@ -595,6 +654,12 @@ class LivePhoto {
     this.video.classList.add('playing');
     this.showLoading();
     
+    // 隐藏微信提示
+    const weixinHint = this.container.querySelector('.weixin-play-hint');
+    if (weixinHint) {
+      weixinHint.style.display = 'none';
+    }
+    
     // 播放视频
     const playPromise = this.video.play();
     
@@ -637,6 +702,14 @@ class LivePhotoPage {
   // 初始化
   init() {
     this.detectLivePhotos();
+    
+    // 检测是否为微信环境
+    const isWeixin = navigator.userAgent.toLowerCase().includes('micromessenger');
+    
+    // 如果在微信环境中且禁用自动播放，则不设置Intersection Observer
+    if (isWeixin && this.config.weixin_disable_autoplay) {
+      return;
+    }
     
     // 如果启用懒加载，设置Intersection Observer
     if (this.config.lazy_load) {
