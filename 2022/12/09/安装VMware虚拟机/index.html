@@ -654,9 +654,9 @@ class LivePhoto {
     // 在微信环境中调整配置
     if (this.isWeixin && this.config.weixin_disable_autoplay) {
       this.config.autoplay = false;
-      this.config.hover_to_play = false;
+      this.config.hover_to_play = true;
       this.config.touch_to_play = true;
-      this.config.click_to_play = true; // 确保点击播放启用
+      this.config.click_to_play = false; // 确保点击播放启用
       
       // 修改微信环境下的badge
       this.modifyWeixinBadge();

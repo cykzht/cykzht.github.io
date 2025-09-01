@@ -429,7 +429,7 @@ btf.addGlobalFn('pjaxSend', () => {
 <p>当今的智能手机（如 iPhone 的 Live Photo、部分 Android 的类似功能）都能拍摄动态照片，它们记录下拍照前后共约 3 秒的动态视频和声音。然而，当我们将博客文章部署到静态网站时，这些动态照片通常会退化为静态的 JPEG 图片，失去了其生动的核心体验。</p>
 <p><strong>Hexo-live-photo</strong> 插件就是为了解决这个问题而生的。它通过解析 Live Photo 资源（一张 <code>.jpg</code> 图片和一段 <code>.mp4</code> 视频），并利用 HTML5 视频播放技术，在不影响页面加载性能的前提下，为您的 Hexo 博客完美还原动态照片的播放效果，让您的回忆更加生动。</p>
 
-      <div class="live-photo-container" id="livephoto-wgvuz5fnl" >
+      <div class="live-photo-container" id="livephoto-nviczbwgf" >
         <img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://11.g2022cyk.top:8081/wp-content/uploads/2025/09/1756728754-中文版展示.mp4_20250901_200914.711.webp" alt="中文版动图展示" class="live-photo-static"  >
         <video muted playsinline preload="auto" class="live-photo-video">
           <source src="https://11.g2022cyk.top:8081/wp-content/uploads/2025/09/1756728743-中文版展示.mp4" type="video/mp4">
@@ -641,9 +641,9 @@ class LivePhoto {
     // 在微信环境中调整配置
     if (this.isWeixin && this.config.weixin_disable_autoplay) {
       this.config.autoplay = false;
-      this.config.hover_to_play = false;
+      this.config.hover_to_play = true;
       this.config.touch_to_play = true;
-      this.config.click_to_play = true; // 确保点击播放启用
+      this.config.click_to_play = false; // 确保点击播放启用
       
       // 修改微信环境下的badge
       this.modifyWeixinBadge();

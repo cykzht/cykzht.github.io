@@ -431,7 +431,7 @@ btf.addGlobalFn('pjaxSend', () => {
 <div class="image-grid">
   <div class="image-column">
     
-      <div class="live-photo-container" id="livephoto-fwmsmnpgb" >
+      <div class="live-photo-container" id="livephoto-tcgc92nuw" >
         <img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://11.g2022cyk.top:8081/wp-content/uploads/2025/09/1756729017-MVIMG_20250823_094715.webp" alt="大贝壳" class="live-photo-static"  >
         <video muted playsinline preload="auto" class="live-photo-video">
           <source src="https://11.g2022cyk.top:8081/wp-content/uploads/2025/09/1756717898-VID_20250901_163629.mp4" type="video/mp4">
@@ -444,7 +444,7 @@ btf.addGlobalFn('pjaxSend', () => {
   </div>
   <div class="image-column">
     
-      <div class="live-photo-container" id="livephoto-4eg9bish8" >
+      <div class="live-photo-container" id="livephoto-kk45ty40c" >
         <img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://11.g2022cyk.top:8081/wp-content/uploads/2025/09/1756729035-MVIMG_20250823_095200.webp" alt="海洋" class="live-photo-static"  >
         <video muted playsinline preload="auto" class="live-photo-video">
           <source src="https://11.g2022cyk.top:8081/wp-content/uploads/2025/09/1756729058-VID_20250901_163620.mp4" type="video/mp4">
@@ -619,9 +619,9 @@ class LivePhoto {
     // 在微信环境中调整配置
     if (this.isWeixin && this.config.weixin_disable_autoplay) {
       this.config.autoplay = false;
-      this.config.hover_to_play = false;
+      this.config.hover_to_play = true;
       this.config.touch_to_play = true;
-      this.config.click_to_play = true; // 确保点击播放启用
+      this.config.click_to_play = false; // 确保点击播放启用
       
       // 修改微信环境下的badge
       this.modifyWeixinBadge();
