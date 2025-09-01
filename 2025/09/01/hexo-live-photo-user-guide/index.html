@@ -91,22 +91,6 @@
 }
 
 
-/* 微信badge脉冲动画 */
-@keyframes weixin-pulse {
-  0% {
-    transform: scale(1);
-    box-shadow: 0 0 0 0 rgba(255, 46, 77, 0.7);
-  }
-  70% {
-    transform: scale(1.05);
-    box-shadow: 0 0 0 10px rgba(255, 46, 77, 0);
-  }
-  100% {
-    transform: scale(1);
-    box-shadow: 0 0 0 0 rgba(255, 46, 77, 0);
-  }
-}
-
 /* 加载指示器 */
 .live-loading {
   position: absolute;
@@ -445,7 +429,7 @@ btf.addGlobalFn('pjaxSend', () => {
 <p>Modern smartphones, such as iPhones with Live Photos and some Android devices with similar features, can capture dynamic photos that record approximately 3 seconds of video and audio before and after the photo is taken. However, when deploying blog posts to static websites, these dynamic photos are often reduced to static JPEG images, losing their lively essence.</p>
 <p><strong>Hexo-live-photo</strong> was created to solve this problem. It parses Live Photo resources (a <code>.jpg</code> image and a <code>.mp4</code> video) and utilizes HTML5 video playback technology to perfectly restore the dynamic photo playback effect in your Hexo blog without affecting page loading performance, making your memories more vivid.</p>
 
-      <div class="live-photo-container" id="livephoto-sfvxq90vm" style="max-width: Demonstration;">
+      <div class="live-photo-container" id="livephoto-fhieoui9s" style="max-width: Demonstration;">
         <img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://11.g2022cyk.top:8081/wp-content/uploads/2025/09/1756728750-English.mp4_20250901_200851.891.webp" alt="Live" class="live-photo-static" width="Demonstration" height="Live">
         <video muted playsinline preload="auto" class="live-photo-video">
           <source src="https://11.g2022cyk.top:8081/wp-content/uploads/2025/09/1756728746-English.mp4" type="video/mp4">
@@ -658,7 +642,7 @@ class LivePhoto {
     if (this.isWeixin && this.config.weixin_disable_autoplay) {
       this.config.autoplay = false;
       this.config.hover_to_play = false;
-      this.config.touch_to_play = false;
+      this.config.touch_to_play = true;
       this.config.click_to_play = true; // 确保点击播放启用
       
       // 修改微信环境下的badge
@@ -691,8 +675,7 @@ class LivePhoto {
       if(this.config.badge_text===''){
         this.config.badge_text='Live';
       }
-      badge.innerHTML = this.config.badge_text + '| 点击播放';
-      badge.classList.add('weixin-pulse');
+      badge.innerHTML = this.config.badge_text + ' | 点击播放';
     }
   }
   

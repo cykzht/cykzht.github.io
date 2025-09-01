@@ -91,22 +91,6 @@
 }
 
 
-/* 微信badge脉冲动画 */
-@keyframes weixin-pulse {
-  0% {
-    transform: scale(1);
-    box-shadow: 0 0 0 0 rgba(255, 46, 77, 0.7);
-  }
-  70% {
-    transform: scale(1.05);
-    box-shadow: 0 0 0 10px rgba(255, 46, 77, 0);
-  }
-  100% {
-    transform: scale(1);
-    box-shadow: 0 0 0 0 rgba(255, 46, 77, 0);
-  }
-}
-
 /* 加载指示器 */
 .live-loading {
   position: absolute;
@@ -624,7 +608,7 @@ class LivePhoto {
     if (this.isWeixin && this.config.weixin_disable_autoplay) {
       this.config.autoplay = false;
       this.config.hover_to_play = false;
-      this.config.touch_to_play = false;
+      this.config.touch_to_play = true;
       this.config.click_to_play = true; // 确保点击播放启用
       
       // 修改微信环境下的badge
@@ -657,8 +641,7 @@ class LivePhoto {
       if(this.config.badge_text===''){
         this.config.badge_text='Live';
       }
-      badge.innerHTML = this.config.badge_text + '| 点击播放';
-      badge.classList.add('weixin-pulse');
+      badge.innerHTML = this.config.badge_text + ' | 点击播放';
     }
   }
   
