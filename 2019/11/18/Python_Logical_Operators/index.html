@@ -1,6 +1,6 @@
 <!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><!-- hexo injector head_begin start -->
     <script>
-      window.LivePhotoConfig = {"enable":true,"autoplay":true,"hover_to_play":true,"touch_to_play":true,"lazy_load":true,"threshold":0.8,"badge":true,"badge_text":"Live","badge_position":"bottom-left","loading_animation":true,"xiaomi_browser_fix":true,"preload":"auto","hover_delay":200,"touch_delay":50,"click_to_play":false,"keep_observing":false};
+      window.LivePhotoConfig = {"enable":true,"autoplay":true,"hover_to_play":true,"touch_to_play":true,"lazy_load":true,"threshold":0.8,"badge":true,"badge_text":"Live","badge_position":"bottom-left","loading_animation":true,"preload":"auto","hover_delay":200,"touch_delay":50,"click_to_play":false,"keep_observing":false};
     </script>
   <style>/* Live Photo 容器 */
 .live-photo-container {
@@ -151,30 +151,7 @@
   
 }
 
-.live-photo-container video[data-xiaomi-fix="true"] {
-    /* 尝试确保视频元素显示正确 */
-    object-fit: cover;
-    /* 防止视频控件被强制显示 */
-    -webkit-appearance: none;
-    appearance: none;
-}
 
-/* 尝试隐藏浏览器可能强制添加的自带控制条 (效果因浏览器而异) */
-.live-photo-container video[data-xiaomi-fix="true"]::-webkit-media-controls {
-    display: none !important;
-}
-
-/* 确保静态图片在视频未播放时正常显示 */
-.live-photo-static {
-    display: block;
-    /* 确保图片层级在视频未播放时高于视频 */
-    z-index: 1;
-}
-.live-photo-video.playing {
-    opacity: 1;
-    /* 视频播放时，提高视频层级 */
-    z-index: 2;
-}
 
 
 /* 多图布局样式 */
@@ -713,30 +690,7 @@ class LivePhoto {
     
     // 绑定事件
     this.bindEvents();
-
-    if (config.xiaomi_browser_fix && this.isLikelyXiaomiBrowser()) {
-            this.replaceVideoSourceWithBlob();
-        }
   }
-
-  isLikelyXiaomiBrowser() {
-        // 简单的 UA 检测，判断是否为小米浏览器
-        const userAgent = navigator.userAgent.toLowerCase();
-        return userAgent.includes('miui') || userAgent.includes('xiaomi');
-    }
-
-    async replaceVideoSourceWithBlob() {
-        const videoUrl = this.video.querySelector('source').src;
-        try {
-            const response = await fetch(videoUrl);
-            const videoBlob = await response.blob();
-            const blobUrl = URL.createObjectURL(videoBlob);
-            this.video.src = blobUrl; // 直接将 blob URL 赋给 video 的 src
-            // 注意：如果需要，可以在这里移除原有的 <source> 标签
-        } catch (error) {
-            console.error('Failed to fetch video as Blob:', error);
-        }
-    }
   
   // 绑定事件
   bindEvents() {
