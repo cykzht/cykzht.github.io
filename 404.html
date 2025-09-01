@@ -480,7 +480,7 @@ class LivePhoto {
     // 在微信环境中调整配置
     if (this.isWeixin && this.config.weixin_disable_autoplay) {
       this.config.autoplay = false;
-      this.config.hover_to_play = true;
+      this.config.hover_to_play = false;
       this.config.touch_to_play = true;
       this.config.click_to_play = true; // 确保点击播放启用
       
@@ -521,7 +521,7 @@ class LivePhoto {
   // 绑定事件
   bindEvents() {
     // 如果不是微信环境或者微信环境中不禁用自动播放，则绑定相应事件
-    if (!this.isWeixin || !this.config.weixin_disable_autoplay) {
+    // if (!this.isWeixin || !this.config.weixin_disable_autoplay) {
       // 桌面端：鼠标悬停播放
       if (this.config.hover_to_play) {
         this.container.addEventListener('mouseenter', () => this.handleHoverStart());
@@ -534,7 +534,7 @@ class LivePhoto {
         this.container.addEventListener('touchend', () => this.handleTouchEnd());
         this.container.addEventListener('touchcancel', () => this.handleTouchEnd());
       }
-    }
+    // }
     
     // 点击事件 - 在微信环境中这是主要的交互方式
     if (this.config.click_to_play) {
