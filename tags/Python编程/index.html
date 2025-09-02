@@ -1,6 +1,6 @@
 <!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><!-- hexo injector head_begin start -->
     <script>
-      window.LivePhotoConfig = {"enable":true,"autoplay":true,"hover_to_play":true,"touch_to_play":true,"lazy_load":true,"threshold":0.8,"badge":true,"badge_text":"Live","badge_position":"bottom-left","loading_animation":false,"preload":"auto","weixin_disable_autoplay":true,"hover_delay":200,"touch_delay":50,"click_to_play":false,"keep_observing":false};
+      window.LivePhotoConfig = {"enable":true,"autoplay":true,"hover_to_play":true,"click_to_play":true,"lazy_load":true,"threshold":0.8,"badge":true,"badge_text":"Live","badge_position":"bottom-left","loading_animation":true,"preload":"auto","keep_observing":false,"hover_delay":200,"weixin_disable_autoplay":true,"touch_delay":50};
     </script>
   <style>/* Live Photo 容器 */
 .live-photo-container {
@@ -17,7 +17,6 @@
   transform: translateY(-2px);
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
 }
-
 
 /* 静态图片 */
 .live-photo-static {
@@ -90,7 +89,6 @@
   right: 12px;
 }
 
-
 /* 加载指示器 */
 .live-loading {
   position: absolute;
@@ -104,7 +102,7 @@
   border-top-color: #ff2e4d;
   animation: livephoto-spin 1s ease-in-out infinite;
   display: none;
-  z-index: 10;
+  z-index: 1;
 }
 
 @keyframes livephoto-spin {
@@ -150,92 +148,156 @@
   .live-badge.top-right {
     top: 8px;
   }
-
+  
 }
 
-
-
-
-/* 多图布局样式 */
+/* 多图布局容器 */
 .image-grid {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   margin: 20px 0;
-  gap: 20px;
+  gap: 15px; /* 使用gap属性设置间距 */
 }
 
 .image-column {
-  flex: 1;
-  min-width: 250px;
+  flex: 0 0 calc(50% - 8px); /* 每列占50%宽度减去一半的间距 */
+  min-width: 0; /* 防止内容溢出 */
 }
 
 /* Grid布局 */
 .image-grid-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(2, 1fr); /* 始终保持两列 */
+  gap: 15px;
   margin: 20px 0;
 }
 
 .grid-item {
   position: relative;
+  min-width: 0; /* 防止内容溢出 */
 }
 
 /* 浮动布局 */
 .image-float-container {
   width: 100%;
   margin: 20px 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
 }
 
 .float-image {
-  float: left;
-  width: calc(50% - 10px);
-  margin-right: 20px;
+  flex: 0 0 calc(50% - 8px); /* 每列占50%宽度减去一半的间距 */
 }
 
-.float-image:nth-child(2n) {
-  margin-right: 0;
+/* Live Photo 容器适配多图布局 */
+.image-grid .live-photo-container,
+.image-grid-grid .live-photo-container,
+.image-float-container .live-photo-container {
+  margin: 0; /* 移除单独设置的外边距 */
+  border-radius: 8px; /* 稍微减小圆角以适应小屏幕 */
 }
 
-.clearfix {
-  clear: both;
+/* 确保图片和视频在多图布局中正确显示 */
+.image-grid .live-photo-static,
+.image-grid-grid .live-photo-static,
+.image-float-container .live-photo-static,
+.image-grid .live-photo-video,
+.image-grid-grid .live-photo-video,
+.image-float-container .live-photo-video {
+  border-radius: 8px; /* 与容器保持一致 */
 }
 
-/* 普通图片样式 */
-.regular-image {
-  width: 100%;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+/* 调整Live标识在小屏幕上的大小 */
+.image-grid .live-badge,
+.image-grid-grid .live-badge,
+.image-float-container .live-badge {
+  font-size: 10px;
+  padding: 2px 6px;
 }
 
-.regular-image:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+.image-grid .live-badge.bottom-left,
+.image-grid-grid .live-badge.bottom-left,
+.image-float-container .live-badge.bottom-left,
+.image-grid .live-badge.bottom-right,
+.image-grid-grid .live-badge.bottom-right,
+.image-float-container .live-badge.bottom-right {
+  bottom: 8px;
 }
 
-/* 响应式设计 */
-@media (max-width: 768px) {
+.image-grid .live-badge.bottom-left,
+.image-grid-grid .live-badge.bottom-left,
+.image-float-container .live-badge.bottom-left,
+.image-grid .live-badge.top-left,
+.image-grid-grid .live-badge.top-left,
+.image-float-container .live-badge.top-left {
+  left: 8px;
+}
+
+.image-grid .live-badge.bottom-right,
+.image-grid-grid .live-badge.bottom-right,
+.image-float-container .live-badge.bottom-right,
+.image-grid .live-badge.top-right,
+.image-grid-grid .live-badge.top-right,
+.image-float-container .live-badge.top-right {
+  right: 8px;
+}
+
+.image-grid .live-badge.top-left,
+.image-grid-grid .live-badge.top-left,
+.image-float-container .live-badge.top-left,
+.image-grid .live-badge.top-right,
+.image-grid-grid .live-badge.top-right,
+.image-float-container .live-badge.top-right {
+  top: 8px;
+}
+
+/* 非常小的设备调整 */
+@media (max-width: 360px) {
   .image-grid {
-    flex-direction: column;
-    gap: 15px;
+    gap: 10px;
   }
   
   .image-column {
-    width: 100%;
+    flex: 0 0 calc(50% - 5px); /* 调整间距 */
   }
   
   .image-grid-grid {
-    grid-template-columns: 1fr;
+    gap: 10px;
   }
   
   .float-image {
-    width: 100%;
-    margin-right: 0;
-    margin-bottom: 15px;
-    float: none;
+    flex: 0 0 calc(50% - 5px); /* 调整间距 */
   }
+  
+  /* 进一步调整Live标识 */
+  .image-grid .live-badge,
+  .image-grid-grid .live-badge,
+  .image-float-container .live-badge {
+    font-size: 9px;
+    padding: 2px 4px;
+  }
+}
+
+/* 确保单图布局不受影响 */
+.live-photo-container:not(.image-grid):not(.image-grid-grid):not(.image-float-container) {
+  margin: 20px 0;
+}
+
+/* 标题样式调整 */
+.live-caption {
+  font-size: 13px; /* 稍微减小字体大小 */
+  margin-top: 5px;
+  line-height: 1.4;
+}
+
+/* 确保加载指示器在多图布局中正确显示 */
+.image-grid .live-loading,
+.image-grid-grid .live-loading,
+.image-float-container .live-loading {
+  width: 30px;
+  height: 30px;
 }</style><!-- hexo injector head_begin end --><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>标签: Python编程 | 程俞客&amp;称心号</title><meta name="author" content="程小客,zhuhaitian@shushichenxin.com"><meta name="copyright" content="程小客"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="述事称心社团下的程序部门和影像部门">
 <meta property="og:type" content="website">
 <meta property="og:title" content="程俞客&amp;称心号">
@@ -247,7 +309,7 @@
 <meta property="article:author" content="程小客">
 <meta property="article:tag" content="程俞客,称心号">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://www.g2022cyk.top/img/%E5%B1%9E%E5%AE%9E%E8%AF%9A%E5%BF%83.jpg"><script type="application/ld+json"></script><link rel="shortcut icon" href="/img/%E7%A7%B0%E5%BF%83%E5%8F%B7.png"><link rel="canonical" href="https://www.g2022cyk.top/tags/Python%E7%BC%96%E7%A8%8B/"><link rel="preconnect" href="//unpkg.com"/><link rel="preconnect" href="//hm.baidu.com"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://unpkg.com/@fortawesome/fontawesome-free/css/all.min.css"><link rel="stylesheet" href="https://unpkg.com/@fancyapps/ui/dist/fancybox/fancybox.css" media="print" onload="this.media='all'"><script>
+<meta name="twitter:image" content="https://www.g2022cyk.top/img/%E5%B1%9E%E5%AE%9E%E8%AF%9A%E5%BF%83.jpg"><script type="application/ld+json"></script><link rel="shortcut icon" href="/img/%E7%A7%B0%E5%BF%83%E5%8F%B7.png"><link rel="canonical" href="https://www.g2022cyk.top/tags/Python%E7%BC%96%E7%A8%8B/"><link rel="preconnect"/><link rel="preconnect" href="//hm.baidu.com"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="/pluginsSrc/@fortawesome/fontawesome-free/css/all.min.css"><link rel="stylesheet" href="/pluginsSrc/@fancyapps/ui/dist/fancybox/fancybox.css" media="print" onload="this.media='all'"><script>
     (() => {
       
     const saveToLocal = {
@@ -377,7 +439,7 @@ btf.addGlobalFn('pjaxComplete', () => {
   lightbox: 'fancybox',
   Snackbar: undefined,
   infinitegrid: {
-    js: 'https://unpkg.com/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    js: '/pluginsSrc/@egjs/infinitegrid/dist/infinitegrid.min.js',
     buttonText: '加载更多'
   },
   isPhotoFigcaption: false,
@@ -401,7 +463,7 @@ btf.addGlobalFn('pjaxSend', () => {
   Pace.restart()
 }, 'pace_restart')
 
-</script><link rel="stylesheet" href="https://unpkg.com/pace-js/themes/blue/pace-theme-minimal.css"/><script src="https://unpkg.com/pace-js/pace.min.js"></script><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/%E5%B1%9E%E5%AE%9E%E8%AF%9A%E5%BF%83.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">114</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">37</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">3</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><span class="site-page group hide"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/categories/%E4%B8%AD%E6%96%87%E6%9C%9F%E5%88%8A/"><i class="fa-fw fas fa-language"></i><span> 中文</span></a></li><li><a class="site-page child" href="/categories/%E8%8B%B1%E6%96%87%E6%9C%9F%E5%88%8A/"><i class="fa-fw fas fa-globe"></i><span> 英文</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/links/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于我</span></a></div></div></div></div><div class="page" id="body-wrap"><header class="not-home-page" id="page-header" style="background-image: url(/img/tag.webp);"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><img class="site-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/%E7%A7%B0%E5%BF%83%E5%8F%B7.png" alt="Logo"><span class="site-name">程俞客&amp;称心号</span></a></span><div id="menus"><div id="search-button"><span class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></span></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><span class="site-page group hide"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/categories/%E4%B8%AD%E6%96%87%E6%9C%9F%E5%88%8A/"><i class="fa-fw fas fa-language"></i><span> 中文</span></a></li><li><a class="site-page child" href="/categories/%E8%8B%B1%E6%96%87%E6%9C%9F%E5%88%8A/"><i class="fa-fw fas fa-globe"></i><span> 英文</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/links/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于我</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="page-site-info"><h1 id="site-title">Python编程</h1></div></header><main class="layout" id="content-inner"><div id="tag"><div class="article-sort-title">标签 - Python编程</div><div class="article-sort"><div class="article-sort-item year">2023</div><div class="article-sort-item"><a class="article-sort-item-img" href="/2023/05/04/%E4%BD%BF%E7%94%A8PyWebViwe%E5%BC%80%E5%8F%91%E6%A1%8C%E9%9D%A2%E5%BA%94%E7%94%A8/" title="使用PyWebViwe开发桌面应用"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://11.g2022cyk.top:8081/wp-content/uploads/2025/08/1754230600-pywebview.webp" alt="使用PyWebViwe开发桌面应用" onerror="this.onerror=null;this.src='/img/404.jpg'"></a><div class="article-sort-item-info"><div class="article-sort-item-time"><i class="far fa-calendar-alt"></i><time class="post-meta-date-created" datetime="2023-05-04T14:12:44.000Z" title="发表于 2023-05-04 22:12:44">2023-05-04</time></div><a class="article-sort-item-title" href="/2023/05/04/%E4%BD%BF%E7%94%A8PyWebViwe%E5%BC%80%E5%8F%91%E6%A1%8C%E9%9D%A2%E5%BA%94%E7%94%A8/" title="使用PyWebViwe开发桌面应用">使用PyWebViwe开发桌面应用</a></div></div><div class="article-sort-item year">2020</div><div class="article-sort-item"><a class="article-sort-item-img" href="/2020/04/24/%E6%89%8B%E6%9C%BA%E8%BF%90%E8%A1%8CPython/" title="家里没有电脑？教你用手机编写Python程序"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://11.g2022cyk.top:8081/wp-content/uploads/2020/04/12d7643a6033101c2a06e9072fe4cd5-1024x973.jpg" alt="家里没有电脑？教你用手机编写Python程序" onerror="this.onerror=null;this.src='/img/404.jpg'"></a><div class="article-sort-item-info"><div class="article-sort-item-time"><i class="far fa-calendar-alt"></i><time class="post-meta-date-created" datetime="2020-04-24T06:35:57.000Z" title="发表于 2020-04-24 14:35:57">2020-04-24</time></div><a class="article-sort-item-title" href="/2020/04/24/%E6%89%8B%E6%9C%BA%E8%BF%90%E8%A1%8CPython/" title="家里没有电脑？教你用手机编写Python程序">家里没有电脑？教你用手机编写Python程序</a></div></div><div class="article-sort-item year">2019</div><div class="article-sort-item"><a class="article-sort-item-img" href="/2019/11/20/%E5%88%86%E6%94%AF%E8%AF%AD%E5%8F%A5/" title="Python的分支语句if的用法"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://11.g2022cyk.top:8081/wp-content/uploads/2025/08/1754397211-pythonfenzhi.webp" alt="Python的分支语句if的用法" onerror="this.onerror=null;this.src='/img/404.jpg'"></a><div class="article-sort-item-info"><div class="article-sort-item-time"><i class="far fa-calendar-alt"></i><time class="post-meta-date-created" datetime="2019-11-20T09:43:33.000Z" title="发表于 2019-11-20 17:43:33">2019-11-20</time></div><a class="article-sort-item-title" href="/2019/11/20/%E5%88%86%E6%94%AF%E8%AF%AD%E5%8F%A5/" title="Python的分支语句if的用法">Python的分支语句if的用法</a></div></div><div class="article-sort-item"><a class="article-sort-item-img" href="/2019/11/18/Python%E7%9A%84%E9%80%BB%E8%BE%91%E8%BF%90%E7%AE%97/" title="Python的逻辑值与关系运算、逻辑运算"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://11.g2022cyk.top:8081/wp-content/uploads/2025/08/1754397610-pyluoji.webp" alt="Python的逻辑值与关系运算、逻辑运算" onerror="this.onerror=null;this.src='/img/404.jpg'"></a><div class="article-sort-item-info"><div class="article-sort-item-time"><i class="far fa-calendar-alt"></i><time class="post-meta-date-created" datetime="2019-11-18T09:43:33.000Z" title="发表于 2019-11-18 17:43:33">2019-11-18</time></div><a class="article-sort-item-title" href="/2019/11/18/Python%E7%9A%84%E9%80%BB%E8%BE%91%E8%BF%90%E7%AE%97/" title="Python的逻辑值与关系运算、逻辑运算">Python的逻辑值与关系运算、逻辑运算</a></div></div><div class="article-sort-item"><a class="article-sort-item-img" href="/2019/10/09/Python%E5%9F%BA%E7%A1%80%E8%AF%AD%E5%8F%A5%E7%BB%83%E4%B9%A0%E9%A2%98/" title="Python基础语句练习题"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://11.g2022cyk.top:8081/wp-content/uploads/2025/08/1754397825-pylianxi.webp" alt="Python基础语句练习题" onerror="this.onerror=null;this.src='/img/404.jpg'"></a><div class="article-sort-item-info"><div class="article-sort-item-time"><i class="far fa-calendar-alt"></i><time class="post-meta-date-created" datetime="2019-10-09T14:12:42.000Z" title="发表于 2019-10-09 22:12:42">2019-10-09</time></div><a class="article-sort-item-title" href="/2019/10/09/Python%E5%9F%BA%E7%A1%80%E8%AF%AD%E5%8F%A5%E7%BB%83%E4%B9%A0%E9%A2%98/" title="Python基础语句练习题">Python基础语句练习题</a></div></div><div class="article-sort-item"><a class="article-sort-item-img" href="/2019/10/09/Python%E8%BE%93%E5%85%A5%E8%AF%AD%E5%8F%A5input%E7%9A%84%E4%BD%BF%E7%94%A8/" title="Python基础输入语句和数据类型转换"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://11.g2022cyk.top:8081/wp-content/uploads/2025/08/1754397867-pyinput.webp" alt="Python基础输入语句和数据类型转换" onerror="this.onerror=null;this.src='/img/404.jpg'"></a><div class="article-sort-item-info"><div class="article-sort-item-time"><i class="far fa-calendar-alt"></i><time class="post-meta-date-created" datetime="2019-10-09T14:12:41.000Z" title="发表于 2019-10-09 22:12:41">2019-10-09</time></div><a class="article-sort-item-title" href="/2019/10/09/Python%E8%BE%93%E5%85%A5%E8%AF%AD%E5%8F%A5input%E7%9A%84%E4%BD%BF%E7%94%A8/" title="Python基础输入语句和数据类型转换">Python基础输入语句和数据类型转换</a></div></div><div class="article-sort-item"><a class="article-sort-item-img" href="/2019/10/09/Python%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E4%B8%8E%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2/" title="Python的基本数据类型与强制转换"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://11.g2022cyk.top:8081/wp-content/uploads/2025/08/1754397642-pythonjiben.webp" alt="Python的基本数据类型与强制转换" onerror="this.onerror=null;this.src='/img/404.jpg'"></a><div class="article-sort-item-info"><div class="article-sort-item-time"><i class="far fa-calendar-alt"></i><time class="post-meta-date-created" datetime="2019-10-09T13:12:41.000Z" title="发表于 2019-10-09 21:12:41">2019-10-09</time></div><a class="article-sort-item-title" href="/2019/10/09/Python%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E4%B8%8E%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2/" title="Python的基本数据类型与强制转换">Python的基本数据类型与强制转换</a></div></div><div class="article-sort-item"><a class="article-sort-item-img" href="/2019/09/23/Python%E7%9A%84%E8%BE%93%E5%87%BA/" title="世界你好：在Python里打印HelloWorld"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://11.g2022cyk.top:8081/wp-content/uploads/2025/08/1754397731-pyghellop.webp" alt="世界你好：在Python里打印HelloWorld" onerror="this.onerror=null;this.src='/img/404.jpg'"></a><div class="article-sort-item-info"><div class="article-sort-item-time"><i class="far fa-calendar-alt"></i><time class="post-meta-date-created" datetime="2019-09-23T14:12:41.000Z" title="发表于 2019-09-23 22:12:41">2019-09-23</time></div><a class="article-sort-item-title" href="/2019/09/23/Python%E7%9A%84%E8%BE%93%E5%87%BA/" title="世界你好：在Python里打印HelloWorld">世界你好：在Python里打印HelloWorld</a></div></div><div class="article-sort-item"><a class="article-sort-item-img" href="/2019/09/16/Python%E7%8E%AF%E5%A2%83%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/" title="Python环境安装教程"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://11.g2022cyk.top:8081/wp-content/uploads/2025/08/1754397768-pyinstall.webp" alt="Python环境安装教程" onerror="this.onerror=null;this.src='/img/404.jpg'"></a><div class="article-sort-item-info"><div class="article-sort-item-time"><i class="far fa-calendar-alt"></i><time class="post-meta-date-created" datetime="2019-09-16T14:59:09.000Z" title="发表于 2019-09-16 22:59:09">2019-09-16</time></div><a class="article-sort-item-title" href="/2019/09/16/Python%E7%8E%AF%E5%A2%83%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/" title="Python环境安装教程">Python环境安装教程</a></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/%E5%B1%9E%E5%AE%9E%E8%AF%9A%E5%BF%83.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">程小客</div><div class="author-info-description">述事称心社团下的程序部门和影像部门</div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">114</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">37</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">3</div></a></div><a id="card-info-btn" href="mailto:zhuhaitian@shushichenxin.com"><i class="fas fa-envelope"></i><span>联系我</span></a><div class="card-info-social-icons"><a class="social-icon" href="https://github.com/cykzht" target="_blank" title="Github"><i class="fab fa-github" style="color: #hdhfbb;"></i></a><a class="social-icon" href="mailto:zhuhaitian@shushichenxin.com" target="_blank" title="Email"><i class="fas fa-envelope" style="color: #000000;"></i></a><a class="social-icon" href="https://space.bilibili.com/122529890" target="_blank" title="Bilibili"><i class="fab fa-bilibili" style="color: #00A1D6;"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">欢迎大家去<a href="https://www.shushichenxin.com/" target="_blank">述事称心</a>逛逛！</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2025/09/01/hexo-live-photo-user-guide/" title="Hexo-Live-Photo Usage Guide"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://11.g2022cyk.top:8081/wp-content/uploads/2025/09/1756729382-English.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Hexo-Live-Photo Usage Guide"/></a><div class="content"><a class="title" href="/2025/09/01/hexo-live-photo-user-guide/" title="Hexo-Live-Photo Usage Guide">Hexo-Live-Photo Usage Guide</a><time datetime="2025-09-01T12:00:00.000Z" title="发表于 2025-09-01 20:00:00">2025-09-01</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2025/09/01/hexo-live-photo%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E/" title="Hexo-Live-Photo 使用说明"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://11.g2022cyk.top:8081/wp-content/uploads/2025/09/1756727342-中文.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Hexo-Live-Photo 使用说明"/></a><div class="content"><a class="title" href="/2025/09/01/hexo-live-photo%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E/" title="Hexo-Live-Photo 使用说明">Hexo-Live-Photo 使用说明</a><time datetime="2025-09-01T12:00:00.000Z" title="发表于 2025-09-01 20:00:00">2025-09-01</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/11/19/TensorFlow%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/" title="TensorFlow安装教程"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://11.g2022cyk.top:8081/wp-content/uploads/2025/08/1754229626-ten.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="TensorFlow安装教程"/></a><div class="content"><a class="title" href="/2024/11/19/TensorFlow%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/" title="TensorFlow安装教程">TensorFlow安装教程</a><time datetime="2024-11-19T14:12:41.000Z" title="发表于 2024-11-19 22:12:41">2024-11-19</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/11/19/tensorflow_installation_guide/" title="TensorFlow Installation Tutorial"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://11.g2022cyk.top:8081/wp-content/uploads/2025/08/1754229626-ten.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="TensorFlow Installation Tutorial"/></a><div class="content"><a class="title" href="/2024/11/19/tensorflow_installation_guide/" title="TensorFlow Installation Tutorial">TensorFlow Installation Tutorial</a><time datetime="2024-11-19T14:12:41.000Z" title="发表于 2024-11-19 22:12:41">2024-11-19</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/12/22/goodbye_school_dropout_website/" title="Farewell to TuitionDrop"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://11.g2022cyk.top:8081/wp-content/uploads/2025/08/1754144143-show.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Farewell to TuitionDrop"/></a><div class="content"><a class="title" href="/2023/12/22/goodbye_school_dropout_website/" title="Farewell to TuitionDrop">Farewell to TuitionDrop</a><time datetime="2023-12-22T10:20:00.000Z" title="发表于 2023-12-22 18:20:00">2023-12-22</time></div></div></div></div><div class="card-widget card-tags"><div class="item-headline"><i class="fas fa-tags"></i><span>标签</span></div><div class="card-tag-cloud"><a href="/tags/%E9%AB%98%E8%80%83/" style="font-size: 1.18em; color: #999ca1">高考</a> <a href="/tags/%E9%80%80%E5%AD%A6%E7%BD%91/" style="font-size: 1.26em; color: #999fa8">退学网</a> <a href="/tags/Experience-Sharing/" style="font-size: 1.1em; color: #999">Experience Sharing</a> <a href="/tags/TuitionFreeNet/" style="font-size: 1.1em; color: #999">TuitionFreeNet</a> <a href="/tags/Vue-Programming/" style="font-size: 1.1em; color: #999">Vue Programming</a> <a href="/tags/TuitionDrop/" style="font-size: 1.1em; color: #999">TuitionDrop</a> <a href="/tags/PHP%E7%BC%96%E7%A8%8B/" style="font-size: 1.34em; color: #99a3b0">PHP编程</a> <a href="/tags/Android/" style="font-size: 1.1em; color: #999">Android</a> <a href="/tags/Circuit-Design/" style="font-size: 1.1em; color: #999">Circuit Design</a> <a href="/tags/Arduino/" style="font-size: 1.18em; color: #999ca1">Arduino</a> <a href="/tags/vue%E7%BC%96%E7%A8%8B/" style="font-size: 1.1em; color: #999">vue编程</a> <a href="/tags/%E7%A8%8B%E5%BA%8F%E5%8F%91%E5%B8%83/" style="font-size: 1.18em; color: #999ca1">程序发布</a> <a href="/tags/Quitting-School-Website/" style="font-size: 1.1em; color: #999">Quitting School Website</a> <a href="/tags/%E7%BB%8F%E9%AA%8C%E5%88%86%E4%BA%AB/" style="font-size: 1.1em; color: #999">经验分享</a> <a href="/tags/Virtual-Machine/" style="font-size: 1.26em; color: #999fa8">Virtual Machine</a> <a href="/tags/Java%E7%BC%96%E7%A8%8B/" style="font-size: 1.5em; color: #99a9bf">Java编程</a> <a href="/tags/%E6%97%85%E6%B8%B8%E6%97%A5%E8%AE%B0/" style="font-size: 1.1em; color: #999">旅游日记</a> <a href="/tags/Bug/" style="font-size: 1.18em; color: #999ca1">Bug</a> <a href="/tags/Tuixuewang/" style="font-size: 1.1em; color: #999">Tuixuewang</a> <a href="/tags/Python-Programming/" style="font-size: 1.42em; color: #99a6b7">Python Programming</a> <a href="/tags/Gaokao/" style="font-size: 1.18em; color: #999ca1">Gaokao</a> <a href="/tags/%E6%9E%81%E5%9F%9F/" style="font-size: 1.1em; color: #999">极域</a> <a href="/tags/%E8%99%9A%E6%8B%9F%E6%9C%BA/" style="font-size: 1.26em; color: #999fa8">虚拟机</a> <a href="/tags/Jiyu/" style="font-size: 1.1em; color: #999">Jiyu</a> <a href="/tags/%E5%AE%89%E5%8D%93/" style="font-size: 1.1em; color: #999">安卓</a> <a href="/tags/Hexo%E6%8F%92%E4%BB%B6-Live-Photo-%E5%8A%A8%E6%80%81%E5%9B%BE%E7%89%87/" style="font-size: 1.1em; color: #999">Hexo插件, Live Photo, 动态图片</a> <a href="/tags/Python-Problems/" style="font-size: 1.1em; color: #999">Python Problems</a> <a href="/tags/Python%E9%A2%98%E7%9B%AE/" style="font-size: 1.1em; color: #999">Python题目</a> <a href="/tags/Nginx/" style="font-size: 1.18em; color: #999ca1">Nginx</a> <a href="/tags/TensorFlow/" style="font-size: 1.18em; color: #999ca1">TensorFlow</a> <a href="/tags/Python%E7%BC%96%E7%A8%8B/" style="font-size: 1.42em; color: #99a6b7">Python编程</a> <a href="/tags/Flash/" style="font-size: 1.18em; color: #999ca1">Flash</a> <a href="/tags/%E7%94%B5%E8%B7%AF%E8%AE%BE%E8%AE%A1/" style="font-size: 1.1em; color: #999">电路设计</a> <a href="/tags/Program-Release/" style="font-size: 1.18em; color: #999ca1">Program Release</a> <a href="/tags/Java-Programming/" style="font-size: 1.5em; color: #99a9bf">Java Programming</a> <a href="/tags/Hexo-Plugin-Live-Photo-Dynamic-Images/" style="font-size: 1.1em; color: #999">Hexo Plugin, Live Photo, Dynamic Images</a> <a href="/tags/PHP-Programming/" style="font-size: 1.34em; color: #99a3b0">PHP Programming</a></div></div><div class="card-widget card-archives">
+</script><link rel="stylesheet" href="/pluginsSrc/pace-js/themes/blue/pace-theme-minimal.css"/><script src="/pluginsSrc/pace-js/pace.min.js"></script><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/%E5%B1%9E%E5%AE%9E%E8%AF%9A%E5%BF%83.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">114</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">37</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">3</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><span class="site-page group hide"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/categories/%E4%B8%AD%E6%96%87%E6%9C%9F%E5%88%8A/"><i class="fa-fw fas fa-language"></i><span> 中文</span></a></li><li><a class="site-page child" href="/categories/%E8%8B%B1%E6%96%87%E6%9C%9F%E5%88%8A/"><i class="fa-fw fas fa-globe"></i><span> 英文</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/links/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于我</span></a></div></div></div></div><div class="page" id="body-wrap"><header class="not-home-page" id="page-header" style="background-image: url(/img/tag.webp);"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><img class="site-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/%E7%A7%B0%E5%BF%83%E5%8F%B7.png" alt="Logo"><span class="site-name">程俞客&amp;称心号</span></a></span><div id="menus"><div id="search-button"><span class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></span></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><span class="site-page group hide"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/categories/%E4%B8%AD%E6%96%87%E6%9C%9F%E5%88%8A/"><i class="fa-fw fas fa-language"></i><span> 中文</span></a></li><li><a class="site-page child" href="/categories/%E8%8B%B1%E6%96%87%E6%9C%9F%E5%88%8A/"><i class="fa-fw fas fa-globe"></i><span> 英文</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/links/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于我</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="page-site-info"><h1 id="site-title">Python编程</h1></div></header><main class="layout" id="content-inner"><div id="tag"><div class="article-sort-title">标签 - Python编程</div><div class="article-sort"><div class="article-sort-item year">2023</div><div class="article-sort-item"><a class="article-sort-item-img" href="/2023/05/04/%E4%BD%BF%E7%94%A8PyWebViwe%E5%BC%80%E5%8F%91%E6%A1%8C%E9%9D%A2%E5%BA%94%E7%94%A8/" title="使用PyWebViwe开发桌面应用"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://11.g2022cyk.top:8081/wp-content/uploads/2025/08/1754230600-pywebview.webp" alt="使用PyWebViwe开发桌面应用" onerror="this.onerror=null;this.src='/img/404.jpg'"></a><div class="article-sort-item-info"><div class="article-sort-item-time"><i class="far fa-calendar-alt"></i><time class="post-meta-date-created" datetime="2023-05-04T14:12:44.000Z" title="发表于 2023-05-04 22:12:44">2023-05-04</time></div><a class="article-sort-item-title" href="/2023/05/04/%E4%BD%BF%E7%94%A8PyWebViwe%E5%BC%80%E5%8F%91%E6%A1%8C%E9%9D%A2%E5%BA%94%E7%94%A8/" title="使用PyWebViwe开发桌面应用">使用PyWebViwe开发桌面应用</a></div></div><div class="article-sort-item year">2020</div><div class="article-sort-item"><a class="article-sort-item-img" href="/2020/04/24/%E6%89%8B%E6%9C%BA%E8%BF%90%E8%A1%8CPython/" title="家里没有电脑？教你用手机编写Python程序"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://11.g2022cyk.top:8081/wp-content/uploads/2020/04/12d7643a6033101c2a06e9072fe4cd5-1024x973.jpg" alt="家里没有电脑？教你用手机编写Python程序" onerror="this.onerror=null;this.src='/img/404.jpg'"></a><div class="article-sort-item-info"><div class="article-sort-item-time"><i class="far fa-calendar-alt"></i><time class="post-meta-date-created" datetime="2020-04-24T06:35:57.000Z" title="发表于 2020-04-24 14:35:57">2020-04-24</time></div><a class="article-sort-item-title" href="/2020/04/24/%E6%89%8B%E6%9C%BA%E8%BF%90%E8%A1%8CPython/" title="家里没有电脑？教你用手机编写Python程序">家里没有电脑？教你用手机编写Python程序</a></div></div><div class="article-sort-item year">2019</div><div class="article-sort-item"><a class="article-sort-item-img" href="/2019/11/20/%E5%88%86%E6%94%AF%E8%AF%AD%E5%8F%A5/" title="Python的分支语句if的用法"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://11.g2022cyk.top:8081/wp-content/uploads/2025/08/1754397211-pythonfenzhi.webp" alt="Python的分支语句if的用法" onerror="this.onerror=null;this.src='/img/404.jpg'"></a><div class="article-sort-item-info"><div class="article-sort-item-time"><i class="far fa-calendar-alt"></i><time class="post-meta-date-created" datetime="2019-11-20T09:43:33.000Z" title="发表于 2019-11-20 17:43:33">2019-11-20</time></div><a class="article-sort-item-title" href="/2019/11/20/%E5%88%86%E6%94%AF%E8%AF%AD%E5%8F%A5/" title="Python的分支语句if的用法">Python的分支语句if的用法</a></div></div><div class="article-sort-item"><a class="article-sort-item-img" href="/2019/11/18/Python%E7%9A%84%E9%80%BB%E8%BE%91%E8%BF%90%E7%AE%97/" title="Python的逻辑值与关系运算、逻辑运算"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://11.g2022cyk.top:8081/wp-content/uploads/2025/08/1754397610-pyluoji.webp" alt="Python的逻辑值与关系运算、逻辑运算" onerror="this.onerror=null;this.src='/img/404.jpg'"></a><div class="article-sort-item-info"><div class="article-sort-item-time"><i class="far fa-calendar-alt"></i><time class="post-meta-date-created" datetime="2019-11-18T09:43:33.000Z" title="发表于 2019-11-18 17:43:33">2019-11-18</time></div><a class="article-sort-item-title" href="/2019/11/18/Python%E7%9A%84%E9%80%BB%E8%BE%91%E8%BF%90%E7%AE%97/" title="Python的逻辑值与关系运算、逻辑运算">Python的逻辑值与关系运算、逻辑运算</a></div></div><div class="article-sort-item"><a class="article-sort-item-img" href="/2019/10/09/Python%E5%9F%BA%E7%A1%80%E8%AF%AD%E5%8F%A5%E7%BB%83%E4%B9%A0%E9%A2%98/" title="Python基础语句练习题"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://11.g2022cyk.top:8081/wp-content/uploads/2025/08/1754397825-pylianxi.webp" alt="Python基础语句练习题" onerror="this.onerror=null;this.src='/img/404.jpg'"></a><div class="article-sort-item-info"><div class="article-sort-item-time"><i class="far fa-calendar-alt"></i><time class="post-meta-date-created" datetime="2019-10-09T14:12:42.000Z" title="发表于 2019-10-09 22:12:42">2019-10-09</time></div><a class="article-sort-item-title" href="/2019/10/09/Python%E5%9F%BA%E7%A1%80%E8%AF%AD%E5%8F%A5%E7%BB%83%E4%B9%A0%E9%A2%98/" title="Python基础语句练习题">Python基础语句练习题</a></div></div><div class="article-sort-item"><a class="article-sort-item-img" href="/2019/10/09/Python%E8%BE%93%E5%85%A5%E8%AF%AD%E5%8F%A5input%E7%9A%84%E4%BD%BF%E7%94%A8/" title="Python基础输入语句和数据类型转换"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://11.g2022cyk.top:8081/wp-content/uploads/2025/08/1754397867-pyinput.webp" alt="Python基础输入语句和数据类型转换" onerror="this.onerror=null;this.src='/img/404.jpg'"></a><div class="article-sort-item-info"><div class="article-sort-item-time"><i class="far fa-calendar-alt"></i><time class="post-meta-date-created" datetime="2019-10-09T14:12:41.000Z" title="发表于 2019-10-09 22:12:41">2019-10-09</time></div><a class="article-sort-item-title" href="/2019/10/09/Python%E8%BE%93%E5%85%A5%E8%AF%AD%E5%8F%A5input%E7%9A%84%E4%BD%BF%E7%94%A8/" title="Python基础输入语句和数据类型转换">Python基础输入语句和数据类型转换</a></div></div><div class="article-sort-item"><a class="article-sort-item-img" href="/2019/10/09/Python%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E4%B8%8E%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2/" title="Python的基本数据类型与强制转换"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://11.g2022cyk.top:8081/wp-content/uploads/2025/08/1754397642-pythonjiben.webp" alt="Python的基本数据类型与强制转换" onerror="this.onerror=null;this.src='/img/404.jpg'"></a><div class="article-sort-item-info"><div class="article-sort-item-time"><i class="far fa-calendar-alt"></i><time class="post-meta-date-created" datetime="2019-10-09T13:12:41.000Z" title="发表于 2019-10-09 21:12:41">2019-10-09</time></div><a class="article-sort-item-title" href="/2019/10/09/Python%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E4%B8%8E%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2/" title="Python的基本数据类型与强制转换">Python的基本数据类型与强制转换</a></div></div><div class="article-sort-item"><a class="article-sort-item-img" href="/2019/09/23/Python%E7%9A%84%E8%BE%93%E5%87%BA/" title="世界你好：在Python里打印HelloWorld"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://11.g2022cyk.top:8081/wp-content/uploads/2025/08/1754397731-pyghellop.webp" alt="世界你好：在Python里打印HelloWorld" onerror="this.onerror=null;this.src='/img/404.jpg'"></a><div class="article-sort-item-info"><div class="article-sort-item-time"><i class="far fa-calendar-alt"></i><time class="post-meta-date-created" datetime="2019-09-23T14:12:41.000Z" title="发表于 2019-09-23 22:12:41">2019-09-23</time></div><a class="article-sort-item-title" href="/2019/09/23/Python%E7%9A%84%E8%BE%93%E5%87%BA/" title="世界你好：在Python里打印HelloWorld">世界你好：在Python里打印HelloWorld</a></div></div><div class="article-sort-item"><a class="article-sort-item-img" href="/2019/09/16/Python%E7%8E%AF%E5%A2%83%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/" title="Python环境安装教程"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://11.g2022cyk.top:8081/wp-content/uploads/2025/08/1754397768-pyinstall.webp" alt="Python环境安装教程" onerror="this.onerror=null;this.src='/img/404.jpg'"></a><div class="article-sort-item-info"><div class="article-sort-item-time"><i class="far fa-calendar-alt"></i><time class="post-meta-date-created" datetime="2019-09-16T14:59:09.000Z" title="发表于 2019-09-16 22:59:09">2019-09-16</time></div><a class="article-sort-item-title" href="/2019/09/16/Python%E7%8E%AF%E5%A2%83%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/" title="Python环境安装教程">Python环境安装教程</a></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/%E5%B1%9E%E5%AE%9E%E8%AF%9A%E5%BF%83.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">程小客</div><div class="author-info-description">述事称心社团下的程序部门和影像部门</div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">114</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">37</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">3</div></a></div><a id="card-info-btn" href="mailto:zhuhaitian@shushichenxin.com"><i class="fas fa-envelope"></i><span>联系我</span></a><div class="card-info-social-icons"><a class="social-icon" href="https://github.com/cykzht" target="_blank" title="Github"><i class="fab fa-github" style="color: #hdhfbb;"></i></a><a class="social-icon" href="mailto:zhuhaitian@shushichenxin.com" target="_blank" title="Email"><i class="fas fa-envelope" style="color: #000000;"></i></a><a class="social-icon" href="https://space.bilibili.com/122529890" target="_blank" title="Bilibili"><i class="fab fa-bilibili" style="color: #00A1D6;"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">欢迎大家去<a href="https://www.shushichenxin.com/" target="_blank">述事称心</a>逛逛！</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2025/09/01/hexo-live-photo-user-guide/" title="Hexo-Live-Photo User Guide"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://11.g2022cyk.top:8081/wp-content/uploads/2025/09/1756727342-中文.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Hexo-Live-Photo User Guide"/></a><div class="content"><a class="title" href="/2025/09/01/hexo-live-photo-user-guide/" title="Hexo-Live-Photo User Guide">Hexo-Live-Photo User Guide</a><time datetime="2025-09-01T12:00:00.000Z" title="发表于 2025-09-01 20:00:00">2025-09-01</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2025/09/01/hexo-live-photo%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E/" title="Hexo-Live-Photo 使用说明"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://11.g2022cyk.top:8081/wp-content/uploads/2025/09/1756727342-中文.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Hexo-Live-Photo 使用说明"/></a><div class="content"><a class="title" href="/2025/09/01/hexo-live-photo%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E/" title="Hexo-Live-Photo 使用说明">Hexo-Live-Photo 使用说明</a><time datetime="2025-09-01T12:00:00.000Z" title="发表于 2025-09-01 20:00:00">2025-09-01</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/11/19/TensorFlow%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/" title="TensorFlow安装教程"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://11.g2022cyk.top:8081/wp-content/uploads/2025/08/1754229626-ten.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="TensorFlow安装教程"/></a><div class="content"><a class="title" href="/2024/11/19/TensorFlow%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/" title="TensorFlow安装教程">TensorFlow安装教程</a><time datetime="2024-11-19T14:12:41.000Z" title="发表于 2024-11-19 22:12:41">2024-11-19</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/11/19/tensorflow_installation_guide/" title="TensorFlow Installation Tutorial"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://11.g2022cyk.top:8081/wp-content/uploads/2025/08/1754229626-ten.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="TensorFlow Installation Tutorial"/></a><div class="content"><a class="title" href="/2024/11/19/tensorflow_installation_guide/" title="TensorFlow Installation Tutorial">TensorFlow Installation Tutorial</a><time datetime="2024-11-19T14:12:41.000Z" title="发表于 2024-11-19 22:12:41">2024-11-19</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/12/22/goodbye_school_dropout_website/" title="Farewell to TuitionDrop"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://11.g2022cyk.top:8081/wp-content/uploads/2025/08/1754144143-show.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Farewell to TuitionDrop"/></a><div class="content"><a class="title" href="/2023/12/22/goodbye_school_dropout_website/" title="Farewell to TuitionDrop">Farewell to TuitionDrop</a><time datetime="2023-12-22T10:20:00.000Z" title="发表于 2023-12-22 18:20:00">2023-12-22</time></div></div></div></div><div class="card-widget card-tags"><div class="item-headline"><i class="fas fa-tags"></i><span>标签</span></div><div class="card-tag-cloud"><a href="/tags/Jiyu/" style="font-size: 1.1em; color: #999">Jiyu</a> <a href="/tags/Bug/" style="font-size: 1.18em; color: #999ca1">Bug</a> <a href="/tags/%E6%97%85%E6%B8%B8%E6%97%A5%E8%AE%B0/" style="font-size: 1.1em; color: #999">旅游日记</a> <a href="/tags/vue%E7%BC%96%E7%A8%8B/" style="font-size: 1.1em; color: #999">vue编程</a> <a href="/tags/Arduino/" style="font-size: 1.18em; color: #999ca1">Arduino</a> <a href="/tags/Hexo%E6%8F%92%E4%BB%B6-Live-Photo-%E5%8A%A8%E6%80%81%E5%9B%BE%E7%89%87/" style="font-size: 1.1em; color: #999">Hexo插件, Live Photo, 动态图片</a> <a href="/tags/Android/" style="font-size: 1.1em; color: #999">Android</a> <a href="/tags/Gaokao/" style="font-size: 1.18em; color: #999ca1">Gaokao</a> <a href="/tags/Vue-Programming/" style="font-size: 1.1em; color: #999">Vue Programming</a> <a href="/tags/%E9%80%80%E5%AD%A6%E7%BD%91/" style="font-size: 1.26em; color: #999fa8">退学网</a> <a href="/tags/Python%E7%BC%96%E7%A8%8B/" style="font-size: 1.42em; color: #99a6b7">Python编程</a> <a href="/tags/TuitionFreeNet/" style="font-size: 1.1em; color: #999">TuitionFreeNet</a> <a href="/tags/PHP%E7%BC%96%E7%A8%8B/" style="font-size: 1.34em; color: #99a3b0">PHP编程</a> <a href="/tags/TuitionDrop/" style="font-size: 1.1em; color: #999">TuitionDrop</a> <a href="/tags/PHP-Programming/" style="font-size: 1.34em; color: #99a3b0">PHP Programming</a> <a href="/tags/Program-Release/" style="font-size: 1.18em; color: #999ca1">Program Release</a> <a href="/tags/%E7%A8%8B%E5%BA%8F%E5%8F%91%E5%B8%83/" style="font-size: 1.18em; color: #999ca1">程序发布</a> <a href="/tags/Virtual-Machine/" style="font-size: 1.26em; color: #999fa8">Virtual Machine</a> <a href="/tags/Python%E9%A2%98%E7%9B%AE/" style="font-size: 1.1em; color: #999">Python题目</a> <a href="/tags/TensorFlow/" style="font-size: 1.18em; color: #999ca1">TensorFlow</a> <a href="/tags/%E7%94%B5%E8%B7%AF%E8%AE%BE%E8%AE%A1/" style="font-size: 1.1em; color: #999">电路设计</a> <a href="/tags/%E5%AE%89%E5%8D%93/" style="font-size: 1.1em; color: #999">安卓</a> <a href="/tags/%E7%BB%8F%E9%AA%8C%E5%88%86%E4%BA%AB/" style="font-size: 1.1em; color: #999">经验分享</a> <a href="/tags/Tuixuewang/" style="font-size: 1.1em; color: #999">Tuixuewang</a> <a href="/tags/%E9%AB%98%E8%80%83/" style="font-size: 1.18em; color: #999ca1">高考</a> <a href="/tags/Circuit-Design/" style="font-size: 1.1em; color: #999">Circuit Design</a> <a href="/tags/Python-Programming/" style="font-size: 1.42em; color: #99a6b7">Python Programming</a> <a href="/tags/%E8%99%9A%E6%8B%9F%E6%9C%BA/" style="font-size: 1.26em; color: #999fa8">虚拟机</a> <a href="/tags/Experience-Sharing/" style="font-size: 1.1em; color: #999">Experience Sharing</a> <a href="/tags/Nginx/" style="font-size: 1.18em; color: #999ca1">Nginx</a> <a href="/tags/Hexo-Plugin-Live-Photo-Dynamic-Images/" style="font-size: 1.1em; color: #999">Hexo Plugin, Live Photo, Dynamic Images</a> <a href="/tags/Java%E7%BC%96%E7%A8%8B/" style="font-size: 1.5em; color: #99a9bf">Java编程</a> <a href="/tags/Python-Problems/" style="font-size: 1.1em; color: #999">Python Problems</a> <a href="/tags/Flash/" style="font-size: 1.18em; color: #999ca1">Flash</a> <a href="/tags/%E6%9E%81%E5%9F%9F/" style="font-size: 1.1em; color: #999">极域</a> <a href="/tags/Java-Programming/" style="font-size: 1.5em; color: #99a9bf">Java Programming</a> <a href="/tags/Quitting-School-Website/" style="font-size: 1.1em; color: #999">Quitting School Website</a></div></div><div class="card-widget card-archives">
     <div class="item-headline">
       <i class="fas fa-archive"></i>
       <span>归档</span>
@@ -486,7 +548,7 @@ btf.addGlobalFn('pjaxSend', () => {
         </li>
       
     </ul>
-  </div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站信息</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章数目 :</div><div class="item-count">114</div></div><div class="webinfo-item"><div class="item-name">本站总字数 :</div><div class="item-count">79.2k</div></div><div class="webinfo-item"><div class="item-name">本站访客数 :</div><div class="item-count" id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">本站总浏览量 :</div><div class="item-count" id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2025-09-01T16:45:56.277Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer" style="background-image: url(/img/tag.webp);"><div class="footer-other"><div class="footer-copyright"><span class="copyright">&copy;&nbsp;2019 - 2025 By 程小客</span></div><div class="footer_custom_text"><a target="_blank" rel="noopener" href="https://beian.miit.gov.cn/"><span>备案号：京ICP备2022028753号-1</span></a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://unpkg.com/@fancyapps/ui/dist/fancybox/fancybox.umd.js"></script><script src="https://unpkg.com/vanilla-lazyload/dist/lazyload.iife.min.js"></script><div class="js-pjax"><script>(() => {
+  </div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站信息</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章数目 :</div><div class="item-count">114</div></div><div class="webinfo-item"><div class="item-name">本站总字数 :</div><div class="item-count">79.5k</div></div><div class="webinfo-item"><div class="item-name">本站访客数 :</div><div class="item-count" id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">本站总浏览量 :</div><div class="item-count" id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2025-09-02T04:26:49.190Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer" style="background-image: url(/img/tag.webp);"><div class="footer-other"><div class="footer-copyright"><span class="copyright">&copy;&nbsp;2019 - 2025 By 程小客</span></div><div class="footer_custom_text"><a target="_blank" rel="noopener" href="https://beian.miit.gov.cn/"><span>备案号：京ICP备2022028753号-1</span></a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/pluginsSrc/@fancyapps/ui/dist/fancybox/fancybox.umd.js"></script><script src="/pluginsSrc/vanilla-lazyload/dist/lazyload.iife.min.js"></script><div class="js-pjax"><script>(() => {
   const runMermaid = ele => {
     window.loadMermaid = true
     const theme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'default'
@@ -530,119 +592,100 @@ btf.addGlobalFn('pjaxSend', () => {
 
     const runMermaidFn = () => runMermaid($mermaid)
     btf.addGlobalFn('themeChange', runMermaidFn, 'mermaid')
-    window.loadMermaid ? runMermaidFn() : btf.getScript('https://unpkg.com/mermaid/dist/mermaid.min.js').then(runMermaidFn)
+    window.loadMermaid ? runMermaidFn() : btf.getScript('/pluginsSrc/mermaid/dist/mermaid.min.js').then(runMermaidFn)
   }
 
   btf.addGlobalFn('encrypt', loadMermaid, 'mermaid')
   window.pjax ? loadMermaid() : document.addEventListener('DOMContentLoaded', loadMermaid)
-})()</script></div><canvas class="fireworks" mobile="false"></canvas><script src="https://unpkg.com/butterfly-extsrc/dist/fireworks.min.js"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="text-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js"></script></div></div><!-- hexo injector body_end start --><script>// LivePhoto类，管理单个Live Photo的行为
+})()</script></div><canvas class="fireworks" mobile="false"></canvas><script src="/pluginsSrc/butterfly-extsrc/dist/fireworks.min.js"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="text-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js"></script></div></div><!-- hexo injector body_end start --><script>// LivePhoto类，管理单个Live Photo的行为
 class LivePhoto {
   constructor(container, config) {
     this.container = container;
-    this.staticImage = container.querySelector('.live-photo-static');
-    this.video = container.querySelector('.live-photo-video');
+    this.staticImage = container.querySelector(".live-photo-static");
+    this.video = container.querySelector(".live-photo-video");
     this.config = config;
     this.hasAutoPlayed = false;
     this.isPlaying = false;
     this.hoverTimeout = null;
     this.touchTimeout = null;
     this.isWeixin = this.detectWeixinBrowser();
-    
+
     // 在微信环境中调整配置
     if (this.isWeixin && this.config.weixin_disable_autoplay) {
       this.config.autoplay = false;
-      this.config.hover_to_play = false;
-      this.config.touch_to_play = true;
-      this.config.click_to_play = true; // 确保点击播放启用
-      
+
       // 修改微信环境下的badge
       this.modifyWeixinBadge();
     }
-    
+
     // 绑定事件
     this.bindEvents();
   }
-  
+
   // 检测微信浏览器
   detectWeixinBrowser() {
     const ua = navigator.userAgent.toLowerCase();
-    return ua.includes('micromessenger');
+    return ua.includes("micromessenger");
   }
-  
+
   // 修改微信环境下的badge
   modifyWeixinBadge() {
-    let badge = this.container.querySelector('.live-badge');
-    
+    let badge = this.container.querySelector(".live-badge");
+
     // 如果没有badge，创建一个
     if (!badge && this.config.badge) {
-      badge = document.createElement('div');
-      badge.className = `live-badge ${this.config.badge_position || 'bottom-left'} weixin-badge`;
+      badge = document.createElement("div");
+      badge.className = `live-badge ${
+        this.config.badge_position || "bottom-left"
+      }`;
       this.container.appendChild(badge);
     }
-    
+
     // 修改badge内容和样式
     if (badge) {
-      if(this.config.badge_text===''){
-        this.config.badge_text='Live';
-      }
-      badge.innerHTML = this.config.badge_text + ' | 点击播放';
+      badge.innerHTML = this.config.badge_text + " | 点击播放";
     }
   }
-  
+
   // 绑定事件
   bindEvents() {
-    // 如果不是微信环境或者微信环境中不禁用自动播放，则绑定相应事件
-    // if (!this.isWeixin || !this.config.weixin_disable_autoplay) {
-      // 桌面端：鼠标悬停播放
-      if (this.config.hover_to_play) {
-        this.container.addEventListener('mouseenter', () => this.handleHoverStart());
-        this.container.addEventListener('mouseleave', () => this.handleHoverEnd());
-      }
-      
-      // 移动端/触摸设备：触摸播放
-      if (this.config.touch_to_play) {
-        this.container.addEventListener('touchstart', (e) => this.handleTouchStart(e));
-        this.container.addEventListener('touchend', () => this.handleTouchEnd());
-        this.container.addEventListener('touchcancel', () => this.handleTouchEnd());
-      }
-    // }
-    
+    // 桌面端：鼠标悬停播放
+    if (this.config.hover_to_play) {
+      this.container.addEventListener("mouseenter", () =>
+        this.handleHoverStart()
+      );
+      this.container.addEventListener("mouseleave", () =>
+        this.handleHoverEnd()
+      );
+    }
+
     // 点击事件 - 在微信环境中这是主要的交互方式
     if (this.config.click_to_play) {
-      this.container.addEventListener('click', (e) => {
-        // 防止触摸设备上的重复触发
-        if (!this.isTouchEvent(e)) {
-          this.play();
-        }
+      this.container.addEventListener("click", (e) => {
+        this.play();
       });
     }
-    
+
     // 监听视频结束事件
-    this.video.addEventListener('ended', () => this.stop());
-    
+    this.video.addEventListener("ended", () => this.stop());
+
     // 监听视频加载事件
-    this.video.addEventListener('loadstart', () => this.showLoading());
-    this.video.addEventListener('canplay', () => this.hideLoading());
-    this.video.addEventListener('error', () => this.hideLoading());
+    this.video.addEventListener("loadstart", () => this.showLoading());
+    this.video.addEventListener("canplay", () => this.hideLoading());
+    this.video.addEventListener("error", () => this.hideLoading());
   }
-  
-  // 检测是否为触摸事件
-  isTouchEvent(e) {
-    return e.pointerType === 'touch' || 
-           (e.sourceCapabilities && e.sourceCapabilities.firesTouchEvents);
-  }
-  
+
   // 处理悬停开始
   handleHoverStart() {
     // 清除之前的超时
     if (this.hoverTimeout) clearTimeout(this.hoverTimeout);
-    
+
     // 设置延迟播放
     this.hoverTimeout = setTimeout(() => {
       this.play();
     }, this.config.hover_delay || 300);
   }
-  
+
   // 处理悬停结束
   handleHoverEnd() {
     // 清除悬停超时
@@ -650,94 +693,62 @@ class LivePhoto {
       clearTimeout(this.hoverTimeout);
       this.hoverTimeout = null;
     }
-    
+
     // 如果视频正在播放，不停止（让它播放完）
   }
-  
-  // 处理触摸开始
-  handleTouchStart(e) {
-    // 防止默认行为（如滚动）
-    if (e.touches.length === 1) {
-      e.preventDefault();
-    }
-    
-    // 清除之前的超时
-    if (this.touchTimeout) clearTimeout(this.touchTimeout);
-    
-    // 设置延迟播放
-    this.touchTimeout = setTimeout(() => {
-      this.play();
-    }, this.config.touch_delay || 100);
-  }
-  
-  // 处理触摸结束
-  handleTouchEnd() {
-    // 清除触摸超时
-    if (this.touchTimeout) {
-      clearTimeout(this.touchTimeout);
-      this.touchTimeout = null;
-    }
-  }
-  
+
   // 显示加载指示器
   showLoading() {
-    let loadingEl = this.container.querySelector('.live-loading');
+    let loadingEl = this.container.querySelector(".live-loading");
     if (!loadingEl && this.config.loading_animation) {
-      loadingEl = document.createElement('div');
-      loadingEl.className = 'live-loading';
+      loadingEl = document.createElement("div");
+      loadingEl.className = "live-loading";
       this.container.appendChild(loadingEl);
     }
     if (loadingEl) {
-      loadingEl.style.display = 'block';
+      loadingEl.style.display = "block";
     }
   }
-  
+
   // 隐藏加载指示器
   hideLoading() {
-    const loadingEl = this.container.querySelector('.live-loading');
+    const loadingEl = this.container.querySelector(".live-loading");
     if (loadingEl) {
-      loadingEl.style.display = 'none';
+      loadingEl.style.display = "none";
     }
   }
-  
+
   // 播放视频
   play() {
     if (this.isPlaying) return;
-    
+
     this.isPlaying = true;
     this.staticImage.style.opacity = 0;
-    this.video.classList.add('playing');
-    this.showLoading();
-    
-    
+    this.video.classList.add("playing");
+    if (this.video.readyState < 3) { // HAVE_FUTURE_DATA
+      this.showLoading();
+    }
+
     // 播放视频
     const playPromise = this.video.play();
-    
+
     if (playPromise !== undefined) {
-      playPromise.catch(error => {
-        console.error('视频播放失败:', error);
+      playPromise.catch((error) => {
+        console.error("视频播放失败:", error);
         this.hideLoading();
         this.isPlaying = false;
       });
     }
   }
-  
+
   // 停止播放
   stop() {
-    this.video.classList.remove('playing');
+    this.video.classList.remove("playing");
     this.staticImage.style.opacity = 1;
     this.isPlaying = false;
     this.hideLoading();
-    
-    // 如果是微信环境，恢复badge的脉冲效果
-    if (this.isWeixin && this.config.weixin_disable_autoplay) {
-      const weixinBadge = this.container.querySelector('.weixin-badge');
-      if (weixinBadge) {
-        weixinBadge.classList.add('weixin-pulse');
-      }
-    }
   }
-  
+
   // 自动播放（当进入视口时）
   autoPlay() {
     if (!this.hasAutoPlayed && this.config.autoplay) {
@@ -753,85 +764,93 @@ class LivePhotoPage {
     this.config = config;
     this.livePhotos = [];
     this.observer = null;
-    
+
     this.init();
   }
-  
+
   // 初始化
   init() {
     this.detectLivePhotos();
-    
+
     // 检测是否为微信环境
-    const isWeixin = navigator.userAgent.toLowerCase().includes('micromessenger');
-    
+    const isWeixin = navigator.userAgent
+      .toLowerCase()
+      .includes("micromessenger");
+
     // 如果在微信环境中且禁用自动播放，则不设置Intersection Observer
     if (isWeixin && this.config.weixin_disable_autoplay) {
       return;
     }
-    
+
     // 如果启用懒加载，设置Intersection Observer
     if (this.config.lazy_load) {
       this.setupIntersectionObserver();
     } else if (this.config.autoplay) {
       // 如果不使用懒加载，直接自动播放所有
-      this.livePhotos.forEach(livePhoto => livePhoto.autoPlay());
+      this.livePhotos.forEach((livePhoto) => livePhoto.autoPlay());
     }
   }
-  
+
   // 检测页面中的所有Live Photo容器
   detectLivePhotos() {
-    const containers = document.querySelectorAll('.live-photo-container');
-    
-    containers.forEach(container => {
+    const containers = document.querySelectorAll(".live-photo-container");
+
+    containers.forEach((container) => {
       // 检查是否已经初始化过
       if (!container.dataset.initialized) {
         const livePhoto = new LivePhoto(container, this.config);
         this.livePhotos.push(livePhoto);
-        container.dataset.initialized = 'true';
+        container.dataset.initialized = "true";
       }
     });
   }
-  
+
   // 设置Intersection Observer
   setupIntersectionObserver() {
     // 如果已有observer，先断开所有观察
     if (this.observer) {
       this.observer.disconnect();
     }
-    
+
     // 创建新的observer
-    this.observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          // 找到对应的LivePhoto实例
-          const container = entry.target;
-          const livePhoto = this.livePhotos.find(lp => lp.container === container);
-          
-          if (livePhoto) {
-            livePhoto.autoPlay();
-            
-            // 如果不需要持续观察，可以取消观察
-            if (!this.config.keep_observing) {
-              this.observer.unobserve(container);
+    this.observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            // 找到对应的LivePhoto实例
+            const container = entry.target;
+            const livePhoto = this.livePhotos.find(
+              (lp) => lp.container === container
+            );
+
+            if (livePhoto) {
+              livePhoto.autoPlay();
+
+              // 如果不需要持续观察，可以取消观察
+              if (!this.config.keep_observing) {
+                this.observer.unobserve(container);
+              }
             }
           }
-        }
-      });
-    }, {
-      threshold: this.config.threshold,
-      rootMargin: '0px 0px 10% 0px' // 底部提前10%触发
-    });
-    
+        });
+      },
+      {
+        threshold: this.config.threshold,
+        rootMargin: "0px 0px 10% 0px", // 底部提前10%触发
+      }
+    );
+
     // 开始观察所有Live Photo容器
-    this.livePhotos.forEach(livePhoto => {
+    this.livePhotos.forEach((livePhoto) => {
       this.observer.observe(livePhoto.container);
     });
   }
 }
 
 // 当DOM加载完成后初始化
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener("DOMContentLoaded", function () {
   if (window.LivePhotoConfig && window.LivePhotoConfig.enable) {
     window.livePhotoPage = new LivePhotoPage(window.LivePhotoConfig);
   }
-});</script><!-- hexo injector body_end end --></body></html>
+});
+</script><!-- hexo injector body_end end --></body></html>

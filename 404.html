@@ -1,6 +1,6 @@
 <!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><!-- hexo injector head_begin start -->
     <script>
-      window.LivePhotoConfig = {"enable":true,"autoplay":true,"hover_to_play":true,"touch_to_play":true,"lazy_load":true,"threshold":0.8,"badge":true,"badge_text":"Live","badge_position":"bottom-left","loading_animation":false,"preload":"auto","weixin_disable_autoplay":true,"hover_delay":200,"touch_delay":50,"click_to_play":false,"keep_observing":false};
+      window.LivePhotoConfig = {"enable":true,"autoplay":true,"hover_to_play":true,"click_to_play":true,"lazy_load":true,"threshold":0.8,"badge":true,"badge_text":"Live","badge_position":"bottom-left","loading_animation":true,"preload":"auto","keep_observing":false,"hover_delay":200,"weixin_disable_autoplay":true,"touch_delay":50};
     </script>
   <style>/* Live Photo 容器 */
 .live-photo-container {
@@ -17,7 +17,6 @@
   transform: translateY(-2px);
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
 }
-
 
 /* 静态图片 */
 .live-photo-static {
@@ -90,7 +89,6 @@
   right: 12px;
 }
 
-
 /* 加载指示器 */
 .live-loading {
   position: absolute;
@@ -104,7 +102,7 @@
   border-top-color: #ff2e4d;
   animation: livephoto-spin 1s ease-in-out infinite;
   display: none;
-  z-index: 10;
+  z-index: 1;
 }
 
 @keyframes livephoto-spin {
@@ -150,92 +148,156 @@
   .live-badge.top-right {
     top: 8px;
   }
-
+  
 }
 
-
-
-
-/* 多图布局样式 */
+/* 多图布局容器 */
 .image-grid {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   margin: 20px 0;
-  gap: 20px;
+  gap: 15px; /* 使用gap属性设置间距 */
 }
 
 .image-column {
-  flex: 1;
-  min-width: 250px;
+  flex: 0 0 calc(50% - 8px); /* 每列占50%宽度减去一半的间距 */
+  min-width: 0; /* 防止内容溢出 */
 }
 
 /* Grid布局 */
 .image-grid-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(2, 1fr); /* 始终保持两列 */
+  gap: 15px;
   margin: 20px 0;
 }
 
 .grid-item {
   position: relative;
+  min-width: 0; /* 防止内容溢出 */
 }
 
 /* 浮动布局 */
 .image-float-container {
   width: 100%;
   margin: 20px 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
 }
 
 .float-image {
-  float: left;
-  width: calc(50% - 10px);
-  margin-right: 20px;
+  flex: 0 0 calc(50% - 8px); /* 每列占50%宽度减去一半的间距 */
 }
 
-.float-image:nth-child(2n) {
-  margin-right: 0;
+/* Live Photo 容器适配多图布局 */
+.image-grid .live-photo-container,
+.image-grid-grid .live-photo-container,
+.image-float-container .live-photo-container {
+  margin: 0; /* 移除单独设置的外边距 */
+  border-radius: 8px; /* 稍微减小圆角以适应小屏幕 */
 }
 
-.clearfix {
-  clear: both;
+/* 确保图片和视频在多图布局中正确显示 */
+.image-grid .live-photo-static,
+.image-grid-grid .live-photo-static,
+.image-float-container .live-photo-static,
+.image-grid .live-photo-video,
+.image-grid-grid .live-photo-video,
+.image-float-container .live-photo-video {
+  border-radius: 8px; /* 与容器保持一致 */
 }
 
-/* 普通图片样式 */
-.regular-image {
-  width: 100%;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+/* 调整Live标识在小屏幕上的大小 */
+.image-grid .live-badge,
+.image-grid-grid .live-badge,
+.image-float-container .live-badge {
+  font-size: 10px;
+  padding: 2px 6px;
 }
 
-.regular-image:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+.image-grid .live-badge.bottom-left,
+.image-grid-grid .live-badge.bottom-left,
+.image-float-container .live-badge.bottom-left,
+.image-grid .live-badge.bottom-right,
+.image-grid-grid .live-badge.bottom-right,
+.image-float-container .live-badge.bottom-right {
+  bottom: 8px;
 }
 
-/* 响应式设计 */
-@media (max-width: 768px) {
+.image-grid .live-badge.bottom-left,
+.image-grid-grid .live-badge.bottom-left,
+.image-float-container .live-badge.bottom-left,
+.image-grid .live-badge.top-left,
+.image-grid-grid .live-badge.top-left,
+.image-float-container .live-badge.top-left {
+  left: 8px;
+}
+
+.image-grid .live-badge.bottom-right,
+.image-grid-grid .live-badge.bottom-right,
+.image-float-container .live-badge.bottom-right,
+.image-grid .live-badge.top-right,
+.image-grid-grid .live-badge.top-right,
+.image-float-container .live-badge.top-right {
+  right: 8px;
+}
+
+.image-grid .live-badge.top-left,
+.image-grid-grid .live-badge.top-left,
+.image-float-container .live-badge.top-left,
+.image-grid .live-badge.top-right,
+.image-grid-grid .live-badge.top-right,
+.image-float-container .live-badge.top-right {
+  top: 8px;
+}
+
+/* 非常小的设备调整 */
+@media (max-width: 360px) {
   .image-grid {
-    flex-direction: column;
-    gap: 15px;
+    gap: 10px;
   }
   
   .image-column {
-    width: 100%;
+    flex: 0 0 calc(50% - 5px); /* 调整间距 */
   }
   
   .image-grid-grid {
-    grid-template-columns: 1fr;
+    gap: 10px;
   }
   
   .float-image {
-    width: 100%;
-    margin-right: 0;
-    margin-bottom: 15px;
-    float: none;
+    flex: 0 0 calc(50% - 5px); /* 调整间距 */
   }
+  
+  /* 进一步调整Live标识 */
+  .image-grid .live-badge,
+  .image-grid-grid .live-badge,
+  .image-float-container .live-badge {
+    font-size: 9px;
+    padding: 2px 4px;
+  }
+}
+
+/* 确保单图布局不受影响 */
+.live-photo-container:not(.image-grid):not(.image-grid-grid):not(.image-float-container) {
+  margin: 20px 0;
+}
+
+/* 标题样式调整 */
+.live-caption {
+  font-size: 13px; /* 稍微减小字体大小 */
+  margin-top: 5px;
+  line-height: 1.4;
+}
+
+/* 确保加载指示器在多图布局中正确显示 */
+.image-grid .live-loading,
+.image-grid-grid .live-loading,
+.image-float-container .live-loading {
+  width: 30px;
+  height: 30px;
 }</style><!-- hexo injector head_begin end --><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>程俞客&amp;称心号 | 程俞客&amp;称心号</title><meta name="author" content="程小客,zhuhaitian@shushichenxin.com"><meta name="copyright" content="程小客"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="述事称心社团下的程序部门和影像部门">
 <meta property="og:type" content="website">
 <meta property="og:title" content="程俞客&amp;称心号">
@@ -247,7 +309,7 @@
 <meta property="article:author" content="程小客">
 <meta property="article:tag" content="程俞客,称心号">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://www.g2022cyk.top/img/%E5%B1%9E%E5%AE%9E%E8%AF%9A%E5%BF%83.jpg"><script type="application/ld+json"></script><link rel="shortcut icon" href="/img/%E7%A7%B0%E5%BF%83%E5%8F%B7.png"><link rel="canonical" href="https://www.g2022cyk.top/404"><link rel="preconnect" href="//unpkg.com"/><link rel="preconnect" href="//hm.baidu.com"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://unpkg.com/@fortawesome/fontawesome-free/css/all.min.css"><link rel="stylesheet" href="https://unpkg.com/@fancyapps/ui/dist/fancybox/fancybox.css" media="print" onload="this.media='all'"><script>
+<meta name="twitter:image" content="https://www.g2022cyk.top/img/%E5%B1%9E%E5%AE%9E%E8%AF%9A%E5%BF%83.jpg"><script type="application/ld+json"></script><link rel="shortcut icon" href="/img/%E7%A7%B0%E5%BF%83%E5%8F%B7.png"><link rel="canonical" href="https://www.g2022cyk.top/404"><link rel="preconnect"/><link rel="preconnect" href="//hm.baidu.com"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="/pluginsSrc/@fortawesome/fontawesome-free/css/all.min.css"><link rel="stylesheet" href="/pluginsSrc/@fancyapps/ui/dist/fancybox/fancybox.css" media="print" onload="this.media='all'"><script>
     (() => {
       
     const saveToLocal = {
@@ -377,7 +439,7 @@ btf.addGlobalFn('pjaxComplete', () => {
   lightbox: 'fancybox',
   Snackbar: undefined,
   infinitegrid: {
-    js: 'https://unpkg.com/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    js: '/pluginsSrc/@egjs/infinitegrid/dist/infinitegrid.min.js',
     buttonText: '加载更多'
   },
   isPhotoFigcaption: false,
@@ -401,16 +463,16 @@ btf.addGlobalFn('pjaxSend', () => {
   Pace.restart()
 }, 'pace_restart')
 
-</script><link rel="stylesheet" href="https://unpkg.com/pace-js/themes/blue/pace-theme-minimal.css"/><script src="https://unpkg.com/pace-js/pace.min.js"></script><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/%E5%B1%9E%E5%AE%9E%E8%AF%9A%E5%BF%83.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">114</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">37</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">3</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><span class="site-page group hide"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/categories/%E4%B8%AD%E6%96%87%E6%9C%9F%E5%88%8A/"><i class="fa-fw fas fa-language"></i><span> 中文</span></a></li><li><a class="site-page child" href="/categories/%E8%8B%B1%E6%96%87%E6%9C%9F%E5%88%8A/"><i class="fa-fw fas fa-globe"></i><span> 英文</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/links/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于我</span></a></div></div></div></div><div class="page type-404" id="body-wrap"><header class="not-top-img" id="page-header"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><img class="site-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/%E7%A7%B0%E5%BF%83%E5%8F%B7.png" alt="Logo"><span class="site-name">程俞客&amp;称心号</span></a></span><div id="menus"><div id="search-button"><span class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></span></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><span class="site-page group hide"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/categories/%E4%B8%AD%E6%96%87%E6%9C%9F%E5%88%8A/"><i class="fa-fw fas fa-language"></i><span> 中文</span></a></li><li><a class="site-page child" href="/categories/%E8%8B%B1%E6%96%87%E6%9C%9F%E5%88%8A/"><i class="fa-fw fas fa-globe"></i><span> 英文</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/links/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于我</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><h1 class="title-seo">程俞客&amp;称心号</h1></header><main class="layout hide-aside" id="content-inner"><div class="nc" id="page"><div class="error-content"><div class="error-img"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/404.png" alt="Page not found"></div><div class="error-info"><h1 class="error_title">404</h1><div class="error_subtitle">未找到页面</div></div></div></div></main><footer id="footer"><div class="footer-other"><div class="footer-copyright"><span class="copyright">&copy;&nbsp;2019 - 2025 By 程小客</span></div><div class="footer_custom_text"><a target="_blank" rel="noopener" href="https://beian.miit.gov.cn/"><span>备案号：京ICP备2022028753号-1</span></a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://unpkg.com/@fancyapps/ui/dist/fancybox/fancybox.umd.js"></script><script src="https://unpkg.com/vanilla-lazyload/dist/lazyload.iife.min.js"></script><div class="js-pjax"><script>(async () => {
+</script><link rel="stylesheet" href="/pluginsSrc/pace-js/themes/blue/pace-theme-minimal.css"/><script src="/pluginsSrc/pace-js/pace.min.js"></script><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/%E5%B1%9E%E5%AE%9E%E8%AF%9A%E5%BF%83.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">114</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">37</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">3</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><span class="site-page group hide"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/categories/%E4%B8%AD%E6%96%87%E6%9C%9F%E5%88%8A/"><i class="fa-fw fas fa-language"></i><span> 中文</span></a></li><li><a class="site-page child" href="/categories/%E8%8B%B1%E6%96%87%E6%9C%9F%E5%88%8A/"><i class="fa-fw fas fa-globe"></i><span> 英文</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/links/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于我</span></a></div></div></div></div><div class="page type-404" id="body-wrap"><header class="not-top-img" id="page-header"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><img class="site-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/%E7%A7%B0%E5%BF%83%E5%8F%B7.png" alt="Logo"><span class="site-name">程俞客&amp;称心号</span></a></span><div id="menus"><div id="search-button"><span class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></span></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><span class="site-page group hide"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/categories/%E4%B8%AD%E6%96%87%E6%9C%9F%E5%88%8A/"><i class="fa-fw fas fa-language"></i><span> 中文</span></a></li><li><a class="site-page child" href="/categories/%E8%8B%B1%E6%96%87%E6%9C%9F%E5%88%8A/"><i class="fa-fw fas fa-globe"></i><span> 英文</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/links/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于我</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><h1 class="title-seo">程俞客&amp;称心号</h1></header><main class="layout hide-aside" id="content-inner"><div class="nc" id="page"><div class="error-content"><div class="error-img"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/404.png" alt="Page not found"></div><div class="error-info"><h1 class="error_title">404</h1><div class="error_subtitle">未找到页面</div></div></div></div></main><footer id="footer"><div class="footer-other"><div class="footer-copyright"><span class="copyright">&copy;&nbsp;2019 - 2025 By 程小客</span></div><div class="footer_custom_text"><a target="_blank" rel="noopener" href="https://beian.miit.gov.cn/"><span>备案号：京ICP备2022028753号-1</span></a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/pluginsSrc/@fancyapps/ui/dist/fancybox/fancybox.umd.js"></script><script src="/pluginsSrc/vanilla-lazyload/dist/lazyload.iife.min.js"></script><div class="js-pjax"><script>(async () => {
   const showKatex = () => {
     document.querySelectorAll('#article-container .katex').forEach(el => el.classList.add('katex-show'))
   }
 
   if (!window.katex_js_css) {
     window.katex_js_css = true
-    await btf.getCSS('https://unpkg.com/katex/dist/katex.min.css')
+    await btf.getCSS('/pluginsSrc/katex/dist/katex.min.css')
     if (false) {
-      await btf.getScript('https://unpkg.com/katex/dist/contrib/copy-tex.min.js')
+      await btf.getScript('/pluginsSrc/katex/dist/contrib/copy-tex.min.js')
     }
   }
 
@@ -459,119 +521,100 @@ btf.addGlobalFn('pjaxSend', () => {
 
     const runMermaidFn = () => runMermaid($mermaid)
     btf.addGlobalFn('themeChange', runMermaidFn, 'mermaid')
-    window.loadMermaid ? runMermaidFn() : btf.getScript('https://unpkg.com/mermaid/dist/mermaid.min.js').then(runMermaidFn)
+    window.loadMermaid ? runMermaidFn() : btf.getScript('/pluginsSrc/mermaid/dist/mermaid.min.js').then(runMermaidFn)
   }
 
   btf.addGlobalFn('encrypt', loadMermaid, 'mermaid')
   window.pjax ? loadMermaid() : document.addEventListener('DOMContentLoaded', loadMermaid)
-})()</script></div><canvas class="fireworks" mobile="false"></canvas><script src="https://unpkg.com/butterfly-extsrc/dist/fireworks.min.js"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="text-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js"></script></div></div><!-- hexo injector body_end start --><script>// LivePhoto类，管理单个Live Photo的行为
+})()</script></div><canvas class="fireworks" mobile="false"></canvas><script src="/pluginsSrc/butterfly-extsrc/dist/fireworks.min.js"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="text-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js"></script></div></div><!-- hexo injector body_end start --><script>// LivePhoto类，管理单个Live Photo的行为
 class LivePhoto {
   constructor(container, config) {
     this.container = container;
-    this.staticImage = container.querySelector('.live-photo-static');
-    this.video = container.querySelector('.live-photo-video');
+    this.staticImage = container.querySelector(".live-photo-static");
+    this.video = container.querySelector(".live-photo-video");
     this.config = config;
     this.hasAutoPlayed = false;
     this.isPlaying = false;
     this.hoverTimeout = null;
     this.touchTimeout = null;
     this.isWeixin = this.detectWeixinBrowser();
-    
+
     // 在微信环境中调整配置
     if (this.isWeixin && this.config.weixin_disable_autoplay) {
       this.config.autoplay = false;
-      this.config.hover_to_play = false;
-      this.config.touch_to_play = true;
-      this.config.click_to_play = true; // 确保点击播放启用
-      
+
       // 修改微信环境下的badge
       this.modifyWeixinBadge();
     }
-    
+
     // 绑定事件
     this.bindEvents();
   }
-  
+
   // 检测微信浏览器
   detectWeixinBrowser() {
     const ua = navigator.userAgent.toLowerCase();
-    return ua.includes('micromessenger');
+    return ua.includes("micromessenger");
   }
-  
+
   // 修改微信环境下的badge
   modifyWeixinBadge() {
-    let badge = this.container.querySelector('.live-badge');
-    
+    let badge = this.container.querySelector(".live-badge");
+
     // 如果没有badge，创建一个
     if (!badge && this.config.badge) {
-      badge = document.createElement('div');
-      badge.className = `live-badge ${this.config.badge_position || 'bottom-left'} weixin-badge`;
+      badge = document.createElement("div");
+      badge.className = `live-badge ${
+        this.config.badge_position || "bottom-left"
+      }`;
       this.container.appendChild(badge);
     }
-    
+
     // 修改badge内容和样式
     if (badge) {
-      if(this.config.badge_text===''){
-        this.config.badge_text='Live';
-      }
-      badge.innerHTML = this.config.badge_text + ' | 点击播放';
+      badge.innerHTML = this.config.badge_text + " | 点击播放";
     }
   }
-  
+
   // 绑定事件
   bindEvents() {
-    // 如果不是微信环境或者微信环境中不禁用自动播放，则绑定相应事件
-    // if (!this.isWeixin || !this.config.weixin_disable_autoplay) {
-      // 桌面端：鼠标悬停播放
-      if (this.config.hover_to_play) {
-        this.container.addEventListener('mouseenter', () => this.handleHoverStart());
-        this.container.addEventListener('mouseleave', () => this.handleHoverEnd());
-      }
-      
-      // 移动端/触摸设备：触摸播放
-      if (this.config.touch_to_play) {
-        this.container.addEventListener('touchstart', (e) => this.handleTouchStart(e));
-        this.container.addEventListener('touchend', () => this.handleTouchEnd());
-        this.container.addEventListener('touchcancel', () => this.handleTouchEnd());
-      }
-    // }
-    
+    // 桌面端：鼠标悬停播放
+    if (this.config.hover_to_play) {
+      this.container.addEventListener("mouseenter", () =>
+        this.handleHoverStart()
+      );
+      this.container.addEventListener("mouseleave", () =>
+        this.handleHoverEnd()
+      );
+    }
+
     // 点击事件 - 在微信环境中这是主要的交互方式
     if (this.config.click_to_play) {
-      this.container.addEventListener('click', (e) => {
-        // 防止触摸设备上的重复触发
-        if (!this.isTouchEvent(e)) {
-          this.play();
-        }
+      this.container.addEventListener("click", (e) => {
+        this.play();
       });
     }
-    
+
     // 监听视频结束事件
-    this.video.addEventListener('ended', () => this.stop());
-    
+    this.video.addEventListener("ended", () => this.stop());
+
     // 监听视频加载事件
-    this.video.addEventListener('loadstart', () => this.showLoading());
-    this.video.addEventListener('canplay', () => this.hideLoading());
-    this.video.addEventListener('error', () => this.hideLoading());
+    this.video.addEventListener("loadstart", () => this.showLoading());
+    this.video.addEventListener("canplay", () => this.hideLoading());
+    this.video.addEventListener("error", () => this.hideLoading());
   }
-  
-  // 检测是否为触摸事件
-  isTouchEvent(e) {
-    return e.pointerType === 'touch' || 
-           (e.sourceCapabilities && e.sourceCapabilities.firesTouchEvents);
-  }
-  
+
   // 处理悬停开始
   handleHoverStart() {
     // 清除之前的超时
     if (this.hoverTimeout) clearTimeout(this.hoverTimeout);
-    
+
     // 设置延迟播放
     this.hoverTimeout = setTimeout(() => {
       this.play();
     }, this.config.hover_delay || 300);
   }
-  
+
   // 处理悬停结束
   handleHoverEnd() {
     // 清除悬停超时
@@ -579,94 +622,62 @@ class LivePhoto {
       clearTimeout(this.hoverTimeout);
       this.hoverTimeout = null;
     }
-    
+
     // 如果视频正在播放，不停止（让它播放完）
   }
-  
-  // 处理触摸开始
-  handleTouchStart(e) {
-    // 防止默认行为（如滚动）
-    if (e.touches.length === 1) {
-      e.preventDefault();
-    }
-    
-    // 清除之前的超时
-    if (this.touchTimeout) clearTimeout(this.touchTimeout);
-    
-    // 设置延迟播放
-    this.touchTimeout = setTimeout(() => {
-      this.play();
-    }, this.config.touch_delay || 100);
-  }
-  
-  // 处理触摸结束
-  handleTouchEnd() {
-    // 清除触摸超时
-    if (this.touchTimeout) {
-      clearTimeout(this.touchTimeout);
-      this.touchTimeout = null;
-    }
-  }
-  
+
   // 显示加载指示器
   showLoading() {
-    let loadingEl = this.container.querySelector('.live-loading');
+    let loadingEl = this.container.querySelector(".live-loading");
     if (!loadingEl && this.config.loading_animation) {
-      loadingEl = document.createElement('div');
-      loadingEl.className = 'live-loading';
+      loadingEl = document.createElement("div");
+      loadingEl.className = "live-loading";
       this.container.appendChild(loadingEl);
     }
     if (loadingEl) {
-      loadingEl.style.display = 'block';
+      loadingEl.style.display = "block";
     }
   }
-  
+
   // 隐藏加载指示器
   hideLoading() {
-    const loadingEl = this.container.querySelector('.live-loading');
+    const loadingEl = this.container.querySelector(".live-loading");
     if (loadingEl) {
-      loadingEl.style.display = 'none';
+      loadingEl.style.display = "none";
     }
   }
-  
+
   // 播放视频
   play() {
     if (this.isPlaying) return;
-    
+
     this.isPlaying = true;
     this.staticImage.style.opacity = 0;
-    this.video.classList.add('playing');
-    this.showLoading();
-    
-    
+    this.video.classList.add("playing");
+    if (this.video.readyState < 3) { // HAVE_FUTURE_DATA
+      this.showLoading();
+    }
+
     // 播放视频
     const playPromise = this.video.play();
-    
+
     if (playPromise !== undefined) {
-      playPromise.catch(error => {
-        console.error('视频播放失败:', error);
+      playPromise.catch((error) => {
+        console.error("视频播放失败:", error);
         this.hideLoading();
         this.isPlaying = false;
       });
     }
   }
-  
+
   // 停止播放
   stop() {
-    this.video.classList.remove('playing');
+    this.video.classList.remove("playing");
     this.staticImage.style.opacity = 1;
     this.isPlaying = false;
     this.hideLoading();
-    
-    // 如果是微信环境，恢复badge的脉冲效果
-    if (this.isWeixin && this.config.weixin_disable_autoplay) {
-      const weixinBadge = this.container.querySelector('.weixin-badge');
-      if (weixinBadge) {
-        weixinBadge.classList.add('weixin-pulse');
-      }
-    }
   }
-  
+
   // 自动播放（当进入视口时）
   autoPlay() {
     if (!this.hasAutoPlayed && this.config.autoplay) {
@@ -682,85 +693,93 @@ class LivePhotoPage {
     this.config = config;
     this.livePhotos = [];
     this.observer = null;
-    
+
     this.init();
   }
-  
+
   // 初始化
   init() {
     this.detectLivePhotos();
-    
+
     // 检测是否为微信环境
-    const isWeixin = navigator.userAgent.toLowerCase().includes('micromessenger');
-    
+    const isWeixin = navigator.userAgent
+      .toLowerCase()
+      .includes("micromessenger");
+
     // 如果在微信环境中且禁用自动播放，则不设置Intersection Observer
     if (isWeixin && this.config.weixin_disable_autoplay) {
       return;
     }
-    
+
     // 如果启用懒加载，设置Intersection Observer
     if (this.config.lazy_load) {
       this.setupIntersectionObserver();
     } else if (this.config.autoplay) {
       // 如果不使用懒加载，直接自动播放所有
-      this.livePhotos.forEach(livePhoto => livePhoto.autoPlay());
+      this.livePhotos.forEach((livePhoto) => livePhoto.autoPlay());
     }
   }
-  
+
   // 检测页面中的所有Live Photo容器
   detectLivePhotos() {
-    const containers = document.querySelectorAll('.live-photo-container');
-    
-    containers.forEach(container => {
+    const containers = document.querySelectorAll(".live-photo-container");
+
+    containers.forEach((container) => {
       // 检查是否已经初始化过
       if (!container.dataset.initialized) {
         const livePhoto = new LivePhoto(container, this.config);
         this.livePhotos.push(livePhoto);
-        container.dataset.initialized = 'true';
+        container.dataset.initialized = "true";
       }
     });
   }
-  
+
   // 设置Intersection Observer
   setupIntersectionObserver() {
     // 如果已有observer，先断开所有观察
     if (this.observer) {
       this.observer.disconnect();
     }
-    
+
     // 创建新的observer
-    this.observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          // 找到对应的LivePhoto实例
-          const container = entry.target;
-          const livePhoto = this.livePhotos.find(lp => lp.container === container);
-          
-          if (livePhoto) {
-            livePhoto.autoPlay();
-            
-            // 如果不需要持续观察，可以取消观察
-            if (!this.config.keep_observing) {
-              this.observer.unobserve(container);
+    this.observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            // 找到对应的LivePhoto实例
+            const container = entry.target;
+            const livePhoto = this.livePhotos.find(
+              (lp) => lp.container === container
+            );
+
+            if (livePhoto) {
+              livePhoto.autoPlay();
+
+              // 如果不需要持续观察，可以取消观察
+              if (!this.config.keep_observing) {
+                this.observer.unobserve(container);
+              }
             }
           }
-        }
-      });
-    }, {
-      threshold: this.config.threshold,
-      rootMargin: '0px 0px 10% 0px' // 底部提前10%触发
-    });
-    
+        });
+      },
+      {
+        threshold: this.config.threshold,
+        rootMargin: "0px 0px 10% 0px", // 底部提前10%触发
+      }
+    );
+
     // 开始观察所有Live Photo容器
-    this.livePhotos.forEach(livePhoto => {
+    this.livePhotos.forEach((livePhoto) => {
       this.observer.observe(livePhoto.container);
     });
   }
 }
 
 // 当DOM加载完成后初始化
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener("DOMContentLoaded", function () {
   if (window.LivePhotoConfig && window.LivePhotoConfig.enable) {
     window.livePhotoPage = new LivePhotoPage(window.LivePhotoConfig);
   }
-});</script><!-- hexo injector body_end end --></body></html>
+});
+</script><!-- hexo injector body_end end --></body></html>
