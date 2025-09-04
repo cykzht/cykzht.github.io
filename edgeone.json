@@ -1,11 +1,1 @@
-{
-  "name": "cykzhthexo",
-  "redirects": [
-    { "source": "$host", "destination": "$wwwhost", "statusCode": 301 },
-    {
-      "source": "/archives/语音开机",
-      "destination": "/2022/08/08/小爱同学语音开机",
-      "statusCode": 301
-    }
-  ]
-}
+{"name":"cykzhthexo","redirects":[{"source":"$host","destination":"$wwwhost","statusCode":301}]}
