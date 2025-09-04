@@ -1,7 +1,350 @@
-(()=>{const m={debounce:(t,o=0,e=!1)=>{let n;return(...i)=>{const a=()=>{n=null,e||t(...i)},s=e&&!n;clearTimeout(n),n=setTimeout(a,o),s&&t(...i)}},throttle:function(t,o,e={}){let n,i,a,s=0;const d=()=>{s=e.leading===!1?0:new Date().getTime(),n=null,t.apply(i,a),n||(i=a=null)};return(...c)=>{const r=new Date().getTime();!s&&e.leading===!1&&(s=r);const f=o-(r-s);i=this,a=c,f<=0||f>o?(n&&(clearTimeout(n),n=null),s=r,t.apply(i,a),n||(i=a=null)):!n&&e.trailing!==!1&&(n=setTimeout(d,f))}},overflowPaddingR:{add:()=>{const t=window.innerWidth-document.body.clientWidth;if(t>0){document.body.style.paddingRight=`${t}px`,document.body.style.overflow="hidden";const o=document.querySelector("#page-header.nav-fixed #menus");o&&(o.style.paddingRight=`${t}px`)}},remove:()=>{document.body.style.paddingRight="",document.body.style.overflow="";const t=document.querySelector("#page-header.nav-fixed #menus");t&&(t.style.paddingRight="")}},snackbarShow:(t,o=!1,e=2e3)=>{const{position:n,bgLight:i,bgDark:a}=GLOBAL_CONFIG.Snackbar,s=document.documentElement.getAttribute("data-theme")==="light"?i:a;Snackbar.show({text:t,backgroundColor:s,showAction:o,duration:e,pos:n,customClass:"snackbar-css"})},diffDate:(t,o=!1)=>{const e=new Date,n=new Date(t),s=(e-n)/1e3/60,d=s/60,l=d/24,c=l/30,{dateSuffix:r}=GLOBAL_CONFIG;return o?c>12?n.toISOString().slice(0,10):c>=1?`${Math.floor(c)} ${r.month}`:l>=1?`${Math.floor(l)} ${r.day}`:d>=1?`${Math.floor(d)} ${r.hour}`:s>=1?`${Math.floor(s)} ${r.min}`:r.just:Math.floor(l)},loadComment:(t,o)=>{if("IntersectionObserver"in window){const e=new IntersectionObserver(n=>{n[0].isIntersecting&&(o(),e.disconnect())},{threshold:[0]});e.observe(t)}else o()},scrollToDest:(t,o=500)=>{const e=window.scrollY,n=document.getElementById("page-header").classList.contains("fixed");if((e>t||n)&&(t=t-70),"scrollBehavior"in document.documentElement.style){window.scrollTo({top:t,behavior:"smooth"});return}const i=performance.now(),a=s=>{const d=s-i,l=Math.min(d/o,1);window.scrollTo(0,e+(t-e)*l),l<1&&requestAnimationFrame(a)};requestAnimationFrame(a)},animateIn:(t,o)=>{t.style.display="block",t.style.animation=o},animateOut:(t,o)=>{const e=()=>{t.style.display="",t.style.animation="",t.removeEventListener("animationend",e)};t.addEventListener("animationend",e),t.style.animation=o},wrap:(t,o,e)=>{const n=document.createElement(o);for(const[i,a]of Object.entries(e))n.setAttribute(i,a);t.parentNode.insertBefore(n,t),n.appendChild(t)},isHidden:t=>t.offsetHeight===0&&t.offsetWidth===0,getEleTop:t=>{let o=t.offsetTop,e=t.offsetParent;for(;e!==null;)o+=e.offsetTop,e=e.offsetParent;return o},loadLightbox:t=>{const o=GLOBAL_CONFIG.lightbox;if(o==="medium_zoom"){mediumZoom(t,{background:"var(--zoom-bg)"});return}if(o==="fancybox"&&(Array.from(t).forEach(e=>{if(e.parentNode.tagName!=="A"){const n=e.dataset.lazySrc||e.src,i=e.title||e.alt||"";btf.wrap(e,"a",{href:n,"data-fancybox":"gallery","data-caption":i,"data-thumb":n})}}),!window.fancyboxRun)){let e="";Fancybox.version<"6"?e={Hash:!1,Thumbs:{showOnStart:!1},Images:{Panzoom:{maxScale:4}},Carousel:{transition:"slide"},Toolbar:{display:{left:["infobar"],middle:["zoomIn","zoomOut","toggle1to1","rotateCCW","rotateCW","flipX","flipY"],right:["slideshow","thumbs","close"]}}}:e={Hash:!1,Carousel:{transition:"slide",Thumbs:{showOnStart:!1},Toolbar:{display:{left:["counter"],middle:["zoomIn","zoomOut","toggle1to1","rotateCCW","rotateCW","flipX","flipY","reset"],right:["autoplay","thumbs","close"]}},Zoomable:{Panzoom:{maxScale:4}}}},Fancybox.bind("[data-fancybox]",e),window.fancyboxRun=!0}},setLoading:{add:t=>{t.insertAdjacentHTML("afterend",`
+(() => {
+  const btfFn = {
+    debounce: (func, wait = 0, immediate = false) => {
+      let timeout
+      return (...args) => {
+        const later = () => {
+          timeout = null
+          if (!immediate) func(...args)
+        }
+        const callNow = immediate && !timeout
+        clearTimeout(timeout)
+        timeout = setTimeout(later, wait)
+        if (callNow) func(...args)
+      }
+    },
+
+    throttle: function (func, wait, options = {}) {
+      let timeout, context, args
+      let previous = 0
+
+      const later = () => {
+        previous = options.leading === false ? 0 : new Date().getTime()
+        timeout = null
+        func.apply(context, args)
+        if (!timeout) context = args = null
+      }
+
+      const throttled = (...params) => {
+        const now = new Date().getTime()
+        if (!previous && options.leading === false) previous = now
+        const remaining = wait - (now - previous)
+        context = this
+        args = params
+        if (remaining <= 0 || remaining > wait) {
+          if (timeout) {
+            clearTimeout(timeout)
+            timeout = null
+          }
+          previous = now
+          func.apply(context, args)
+          if (!timeout) context = args = null
+        } else if (!timeout && options.trailing !== false) {
+          timeout = setTimeout(later, remaining)
+        }
+      }
+
+      return throttled
+    },
+
+    overflowPaddingR: {
+      add: () => {
+        const paddingRight = window.innerWidth - document.body.clientWidth
+
+        if (paddingRight > 0) {
+          document.body.style.paddingRight = `${paddingRight}px`
+          document.body.style.overflow = 'hidden'
+          const menuElement = document.querySelector('#page-header.nav-fixed #menus')
+          if (menuElement) {
+            menuElement.style.paddingRight = `${paddingRight}px`
+          }
+        }
+      },
+      remove: () => {
+        document.body.style.paddingRight = ''
+        document.body.style.overflow = ''
+        const menuElement = document.querySelector('#page-header.nav-fixed #menus')
+        if (menuElement) {
+          menuElement.style.paddingRight = ''
+        }
+      }
+    },
+
+    snackbarShow: (text, showAction = false, duration = 2000) => {
+      const { position, bgLight, bgDark } = GLOBAL_CONFIG.Snackbar
+      const bg = document.documentElement.getAttribute('data-theme') === 'light' ? bgLight : bgDark
+      Snackbar.show({
+        text,
+        backgroundColor: bg,
+        showAction,
+        duration,
+        pos: position,
+        customClass: 'snackbar-css'
+      })
+    },
+
+    diffDate: (inputDate, more = false) => {
+      const dateNow = new Date()
+      const datePost = new Date(inputDate)
+      const diffMs = dateNow - datePost
+      const diffSec = diffMs / 1000
+      const diffMin = diffSec / 60
+      const diffHour = diffMin / 60
+      const diffDay = diffHour / 24
+      const diffMonth = diffDay / 30
+      const { dateSuffix } = GLOBAL_CONFIG
+
+      if (!more) return Math.floor(diffDay)
+
+      if (diffMonth > 12) return datePost.toISOString().slice(0, 10)
+      if (diffMonth >= 1) return `${Math.floor(diffMonth)} ${dateSuffix.month}`
+      if (diffDay >= 1) return `${Math.floor(diffDay)} ${dateSuffix.day}`
+      if (diffHour >= 1) return `${Math.floor(diffHour)} ${dateSuffix.hour}`
+      if (diffMin >= 1) return `${Math.floor(diffMin)} ${dateSuffix.min}`
+      return dateSuffix.just
+    },
+
+    loadComment: (dom, callback) => {
+      if ('IntersectionObserver' in window) {
+        const observerItem = new IntersectionObserver((entries) => {
+          if (entries[0].isIntersecting) {
+            callback()
+            observerItem.disconnect()
+          }
+        }, { threshold: [0] })
+        observerItem.observe(dom)
+      } else {
+        callback()
+      }
+    },
+
+    scrollToDest: (pos, time = 500) => {
+      const currentPos = window.scrollY
+      const isNavFixed = document.getElementById('page-header').classList.contains('fixed')
+      if (currentPos > pos || isNavFixed) pos = pos - 70
+
+      if ('scrollBehavior' in document.documentElement.style) {
+        window.scrollTo({
+          top: pos,
+          behavior: 'smooth'
+        })
+        return
+      }
+
+      const startTime = performance.now()
+      const animate = currentTime => {
+        const timeElapsed = currentTime - startTime
+        const progress = Math.min(timeElapsed / time, 1)
+        window.scrollTo(0, currentPos + (pos - currentPos) * progress)
+        if (progress < 1) {
+          requestAnimationFrame(animate)
+        }
+      }
+      requestAnimationFrame(animate)
+    },
+
+    animateIn: (ele, animation) => {
+      ele.style.display = 'block'
+      ele.style.animation = animation
+    },
+
+    animateOut: (ele, animation) => {
+      const handleAnimationEnd = () => {
+        ele.style.display = ''
+        ele.style.animation = ''
+        ele.removeEventListener('animationend', handleAnimationEnd)
+      }
+      ele.addEventListener('animationend', handleAnimationEnd)
+      ele.style.animation = animation
+    },
+
+    wrap: (selector, eleType, options) => {
+      const createEle = document.createElement(eleType)
+      for (const [key, value] of Object.entries(options)) {
+        createEle.setAttribute(key, value)
+      }
+      selector.parentNode.insertBefore(createEle, selector)
+      createEle.appendChild(selector)
+    },
+
+    isHidden: ele => ele.offsetHeight === 0 && ele.offsetWidth === 0,
+
+    getEleTop: ele => {
+      let actualTop = ele.offsetTop
+      let current = ele.offsetParent
+
+      while (current !== null) {
+        actualTop += current.offsetTop
+        current = current.offsetParent
+      }
+
+      return actualTop
+    },
+
+    loadLightbox: ele => {
+      const service = GLOBAL_CONFIG.lightbox
+
+      if (service === 'medium_zoom') {
+        mediumZoom(ele, { background: 'var(--zoom-bg)' })
+        return
+      }
+
+      if (service === 'fancybox') {
+        Array.from(ele).forEach(i => {
+          if (i.parentNode.tagName !== 'A') {
+            const dataSrc = i.dataset.lazySrc || i.src
+            const dataCaption = i.title || i.alt || ''
+            btf.wrap(i, 'a', { href: dataSrc, 'data-fancybox': 'gallery', 'data-caption': dataCaption, 'data-thumb': dataSrc })
+          }
+        })
+
+        if (!window.fancyboxRun) {
+          let options = ''
+          if (Fancybox.version < '6') {
+            options = {
+              Hash: false,
+              Thumbs: {
+                showOnStart: false
+              },
+              Images: {
+                Panzoom: {
+                  maxScale: 4
+                }
+              },
+              Carousel: {
+                transition: 'slide'
+              },
+              Toolbar: {
+                display: {
+                  left: ['infobar'],
+                  middle: [
+                    'zoomIn',
+                    'zoomOut',
+                    'toggle1to1',
+                    'rotateCCW',
+                    'rotateCW',
+                    'flipX',
+                    'flipY'
+                  ],
+                  right: ['slideshow', 'thumbs', 'close']
+                }
+              }
+            }
+          } else {
+            options = {
+              Hash: false,
+              Carousel: {
+                transition: 'slide',
+                Thumbs: {
+                  showOnStart: false
+                },
+                Toolbar: {
+                  display: {
+                    left: ['counter'],
+                    middle: [
+                      'zoomIn',
+                      'zoomOut',
+                      'toggle1to1',
+                      'rotateCCW',
+                      'rotateCW',
+                      'flipX',
+                      'flipY',
+                      "reset"
+                    ],
+                    right: ['autoplay', 'thumbs', 'close']
+                  }
+                },
+                Zoomable: {
+                  Panzoom: {
+                    maxScale: 4
+                  }
+                }
+              }
+            }
+          }
+
+          Fancybox.bind('[data-fancybox]', options)
+          window.fancyboxRun = true
+        }
+      }
+    },
+
+    setLoading: {
+      add: ele => {
+        const html = `
         <div class="loading-container">
           <div class="loading-item">
             <div></div><div></div><div></div><div></div><div></div>
           </div>
         </div>
-      `)},remove:t=>{t.nextElementSibling.remove()}},updateAnchor:t=>{if(t!==window.location.hash){t||(t=location.pathname);const o=GLOBAL_CONFIG_SITE.title;window.history.replaceState({url:location.href,title:o},o,t)}},getScrollPercent:(()=>{let t,o,e,n;return(i,a)=>{(!t||a.clientHeight!==t)&&(t=a.clientHeight,o=window.innerHeight,e=a.offsetTop,n=Math.max(t-o,document.documentElement.scrollHeight-o));const s=(i-e)/n;return Math.max(0,Math.min(100,Math.round(s*100)))}})(),addEventListenerPjax:(t,o,e,n=!1)=>{t.addEventListener(o,e,n),btf.addGlobalFn("pjaxSendOnce",()=>{t.removeEventListener(o,e,n)})},removeGlobalFnEvent:(t,o=window)=>{const e=o.globalFn||{},n=e[t];n&&(Object.keys(n).forEach(i=>n[i]()),delete e[t])},switchComments:(t=document,o)=>{const e=t.querySelector("#switch-btn");if(!e)return;let n=!1;const i=t.querySelector("#post-comment"),a=()=>{i.classList.toggle("move"),!n&&typeof loadOtherComment=="function"&&(n=!0,loadOtherComment(t,o))};btf.addEventListenerPjax(e,"click",a)}};window.btf={...window.btf,...m}})();
+      `
+        ele.insertAdjacentHTML('afterend', html)
+      },
+      remove: ele => {
+        ele.nextElementSibling.remove()
+      }
+    },
+
+    updateAnchor: anchor => {
+      if (anchor !== window.location.hash) {
+        if (!anchor) anchor = location.pathname
+        const title = GLOBAL_CONFIG_SITE.title
+        window.history.replaceState({
+          url: location.href,
+          title
+        }, title, anchor)
+      }
+    },
+
+    getScrollPercent: (() => {
+      let docHeight, winHeight, headerHeight, contentMath
+
+      return (currentTop, ele) => {
+        if (!docHeight || ele.clientHeight !== docHeight) {
+          docHeight = ele.clientHeight
+          winHeight = window.innerHeight
+          headerHeight = ele.offsetTop
+          contentMath = Math.max(docHeight - winHeight, document.documentElement.scrollHeight - winHeight)
+        }
+
+        const scrollPercent = (currentTop - headerHeight) / contentMath
+        return Math.max(0, Math.min(100, Math.round(scrollPercent * 100)))
+      }
+    })(),
+
+    addEventListenerPjax: (ele, event, fn, option = false) => {
+      ele.addEventListener(event, fn, option)
+      btf.addGlobalFn('pjaxSendOnce', () => {
+        ele.removeEventListener(event, fn, option)
+      })
+    },
+
+    removeGlobalFnEvent: (key, parent = window) => {
+      const globalFn = parent.globalFn || {}
+      const keyObj = globalFn[key]
+      if (!keyObj) return
+
+      Object.keys(keyObj).forEach(i => keyObj[i]())
+
+      delete globalFn[key]
+    },
+
+    switchComments: (el = document, path) => {
+      const switchBtn = el.querySelector('#switch-btn')
+      if (!switchBtn) return
+
+      let switchDone = false
+      const postComment = el.querySelector('#post-comment')
+      const handleSwitchBtn = () => {
+        postComment.classList.toggle('move')
+        if (!switchDone && typeof loadOtherComment === 'function') {
+          switchDone = true
+          loadOtherComment(el, path)
+        }
+      }
+      btf.addEventListenerPjax(switchBtn, 'click', handleSwitchBtn)
+    }
+  }
+
+  window.btf = { ...window.btf, ...btfFn }
+})()
