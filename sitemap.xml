@@ -2,15 +2,6 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://www.g2022cyk.top/edgeone.json</loc>
-    
-    <lastmod>2025-09-04</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://www.g2022cyk.top/2022/08/08/%E8%AF%AD%E9%9F%B3%E5%BC%80%E6%9C%BA/</loc>
     
     <lastmod>2025-09-04</lastmod>
@@ -92,34 +83,7 @@
   </url>
   
   <url>
-    <loc>https://www.g2022cyk.top/2023/01/11/create-vue-project-with-zero-instructions/</loc>
-    
-    <lastmod>2025-08-07</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.g2022cyk.top/2023/02/01/desktop_navigation_release/</loc>
-    
-    <lastmod>2025-08-07</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://www.g2022cyk.top/2023/01/30/desktop_navigation_host_computer/</loc>
-    
-    <lastmod>2025-08-07</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.g2022cyk.top/2022/09/12/first_java_program/</loc>
     
     <lastmod>2025-08-07</lastmod>
     
@@ -137,7 +101,7 @@
   </url>
   
   <url>
-    <loc>https://www.g2022cyk.top/2023/06/10/gaokao_free_time_chasing_infinite_possibilities/</loc>
+    <loc>https://www.g2022cyk.top/2023/02/01/desktop_navigation_release/</loc>
     
     <lastmod>2025-08-07</lastmod>
     
@@ -146,16 +110,7 @@
   </url>
   
   <url>
-    <loc>https://www.g2022cyk.top/2023/01/02/four-in-one-pcb-card/</loc>
-    
-    <lastmod>2025-08-07</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.g2022cyk.top/2023/02/22/incident_report_221_school_leaving_abnormal_event/</loc>
+    <loc>https://www.g2022cyk.top/2023/01/11/create-vue-project-with-zero-instructions/</loc>
     
     <lastmod>2025-08-07</lastmod>
     
@@ -173,7 +128,34 @@
   </url>
   
   <url>
-    <loc>https://www.g2022cyk.top/2022/09/09/Java_code_standard/</loc>
+    <loc>https://www.g2022cyk.top/2023/01/02/four-in-one-pcb-card/</loc>
+    
+    <lastmod>2025-08-07</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.g2022cyk.top/2023/06/10/gaokao_free_time_chasing_infinite_possibilities/</loc>
+    
+    <lastmod>2025-08-07</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.g2022cyk.top/2022/09/12/first_java_program/</loc>
+    
+    <lastmod>2025-08-07</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.g2022cyk.top/2023/02/22/incident_report_221_school_leaving_abnormal_event/</loc>
     
     <lastmod>2025-08-07</lastmod>
     
@@ -218,7 +200,7 @@
   </url>
   
   <url>
-    <loc>https://www.g2022cyk.top/2022/12/10/install-hyper-v-virtual-machine/</loc>
+    <loc>https://www.g2022cyk.top/2022/09/09/Java_code_standard/</loc>
     
     <lastmod>2025-08-07</lastmod>
     
@@ -236,7 +218,7 @@
   </url>
   
   <url>
-    <loc>https://www.g2022cyk.top/2022/12/22/installing_windows_7_in_vmware_virtual_machine/</loc>
+    <loc>https://www.g2022cyk.top/2022/12/10/install-hyper-v-virtual-machine/</loc>
     
     <lastmod>2025-08-07</lastmod>
     
@@ -246,6 +228,15 @@
   
   <url>
     <loc>https://www.g2022cyk.top/2022/09/09/install_java_environment_on_linux/</loc>
+    
+    <lastmod>2025-08-07</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.g2022cyk.top/2022/12/22/installing_windows_7_in_vmware_virtual_machine/</loc>
     
     <lastmod>2025-08-07</lastmod>
     
@@ -362,6 +353,15 @@
   </url>
   
   <url>
+    <loc>https://www.g2022cyk.top/2022/12/20/new_vision/</loc>
+    
+    <lastmod>2025-08-07</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://www.g2022cyk.top/2020/04/24/phone_run_python/</loc>
     
     <lastmod>2025-08-07</lastmod>
@@ -371,25 +371,7 @@
   </url>
   
   <url>
-    <loc>https://www.g2022cyk.top/2022/11/09/nginx_reverse_proxy/</loc>
-    
-    <lastmod>2025-08-07</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://www.g2022cyk.top/2022/12/21/php_connect_mysql_database/</loc>
-    
-    <lastmod>2025-08-07</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.g2022cyk.top/2022/12/20/new_vision/</loc>
     
     <lastmod>2025-08-07</lastmod>
     
@@ -434,7 +416,7 @@
   </url>
   
   <url>
-    <loc>https://www.g2022cyk.top/2019/09/23/python_output/</loc>
+    <loc>https://www.g2022cyk.top/2022/11/09/nginx_reverse_proxy/</loc>
     
     <lastmod>2025-08-07</lastmod>
     
@@ -452,7 +434,25 @@
   </url>
   
   <url>
+    <loc>https://www.g2022cyk.top/2019/09/23/python_output/</loc>
+    
+    <lastmod>2025-08-07</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://www.g2022cyk.top/2022/12/31/read_sitemap_Automatically_and_Submit_to_Baidu_Webmaster/</loc>
+    
+    <lastmod>2025-08-07</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.g2022cyk.top/2023/12/22/smartlearn_net_easily_check_scores_on_phone/</loc>
     
     <lastmod>2025-08-07</lastmod>
     
@@ -470,7 +470,7 @@
   </url>
   
   <url>
-    <loc>https://www.g2022cyk.top/2023/12/22/smartlearn_net_easily_check_scores_on_phone/</loc>
+    <loc>https://www.g2022cyk.top/2022/04/29/spring_fall_winter_summer_open_source_release/</loc>
     
     <lastmod>2025-08-07</lastmod>
     
@@ -489,15 +489,6 @@
   
   <url>
     <loc>https://www.g2022cyk.top/2022/12/13/teach-you-install-flash-pure-version-in-2022/</loc>
-    
-    <lastmod>2025-08-07</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.g2022cyk.top/2022/04/29/spring_fall_winter_summer_open_source_release/</loc>
     
     <lastmod>2025-08-07</lastmod>
     
@@ -1094,6 +1085,13 @@
   </url>
   
   <url>
+    <loc>https://www.g2022cyk.top/tags/Virtual-Machine/</loc>
+    <lastmod>2025-09-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://www.g2022cyk.top/tags/%E8%99%9A%E6%8B%9F%E6%9C%BA/</loc>
     <lastmod>2025-09-04</lastmod>
     <changefreq>weekly</changefreq>
@@ -1102,13 +1100,6 @@
   
   <url>
     <loc>https://www.g2022cyk.top/tags/Java%E7%BC%96%E7%A8%8B/</loc>
-    <lastmod>2025-09-04</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.g2022cyk.top/tags/Virtual-Machine/</loc>
     <lastmod>2025-09-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -1157,13 +1148,6 @@
   </url>
   
   <url>
-    <loc>https://www.g2022cyk.top/tags/Vue-Programming/</loc>
-    <lastmod>2025-09-04</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://www.g2022cyk.top/tags/Program-Release/</loc>
     <lastmod>2025-09-04</lastmod>
     <changefreq>weekly</changefreq>
@@ -1171,14 +1155,14 @@
   </url>
   
   <url>
-    <loc>https://www.g2022cyk.top/tags/TuitionDrop/</loc>
+    <loc>https://www.g2022cyk.top/tags/Jiyu/</loc>
     <lastmod>2025-09-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://www.g2022cyk.top/tags/Jiyu/</loc>
+    <loc>https://www.g2022cyk.top/tags/Vue-Programming/</loc>
     <lastmod>2025-09-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -1199,7 +1183,7 @@
   </url>
   
   <url>
-    <loc>https://www.g2022cyk.top/tags/Hexo%E6%8F%92%E4%BB%B6-Live-Photo-%E5%8A%A8%E6%80%81%E5%9B%BE%E7%89%87/</loc>
+    <loc>https://www.g2022cyk.top/tags/Hexo-Plugin-Live-Photo-Dynamic-Images/</loc>
     <lastmod>2025-09-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -1213,7 +1197,14 @@
   </url>
   
   <url>
-    <loc>https://www.g2022cyk.top/tags/Hexo-Plugin-Live-Photo-Dynamic-Images/</loc>
+    <loc>https://www.g2022cyk.top/tags/TuitionDrop/</loc>
+    <lastmod>2025-09-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.g2022cyk.top/tags/Hexo%E6%8F%92%E4%BB%B6-Live-Photo-%E5%8A%A8%E6%80%81%E5%9B%BE%E7%89%87/</loc>
     <lastmod>2025-09-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -1234,6 +1225,13 @@
   </url>
   
   <url>
+    <loc>https://www.g2022cyk.top/tags/Quitting-School-Website/</loc>
+    <lastmod>2025-09-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://www.g2022cyk.top/tags/Bug/</loc>
     <lastmod>2025-09-04</lastmod>
     <changefreq>weekly</changefreq>
@@ -1241,7 +1239,7 @@
   </url>
   
   <url>
-    <loc>https://www.g2022cyk.top/tags/Quitting-School-Website/</loc>
+    <loc>https://www.g2022cyk.top/tags/TuitionFreeNet/</loc>
     <lastmod>2025-09-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -1262,13 +1260,6 @@
   </url>
   
   <url>
-    <loc>https://www.g2022cyk.top/tags/TuitionFreeNet/</loc>
-    <lastmod>2025-09-04</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://www.g2022cyk.top/tags/%E9%80%80%E5%AD%A6%E7%BD%91/</loc>
     <lastmod>2025-09-04</lastmod>
     <changefreq>weekly</changefreq>
@@ -1276,14 +1267,14 @@
   </url>
   
   <url>
-    <loc>https://www.g2022cyk.top/tags/%E5%AE%89%E5%8D%93/</loc>
+    <loc>https://www.g2022cyk.top/tags/%E7%94%B5%E8%B7%AF%E8%AE%BE%E8%AE%A1/</loc>
     <lastmod>2025-09-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://www.g2022cyk.top/tags/%E7%94%B5%E8%B7%AF%E8%AE%BE%E8%AE%A1/</loc>
+    <loc>https://www.g2022cyk.top/tags/%E5%AE%89%E5%8D%93/</loc>
     <lastmod>2025-09-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -1304,14 +1295,14 @@
   </url>
   
   <url>
-    <loc>https://www.g2022cyk.top/tags/%E7%A8%8B%E5%BA%8F%E5%8F%91%E5%B8%83/</loc>
+    <loc>https://www.g2022cyk.top/tags/%E7%BB%8F%E9%AA%8C%E5%88%86%E4%BA%AB/</loc>
     <lastmod>2025-09-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://www.g2022cyk.top/tags/%E7%BB%8F%E9%AA%8C%E5%88%86%E4%BA%AB/</loc>
+    <loc>https://www.g2022cyk.top/tags/%E7%A8%8B%E5%BA%8F%E5%8F%91%E5%B8%83/</loc>
     <lastmod>2025-09-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
