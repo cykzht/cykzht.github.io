@@ -99,16 +99,41 @@
     detectApple()
   
     })()
-  </script><script>var _hmt = _hmt || [];
-(function() {
-  var hm = document.createElement("script");
-  hm.src = "https://hm.baidu.com/hm.js?09ca4f4526f7e714a253c7329a59e212";
-  var s = document.getElementsByTagName("script")[0];
-  s.parentNode.insertBefore(hm, s);
-})();
-btf.addGlobalFn('pjaxComplete', () => {
-  _hmt.push(['_trackPageview',window.location.pathname])
-}, 'baidu_analytics')
+  </script><script>// 检查是否为本地或内网环境
+const hostname = window.location.hostname;
+const isLocal = hostname === 'localhost' || 
+               hostname === '127.0.0.1' || 
+               hostname.startsWith('192.168.') || 
+               hostname.startsWith('10.') || 
+               hostname.startsWith('172.16.') || 
+               hostname.startsWith('172.17.') || 
+               hostname.startsWith('172.18.') || 
+               hostname.startsWith('172.19.') || 
+               hostname.startsWith('172.20.') || 
+               hostname.startsWith('172.21.') || 
+               hostname.startsWith('172.22.') || 
+               hostname.startsWith('172.23.') || 
+               hostname.startsWith('172.24.') || 
+               hostname.startsWith('172.25.') || 
+               hostname.startsWith('172.26.') || 
+               hostname.startsWith('172.27.') || 
+               hostname.startsWith('172.28.') || 
+               hostname.startsWith('172.29.') || 
+               hostname.startsWith('172.30.') || 
+               hostname.startsWith('172.31.');
+
+if (!isLocal) {
+  var _hmt = _hmt || [];
+  (function() {
+    var hm = document.createElement("script");
+    hm.src = "https://hm.baidu.com/hm.js?09ca4f4526f7e714a253c7329a59e212";
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(hm, s);
+  })();
+  btf.addGlobalFn('pjaxComplete', () => {
+    _hmt.push(['_trackPageview',window.location.pathname])
+  }, 'baidu_analytics')
+}
 </script><script>const GLOBAL_CONFIG = {
   root: '/',
   algolia: undefined,

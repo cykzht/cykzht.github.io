@@ -416,16 +416,41 @@
     detectApple()
   
     })()
-  </script><script>var _hmt = _hmt || [];
-(function() {
-  var hm = document.createElement("script");
-  hm.src = "https://hm.baidu.com/hm.js?09ca4f4526f7e714a253c7329a59e212";
-  var s = document.getElementsByTagName("script")[0];
-  s.parentNode.insertBefore(hm, s);
-})();
-btf.addGlobalFn('pjaxComplete', () => {
-  _hmt.push(['_trackPageview',window.location.pathname])
-}, 'baidu_analytics')
+  </script><script>// 检查是否为本地或内网环境
+const hostname = window.location.hostname;
+const isLocal = hostname === 'localhost' || 
+               hostname === '127.0.0.1' || 
+               hostname.startsWith('192.168.') || 
+               hostname.startsWith('10.') || 
+               hostname.startsWith('172.16.') || 
+               hostname.startsWith('172.17.') || 
+               hostname.startsWith('172.18.') || 
+               hostname.startsWith('172.19.') || 
+               hostname.startsWith('172.20.') || 
+               hostname.startsWith('172.21.') || 
+               hostname.startsWith('172.22.') || 
+               hostname.startsWith('172.23.') || 
+               hostname.startsWith('172.24.') || 
+               hostname.startsWith('172.25.') || 
+               hostname.startsWith('172.26.') || 
+               hostname.startsWith('172.27.') || 
+               hostname.startsWith('172.28.') || 
+               hostname.startsWith('172.29.') || 
+               hostname.startsWith('172.30.') || 
+               hostname.startsWith('172.31.');
+
+if (!isLocal) {
+  var _hmt = _hmt || [];
+  (function() {
+    var hm = document.createElement("script");
+    hm.src = "https://hm.baidu.com/hm.js?09ca4f4526f7e714a253c7329a59e212";
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(hm, s);
+  })();
+  btf.addGlobalFn('pjaxComplete', () => {
+    _hmt.push(['_trackPageview',window.location.pathname])
+  }, 'baidu_analytics')
+}
 </script><script>const GLOBAL_CONFIG = {
   root: '/',
   algolia: undefined,
@@ -483,7 +508,7 @@ btf.addGlobalFn('pjaxSend', () => {
 <p>Modern smartphones (such as iPhone’s Live Photo and similar features on some Android devices) can capture dynamic photos, recording approximately 3 seconds of video and audio before and after the shot. However, when deploying blog posts to static websites, these dynamic photos are often reduced to static JPEG images, losing their vivid essence.</p>
 <p><strong>Hexo-live-photo</strong> was created to solve this problem. It parses Live Photo resources (a <code>.jpg</code> image and a <code>.mp4</code> video) and utilizes HTML5 video playback technology to perfectly restore the dynamic photo playback effect in your Hexo blog without affecting page load performance, making your memories more vivid.</p>
 
-      <div class="live-photo-container" id="livephoto-f1lg64ckx" >
+      <div class="live-photo-container" id="livephoto-7sgjpi7re" >
         <img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://11.g2022cyk.top:8081/wp-content/uploads/2025/09/1757142694-English_1.webp" alt="Dynamic Image Display" class="live-photo-static"  >
         <video muted playsinline preload="auto" class="live-photo-video">
           <source src="https://11.g2022cyk.top:8081/wp-content/uploads/2025/09/1757142741-English_1.mp4" type="video/mp4">
